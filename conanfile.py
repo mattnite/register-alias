@@ -1,5 +1,6 @@
 from conans import ConanFile, CMake, tools
 
+
 class SvdAliasConan(ConanFile):
     name = "svd-alias"
     version = "0.1"
@@ -8,10 +9,7 @@ class SvdAliasConan(ConanFile):
     url = "<Package recipe repository url here, for issues about the package>"
     description = "<Description of Svdalias here>"
     topics = ("embedded", "mcu")
-    export_sources = "include"
-
-    def build(self):
-        self.copy("*", dst=".")
+    exports_sources = "include/*"
 
     def package(self):
         self.copy("*", dst=".")
