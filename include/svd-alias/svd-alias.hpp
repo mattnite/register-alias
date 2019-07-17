@@ -2,6 +2,6 @@
 #include "svd-alias/register.hpp"
 
 // STMicro
-#include "svd-alias/st-micro/STM32Lx1.hpp"
-#include "svd-alias/st-micro/STM32Lx2.hpp"
-#include "svd-alias/st-micro/STM32Lx3.hpp"
+#include "svd-alias/st-micro/STM32L0x1.hpp"
+#include "svd-alias/st-micro/STM32L0x2.hpp"
+#include "svd-alias/st-micro/STM32L0x3.hpp"
