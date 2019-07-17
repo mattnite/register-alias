@@ -41,7 +41,7 @@ for svd in sys.argv[1:]:
                     fieldName = field.find("name").text
                     bitWidth = field.find("bitWidth").text
                     bitOffset = field.find("bitOffset").text
-                    f.write('            using %s = Field<%s, %s>;' % (fieldName, bitOffset, bitWidth))
+                    f.write('            using %s = Field<%s, %s>;' % (fieldName if fieldName != registerName else "Field", bitOffset, bitWidth))
                     if fieldDescription is not None:
                         f.write('    // %s' % ' '.join(fieldDescription.text.replace('\n', ' ').replace('\r', '').split()))
                     

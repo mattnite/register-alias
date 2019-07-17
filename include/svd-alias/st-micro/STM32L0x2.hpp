@@ -465,12 +465,12 @@ struct STM32L0x2 {
     struct CRC {
         // Data register
         struct DR : public Register<0x40023000> {
-            using DR = Field<0, 32>;    // Data register bits
+            using Field = Field<0, 32>;    // Data register bits
         };
 
         // Independent data register
         struct IDR : public Register<0x40023004> {
-            using IDR = Field<0, 8>;    // General-purpose 8-bit data register bits
+            using Field = Field<0, 8>;    // General-purpose 8-bit data register bits
         };
 
         // Control register
@@ -1904,17 +1904,17 @@ struct STM32L0x2 {
 
         // Compare Register
         struct CMP : public Register<0x40007c14> {
-            using CMP = Field<0, 16>;    // Compare value.
+            using Field = Field<0, 16>;    // Compare value.
         };
 
         // Autoreload Register
         struct ARR : public Register<0x40007c18> {
-            using ARR = Field<0, 16>;    // Auto reload value.
+            using Field = Field<0, 16>;    // Auto reload value.
         };
 
         // Counter Register
         struct CNT : public Register<0x40007c1c> {
-            using CNT = Field<0, 16>;    // Counter value.
+            using Field = Field<0, 16>;    // Counter value.
         };
 
     };
@@ -2324,12 +2324,12 @@ struct STM32L0x2 {
 
         // Receive data register
         struct RDR : public Register<0x40013824> {
-            using RDR = Field<0, 9>;    // Receive data value
+            using Field = Field<0, 9>;    // Receive data value
         };
 
         // Transmit data register
         struct TDR : public Register<0x40013828> {
-            using TDR = Field<0, 9>;    // Transmit data value
+            using Field = Field<0, 9>;    // Transmit data value
         };
 
     };
@@ -2487,12 +2487,12 @@ struct STM32L0x2 {
 
         // Receive data register
         struct RDR : public Register<0x40004424> {
-            using RDR = Field<0, 9>;    // Receive data value
+            using Field = Field<0, 9>;    // Receive data value
         };
 
         // Transmit data register
         struct TDR : public Register<0x40004428> {
-            using TDR = Field<0, 9>;    // Transmit data value
+            using Field = Field<0, 9>;    // Transmit data value
         };
 
     };
@@ -2650,12 +2650,12 @@ struct STM32L0x2 {
 
         // Receive data register
         struct RDR : public Register<0x40004c24> {
-            using RDR = Field<0, 9>;    // Receive data value
+            using Field = Field<0, 9>;    // Receive data value
         };
 
         // Transmit data register
         struct TDR : public Register<0x40004c28> {
-            using TDR = Field<0, 9>;    // Transmit data value
+            using Field = Field<0, 9>;    // Transmit data value
         };
 
     };
@@ -2813,12 +2813,12 @@ struct STM32L0x2 {
 
         // Receive data register
         struct RDR : public Register<0x40005024> {
-            using RDR = Field<0, 9>;    // Receive data value
+            using Field = Field<0, 9>;    // Receive data value
         };
 
         // Transmit data register
         struct TDR : public Register<0x40005028> {
-            using TDR = Field<0, 9>;    // Transmit data value
+            using Field = Field<0, 9>;    // Transmit data value
         };
 
     };
@@ -3074,7 +3074,7 @@ struct STM32L0x2 {
 
         // Prescaler register
         struct PR : public Register<0x40003004> {
-            using PR = Field<0, 3>;    // Prescaler divider
+            using Field = Field<0, 3>;    // Prescaler divider
         };
 
         // Reload register
@@ -3284,7 +3284,7 @@ struct STM32L0x2 {
 
         // Buffer table address
         struct BTABLE : public Register<0x40005c50> {
-            using BTABLE = Field<3, 13>;    // BTABLE
+            using Field = Field<3, 13>;    // BTABLE
         };
 
         // LPM control and status register
@@ -3829,7 +3829,7 @@ struct STM32L0x2 {
 
         // data register
         struct DR : public Register<0x4001300c> {
-            using DR = Field<0, 16>;    // Data register
+            using Field = Field<0, 16>;    // Data register
         };
 
         // CRC polynomial register
@@ -3914,7 +3914,7 @@ struct STM32L0x2 {
 
         // data register
         struct DR : public Register<0x4000380c> {
-            using DR = Field<0, 16>;    // Data register
+            using Field = Field<0, 16>;    // Data register
         };
 
         // CRC polynomial register
@@ -4387,22 +4387,22 @@ struct STM32L0x2 {
 
         // Power down key register
         struct PDKEYR : public Register<0x40022008> {
-            using PDKEYR = Field<0, 32>;    // RUN_PD in FLASH_ACR key
+            using Field = Field<0, 32>;    // RUN_PD in FLASH_ACR key
         };
 
         // Program/erase key register
         struct PEKEYR : public Register<0x4002200c> {
-            using PEKEYR = Field<0, 32>;    // FLASH_PEC and data EEPROM key
+            using Field = Field<0, 32>;    // FLASH_PEC and data EEPROM key
         };
 
         // Program memory key register
         struct PRGKEYR : public Register<0x40022010> {
-            using PRGKEYR = Field<0, 32>;    // Program memory key
+            using Field = Field<0, 32>;    // Program memory key
         };
 
         // Option byte key register
         struct OPTKEYR : public Register<0x40022014> {
-            using OPTKEYR = Field<0, 32>;    // Option byte key
+            using Field = Field<0, 32>;    // Option byte key
         };
 
         // Status register
@@ -4672,7 +4672,7 @@ struct STM32L0x2 {
 
         // sampling time register
         struct SMPR : public Register<0x40012414> {
-            using SMPR = Field<0, 3>;    // Sampling time selection
+            using Field = Field<0, 3>;    // Sampling time selection
         };
 
         // watchdog threshold register
@@ -4711,7 +4711,7 @@ struct STM32L0x2 {
 
         // ADC Calibration factor
         struct CALFACT : public Register<0x400124b4> {
-            using CALFACT = Field<0, 7>;    // Calibration factor
+            using Field = Field<0, 7>;    // Calibration factor
         };
 
         // ADC common configuration register
@@ -4903,7 +4903,7 @@ struct STM32L0x2 {
 
         // prescaler
         struct PSC : public Register<0x40000028> {
-            using PSC = Field<0, 16>;    // Prescaler value
+            using Field = Field<0, 16>;    // Prescaler value
         };
 
         // auto-reload register
@@ -5099,7 +5099,7 @@ struct STM32L0x2 {
 
         // prescaler
         struct PSC : public Register<0x40000428> {
-            using PSC = Field<0, 16>;    // Prescaler value
+            using Field = Field<0, 16>;    // Prescaler value
         };
 
         // auto-reload register
@@ -5185,17 +5185,17 @@ struct STM32L0x2 {
 
         // counter
         struct CNT : public Register<0x40001024> {
-            using CNT = Field<0, 16>;    // Low counter value
+            using Field = Field<0, 16>;    // Low counter value
         };
 
         // prescaler
         struct PSC : public Register<0x40001028> {
-            using PSC = Field<0, 16>;    // Prescaler value
+            using Field = Field<0, 16>;    // Prescaler value
         };
 
         // auto-reload register
         struct ARR : public Register<0x4000102c> {
-            using ARR = Field<0, 16>;    // Low Auto-reload value
+            using Field = Field<0, 16>;    // Low Auto-reload value
         };
 
     };
@@ -5234,17 +5234,17 @@ struct STM32L0x2 {
 
         // counter
         struct CNT : public Register<0x40001424> {
-            using CNT = Field<0, 16>;    // Low counter value
+            using Field = Field<0, 16>;    // Low counter value
         };
 
         // prescaler
         struct PSC : public Register<0x40001428> {
-            using PSC = Field<0, 16>;    // Prescaler value
+            using Field = Field<0, 16>;    // Prescaler value
         };
 
         // auto-reload register
         struct ARR : public Register<0x4000142c> {
-            using ARR = Field<0, 16>;    // Low Auto-reload value
+            using Field = Field<0, 16>;    // Low Auto-reload value
         };
 
     };
@@ -5339,27 +5339,27 @@ struct STM32L0x2 {
 
         // counter
         struct CNT : public Register<0x40010824> {
-            using CNT = Field<0, 16>;    // counter value
+            using Field = Field<0, 16>;    // counter value
         };
 
         // prescaler
         struct PSC : public Register<0x40010828> {
-            using PSC = Field<0, 16>;    // Prescaler value
+            using Field = Field<0, 16>;    // Prescaler value
         };
 
         // auto-reload register
         struct ARR : public Register<0x4001082c> {
-            using ARR = Field<0, 16>;    // Auto-reload value
+            using Field = Field<0, 16>;    // Auto-reload value
         };
 
         // capture/compare register 1
         struct CCR1 : public Register<0x40010834> {
-            using CCR1 = Field<0, 16>;    // Capture/Compare 1 value
+            using Field = Field<0, 16>;    // Capture/Compare 1 value
         };
 
         // capture/compare register 2
         struct CCR2 : public Register<0x40010838> {
-            using CCR2 = Field<0, 16>;    // Capture/Compare 2 value
+            using Field = Field<0, 16>;    // Capture/Compare 2 value
         };
 
         // TIM21 option register
@@ -5461,27 +5461,27 @@ struct STM32L0x2 {
 
         // counter
         struct CNT : public Register<0x40011424> {
-            using CNT = Field<0, 16>;    // counter value
+            using Field = Field<0, 16>;    // counter value
         };
 
         // prescaler
         struct PSC : public Register<0x40011428> {
-            using PSC = Field<0, 16>;    // Prescaler value
+            using Field = Field<0, 16>;    // Prescaler value
         };
 
         // auto-reload register
         struct ARR : public Register<0x4001142c> {
-            using ARR = Field<0, 16>;    // Auto-reload value
+            using Field = Field<0, 16>;    // Auto-reload value
         };
 
         // capture/compare register 1
         struct CCR1 : public Register<0x40011434> {
-            using CCR1 = Field<0, 16>;    // Capture/Compare 1 value
+            using Field = Field<0, 16>;    // Capture/Compare 1 value
         };
 
         // capture/compare register 2
         struct CCR2 : public Register<0x40011438> {
-            using CCR2 = Field<0, 16>;    // Capture/Compare 2 value
+            using Field = Field<0, 16>;    // Capture/Compare 2 value
         };
 
         // TIM22 option register
@@ -5557,7 +5557,7 @@ struct STM32L0x2 {
 
         // Baud rate register
         struct BRR : public Register<0x4000480c> {
-            using BRR = Field<0, 20>;    // BRR
+            using Field = Field<0, 20>;    // BRR
         };
 
         // Request register
@@ -5603,12 +5603,12 @@ struct STM32L0x2 {
 
         // Receive data register
         struct RDR : public Register<0x40004824> {
-            using RDR = Field<0, 9>;    // Receive data value
+            using Field = Field<0, 9>;    // Receive data value
         };
 
         // Transmit data register
         struct TDR : public Register<0x40004828> {
-            using TDR = Field<0, 9>;    // Transmit data value
+            using Field = Field<0, 9>;    // Transmit data value
         };
 
     };
@@ -5866,7 +5866,7 @@ struct STM32L0x2 {
 
         // Buffer table address
         struct BTABLE : public Register<0x40006050> {
-            using BTABLE = Field<3, 13>;    // Buffer table
+            using Field = Field<3, 13>;    // Buffer table
         };
 
         // LPM control and status register
