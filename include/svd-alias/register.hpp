@@ -19,7 +19,7 @@
 template <auto address, typename T = std::uint32_t> struct RegisterReadOnly {
     template <auto offset, auto width>
     using Field = BitField<address, offset, width, T>;
-}
+};
 
 template <auto address, typename T = std::uint32_t> struct Register : public RegisterReadOnly<address, T> {
     volatile static void set(T val) {
