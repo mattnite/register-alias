@@ -14,14 +14,14 @@ struct BitFieldReadOnly {
     constexpr static auto mask = max << offset;
 
     volatile static T read() {
-        return (*reinterpret_cast<T *>(address) & mask) >> offset;
+        return (*reinterpret_cast<T*>(address) & mask) >> offset;
     }
 };
 
 template <auto address, auto offset, auto width, typename T = std::uint32_t>
 struct BitField : public BitFieldReadOnly<address, offset, width, T> {
-    volatile static void write(const T &val) {
-        auto ptr = reinterpret_cast<T *>(address);
+    volatile static void write(const T& val) {
+        auto ptr = reinterpret_cast<T*>(address);
         *ptr = (*ptr & ~mask) | (mask & (val << offset));
     }
 };

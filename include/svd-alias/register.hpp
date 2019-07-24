@@ -8,35 +8,37 @@
 
 #include "bit-field.hpp"
 
-#include <cstdint>
-
 /** Register access class
  *
  * This class provides a zero overhead method for managing special function
  * registers.
  */
 
-template <auto address, typename T = std::uint32_t> struct RegisterReadOnly {
+template <auto address, typename T = std::uint32_t>
+struct RegisterReadOnly {
     template <auto offset, auto width>
     using Field = BitField<address, offset, width, T>;
 };
 
-template <auto address, typename T = std::uint32_t> struct Register : public RegisterReadOnly<address, T> {
+template <auto address, typename T = std::uint32_t>
+struct Register : public RegisterReadOnly<address, T> {
     volatile static void set(T val) {
-        *reinterpret_cast<T *>(address) |= 1 << val;
+        *reinterpret_cast<T*>(address) |= 1 << val;
     }
 
     volatile static void clear(T val) {
-        *reinterpret_cast<T *>(address) &= ~(1 << val);
+        *reinterpret_cast<T*>(address) &= ~(1 << val);
     }
 
-    template <T... bits> volatile static void set() {
-        *reinterpret_cast<T *>(address) |= ((1 << bits) | ...);
+    template <T... bits>
+    volatile static void set() {
+        *reinterpret_cast<T*>(address) |= ((1 << bits) | ...);
     }
 
-    template <T... bits> volatile static void clear() {
-        *reinterpret_cast<T *>(address) &= (~(1 << bits) & ...);
+    template <T... bits>
+    volatile static void clear() {
+        *reinterpret_cast<T*>(address) &= (~(1 << bits) & ...);
     }
 
-    volatile static T &reg() { return *reinterpret_cast<T *>(address); }
+    volatile static T& reg() { return *reinterpret_cast<T*>(address); }
 };
