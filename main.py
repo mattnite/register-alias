@@ -7,7 +7,8 @@ cpuNameTable = {
     "CM0PLUS": "cortex-mplus",
     "CM1": "cortex-m1",
     "CM3": "cortex-m3",
-    "CM4": "cortex-m4"
+    "CM4": "cortex-m4",
+    "CM7": "cortex-m7"
 }
 
 for svd in sys.argv[1:]:
@@ -18,13 +19,21 @@ for svd in sys.argv[1:]:
     # create cmake file
     with open("{}.cmake".format(deviceName), 'w') as f:
         cpu = root.find("cpu")
-        name = cpu.find("name").text
-        endian = cpu.find("endian").text
-        fpuPresent = cpu.find("fpuPresent").text
+        if cpu is not None:
+            name = cpu.find("name")
+            if name is not None: 
+                text = name.text
+                f.write("set(SVD_CPU {})\n".format(cpuNameTable[text]))
         
-        f.write("set(CPU {})\n".format(cpuNameTable[name]))
-        f.write("set(ENDIAN {})\n".format(endian))
-        f.write("set(FLOAT_ABI {})\n".format(fpuPresent))
+            endian = cpu.find("endian")
+            if endian is not None:
+                text = endian.text
+                f.write("set(SVD_ENDIAN {})\n".format(text))
+            
+            fpuPresent = cpu.find("fpuPresent")
+            if fpuPresent is not None:
+                text = fpuPresent.text
+                f.write("set(SVD_FLOAT_ABI {})\n".format(text))
 
     # create header file
     with open("{}.hpp".format(deviceName), 'w') as f:
@@ -73,3 +82,5 @@ for svd in sys.argv[1:]:
             f.write('    };\n\n')
 
         f.write('};\n')
+
+    
