@@ -33,7 +33,14 @@ for svd in sys.argv[1:]:
             fpuPresent = cpu.find("fpuPresent")
             if fpuPresent is not None:
                 text = fpuPresent.text
-                f.write("set(SVD_FLOAT_ABI {})\n".format(text))
+                value = ""
+                if text == "false" or text == "0":
+                    value = "soft"
+                elif text == "true" or text == "1":
+                    value = "hard"
+
+                if value != "":
+                    f.write("set(SVD_FLOAT_ABI {})\n".format(value))
 
     # create header file
     with open("{}.hpp".format(deviceName), 'w') as f:
