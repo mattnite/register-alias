@@ -3,7 +3,7 @@ from conans import ConanFile, CMake, tools
 
 class SvdAliasConan(ConanFile):
     name = "svd-alias"
-    version = "0.1"
+    version = "0.2"
     license = "<Put the package license here>"
     author = "<Put your name here> <And your email here>"
     url = "<Package recipe repository url here, for issues about the package>"
