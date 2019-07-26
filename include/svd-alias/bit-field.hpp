@@ -20,6 +20,7 @@ struct BitFieldReadOnly {
 
 template <auto address, auto offset, auto width, typename T = std::uint32_t>
 struct BitField : public BitFieldReadOnly<address, offset, width, T> {
+    using BitFieldReadOnly<address, offset, width, T>::mask;
     volatile static void write(const T& val) {
         auto ptr = reinterpret_cast<T*>(address);
         *ptr = (*ptr & ~mask) | (mask & (val << offset));
