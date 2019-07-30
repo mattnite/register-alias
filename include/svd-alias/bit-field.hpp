@@ -24,8 +24,8 @@ struct BitField : public BitFieldReadOnly<address, position, width, T> {
     using BitFieldReadOnly<address, position, width, T>::mask;
     using BitFieldReadOnly<address, position, width, T>::offset;
 
-    volatile static void write(const T& val) {
-        auto ptr = reinterpret_cast<T*>(address);
+    static void write(const T& val) {
+        auto ptr = reinterpret_cast<volatile T*>(address);
         *ptr = (*ptr & ~mask) | (mask & (val << position));
     }
 };
