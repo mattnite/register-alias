@@ -11,6 +11,73 @@ cpuNameTable = {
     "CM7": "cortex-m7"
 }
 
+def someCode():
+    f.write('        struct %s : public Register%s<%s> {\n' % (registerName, access, hex(baseAddress + addressOffset)))
+    for field in register.iter("field"):
+        fieldDescription = field.find("description");
+        fieldName = field.find("name").text
+        
+        bitWidth = field.find("bitWidth")
+        bitOffset = field.find("bitOffset")
+        lsb = field.find("lsb")
+        msb = field.find("msb")
+        bitRange = field.find("bitRange")
+        if bitWidth is not None and bitOffset is not None:
+            width = bitWidth.text
+            offset = bitOffset.text
+        elif lsb is not None and msb is not None:
+            offset = lsb.text
+            width = str(int(msb.text) - int(lsb.text) + 1)
+        elif bitRange is not None:
+            print("bitRange not implemented yet")
+            exit()
+        else:
+            print("failed to find field position")
+            exit()
+
+        f.write('            using %s = Field<%s, %s>;' % (fieldName if fieldName != registerName else "Field", offset, width))
+        if fieldDescription is not None:
+            f.write('    // %s' % ' '.join(fieldDescription.text.replace('\n', ' ').replace('\r', '').split()))
+        
+        f.write('\n')
+
+    f.write('        };\n\n')
+
+def indent(depth):
+    return ''.join(['    '] * depth)
+
+def create_register(register, name, access, address):
+    f.write('%sstruct %s : public Register%s<%s> {\n' % (indent(2), name, access, address))
+    for field in register.iter("field"):
+        fieldDescription = field.find("description");
+        fieldName = field.find("name").text
+        
+        bitWidth = field.find("bitWidth")
+        bitOffset = field.find("bitOffset")
+        lsb = field.find("lsb")
+        msb = field.find("msb")
+        bitRange = field.find("bitRange")
+        if bitWidth is not None and bitOffset is not None:
+            width = bitWidth.text
+            offset = bitOffset.text
+        elif lsb is not None and msb is not None:
+            offset = lsb.text
+            width = str(int(msb.text) - int(lsb.text) + 1)
+        elif bitRange is not None:
+            print("bitRange not implemented yet")
+            exit()
+        else:
+            print("failed to find field position")
+            exit()
+
+        f.write('%susing %s = Field<%s, %s>;' % (indent(3), fieldName if fieldName != registerName else "Field", offset, width))
+        if fieldDescription is not None:
+            f.write('    // %s' % ' '.join(fieldDescription.text.replace('\n', ' ').replace('\r', '').split()))
+        
+        f.write('\n')
+
+    f.write('%s};\n\n' % indent(2))
+
 for svd in sys.argv[1:]:
     tree = ElementTree.parse(svd)
     root = tree.getroot()
@@ -58,8 +125,7 @@ for svd in sys.argv[1:]:
 
             for interrupt in peripheral.iter("interrupt"):
                 interrupts[interrupt.find("value").text] = interrupt.find("name").text
-            
-            
+
             if peripheral.attrib and peripheral.attrib["derivedFrom"]:
                 for tmp in root.iter("peripheral"):
                     if peripheral.attrib["derivedFrom"] == tmp.find("name").text:
@@ -74,29 +140,47 @@ for svd in sys.argv[1:]:
             for register in peripheral.iter("register"):
                 registerName = register.find("name").text
                 addressOffset = int(register.find("addressOffset").text, 16)
+                registerAccess = register.find("access") 
+                access = ""
                 if register.find("description") is not None:
                     registerDescription = register.find("description").text
                     f.write('        // %s\n' % ' '.join(registerDescription.replace('\n', ' ').replace('\r', '').split()))
-                
-                f.write('        struct %s : public Register<%s> {\n' % (registerName, hex(baseAddress + addressOffset)))
-                for field in register.iter("field"):
-                    fieldDescription = field.find("description");
-                    fieldName = field.find("name").text
-                    bitWidth = field.find("bitWidth").text
-                    bitOffset = field.find("bitOffset").text
-                    f.write('            using %s = Field<%s, %s>;' % (fieldName if fieldName != registerName else "Field", bitOffset, bitWidth))
-                    if fieldDescription is not None:
-                        f.write('    // %s' % ' '.join(fieldDescription.text.replace('\n', ' ').replace('\r', '').split()))
-                    
-                    f.write('\n')
 
-                f.write('        };\n\n')
+                if registerAccess is not None:
+                    value = registerAccess.text
+                    if value == "read-only":
+                        access = "ReadOnly"
+                    elif value == "write-only" or value == "write-once":
+                        access = "WriteOnly"
+
+                if "[%s]" in registerName:
+                    for i in range(0, int(register.find("dim").text)):
+                        create_register(register, registerName.replace("[%s]", str(i)), access, hex(baseAddress + addressOffset + (i * int(register.find("dimIncrement").text))))
+                elif "%s" in registerName:
+                    print("Register list not implemented yet")
+                    exit()
+                else:
+                    create_register(register, registerName, access, hex(baseAddress + addressOffset))
 
             f.write('    };\n\n')
         
-        for number, interrupt in interrupts.items():
-            print(number, interrupt)
+        max = 0
+        for number in interrupts:
+            value = int(number)
+            max = value if value > max else max
+       
+        intList = [""] * (max + 1)
 
+        for number, interrupt in interrupts.items():
+            intList[int(number)] = interrupt
+        
+        f.write('    static std::uint32_t const numInterrupts = {};\n\n'.format(len(intList)))
+        f.write('    enum class Interrupts: std::uint32_t {\n')
+        for index, interrupt in enumerate(intList):
+            if interrupt != "":
+                f.write('        {} = {},\n'.format(interrupt, index))
+
+        f.write('    };\n\n')
         f.write('};\n')
 
 

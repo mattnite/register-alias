@@ -8,24 +8,36 @@
 
 #include <cstdint>
 
-template <auto address, auto position, auto width, typename T = std::uint32_t>
-struct BitFieldReadOnly {
+template <auto address, auto position, auto width>
+struct BitFieldBase {
     constexpr static auto max = (1 << width) - 1;
     constexpr static auto mask = max << position;
     constexpr static auto offset = position;
+};
+
+template <auto address, auto position, auto width, typename T = std::uint32_t>
+struct BitFieldReadOnly : public BitFieldBase<address, position, width> {
+	using BitFieldBase<address, position, width>::mask;
+	using BitFieldBase<address, position, width>::offset;
 
     volatile static T read() {
-        return (*reinterpret_cast<T*>(address) & mask) >> position;
+        return (*reinterpret_cast<T*>(address) & mask) >> offset;
     }
 };
 
 template <auto address, auto position, auto width, typename T = std::uint32_t>
-struct BitField : public BitFieldReadOnly<address, position, width, T> {
-    using BitFieldReadOnly<address, position, width, T>::mask;
-    using BitFieldReadOnly<address, position, width, T>::offset;
+struct BitFieldWriteOnly : public BitFieldBase<address, position, width> {
+	using BitFieldBase<address, position, width>::mask;
+	using BitFieldBase<address, position, width>::offset;
 
     static void write(const T& val) {
         auto ptr = reinterpret_cast<volatile T*>(address);
-        *ptr = (*ptr & ~mask) | (mask & (val << position));
+        *ptr = (*ptr & ~mask) | (mask & (val << offset));
     }
 };
+
+template <auto address, auto position, auto width, typename T = std::uint32_t>
+struct BitField 
+	: virtual public BitFieldReadOnly<address, position, width, T>
+	, virtual public BitFieldWriteOnly<address, position, width, T> 
+{};
