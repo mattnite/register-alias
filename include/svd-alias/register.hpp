@@ -56,7 +56,7 @@ struct RegisterWriteOnly {
         *reinterpret_cast<volatile T*>(address) ^= ((1 << bits) | ...);
     }
 
-	void write(T const val) {
+	static void write(T const val) {
 		*reinterpret_cast<volatile T*>(address) = val;
 	}
 };
@@ -66,5 +66,5 @@ struct Register : public RegisterReadOnly<address, T>, public RegisterWriteOnly<
     template <auto offset, auto width>
     using Field = BitField<address, offset, width, T>;
 
-    static T& reg() { return *reinterpret_cast<volatile T*>(address); }
+    volatile static T& reg() { return *reinterpret_cast<T*>(address); }
 };
