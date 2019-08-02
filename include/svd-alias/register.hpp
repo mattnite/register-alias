@@ -54,8 +54,9 @@ struct RegisterWriteOnly {
     template <T... bits>
     static void toggle() {
         *reinterpret_cast<volatile T*>(address) ^= ((1 << bits) | ...);
+    }
 
-	void write(T val) {
+	void write(T const val) {
 		*reinterpret_cast<volatile T*>(address) = val;
 	}
 };
