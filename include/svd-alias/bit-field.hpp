@@ -20,8 +20,8 @@ struct BitFieldReadOnly : public BitFieldBase<address, position, width> {
 	using BitFieldBase<address, position, width>::mask;
 	using BitFieldBase<address, position, width>::offset;
 
-    volatile static T read() {
-        return (*reinterpret_cast<T*>(address) & mask) >> offset;
+    static T read() {
+        return (*reinterpret_cast<volatile T*>(address) & mask) >> offset;
     }
 };
 
@@ -30,14 +30,14 @@ struct BitFieldWriteOnly : public BitFieldBase<address, position, width> {
 	using BitFieldBase<address, position, width>::mask;
 	using BitFieldBase<address, position, width>::offset;
 
-    static void write(const T& val) {
+    static void write(T const val) {
         auto ptr = reinterpret_cast<volatile T*>(address);
         *ptr = (*ptr & ~mask) | (mask & (val << offset));
     }
 };
 
 template <auto address, auto position, auto width, typename T = std::uint32_t>
-struct BitField 
+struct BitField
 	: virtual public BitFieldReadOnly<address, position, width, T>
-	, virtual public BitFieldWriteOnly<address, position, width, T> 
+	, virtual public BitFieldWriteOnly<address, position, width, T>
 {};

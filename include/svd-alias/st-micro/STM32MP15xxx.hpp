@@ -192,7 +192,7 @@ struct STM32MP15xxx {
         };
 
         // ADC regular Data Register
-        struct ADC_DR : public Register<0x48003140> {
+        struct ADC_DR : public RegisterReadOnly<0x48003140> {
             using RDATA = Field<0, 32>;    // RDATA
         };
 
@@ -236,22 +236,22 @@ struct STM32MP15xxx {
         };
 
         // ADC injected data register
-        struct ADC_JDR1 : public Register<0x48003180> {
+        struct ADC_JDR1 : public RegisterReadOnly<0x48003180> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
         // ADC injected data register
-        struct ADC_JDR2 : public Register<0x48003184> {
+        struct ADC_JDR2 : public RegisterReadOnly<0x48003184> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
         // ADC injected data register
-        struct ADC_JDR3 : public Register<0x48003188> {
+        struct ADC_JDR3 : public RegisterReadOnly<0x48003188> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
         // ADC injected data register
-        struct ADC_JDR4 : public Register<0x4800318c> {
+        struct ADC_JDR4 : public RegisterReadOnly<0x4800318c> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
@@ -494,7 +494,7 @@ struct STM32MP15xxx {
         };
 
         // ADC regular Data Register
-        struct ADC_DR : public Register<0x48003040> {
+        struct ADC_DR : public RegisterReadOnly<0x48003040> {
             using RDATA = Field<0, 32>;    // RDATA
         };
 
@@ -538,22 +538,22 @@ struct STM32MP15xxx {
         };
 
         // ADC injected data register
-        struct ADC_JDR1 : public Register<0x48003080> {
+        struct ADC_JDR1 : public RegisterReadOnly<0x48003080> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
         // ADC injected data register
-        struct ADC_JDR2 : public Register<0x48003084> {
+        struct ADC_JDR2 : public RegisterReadOnly<0x48003084> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
         // ADC injected data register
-        struct ADC_JDR3 : public Register<0x48003088> {
+        struct ADC_JDR3 : public RegisterReadOnly<0x48003088> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
         // ADC injected data register
-        struct ADC_JDR4 : public Register<0x4800308c> {
+        struct ADC_JDR4 : public RegisterReadOnly<0x4800308c> {
             using JDATA = Field<0, 32>;    // JDATA
         };
 
@@ -608,7 +608,7 @@ struct STM32MP15xxx {
     // Analog-to-Digital Converter
     struct ADC_common {
         // ADC Common status register
-        struct CSR : public Register<0x48003300> {
+        struct CSR : public RegisterReadOnly<0x48003300> {
             using ADDRDY_MST = Field<0, 1>;    // ADDRDY_MST
             using EOSMP_MST = Field<1, 1>;    // EOSMP_MST
             using EOC_MST = Field<2, 1>;    // EOC_MST
@@ -647,13 +647,13 @@ struct STM32MP15xxx {
         };
 
         // Common regular data register for dual mode
-        struct CDR : public Register<0x4800330c> {
+        struct CDR : public RegisterReadOnly<0x4800330c> {
             using RDATA_MST = Field<0, 16>;    // RDATA_MST
             using RDATA_SLV = Field<16, 16>;    // RDATA_SLV
         };
 
         // Common regular data register for dual mode
-        struct CDR2 : public Register<0x48003310> {
+        struct CDR2 : public RegisterReadOnly<0x48003310> {
             using RDATA_ALT = Field<0, 32>;    // RDATA_ALT
         };
 
@@ -682,7 +682,7 @@ struct STM32MP15xxx {
         };
 
         // BSEC OTP status register
-        struct BSEC_OTP_STATUS : public Register<0x5c00500c> {
+        struct BSEC_OTP_STATUS : public RegisterReadOnly<0x5c00500c> {
             using SECURE = Field<0, 1>;    // SECURE
             using FULLDBG = Field<1, 1>;    // FULLDBG
             using INVALID = Field<2, 1>;    // INVALID
@@ -716,47 +716,47 @@ struct STM32MP15xxx {
         };
 
         // BSEC_OTP_DISTURBED0 is used to report disturbed state of BSEC_OTP_DATA0 to BSEC_OTP_DATA31 (lower 1Kbits OTP). BSEC_OTP_DISTURBED1 is used to report disturbed state of BSEC_OTP_DATA32 to BSEC_OTP_DATA63. BSEC_OTP_DISTURBED2 is used to report disturbed state of BSEC_OTP_DATA64 to BSEC_OTP_DATA95.
-        struct BSEC_OTP_DISTURBED0 : public Register<0x5c00501c> {
+        struct BSEC_OTP_DISTURBED0 : public RegisterReadOnly<0x5c00501c> {
             using DIS = Field<0, 32>;    // DIS
         };
 
         // BSEC_OTP_DISTURBED0 is used to report disturbed state of BSEC_OTP_DATA0 to BSEC_OTP_DATA31 (lower 1Kbits OTP). BSEC_OTP_DISTURBED1 is used to report disturbed state of BSEC_OTP_DATA32 to BSEC_OTP_DATA63. BSEC_OTP_DISTURBED2 is used to report disturbed state of BSEC_OTP_DATA64 to BSEC_OTP_DATA95.
-        struct BSEC_OTP_DISTURBED1 : public Register<0x5c005020> {
+        struct BSEC_OTP_DISTURBED1 : public RegisterReadOnly<0x5c005020> {
             using DIS = Field<0, 32>;    // DIS
         };
 
         // BSEC_OTP_DISTURBED0 is used to report disturbed state of BSEC_OTP_DATA0 to BSEC_OTP_DATA31 (lower 1Kbits OTP). BSEC_OTP_DISTURBED1 is used to report disturbed state of BSEC_OTP_DATA32 to BSEC_OTP_DATA63. BSEC_OTP_DISTURBED2 is used to report disturbed state of BSEC_OTP_DATA64 to BSEC_OTP_DATA95.
-        struct BSEC_OTP_DISTURBED2 : public Register<0x5c005024> {
+        struct BSEC_OTP_DISTURBED2 : public RegisterReadOnly<0x5c005024> {
             using DIS = Field<0, 32>;    // DIS
         };
 
         // BSEC_OTP_ERROR0 is used to report error state of BSEC_OTP_DATA0 to BSEC_OTP_DATA31 (lower 1Kbits OTP which are protected by 2:1 redundancy). BSEC_OTP_ERROR1 is used to report error state of BSEC_OTP_DATA32 to BSEC_OTP_DATA63 which are protected by 6-bit ECC. BSEC_OTP_ERROR2 is used to report error state of BSEC_OTP_DATA64 to BSEC_OTP_DATA95 which are protected by 6-bit ECC.
-        struct BSEC_OTP_ERROR0 : public Register<0x5c005034> {
+        struct BSEC_OTP_ERROR0 : public RegisterReadOnly<0x5c005034> {
             using ERR = Field<0, 32>;    // ERR
         };
 
         // BSEC_OTP_ERROR0 is used to report error state of BSEC_OTP_DATA0 to BSEC_OTP_DATA31 (lower 1Kbits OTP which are protected by 2:1 redundancy). BSEC_OTP_ERROR1 is used to report error state of BSEC_OTP_DATA32 to BSEC_OTP_DATA63 which are protected by 6-bit ECC. BSEC_OTP_ERROR2 is used to report error state of BSEC_OTP_DATA64 to BSEC_OTP_DATA95 which are protected by 6-bit ECC.
-        struct BSEC_OTP_ERROR1 : public Register<0x5c005038> {
+        struct BSEC_OTP_ERROR1 : public RegisterReadOnly<0x5c005038> {
             using ERR = Field<0, 32>;    // ERR
         };
 
         // BSEC_OTP_ERROR0 is used to report error state of BSEC_OTP_DATA0 to BSEC_OTP_DATA31 (lower 1Kbits OTP which are protected by 2:1 redundancy). BSEC_OTP_ERROR1 is used to report error state of BSEC_OTP_DATA32 to BSEC_OTP_DATA63 which are protected by 6-bit ECC. BSEC_OTP_ERROR2 is used to report error state of BSEC_OTP_DATA64 to BSEC_OTP_DATA95 which are protected by 6-bit ECC.
-        struct BSEC_OTP_ERROR2 : public Register<0x5c00503c> {
+        struct BSEC_OTP_ERROR2 : public RegisterReadOnly<0x5c00503c> {
             using ERR = Field<0, 32>;    // ERR
         };
 
         // BSEC_OTP_WLOCK0 is used to report permanent write lock of BSEC_OTP_DATA0 to BSEC_OTP_DATA31. BSEC_OTP_WLOCK1 is used to report permanent write lock of BSEC_OTP_DATA32 to BSEC_OTP_DATA63. BSEC_OTP_WLOCK2 is used to report permanent write lock of BSEC_OTP_DATA64 to BSEC_OTP_DATA95. Permanent write lock requires a programming sequence to lock a word (see section:Section3.3.6: OTP operations on page178).
-        struct BSEC_OTP_WRLOCK0 : public Register<0x5c00504c> {
+        struct BSEC_OTP_WRLOCK0 : public RegisterReadOnly<0x5c00504c> {
             using WRLOCK = Field<0, 32>;    // WRLOCK
         };
 
         // BSEC_OTP_WLOCK0 is used to report permanent write lock of BSEC_OTP_DATA0 to BSEC_OTP_DATA31. BSEC_OTP_WLOCK1 is used to report permanent write lock of BSEC_OTP_DATA32 to BSEC_OTP_DATA63. BSEC_OTP_WLOCK2 is used to report permanent write lock of BSEC_OTP_DATA64 to BSEC_OTP_DATA95. Permanent write lock requires a programming sequence to lock a word (see section:Section3.3.6: OTP operations on page178).
-        struct BSEC_OTP_WRLOCK1 : public Register<0x5c005050> {
+        struct BSEC_OTP_WRLOCK1 : public RegisterReadOnly<0x5c005050> {
             using WRLOCK = Field<0, 32>;    // WRLOCK
         };
 
         // BSEC_OTP_WLOCK0 is used to report permanent write lock of BSEC_OTP_DATA0 to BSEC_OTP_DATA31. BSEC_OTP_WLOCK1 is used to report permanent write lock of BSEC_OTP_DATA32 to BSEC_OTP_DATA63. BSEC_OTP_WLOCK2 is used to report permanent write lock of BSEC_OTP_DATA64 to BSEC_OTP_DATA95. Permanent write lock requires a programming sequence to lock a word (see section:Section3.3.6: OTP operations on page178).
-        struct BSEC_OTP_WRLOCK2 : public Register<0x5c005054> {
+        struct BSEC_OTP_WRLOCK2 : public RegisterReadOnly<0x5c005054> {
             using WRLOCK = Field<0, 32>;    // WRLOCK
         };
 
@@ -806,7 +806,7 @@ struct STM32MP15xxx {
         };
 
         // BSEC JTAG input register
-        struct BSEC_JTAGIN : public Register<0x5c0050ac> {
+        struct BSEC_JTAGIN : public RegisterReadOnly<0x5c0050ac> {
             using DATA = Field<0, 16>;    // DATA
         };
 
@@ -1301,24 +1301,24 @@ struct STM32MP15xxx {
         };
 
         // BSEC hardware configuration register
-        struct BSEC_HWCFGR : public Register<0x5c005ff0> {
+        struct BSEC_HWCFGR : public RegisterReadOnly<0x5c005ff0> {
             using SIZE = Field<0, 4>;    // SIZE
             using ECC_USE = Field<4, 4>;    // ECC_USE
         };
 
         // BSEC version register
-        struct BSEC_VERR : public Register<0x5c005ff4> {
+        struct BSEC_VERR : public RegisterReadOnly<0x5c005ff4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // BSEC identification register
-        struct BSEC_IPIDR : public Register<0x5c005ff8> {
+        struct BSEC_IPIDR : public RegisterReadOnly<0x5c005ff8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // BSEC size identification register
-        struct BSEC_SIDR : public Register<0x5c005ffc> {
+        struct BSEC_SIDR : public RegisterReadOnly<0x5c005ffc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -1346,14 +1346,14 @@ struct STM32MP15xxx {
         };
 
         // DCMI status register
-        struct DCMI_SR : public Register<0x4c006004> {
+        struct DCMI_SR : public RegisterReadOnly<0x4c006004> {
             using HSYNC = Field<0, 1>;    // HSYNC
             using VSYNC = Field<1, 1>;    // VSYNC
             using FNE = Field<2, 1>;    // FNE
         };
 
         // DCMI_RIS gives the raw interrupt status and is accessible in read only. When read, this register returns the status of the corresponding interrupt before masking with the DCMI_IER register value.
-        struct DCMI_RIS : public Register<0x4c006008> {
+        struct DCMI_RIS : public RegisterReadOnly<0x4c006008> {
             using FRAME_RIS = Field<0, 1>;    // FRAME_RIS
             using OVR_RIS = Field<1, 1>;    // OVR_RIS
             using ERR_RIS = Field<2, 1>;    // ERR_RIS
@@ -1371,7 +1371,7 @@ struct STM32MP15xxx {
         };
 
         // This DCMI_MIS register is a read-only register. When read, it returns the current masked status value (depending on the value in DCMI_IER) of the corresponding interrupt. A bit in this register is set if the corresponding enable bit in DCMI_IER is set and the corresponding bit in DCMI_RIS is set.
-        struct DCMI_MIS : public Register<0x4c006010> {
+        struct DCMI_MIS : public RegisterReadOnly<0x4c006010> {
             using FRAME_MIS = Field<0, 1>;    // FRAME_MIS
             using OVR_MIS = Field<1, 1>;    // OVR_MIS
             using ERR_MIS = Field<2, 1>;    // ERR_MIS
@@ -1380,7 +1380,7 @@ struct STM32MP15xxx {
         };
 
         // The DCMI_ICR register is write-only.
-        struct DCMI_ICR : public Register<0x4c006014> {
+        struct DCMI_ICR : public RegisterWriteOnly<0x4c006014> {
             using FRAME_ISC = Field<0, 1>;    // FRAME_ISC
             using OVR_ISC = Field<1, 1>;    // OVR_ISC
             using ERR_ISC = Field<2, 1>;    // ERR_ISC
@@ -1417,7 +1417,7 @@ struct STM32MP15xxx {
         };
 
         // DCMI data register
-        struct DCMI_DR : public Register<0x4c006028> {
+        struct DCMI_DR : public RegisterReadOnly<0x4c006028> {
             using Byte0 = Field<0, 8>;    // Byte0
             using Byte1 = Field<8, 8>;    // Byte1
             using Byte2 = Field<16, 8>;    // Byte2
@@ -1442,7 +1442,7 @@ struct STM32MP15xxx {
         };
 
         // CRYP status register
-        struct CRYP_SR : public Register<0x54001004> {
+        struct CRYP_SR : public RegisterReadOnly<0x54001004> {
             using IFEM = Field<0, 1>;    // IFEM
             using IFNF = Field<1, 1>;    // IFNF
             using OFNE = Field<2, 1>;    // OFNE
@@ -1456,7 +1456,7 @@ struct STM32MP15xxx {
         };
 
         // The CRYP_DOUT register is the data output register. It is read-only and 32-bit wide. It is used to retrieve from the output FIFO up to four 64-bit blocks (TDES) or two 128-bit blocks (AES) of plaintext (when encrypting) or ciphertext (when decrypting), one 32-bit word at a time. To fit different data sizes, the data can be swapped after processing by configuring the DATATYPE bits in the CRYP_CR register. Refer to Section39.3.16: CRYP data registers and data swapping for more details. When CRYP_DOUT register is read, the last data entered into the output FIFO (pointed to by the read pointer) is returned.
-        struct CRYP_DOUT : public Register<0x5400100c> {
+        struct CRYP_DOUT : public RegisterReadOnly<0x5400100c> {
             using DATAOUT = Field<0, 32>;    // DATAOUT
         };
 
@@ -1473,54 +1473,54 @@ struct STM32MP15xxx {
         };
 
         // The CRYP_RISR register is the raw interrupt status register. It is a read-only register. When a read operation is performed, this register gives the current raw status of the corresponding interrupt, i.e. the interrupt information without taking CRYP_IMSCR mask into account. Write operations have no effect.
-        struct CRYP_RISR : public Register<0x54001018> {
+        struct CRYP_RISR : public RegisterReadOnly<0x54001018> {
             using INRIS = Field<0, 1>;    // INRIS
             using OUTRIS = Field<1, 1>;    // OUTRIS
         };
 
         // The CRYP_MISR register is the masked interrupt status register. It is a read-only register. When a read operation is performed, this register gives the current masked status of the corresponding interrupt, i.e. the interrupt information taking CRYP_IMSCR mask into account. Write operations have no effect.
-        struct CRYP_MISR : public Register<0x5400101c> {
+        struct CRYP_MISR : public RegisterReadOnly<0x5400101c> {
             using INMIS = Field<0, 1>;    // INMIS
             using OUTMIS = Field<1, 1>;    // OUTMIS
         };
 
         // CRYP key registers contain the cryptographic keys. In DES/TDES mode, the keys are 64-bit binary values (number from left to right, that is the leftmost bit is bit 1) and named K1, K2 and K3 (K0 is not used). Each key consists of 56 information bits and 8 parity bits. In AES mode, the key is considered as a single 128, 192 or 256 bits long sequence K0K1K2...K127/191/255. The AES key is entered into the registers as follows: for AES-128: K0..K127 corresponds to b127..b0 (b255..b128 are not used), for AES-192: K0..K191 corresponds to b191..b0 (b255..b192 are not used), for AES-256: K0..K255 corresponds to b255..b0. In all cases key bit K0 is the leftmost bit in CRYP inner memory and register bit b0 is the rightmost bit in corresponding CRYP_KxLR key register. For more information refer to Section39.3.17: CRYP key registers. Write accesses to these registers are disregarded when the cryptographic processor is busy (bit BUSY = 1 in the CRYP_SR register)
-        struct CRYP_K0LR : public Register<0x54001020> {
+        struct CRYP_K0LR : public RegisterWriteOnly<0x54001020> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K0RR : public Register<0x54001024> {
+        struct CRYP_K0RR : public RegisterWriteOnly<0x54001024> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K1LR : public Register<0x54001028> {
+        struct CRYP_K1LR : public RegisterWriteOnly<0x54001028> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K1RR : public Register<0x5400102c> {
+        struct CRYP_K1RR : public RegisterWriteOnly<0x5400102c> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K2LR : public Register<0x54001030> {
+        struct CRYP_K2LR : public RegisterWriteOnly<0x54001030> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K2RR : public Register<0x54001034> {
+        struct CRYP_K2RR : public RegisterWriteOnly<0x54001034> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K3LR : public Register<0x54001038> {
+        struct CRYP_K3LR : public RegisterWriteOnly<0x54001038> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K3RR : public Register<0x5400103c> {
+        struct CRYP_K3RR : public RegisterWriteOnly<0x5400103c> {
             using K = Field<0, 32>;    // K
         };
 
@@ -1749,7 +1749,7 @@ struct STM32MP15xxx {
         };
 
         // CRYP hardware configuration register
-        struct CRYP_HWCFGR : public Register<0x540013f0> {
+        struct CRYP_HWCFGR : public RegisterReadOnly<0x540013f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -1757,17 +1757,17 @@ struct STM32MP15xxx {
         };
 
         // CRYP HW Version Register
-        struct CRYP_VERR : public Register<0x540013f4> {
+        struct CRYP_VERR : public RegisterReadOnly<0x540013f4> {
             using VER = Field<0, 8>;    // VER
         };
 
         // CRYP Identification
-        struct CRYP_IPIDR : public Register<0x540013f8> {
+        struct CRYP_IPIDR : public RegisterReadOnly<0x540013f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // CRYP HW Magic ID
-        struct CRYP_MID : public Register<0x540013fc> {
+        struct CRYP_MID : public RegisterReadOnly<0x540013fc> {
             using MID = Field<0, 32>;    // MID
         };
 
@@ -1789,7 +1789,7 @@ struct STM32MP15xxx {
         };
 
         // CRYP status register
-        struct CRYP_SR : public Register<0x4c005004> {
+        struct CRYP_SR : public RegisterReadOnly<0x4c005004> {
             using IFEM = Field<0, 1>;    // IFEM
             using IFNF = Field<1, 1>;    // IFNF
             using OFNE = Field<2, 1>;    // OFNE
@@ -1803,7 +1803,7 @@ struct STM32MP15xxx {
         };
 
         // The CRYP_DOUT register is the data output register. It is read-only and 32-bit wide. It is used to retrieve from the output FIFO up to four 64-bit blocks (TDES) or two 128-bit blocks (AES) of plaintext (when encrypting) or ciphertext (when decrypting), one 32-bit word at a time. To fit different data sizes, the data can be swapped after processing by configuring the DATATYPE bits in the CRYP_CR register. Refer to Section39.3.16: CRYP data registers and data swapping for more details. When CRYP_DOUT register is read, the last data entered into the output FIFO (pointed to by the read pointer) is returned.
-        struct CRYP_DOUT : public Register<0x4c00500c> {
+        struct CRYP_DOUT : public RegisterReadOnly<0x4c00500c> {
             using DATAOUT = Field<0, 32>;    // DATAOUT
         };
 
@@ -1820,54 +1820,54 @@ struct STM32MP15xxx {
         };
 
         // The CRYP_RISR register is the raw interrupt status register. It is a read-only register. When a read operation is performed, this register gives the current raw status of the corresponding interrupt, i.e. the interrupt information without taking CRYP_IMSCR mask into account. Write operations have no effect.
-        struct CRYP_RISR : public Register<0x4c005018> {
+        struct CRYP_RISR : public RegisterReadOnly<0x4c005018> {
             using INRIS = Field<0, 1>;    // INRIS
             using OUTRIS = Field<1, 1>;    // OUTRIS
         };
 
         // The CRYP_MISR register is the masked interrupt status register. It is a read-only register. When a read operation is performed, this register gives the current masked status of the corresponding interrupt, i.e. the interrupt information taking CRYP_IMSCR mask into account. Write operations have no effect.
-        struct CRYP_MISR : public Register<0x4c00501c> {
+        struct CRYP_MISR : public RegisterReadOnly<0x4c00501c> {
             using INMIS = Field<0, 1>;    // INMIS
             using OUTMIS = Field<1, 1>;    // OUTMIS
         };
 
         // CRYP key registers contain the cryptographic keys. In DES/TDES mode, the keys are 64-bit binary values (number from left to right, that is the leftmost bit is bit 1) and named K1, K2 and K3 (K0 is not used). Each key consists of 56 information bits and 8 parity bits. In AES mode, the key is considered as a single 128, 192 or 256 bits long sequence K0K1K2...K127/191/255. The AES key is entered into the registers as follows: for AES-128: K0..K127 corresponds to b127..b0 (b255..b128 are not used), for AES-192: K0..K191 corresponds to b191..b0 (b255..b192 are not used), for AES-256: K0..K255 corresponds to b255..b0. In all cases key bit K0 is the leftmost bit in CRYP inner memory and register bit b0 is the rightmost bit in corresponding CRYP_KxLR key register. For more information refer to Section39.3.17: CRYP key registers. Write accesses to these registers are disregarded when the cryptographic processor is busy (bit BUSY = 1 in the CRYP_SR register)
-        struct CRYP_K0LR : public Register<0x4c005020> {
+        struct CRYP_K0LR : public RegisterWriteOnly<0x4c005020> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K0RR : public Register<0x4c005024> {
+        struct CRYP_K0RR : public RegisterWriteOnly<0x4c005024> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K1LR : public Register<0x4c005028> {
+        struct CRYP_K1LR : public RegisterWriteOnly<0x4c005028> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K1RR : public Register<0x4c00502c> {
+        struct CRYP_K1RR : public RegisterWriteOnly<0x4c00502c> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K2LR : public Register<0x4c005030> {
+        struct CRYP_K2LR : public RegisterWriteOnly<0x4c005030> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K2RR : public Register<0x4c005034> {
+        struct CRYP_K2RR : public RegisterWriteOnly<0x4c005034> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K3LR : public Register<0x4c005038> {
+        struct CRYP_K3LR : public RegisterWriteOnly<0x4c005038> {
             using K = Field<0, 32>;    // K
         };
 
         // Refer to Section39.6.9: CRYP key register 0L (CRYP_K0LR) for details.
-        struct CRYP_K3RR : public Register<0x4c00503c> {
+        struct CRYP_K3RR : public RegisterWriteOnly<0x4c00503c> {
             using K = Field<0, 32>;    // K
         };
 
@@ -2096,7 +2096,7 @@ struct STM32MP15xxx {
         };
 
         // CRYP hardware configuration register
-        struct CRYP_HWCFGR : public Register<0x4c0053f0> {
+        struct CRYP_HWCFGR : public RegisterReadOnly<0x4c0053f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -2104,17 +2104,17 @@ struct STM32MP15xxx {
         };
 
         // CRYP HW Version Register
-        struct CRYP_VERR : public Register<0x4c0053f4> {
+        struct CRYP_VERR : public RegisterReadOnly<0x4c0053f4> {
             using VER = Field<0, 8>;    // VER
         };
 
         // CRYP Identification
-        struct CRYP_IPIDR : public Register<0x4c0053f8> {
+        struct CRYP_IPIDR : public RegisterReadOnly<0x4c0053f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // CRYP HW Magic ID
-        struct CRYP_MID : public Register<0x4c0053fc> {
+        struct CRYP_MID : public RegisterReadOnly<0x4c0053fc> {
             using MID = Field<0, 32>;    // MID
         };
 
@@ -2150,7 +2150,7 @@ struct STM32MP15xxx {
         };
 
         // DAC software trigger register
-        struct DAC_SWTRGR : public Register<0x40017004> {
+        struct DAC_SWTRGR : public RegisterWriteOnly<0x40017004> {
             using SWTRIG1 = Field<0, 1>;    // SWTRIG1
             using SWTRIG2 = Field<1, 1>;    // SWTRIG2
         };
@@ -2204,12 +2204,12 @@ struct STM32MP15xxx {
         };
 
         // DAC channel1 data output register
-        struct DAC_DOR1 : public Register<0x4001702c> {
+        struct DAC_DOR1 : public RegisterReadOnly<0x4001702c> {
             using DACC1DOR = Field<0, 12>;    // DACC1DOR
         };
 
         // This register is available only on dual-channel DACs. Refer to Section29.3: DAC implementation.
-        struct DAC_DOR2 : public Register<0x40017030> {
+        struct DAC_DOR2 : public RegisterReadOnly<0x40017030> {
             using DACC2DOR = Field<0, 12>;    // DACC2DOR
         };
 
@@ -2258,7 +2258,7 @@ struct STM32MP15xxx {
         };
 
         // DAC IP hardware configuration register
-        struct DAC_HWCFGR0 : public Register<0x400173f0> {
+        struct DAC_HWCFGR0 : public RegisterReadOnly<0x400173f0> {
             using DUAL = Field<0, 4>;    // DUAL
             using LFSR = Field<4, 4>;    // LFSR
             using TRIANGLE = Field<8, 4>;    // TRIANGLE
@@ -2267,18 +2267,18 @@ struct STM32MP15xxx {
         };
 
         // No
-        struct DAC_VERR : public Register<0x400173f4> {
+        struct DAC_VERR : public RegisterReadOnly<0x400173f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // No
-        struct DAC_IPIDR : public Register<0x400173f8> {
+        struct DAC_IPIDR : public RegisterReadOnly<0x400173f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // No
-        struct DAC_SIDR : public Register<0x400173fc> {
+        struct DAC_SIDR : public RegisterReadOnly<0x400173fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -2299,7 +2299,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL operating mode status register
-        struct DDRCTRL_STAT : public Register<0x5a003004> {
+        struct DDRCTRL_STAT : public RegisterReadOnly<0x5a003004> {
             using OPERATING_MODE = Field<0, 3>;    // OPERATING_MODE
             using SELFREF_TYPE = Field<4, 2>;    // SELFREF_TYPE
             using SELFREF_CAM_NOT_EMPTY = Field<12, 1>;    // SELFREF_CAM_NOT_EMPTY
@@ -2319,7 +2319,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL mode register read/write status register
-        struct DDRCTRL_MRSTAT : public Register<0x5a003018> {
+        struct DDRCTRL_MRSTAT : public RegisterReadOnly<0x5a003018> {
             using MR_WR_BUSY = Field<0, 1>;    // MR_WR_BUSY
         };
 
@@ -2389,7 +2389,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL CRC parity status register
-        struct DDRCTRL_CRCPARSTAT : public Register<0x5a0030cc> {
+        struct DDRCTRL_CRCPARSTAT : public RegisterReadOnly<0x5a0030cc> {
             using DFI_ALERT_ERR_CNT = Field<0, 16>;    // DFI_ALERT_ERR_CNT
             using DFI_ALERT_ERR_INT = Field<16, 1>;    // DFI_ALERT_ERR_INT
         };
@@ -2534,7 +2534,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL ZQ status register
-        struct DDRCTRL_ZQSTAT : public Register<0x5a00318c> {
+        struct DDRCTRL_ZQSTAT : public RegisterReadOnly<0x5a00318c> {
             using ZQ_RESET_BUSY = Field<0, 1>;    // ZQ_RESET_BUSY
         };
 
@@ -2593,7 +2593,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL DFI status register
-        struct DDRCTRL_DFISTAT : public Register<0x5a0031bc> {
+        struct DDRCTRL_DFISTAT : public RegisterReadOnly<0x5a0031bc> {
             using DFI_INIT_COMPLETE = Field<0, 1>;    // DFI_INIT_COMPLETE
             using DFI_LP_ACK = Field<1, 1>;    // DFI_LP_ACK
         };
@@ -2730,7 +2730,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL CAM debug register
-        struct DDRCTRL_DBGCAM : public Register<0x5a003308> {
+        struct DDRCTRL_DBGCAM : public RegisterReadOnly<0x5a003308> {
             using DBG_HPR_Q_DEPTH = Field<0, 5>;    // DBG_HPR_Q_DEPTH
             using DBG_LPR_Q_DEPTH = Field<8, 5>;    // DBG_LPR_Q_DEPTH
             using DBG_W_Q_DEPTH = Field<16, 5>;    // DBG_W_Q_DEPTH
@@ -2749,7 +2749,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL status debug register
-        struct DDRCTRL_DBGSTAT : public Register<0x5a003310> {
+        struct DDRCTRL_DBGSTAT : public RegisterReadOnly<0x5a003310> {
             using RANK0_REFRESH_BUSY = Field<0, 1>;    // RANK0_REFRESH_BUSY
             using ZQ_CALIB_SHORT_BUSY = Field<4, 1>;    // ZQ_CALIB_SHORT_BUSY
             using CTRLUPD_BUSY = Field<5, 1>;    // CTRLUPD_BUSY
@@ -2761,7 +2761,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL software register programming control status
-        struct DDRCTRL_SWSTAT : public Register<0x5a003324> {
+        struct DDRCTRL_SWSTAT : public RegisterReadOnly<0x5a003324> {
             using SW_DONE_ACK = Field<0, 1>;    // SW_DONE_ACK
         };
 
@@ -2776,7 +2776,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL AXI Poison status register
-        struct DDRCTRL_POISONSTAT : public Register<0x5a003370> {
+        struct DDRCTRL_POISONSTAT : public RegisterReadOnly<0x5a003370> {
             using WR_POISON_INTR_0 = Field<0, 1>;    // WR_POISON_INTR_0
             using WR_POISON_INTR_1 = Field<1, 1>;    // WR_POISON_INTR_1
             using RD_POISON_INTR_0 = Field<16, 1>;    // RD_POISON_INTR_0
@@ -2784,7 +2784,7 @@ struct STM32MP15xxx {
         };
 
         // DDRCTRL port status register
-        struct DDRCTRL_PSTAT : public Register<0x5a0033fc> {
+        struct DDRCTRL_PSTAT : public RegisterReadOnly<0x5a0033fc> {
             using RD_PORT_BUSY_0 = Field<0, 1>;    // RD_PORT_BUSY_0
             using RD_PORT_BUSY_1 = Field<1, 1>;    // RD_PORT_BUSY_1
             using WR_PORT_BUSY_0 = Field<16, 1>;    // WR_PORT_BUSY_0
@@ -2907,7 +2907,7 @@ struct STM32MP15xxx {
     // DDRPERFM
     struct DDRPERFM {
         // Write-only register. A read request returns all zeros.
-        struct DDRPERFM_CTL : public Register<0x5a007000> {
+        struct DDRPERFM_CTL : public RegisterWriteOnly<0x5a007000> {
             using START = Field<0, 1>;    // START
             using STOP = Field<1, 1>;    // STOP
         };
@@ -2919,14 +2919,14 @@ struct STM32MP15xxx {
         };
 
         // DDRPERFM status register
-        struct DDRPERFM_STATUS : public Register<0x5a007008> {
+        struct DDRPERFM_STATUS : public RegisterReadOnly<0x5a007008> {
             using COVF = Field<0, 4>;    // COVF
             using BUSY = Field<16, 1>;    // BUSY
             using TOVF = Field<31, 1>;    // TOVF
         };
 
         // Write-only register. A read request returns all zeros
-        struct DDRPERFM_CCR : public Register<0x5a00700c> {
+        struct DDRPERFM_CCR : public RegisterWriteOnly<0x5a00700c> {
             using CCLR = Field<0, 4>;    // CCLR
             using TCLR = Field<31, 1>;    // TCLR
         };
@@ -2937,58 +2937,58 @@ struct STM32MP15xxx {
         };
 
         // DDRPERFM interrupt status register
-        struct DDRPERFM_ISR : public Register<0x5a007014> {
+        struct DDRPERFM_ISR : public RegisterReadOnly<0x5a007014> {
             using OVFF = Field<0, 1>;    // OVFF
         };
 
         // Write-only register. A read request returns all zeros
-        struct DDRPERFM_ICR : public Register<0x5a007018> {
+        struct DDRPERFM_ICR : public RegisterWriteOnly<0x5a007018> {
             using OVF = Field<0, 1>;    // OVF
         };
 
         // DDRPERFM time counter register
-        struct DDRPERFM_TCNT : public Register<0x5a007020> {
+        struct DDRPERFM_TCNT : public RegisterReadOnly<0x5a007020> {
             using CNT = Field<0, 32>;    // CNT
         };
 
         // DDRPERFM event counter 0 register
-        struct DDRPERFM_CNT0 : public Register<0x5a007060> {
+        struct DDRPERFM_CNT0 : public RegisterReadOnly<0x5a007060> {
             using CNT = Field<0, 32>;    // CNT
         };
 
         // DDRPERFM event counter 1 register
-        struct DDRPERFM_CNT1 : public Register<0x5a007068> {
+        struct DDRPERFM_CNT1 : public RegisterReadOnly<0x5a007068> {
             using CNT = Field<0, 32>;    // CNT
         };
 
         // DDRPERFM event counter 2 register
-        struct DDRPERFM_CNT2 : public Register<0x5a007070> {
+        struct DDRPERFM_CNT2 : public RegisterReadOnly<0x5a007070> {
             using CNT = Field<0, 32>;    // CNT
         };
 
         // DDRPERFM event counter 3 register
-        struct DDRPERFM_CNT3 : public Register<0x5a007078> {
+        struct DDRPERFM_CNT3 : public RegisterReadOnly<0x5a007078> {
             using CNT = Field<0, 32>;    // CNT
         };
 
         // DDRPERFM hardware configuration register
-        struct DDRPERFM_HWCFG : public Register<0x5a0073f0> {
+        struct DDRPERFM_HWCFG : public RegisterReadOnly<0x5a0073f0> {
             using NCNT = Field<0, 4>;    // NCNT
         };
 
         // DDRPERFM version register
-        struct DDRPERFM_VER : public Register<0x5a0073f4> {
+        struct DDRPERFM_VER : public RegisterReadOnly<0x5a0073f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DDRPERFM ID register
-        struct DDRPERFM_ID : public Register<0x5a0073f8> {
+        struct DDRPERFM_ID : public RegisterReadOnly<0x5a0073f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DDRPERFM magic ID register
-        struct DDRPERFM_SID : public Register<0x5a0073fc> {
+        struct DDRPERFM_SID : public RegisterReadOnly<0x5a0073fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -2997,7 +2997,7 @@ struct STM32MP15xxx {
     // DDRPHYC
     struct DDRPHYC {
         // DDRPHYC revision ID register
-        struct DDRPHYC_RIDR : public Register<0x5a004000> {
+        struct DDRPHYC_RIDR : public RegisterReadOnly<0x5a004000> {
             using PUBMNR = Field<0, 4>;    // PUBMNR
             using PUBMDR = Field<4, 4>;    // PUBMDR
             using PUBMJR = Field<8, 4>;    // PUBMJR
@@ -3008,7 +3008,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC PHY initialization register
-        struct DDRPHYC_PIR : public Register<0x5a004004> {
+        struct DDRPHYC_PIR : public RegisterWriteOnly<0x5a004004> {
             using INIT = Field<0, 1>;    // INIT
             using DLLSRST = Field<1, 1>;    // DLLSRST
             using DLLLOCK = Field<2, 1>;    // DLLLOCK
@@ -3049,7 +3049,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC PHY global status register
-        struct DDRPHYC_PGSR : public Register<0x5a00400c> {
+        struct DDRPHYC_PGSR : public RegisterReadOnly<0x5a00400c> {
             using IDONE = Field<0, 1>;    // IDONE
             using DLDONE = Field<1, 1>;    // DLDONE
             using ZCDDONE = Field<2, 1>;    // ZCDDONE
@@ -3308,14 +3308,14 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC ZQ0S register 0
-        struct DDRPHYC_ZQ0SR0 : public Register<0x5a004188> {
+        struct DDRPHYC_ZQ0SR0 : public RegisterReadOnly<0x5a004188> {
             using ZCTRL = Field<0, 20>;    // ZCTRL
             using ZERR = Field<30, 1>;    // ZERR
             using ZDONE = Field<31, 1>;    // ZDONE
         };
 
         // DDRPHYC ZQ0S register 1
-        struct DDRPHYC_ZQ0SR1 : public Register<0x5a00418c> {
+        struct DDRPHYC_ZQ0SR1 : public RegisterReadOnly<0x5a00418c> {
             using ZPD = Field<0, 2>;    // ZPD
             using ZPU = Field<2, 2>;    // ZPU
             using OPD = Field<4, 2>;    // OPD
@@ -3340,7 +3340,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 0 GS register 0
-        struct DDRPHYC_DX0GSR0 : public Register<0x5a0041c4> {
+        struct DDRPHYC_DX0GSR0 : public RegisterReadOnly<0x5a0041c4> {
             using DTDONE = Field<0, 1>;    // DTDONE
             using DTERR = Field<4, 1>;    // DTERR
             using DTIERR = Field<8, 1>;    // DTIERR
@@ -3348,7 +3348,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 0 GS register 1
-        struct DDRPHYC_DX0GSR1 : public Register<0x5a0041c8> {
+        struct DDRPHYC_DX0GSR1 : public RegisterReadOnly<0x5a0041c8> {
             using DFTERR = Field<0, 1>;    // DFTERR
             using DQSDFT = Field<4, 2>;    // DQSDFT
             using RVERR = Field<12, 1>;    // RVERR
@@ -3409,7 +3409,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 1 GS register 0
-        struct DDRPHYC_DX1GSR0 : public Register<0x5a004204> {
+        struct DDRPHYC_DX1GSR0 : public RegisterReadOnly<0x5a004204> {
             using DTDONE = Field<0, 1>;    // DTDONE
             using DTERR = Field<4, 1>;    // DTERR
             using DTIERR = Field<8, 1>;    // DTIERR
@@ -3417,7 +3417,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 1 GS register 1
-        struct DDRPHYC_DX1GSR1 : public Register<0x5a004208> {
+        struct DDRPHYC_DX1GSR1 : public RegisterReadOnly<0x5a004208> {
             using DFTERR = Field<0, 1>;    // DFTERR
             using DQSDFT = Field<4, 2>;    // DQSDFT
             using RVERR = Field<12, 1>;    // RVERR
@@ -3478,7 +3478,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 2 GS register 0
-        struct DDRPHYC_DX2GSR0 : public Register<0x5a004244> {
+        struct DDRPHYC_DX2GSR0 : public RegisterReadOnly<0x5a004244> {
             using DTDONE = Field<0, 1>;    // DTDONE
             using DTERR = Field<4, 1>;    // DTERR
             using DTIERR = Field<8, 1>;    // DTIERR
@@ -3486,7 +3486,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 2 GS register 1
-        struct DDRPHYC_DX2GSR1 : public Register<0x5a004248> {
+        struct DDRPHYC_DX2GSR1 : public RegisterReadOnly<0x5a004248> {
             using DFTERR = Field<0, 1>;    // DFTERR
             using DQSDFT = Field<4, 2>;    // DQSDFT
             using RVERR = Field<12, 1>;    // RVERR
@@ -3547,7 +3547,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 3 GS register 0
-        struct DDRPHYC_DX3GSR0 : public Register<0x5a004284> {
+        struct DDRPHYC_DX3GSR0 : public RegisterReadOnly<0x5a004284> {
             using DTDONE = Field<0, 1>;    // DTDONE
             using DTERR = Field<4, 1>;    // DTERR
             using DTIERR = Field<8, 1>;    // DTIERR
@@ -3555,7 +3555,7 @@ struct STM32MP15xxx {
         };
 
         // DDRPHYC byte lane 3 GS register 1
-        struct DDRPHYC_DX3GSR1 : public Register<0x5a004288> {
+        struct DDRPHYC_DX3GSR1 : public RegisterReadOnly<0x5a004288> {
             using DFTERR = Field<0, 1>;    // DFTERR
             using DQSDFT = Field<4, 2>;    // DQSDFT
             using RVERR = Field<12, 1>;    // RVERR
@@ -3617,18 +3617,18 @@ struct STM32MP15xxx {
         };
 
         // DLYB IP version register
-        struct DLYB_VERR : public Register<0x580063f4> {
+        struct DLYB_VERR : public RegisterReadOnly<0x580063f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DLYB IP identification register
-        struct DLYB_IPIDR : public Register<0x580063f8> {
+        struct DLYB_IPIDR : public RegisterReadOnly<0x580063f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DLYB size ID register
-        struct DLYB_SIDR : public Register<0x580063fc> {
+        struct DLYB_SIDR : public RegisterReadOnly<0x580063fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -3651,18 +3651,18 @@ struct STM32MP15xxx {
         };
 
         // DLYB IP version register
-        struct DLYB_VERR : public Register<0x580083f4> {
+        struct DLYB_VERR : public RegisterReadOnly<0x580083f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DLYB IP identification register
-        struct DLYB_IPIDR : public Register<0x580083f8> {
+        struct DLYB_IPIDR : public RegisterReadOnly<0x580083f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DLYB size ID register
-        struct DLYB_SIDR : public Register<0x580083fc> {
+        struct DLYB_SIDR : public RegisterReadOnly<0x580083fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -3685,18 +3685,18 @@ struct STM32MP15xxx {
         };
 
         // DLYB IP version register
-        struct DLYB_VERR : public Register<0x480053f4> {
+        struct DLYB_VERR : public RegisterReadOnly<0x480053f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DLYB IP identification register
-        struct DLYB_IPIDR : public Register<0x480053f8> {
+        struct DLYB_IPIDR : public RegisterReadOnly<0x480053f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DLYB size ID register
-        struct DLYB_SIDR : public Register<0x480053fc> {
+        struct DLYB_SIDR : public RegisterReadOnly<0x480053fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -3734,7 +3734,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH0WDATR : public Register<0x4400d00c> {
+        struct DFSDM_CH0WDATR : public RegisterReadOnly<0x4400d00c> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -3779,7 +3779,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH1WDATR : public Register<0x4400d02c> {
+        struct DFSDM_CH1WDATR : public RegisterReadOnly<0x4400d02c> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -3824,7 +3824,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH2WDATR : public Register<0x4400d04c> {
+        struct DFSDM_CH2WDATR : public RegisterReadOnly<0x4400d04c> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -3869,7 +3869,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH3WDATR : public Register<0x4400d06c> {
+        struct DFSDM_CH3WDATR : public RegisterReadOnly<0x4400d06c> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -3914,7 +3914,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH4WDATR : public Register<0x4400d08c> {
+        struct DFSDM_CH4WDATR : public RegisterReadOnly<0x4400d08c> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -3959,7 +3959,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH5WDATR : public Register<0x4400d0ac> {
+        struct DFSDM_CH5WDATR : public RegisterReadOnly<0x4400d0ac> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -4004,7 +4004,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH6WDATR : public Register<0x4400d0cc> {
+        struct DFSDM_CH6WDATR : public RegisterReadOnly<0x4400d0cc> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -4049,7 +4049,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains the data resulting from the analog watchdog filter associated to the input channel y.
-        struct DFSDM_CH7WDATR : public Register<0x4400d0ec> {
+        struct DFSDM_CH7WDATR : public RegisterReadOnly<0x4400d0ec> {
             using WDATA = Field<0, 16>;    // WDATA
         };
 
@@ -4096,7 +4096,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 0 interrupt and status register
-        struct DFSDM_FLT0ISR : public Register<0x4400d108> {
+        struct DFSDM_FLT0ISR : public RegisterReadOnly<0x4400d108> {
             using JEOCF = Field<0, 1>;    // JEOCF
             using REOCF = Field<1, 1>;    // REOCF
             using JOVRF = Field<2, 1>;    // JOVRF
@@ -4129,13 +4129,13 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 0 data register for injected group
-        struct DFSDM_FLT0JDATAR : public Register<0x4400d118> {
+        struct DFSDM_FLT0JDATAR : public RegisterReadOnly<0x4400d118> {
             using JDATACH = Field<0, 3>;    // JDATACH
             using JDATA = Field<8, 24>;    // JDATA
         };
 
         // DFSDM filter 0 data register for the regular channel
-        struct DFSDM_FLT0RDATAR : public Register<0x4400d11c> {
+        struct DFSDM_FLT0RDATAR : public RegisterReadOnly<0x4400d11c> {
             using RDATACH = Field<0, 3>;    // RDATACH
             using RPEND = Field<4, 1>;    // RPEND
             using RDATA = Field<8, 24>;    // RDATA
@@ -4154,7 +4154,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 0 analog watchdog status register
-        struct DFSDM_FLT0AWSR : public Register<0x4400d128> {
+        struct DFSDM_FLT0AWSR : public RegisterReadOnly<0x4400d128> {
             using AWLTF = Field<0, 8>;    // AWLTF
             using AWHTF = Field<8, 8>;    // AWHTF
         };
@@ -4166,7 +4166,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 0 extremes detector maximum register
-        struct DFSDM_FLT0EXMAX : public Register<0x4400d130> {
+        struct DFSDM_FLT0EXMAX : public RegisterReadOnly<0x4400d130> {
             using EXMAXCH = Field<0, 3>;    // EXMAXCH
             using EXMAX = Field<8, 24>;    // EXMAX
         };
@@ -4178,7 +4178,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 0 conversion timer register
-        struct DFSDM_FLT0CNVTIMR : public Register<0x4400d138> {
+        struct DFSDM_FLT0CNVTIMR : public RegisterReadOnly<0x4400d138> {
             using CNVCNT = Field<4, 28>;    // CNVCNT
         };
 
@@ -4214,7 +4214,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 1 interrupt and status register
-        struct DFSDM_FLT1ISR : public Register<0x4400d188> {
+        struct DFSDM_FLT1ISR : public RegisterReadOnly<0x4400d188> {
             using JEOCF = Field<0, 1>;    // JEOCF
             using REOCF = Field<1, 1>;    // REOCF
             using JOVRF = Field<2, 1>;    // JOVRF
@@ -4247,13 +4247,13 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 1 data register for injected group
-        struct DFSDM_FLT1JDATAR : public Register<0x4400d198> {
+        struct DFSDM_FLT1JDATAR : public RegisterReadOnly<0x4400d198> {
             using JDATACH = Field<0, 3>;    // JDATACH
             using JDATA = Field<8, 24>;    // JDATA
         };
 
         // DFSDM filter 1 data register for the regular channel
-        struct DFSDM_FLT1RDATAR : public Register<0x4400d19c> {
+        struct DFSDM_FLT1RDATAR : public RegisterReadOnly<0x4400d19c> {
             using RDATACH = Field<0, 3>;    // RDATACH
             using RPEND = Field<4, 1>;    // RPEND
             using RDATA = Field<8, 24>;    // RDATA
@@ -4272,7 +4272,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 1 analog watchdog status register
-        struct DFSDM_FLT1AWSR : public Register<0x4400d1a8> {
+        struct DFSDM_FLT1AWSR : public RegisterReadOnly<0x4400d1a8> {
             using AWLTF = Field<0, 8>;    // AWLTF
             using AWHTF = Field<8, 8>;    // AWHTF
         };
@@ -4284,7 +4284,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 1 extremes detector maximum register
-        struct DFSDM_FLT1EXMAX : public Register<0x4400d1b0> {
+        struct DFSDM_FLT1EXMAX : public RegisterReadOnly<0x4400d1b0> {
             using EXMAXCH = Field<0, 3>;    // EXMAXCH
             using EXMAX = Field<8, 24>;    // EXMAX
         };
@@ -4296,7 +4296,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 1 conversion timer register
-        struct DFSDM_FLT1CNVTIMR : public Register<0x4400d1b8> {
+        struct DFSDM_FLT1CNVTIMR : public RegisterReadOnly<0x4400d1b8> {
             using CNVCNT = Field<4, 28>;    // CNVCNT
         };
 
@@ -4332,7 +4332,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 2 interrupt and status register
-        struct DFSDM_FLT2ISR : public Register<0x4400d208> {
+        struct DFSDM_FLT2ISR : public RegisterReadOnly<0x4400d208> {
             using JEOCF = Field<0, 1>;    // JEOCF
             using REOCF = Field<1, 1>;    // REOCF
             using JOVRF = Field<2, 1>;    // JOVRF
@@ -4365,13 +4365,13 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 2 data register for injected group
-        struct DFSDM_FLT2JDATAR : public Register<0x4400d218> {
+        struct DFSDM_FLT2JDATAR : public RegisterReadOnly<0x4400d218> {
             using JDATACH = Field<0, 3>;    // JDATACH
             using JDATA = Field<8, 24>;    // JDATA
         };
 
         // DFSDM filter 2 data register for the regular channel
-        struct DFSDM_FLT2RDATAR : public Register<0x4400d21c> {
+        struct DFSDM_FLT2RDATAR : public RegisterReadOnly<0x4400d21c> {
             using RDATACH = Field<0, 3>;    // RDATACH
             using RPEND = Field<4, 1>;    // RPEND
             using RDATA = Field<8, 24>;    // RDATA
@@ -4390,7 +4390,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 2 analog watchdog status register
-        struct DFSDM_FLT2AWSR : public Register<0x4400d228> {
+        struct DFSDM_FLT2AWSR : public RegisterReadOnly<0x4400d228> {
             using AWLTF = Field<0, 8>;    // AWLTF
             using AWHTF = Field<8, 8>;    // AWHTF
         };
@@ -4402,7 +4402,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 2 extremes detector maximum register
-        struct DFSDM_FLT2EXMAX : public Register<0x4400d230> {
+        struct DFSDM_FLT2EXMAX : public RegisterReadOnly<0x4400d230> {
             using EXMAXCH = Field<0, 3>;    // EXMAXCH
             using EXMAX = Field<8, 24>;    // EXMAX
         };
@@ -4414,7 +4414,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 2 conversion timer register
-        struct DFSDM_FLT2CNVTIMR : public Register<0x4400d238> {
+        struct DFSDM_FLT2CNVTIMR : public RegisterReadOnly<0x4400d238> {
             using CNVCNT = Field<4, 28>;    // CNVCNT
         };
 
@@ -4450,7 +4450,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 3 interrupt and status register
-        struct DFSDM_FLT3ISR : public Register<0x4400d288> {
+        struct DFSDM_FLT3ISR : public RegisterReadOnly<0x4400d288> {
             using JEOCF = Field<0, 1>;    // JEOCF
             using REOCF = Field<1, 1>;    // REOCF
             using JOVRF = Field<2, 1>;    // JOVRF
@@ -4483,13 +4483,13 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 3 data register for injected group
-        struct DFSDM_FLT3JDATAR : public Register<0x4400d298> {
+        struct DFSDM_FLT3JDATAR : public RegisterReadOnly<0x4400d298> {
             using JDATACH = Field<0, 3>;    // JDATACH
             using JDATA = Field<8, 24>;    // JDATA
         };
 
         // DFSDM filter 3 data register for the regular channel
-        struct DFSDM_FLT3RDATAR : public Register<0x4400d29c> {
+        struct DFSDM_FLT3RDATAR : public RegisterReadOnly<0x4400d29c> {
             using RDATACH = Field<0, 3>;    // RDATACH
             using RPEND = Field<4, 1>;    // RPEND
             using RDATA = Field<8, 24>;    // RDATA
@@ -4508,7 +4508,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 3 analog watchdog status register
-        struct DFSDM_FLT3AWSR : public Register<0x4400d2a8> {
+        struct DFSDM_FLT3AWSR : public RegisterReadOnly<0x4400d2a8> {
             using AWLTF = Field<0, 8>;    // AWLTF
             using AWHTF = Field<8, 8>;    // AWHTF
         };
@@ -4520,7 +4520,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 3 extremes detector maximum register
-        struct DFSDM_FLT3EXMAX : public Register<0x4400d2b0> {
+        struct DFSDM_FLT3EXMAX : public RegisterReadOnly<0x4400d2b0> {
             using EXMAXCH = Field<0, 3>;    // EXMAXCH
             using EXMAX = Field<8, 24>;    // EXMAX
         };
@@ -4532,7 +4532,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 3 conversion timer register
-        struct DFSDM_FLT3CNVTIMR : public Register<0x4400d2b8> {
+        struct DFSDM_FLT3CNVTIMR : public RegisterReadOnly<0x4400d2b8> {
             using CNVCNT = Field<4, 28>;    // CNVCNT
         };
 
@@ -4568,7 +4568,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 4 interrupt and status register
-        struct DFSDM_FLT4ISR : public Register<0x4400d308> {
+        struct DFSDM_FLT4ISR : public RegisterReadOnly<0x4400d308> {
             using JEOCF = Field<0, 1>;    // JEOCF
             using REOCF = Field<1, 1>;    // REOCF
             using JOVRF = Field<2, 1>;    // JOVRF
@@ -4601,13 +4601,13 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 4 data register for injected group
-        struct DFSDM_FLT4JDATAR : public Register<0x4400d318> {
+        struct DFSDM_FLT4JDATAR : public RegisterReadOnly<0x4400d318> {
             using JDATACH = Field<0, 3>;    // JDATACH
             using JDATA = Field<8, 24>;    // JDATA
         };
 
         // DFSDM filter 4 data register for the regular channel
-        struct DFSDM_FLT4RDATAR : public Register<0x4400d31c> {
+        struct DFSDM_FLT4RDATAR : public RegisterReadOnly<0x4400d31c> {
             using RDATACH = Field<0, 3>;    // RDATACH
             using RPEND = Field<4, 1>;    // RPEND
             using RDATA = Field<8, 24>;    // RDATA
@@ -4626,7 +4626,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 4 analog watchdog status register
-        struct DFSDM_FLT4AWSR : public Register<0x4400d328> {
+        struct DFSDM_FLT4AWSR : public RegisterReadOnly<0x4400d328> {
             using AWLTF = Field<0, 8>;    // AWLTF
             using AWHTF = Field<8, 8>;    // AWHTF
         };
@@ -4638,7 +4638,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 4 extremes detector maximum register
-        struct DFSDM_FLT4EXMAX : public Register<0x4400d330> {
+        struct DFSDM_FLT4EXMAX : public RegisterReadOnly<0x4400d330> {
             using EXMAXCH = Field<0, 3>;    // EXMAXCH
             using EXMAX = Field<8, 24>;    // EXMAX
         };
@@ -4650,7 +4650,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 4 conversion timer register
-        struct DFSDM_FLT4CNVTIMR : public Register<0x4400d338> {
+        struct DFSDM_FLT4CNVTIMR : public RegisterReadOnly<0x4400d338> {
             using CNVCNT = Field<4, 28>;    // CNVCNT
         };
 
@@ -4686,7 +4686,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 5 interrupt and status register
-        struct DFSDM_FLT5ISR : public Register<0x4400d388> {
+        struct DFSDM_FLT5ISR : public RegisterReadOnly<0x4400d388> {
             using JEOCF = Field<0, 1>;    // JEOCF
             using REOCF = Field<1, 1>;    // REOCF
             using JOVRF = Field<2, 1>;    // JOVRF
@@ -4719,13 +4719,13 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 5 data register for injected group
-        struct DFSDM_FLT5JDATAR : public Register<0x4400d398> {
+        struct DFSDM_FLT5JDATAR : public RegisterReadOnly<0x4400d398> {
             using JDATACH = Field<0, 3>;    // JDATACH
             using JDATA = Field<8, 24>;    // JDATA
         };
 
         // DFSDM filter 5 data register for the regular channel
-        struct DFSDM_FLT5RDATAR : public Register<0x4400d39c> {
+        struct DFSDM_FLT5RDATAR : public RegisterReadOnly<0x4400d39c> {
             using RDATACH = Field<0, 3>;    // RDATACH
             using RPEND = Field<4, 1>;    // RPEND
             using RDATA = Field<8, 24>;    // RDATA
@@ -4744,7 +4744,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 5 analog watchdog status register
-        struct DFSDM_FLT5AWSR : public Register<0x4400d3a8> {
+        struct DFSDM_FLT5AWSR : public RegisterReadOnly<0x4400d3a8> {
             using AWLTF = Field<0, 8>;    // AWLTF
             using AWHTF = Field<8, 8>;    // AWHTF
         };
@@ -4756,7 +4756,7 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 5 extremes detector maximum register
-        struct DFSDM_FLT5EXMAX : public Register<0x4400d3b0> {
+        struct DFSDM_FLT5EXMAX : public RegisterReadOnly<0x4400d3b0> {
             using EXMAXCH = Field<0, 3>;    // EXMAXCH
             using EXMAX = Field<8, 24>;    // EXMAX
         };
@@ -4768,29 +4768,29 @@ struct STM32MP15xxx {
         };
 
         // DFSDM filter 5 conversion timer register
-        struct DFSDM_FLT5CNVTIMR : public Register<0x4400d3b8> {
+        struct DFSDM_FLT5CNVTIMR : public RegisterReadOnly<0x4400d3b8> {
             using CNVCNT = Field<4, 28>;    // CNVCNT
         };
 
         // This register specifies the hardware configuration of DFSDM peripheral.
-        struct DFSDM_HWCFGR : public Register<0x4400d7f0> {
+        struct DFSDM_HWCFGR : public RegisterReadOnly<0x4400d7f0> {
             using NBT = Field<0, 8>;    // NBT
             using NBF = Field<8, 8>;    // NBF
         };
 
         // This register specifies the version of DFSDM peripheral.
-        struct DFSDM_VERR : public Register<0x4400d7f4> {
+        struct DFSDM_VERR : public RegisterReadOnly<0x4400d7f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // This register specifies the identification of DFSDM peripheral.
-        struct DFSDM_IPIDR : public Register<0x4400d7f8> {
+        struct DFSDM_IPIDR : public RegisterReadOnly<0x4400d7f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // This register specifies the size allocated to DFSDM registers.
-        struct DFSDM_SIDR : public Register<0x4400d7fc> {
+        struct DFSDM_SIDR : public RegisterReadOnly<0x4400d7fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -4799,7 +4799,7 @@ struct STM32MP15xxx {
     // DMA1
     struct DMA1 {
         // DMA low interrupt status register
-        struct DMA_LISR : public Register<0x48000000> {
+        struct DMA_LISR : public RegisterReadOnly<0x48000000> {
             using FEIF0 = Field<0, 1>;    // FEIF0
             using DMEIF0 = Field<2, 1>;    // DMEIF0
             using TEIF0 = Field<3, 1>;    // TEIF0
@@ -4823,7 +4823,7 @@ struct STM32MP15xxx {
         };
 
         // DMA high interrupt status register
-        struct DMA_HISR : public Register<0x48000004> {
+        struct DMA_HISR : public RegisterReadOnly<0x48000004> {
             using FEIF4 = Field<0, 1>;    // FEIF4
             using DMEIF4 = Field<2, 1>;    // DMEIF4
             using TEIF4 = Field<3, 1>;    // TEIF4
@@ -4847,7 +4847,7 @@ struct STM32MP15xxx {
         };
 
         // DMA low interrupt flag clear register
-        struct DMA_LIFCR : public Register<0x48000008> {
+        struct DMA_LIFCR : public RegisterWriteOnly<0x48000008> {
             using CFEIF0 = Field<0, 1>;    // CFEIF0
             using CDMEIF0 = Field<2, 1>;    // CDMEIF0
             using CTEIF0 = Field<3, 1>;    // CTEIF0
@@ -4871,7 +4871,7 @@ struct STM32MP15xxx {
         };
 
         // DMA high interrupt flag clear register
-        struct DMA_HIFCR : public Register<0x4800000c> {
+        struct DMA_HIFCR : public RegisterWriteOnly<0x4800000c> {
             using CFEIF4 = Field<0, 1>;    // CFEIF4
             using CDMEIF4 = Field<2, 1>;    // CDMEIF4
             using CTEIF4 = Field<3, 1>;    // CTEIF4
@@ -5295,14 +5295,14 @@ struct STM32MP15xxx {
         };
 
         // DMA hardware configuration 2register
-        struct DMA_HWCFGR2 : public Register<0x480003ec> {
+        struct DMA_HWCFGR2 : public RegisterReadOnly<0x480003ec> {
             using FIFO_SIZE = Field<0, 2>;    // FIFO_SIZE
             using WRITE_BUFFERABLE = Field<4, 1>;    // WRITE_BUFFERABLE
             using CHSEL_WIDTH = Field<8, 3>;    // CHSEL_WIDTH
         };
 
         // DMA hardware configuration 1 register
-        struct DMA_HWCFGR1 : public Register<0x480003f0> {
+        struct DMA_HWCFGR1 : public RegisterReadOnly<0x480003f0> {
             using DMA_DEF0 = Field<0, 2>;    // DMA_DEF0
             using DMA_DEF1 = Field<4, 2>;    // DMA_DEF1
             using DMA_DEF2 = Field<8, 2>;    // DMA_DEF2
@@ -5314,18 +5314,18 @@ struct STM32MP15xxx {
         };
 
         // This register identifies the version of the IP.
-        struct DMA_VERR : public Register<0x480003f4> {
+        struct DMA_VERR : public RegisterReadOnly<0x480003f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DMA IP identification register
-        struct DMA_IPDR : public Register<0x480003f8> {
+        struct DMA_IPDR : public RegisterReadOnly<0x480003f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DMA size identification register
-        struct DMA_SIDR : public Register<0x480003fc> {
+        struct DMA_SIDR : public RegisterReadOnly<0x480003fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -5334,7 +5334,7 @@ struct STM32MP15xxx {
     // DMA1
     struct DMA2 {
         // DMA low interrupt status register
-        struct DMA_LISR : public Register<0x48001000> {
+        struct DMA_LISR : public RegisterReadOnly<0x48001000> {
             using FEIF0 = Field<0, 1>;    // FEIF0
             using DMEIF0 = Field<2, 1>;    // DMEIF0
             using TEIF0 = Field<3, 1>;    // TEIF0
@@ -5358,7 +5358,7 @@ struct STM32MP15xxx {
         };
 
         // DMA high interrupt status register
-        struct DMA_HISR : public Register<0x48001004> {
+        struct DMA_HISR : public RegisterReadOnly<0x48001004> {
             using FEIF4 = Field<0, 1>;    // FEIF4
             using DMEIF4 = Field<2, 1>;    // DMEIF4
             using TEIF4 = Field<3, 1>;    // TEIF4
@@ -5382,7 +5382,7 @@ struct STM32MP15xxx {
         };
 
         // DMA low interrupt flag clear register
-        struct DMA_LIFCR : public Register<0x48001008> {
+        struct DMA_LIFCR : public RegisterWriteOnly<0x48001008> {
             using CFEIF0 = Field<0, 1>;    // CFEIF0
             using CDMEIF0 = Field<2, 1>;    // CDMEIF0
             using CTEIF0 = Field<3, 1>;    // CTEIF0
@@ -5406,7 +5406,7 @@ struct STM32MP15xxx {
         };
 
         // DMA high interrupt flag clear register
-        struct DMA_HIFCR : public Register<0x4800100c> {
+        struct DMA_HIFCR : public RegisterWriteOnly<0x4800100c> {
             using CFEIF4 = Field<0, 1>;    // CFEIF4
             using CDMEIF4 = Field<2, 1>;    // CDMEIF4
             using CTEIF4 = Field<3, 1>;    // CTEIF4
@@ -5830,14 +5830,14 @@ struct STM32MP15xxx {
         };
 
         // DMA hardware configuration 2register
-        struct DMA_HWCFGR2 : public Register<0x480013ec> {
+        struct DMA_HWCFGR2 : public RegisterReadOnly<0x480013ec> {
             using FIFO_SIZE = Field<0, 2>;    // FIFO_SIZE
             using WRITE_BUFFERABLE = Field<4, 1>;    // WRITE_BUFFERABLE
             using CHSEL_WIDTH = Field<8, 3>;    // CHSEL_WIDTH
         };
 
         // DMA hardware configuration 1 register
-        struct DMA_HWCFGR1 : public Register<0x480013f0> {
+        struct DMA_HWCFGR1 : public RegisterReadOnly<0x480013f0> {
             using DMA_DEF0 = Field<0, 2>;    // DMA_DEF0
             using DMA_DEF1 = Field<4, 2>;    // DMA_DEF1
             using DMA_DEF2 = Field<8, 2>;    // DMA_DEF2
@@ -5849,18 +5849,18 @@ struct STM32MP15xxx {
         };
 
         // This register identifies the version of the IP.
-        struct DMA_VERR : public Register<0x480013f4> {
+        struct DMA_VERR : public RegisterReadOnly<0x480013f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DMA IP identification register
-        struct DMA_IPDR : public Register<0x480013f8> {
+        struct DMA_IPDR : public RegisterReadOnly<0x480013f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DMA size identification register
-        struct DMA_SIDR : public Register<0x480013fc> {
+        struct DMA_SIDR : public RegisterReadOnly<0x480013fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -6045,7 +6045,7 @@ struct STM32MP15xxx {
         };
 
         // DMAMUX request line multiplexer interrupt channel status register
-        struct DMAMUX_CSR : public Register<0x48002080> {
+        struct DMAMUX_CSR : public RegisterReadOnly<0x48002080> {
             using SOF0 = Field<0, 1>;    // SOF0
             using SOF1 = Field<1, 1>;    // SOF1
             using SOF2 = Field<2, 1>;    // SOF2
@@ -6065,7 +6065,7 @@ struct STM32MP15xxx {
         };
 
         // DMAMUX request line multiplexer interrupt clear flag register
-        struct DMAMUX_CFR : public Register<0x48002084> {
+        struct DMAMUX_CFR : public RegisterWriteOnly<0x48002084> {
             using CSOF0 = Field<0, 1>;    // CSOF0
             using CSOF1 = Field<1, 1>;    // CSOF1
             using CSOF2 = Field<2, 1>;    // CSOF2
@@ -6157,7 +6157,7 @@ struct STM32MP15xxx {
         };
 
         // DMAMUX request generator interrupt status register
-        struct DMAMUX_RGSR : public Register<0x48002140> {
+        struct DMAMUX_RGSR : public RegisterReadOnly<0x48002140> {
             using OF0 = Field<0, 1>;    // OF0
             using OF1 = Field<1, 1>;    // OF1
             using OF2 = Field<2, 1>;    // OF2
@@ -6169,7 +6169,7 @@ struct STM32MP15xxx {
         };
 
         // DMAMUX request generator interrupt clear flag register
-        struct DMAMUX_RGCFR : public Register<0x48002144> {
+        struct DMAMUX_RGCFR : public RegisterWriteOnly<0x48002144> {
             using COF0 = Field<0, 1>;    // COF0
             using COF1 = Field<1, 1>;    // COF1
             using COF2 = Field<2, 1>;    // COF2
@@ -6181,12 +6181,12 @@ struct STM32MP15xxx {
         };
 
         // DMAMUX hardware configuration 2 register
-        struct DMAMUX_HWCFGR2 : public Register<0x480023ec> {
+        struct DMAMUX_HWCFGR2 : public RegisterReadOnly<0x480023ec> {
             using NUM_DMA_EXT_REQ = Field<0, 8>;    // NUM_DMA_EXT_REQ
         };
 
         // DMAMUX hardware configuration 1 register
-        struct DMAMUX_HWCFGR1 : public Register<0x480023f0> {
+        struct DMAMUX_HWCFGR1 : public RegisterReadOnly<0x480023f0> {
             using NUM_DMA_STREAMS = Field<0, 8>;    // NUM_DMA_STREAMS
             using NUM_DMA_PERIPH_REQ = Field<8, 8>;    // NUM_DMA_PERIPH_REQ
             using NUM_DMA_TRIG = Field<16, 8>;    // NUM_DMA_TRIG
@@ -6194,18 +6194,18 @@ struct STM32MP15xxx {
         };
 
         // This register identifies the IP version.
-        struct DMAMUX_VERR : public Register<0x480023f4> {
+        struct DMAMUX_VERR : public RegisterReadOnly<0x480023f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // This register identifies the IP.
-        struct DMAMUX_IPIDR : public Register<0x480023f8> {
+        struct DMAMUX_IPIDR : public RegisterReadOnly<0x480023f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DMAMUX size identification register
-        struct DMAMUX_SIDR : public Register<0x480023fc> {
+        struct DMAMUX_SIDR : public RegisterReadOnly<0x480023fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -6214,7 +6214,7 @@ struct STM32MP15xxx {
     // DSIHOST1
     struct DSIHOST1 {
         // DSI Host version register
-        struct DSI_VR : public Register<0x5a000000> {
+        struct DSI_VR : public RegisterReadOnly<0x5a000000> {
             using VERSION = Field<0, 32>;    // VERSION
         };
 
@@ -6263,7 +6263,7 @@ struct STM32MP15xxx {
         };
 
         // DSI Host generic VCID register
-        struct DSI_GVCIDR : public Register<0x5a000030> {
+        struct DSI_GVCIDR : public RegisterReadOnly<0x5a000030> {
             using VCID = Field<0, 2>;    // VCID
         };
 
@@ -6378,7 +6378,7 @@ struct STM32MP15xxx {
         };
 
         // DSI Host generic packet status register
-        struct DSI_GPSR : public Register<0x5a000074> {
+        struct DSI_GPSR : public RegisterReadOnly<0x5a000074> {
             using CMDFE = Field<0, 1>;    // CMDFE
             using CMDFF = Field<1, 1>;    // CMDFF
             using PWRFE = Field<2, 1>;    // PWRFE
@@ -6464,7 +6464,7 @@ struct STM32MP15xxx {
         };
 
         // DSI Host PHY status register
-        struct DSI_PSR : public Register<0x5a0000b0> {
+        struct DSI_PSR : public RegisterReadOnly<0x5a0000b0> {
             using PD = Field<1, 1>;    // PD
             using PSSC = Field<2, 1>;    // PSSC
             using UANC = Field<3, 1>;    // UANC
@@ -6476,7 +6476,7 @@ struct STM32MP15xxx {
         };
 
         // DSI Host interrupt and status register 0
-        struct DSI_ISR0 : public Register<0x5a0000bc> {
+        struct DSI_ISR0 : public RegisterReadOnly<0x5a0000bc> {
             using AE0 = Field<0, 1>;    // AE0
             using AE1 = Field<1, 1>;    // AE1
             using AE2 = Field<2, 1>;    // AE2
@@ -6501,7 +6501,7 @@ struct STM32MP15xxx {
         };
 
         // DSI Host interrupt and status register 1
-        struct DSI_ISR1 : public Register<0x5a0000c0> {
+        struct DSI_ISR1 : public RegisterReadOnly<0x5a0000c0> {
             using TOHSTX = Field<0, 1>;    // TOHSTX
             using TOLPRX = Field<1, 1>;    // TOLPRX
             using ECCSE = Field<2, 1>;    // ECCSE
@@ -6560,7 +6560,7 @@ struct STM32MP15xxx {
         };
 
         // DSI Host force interrupt register 0
-        struct DSI_FIR0 : public Register<0x5a0000d8> {
+        struct DSI_FIR0 : public RegisterWriteOnly<0x5a0000d8> {
             using FAE0 = Field<0, 1>;    // FAE0
             using FAE1 = Field<1, 1>;    // FAE1
             using FAE2 = Field<2, 1>;    // FAE2
@@ -6585,7 +6585,7 @@ struct STM32MP15xxx {
         };
 
         // DSI Host force interrupt register 1
-        struct DSI_FIR1 : public Register<0x5a0000dc> {
+        struct DSI_FIR1 : public RegisterWriteOnly<0x5a0000dc> {
             using FTOHSTX = Field<0, 1>;    // FTOHSTX
             using FTOLPRX = Field<1, 1>;    // FTOLPRX
             using FECCSE = Field<2, 1>;    // FECCSE
@@ -6618,19 +6618,19 @@ struct STM32MP15xxx {
         };
 
         // DSI Host LTDC current color coding register
-        struct DSI_LCCCR : public Register<0x5a000110> {
+        struct DSI_LCCCR : public RegisterReadOnly<0x5a000110> {
             using COLC = Field<0, 4>;    // COLC
             using LPE = Field<8, 1>;    // LPE
         };
 
         // DSI Host low-power mode current configuration register
-        struct DSI_LPMCCR : public Register<0x5a000118> {
+        struct DSI_LPMCCR : public RegisterReadOnly<0x5a000118> {
             using VLPSIZE = Field<0, 8>;    // VLPSIZE
             using LPSIZE = Field<16, 8>;    // LPSIZE
         };
 
         // DSI Host video mode current configuration register
-        struct DSI_VMCCR : public Register<0x5a000138> {
+        struct DSI_VMCCR : public RegisterReadOnly<0x5a000138> {
             using VMT = Field<0, 2>;    // VMT
             using LPVSAE = Field<2, 1>;    // LPVSAE
             using LPVBPE = Field<3, 1>;    // LPVBPE
@@ -6643,52 +6643,52 @@ struct STM32MP15xxx {
         };
 
         // DSI Host video packet current configuration register
-        struct DSI_VPCCR : public Register<0x5a00013c> {
+        struct DSI_VPCCR : public RegisterReadOnly<0x5a00013c> {
             using VPSIZE = Field<0, 14>;    // VPSIZE
         };
 
         // DSI Host video chunks current configuration register
-        struct DSI_VCCCR : public Register<0x5a000140> {
+        struct DSI_VCCCR : public RegisterReadOnly<0x5a000140> {
             using NUMC = Field<0, 13>;    // NUMC
         };
 
         // DSI Host video null packet current configuration register
-        struct DSI_VNPCCR : public Register<0x5a000144> {
+        struct DSI_VNPCCR : public RegisterReadOnly<0x5a000144> {
             using NPSIZE = Field<0, 13>;    // NPSIZE
         };
 
         // DSI Host video HSA current configuration register
-        struct DSI_VHSACCR : public Register<0x5a000148> {
+        struct DSI_VHSACCR : public RegisterReadOnly<0x5a000148> {
             using HSA = Field<0, 12>;    // HSA
         };
 
         // DSI Host video HBP current configuration register
-        struct DSI_VHBPCCR : public Register<0x5a00014c> {
+        struct DSI_VHBPCCR : public RegisterReadOnly<0x5a00014c> {
             using HBP = Field<0, 12>;    // HBP
         };
 
         // DSI Host video line current configuration register
-        struct DSI_VLCCR : public Register<0x5a000150> {
+        struct DSI_VLCCR : public RegisterReadOnly<0x5a000150> {
             using HLINE = Field<0, 15>;    // HLINE
         };
 
         // DSI Host video VSA current configuration register
-        struct DSI_VVSACCR : public Register<0x5a000154> {
+        struct DSI_VVSACCR : public RegisterReadOnly<0x5a000154> {
             using VSA = Field<0, 10>;    // VSA
         };
 
         // DSI Host video VBP current configuration register
-        struct DSI_VVBPCCR : public Register<0x5a000158> {
+        struct DSI_VVBPCCR : public RegisterReadOnly<0x5a000158> {
             using VBP = Field<0, 10>;    // VBP
         };
 
         // DSI Host video VFP current configuration register
-        struct DSI_VVFPCCR : public Register<0x5a00015c> {
+        struct DSI_VVFPCCR : public RegisterReadOnly<0x5a00015c> {
             using VFP = Field<0, 10>;    // VFP
         };
 
         // DSI Host video VA current configuration register
-        struct DSI_VVACCR : public Register<0x5a000160> {
+        struct DSI_VVACCR : public RegisterReadOnly<0x5a000160> {
             using VA = Field<0, 14>;    // VA
         };
 
@@ -6720,7 +6720,7 @@ struct STM32MP15xxx {
         };
 
         // DSI wrapper interrupt and status register
-        struct DSI_WISR : public Register<0x5a00040c> {
+        struct DSI_WISR : public RegisterReadOnly<0x5a00040c> {
             using TEIF = Field<0, 1>;    // TEIF
             using ERIF = Field<1, 1>;    // ERIF
             using BUSY = Field<2, 1>;    // BUSY
@@ -6732,7 +6732,7 @@ struct STM32MP15xxx {
         };
 
         // DSI wrapper interrupt flag clear register
-        struct DSI_WIFCR : public Register<0x5a000410> {
+        struct DSI_WIFCR : public RegisterWriteOnly<0x5a000410> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CERIF = Field<1, 1>;    // CERIF
             using CPLLLIF = Field<9, 1>;    // CPLLLIF
@@ -6780,24 +6780,24 @@ struct STM32MP15xxx {
         };
 
         // DSI Host hardware configuration register
-        struct DSI_HWCFGR : public Register<0x5a0007f0> {
+        struct DSI_HWCFGR : public RegisterReadOnly<0x5a0007f0> {
             using TECHNO = Field<0, 4>;    // TECHNO
             using FIFOSIZE = Field<4, 12>;    // FIFOSIZE
         };
 
         // DSI Host version register
-        struct DSI_VERR : public Register<0x5a0007f4> {
+        struct DSI_VERR : public RegisterReadOnly<0x5a0007f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DSI Host identification register
-        struct DSI_IPIDR : public Register<0x5a0007f8> {
+        struct DSI_IPIDR : public RegisterReadOnly<0x5a0007f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DSI Host size identification register
-        struct DSI_SIDR : public Register<0x5a0007fc> {
+        struct DSI_SIDR : public RegisterReadOnly<0x5a0007fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -6817,13 +6817,13 @@ struct STM32MP15xxx {
         };
 
         // DTS_T0VALR1 contains the value of the factory calibration temperature (T0) for temperature sensor 1. The system reset value is factory trimmed.
-        struct DTS_T0VALR1 : public Register<0x50028008> {
+        struct DTS_T0VALR1 : public RegisterReadOnly<0x50028008> {
             using TS1_FMT0 = Field<0, 16>;    // TS1_FMT0
             using TS1_T0 = Field<16, 2>;    // TS1_T0
         };
 
         // The DTS_RAMPVALR is the ramp coefficient for the temperature sensor. The system reset value is factory trimmed.
-        struct DTS_RAMPVALR : public Register<0x50028010> {
+        struct DTS_RAMPVALR : public RegisterReadOnly<0x50028010> {
             using TS1_RAMP_COEFF = Field<0, 16>;    // TS1_RAMP_COEFF
         };
 
@@ -6839,7 +6839,7 @@ struct STM32MP15xxx {
         };
 
         // Temperature sensor status register
-        struct DTS_SR : public Register<0x50028020> {
+        struct DTS_SR : public RegisterReadOnly<0x50028020> {
             using TS1_ITEF = Field<0, 1>;    // TS1_ITEF
             using TS1_ITLF = Field<1, 1>;    // TS1_ITLF
             using TS1_ITHF = Field<2, 1>;    // TS1_ITHF
@@ -7038,7 +7038,7 @@ struct STM32MP15xxx {
         };
 
         // The transmit queue priority mapping 0 register contains the priority values assigned to Tx queue 0 and tx queue 1.
-        struct ETH_MACTxQPMR : public Register<0x5800a098> {
+        struct ETH_MACTxQPMR : public RegisterReadOnly<0x5800a098> {
             using PSTQ0 = Field<0, 8>;    // PSTQ0
             using PSTQ1 = Field<8, 8>;    // PSTQ1
         };
@@ -7066,7 +7066,7 @@ struct STM32MP15xxx {
         };
 
         // The Interrupt Status register contains the status of interrupts.
-        struct ETH_MACISR : public Register<0x5800a0b0> {
+        struct ETH_MACISR : public RegisterReadOnly<0x5800a0b0> {
             using RGSMIIIS = Field<0, 1>;    // RGSMIIIS
             using PHYIS = Field<3, 1>;    // PHYIS
             using PMTIS = Field<4, 1>;    // PMTIS
@@ -7091,7 +7091,7 @@ struct STM32MP15xxx {
         };
 
         // The Receive Transmit Status register contains the Receive and Transmit Error status.
-        struct ETH_MACRxTxSR : public Register<0x5800a0b8> {
+        struct ETH_MACRxTxSR : public RegisterReadOnly<0x5800a0b8> {
             using TJT = Field<0, 1>;    // TJT
             using NCARR = Field<1, 1>;    // NCARR
             using LCARR = Field<2, 1>;    // LCARR
@@ -7172,13 +7172,13 @@ struct STM32MP15xxx {
         };
 
         // The version register identifies the version of the Ethernet peripheral.
-        struct ETH_MACVR : public Register<0x5800a110> {
+        struct ETH_MACVR : public RegisterReadOnly<0x5800a110> {
             using SNPSVER = Field<0, 8>;    // SNPSVER
             using USERVER = Field<8, 8>;    // USERVER
         };
 
         // The Debug register provides the debug status of various MAC blocks.
-        struct ETH_MACDR : public Register<0x5800a114> {
+        struct ETH_MACDR : public RegisterReadOnly<0x5800a114> {
             using RPESTS = Field<0, 1>;    // RPESTS
             using RFCFCSTS = Field<1, 2>;    // RFCFCSTS
             using TPESTS = Field<16, 1>;    // TPESTS
@@ -7186,7 +7186,7 @@ struct STM32MP15xxx {
         };
 
         // This register indicates the presence of second set of the optional features or functions of the Ethernet peripheral. The software driver can use this register to dynamically enable or disable the programs related to the optional blocks.
-        struct ETH_MACHWF1R : public Register<0x5800a120> {
+        struct ETH_MACHWF1R : public RegisterReadOnly<0x5800a120> {
             using RXFIFOSIZE = Field<0, 5>;    // RXFIFOSIZE
             using TXFIFOSIZE = Field<6, 5>;    // TXFIFOSIZE
             using OSTEN = Field<11, 1>;    // OSTEN
@@ -7203,7 +7203,7 @@ struct STM32MP15xxx {
         };
 
         // This register indicates the presence of third set of the optional features or functions of the Ethernet peripheral. The software driver can use this register to dynamically enable or disable the programs related to the optional blocks.
-        struct ETH_MACHWF2R : public Register<0x5800a124> {
+        struct ETH_MACHWF2R : public RegisterReadOnly<0x5800a124> {
             using RXQCNT = Field<0, 4>;    // RXQCNT
             using TXQCNT = Field<6, 4>;    // TXQCNT
             using RXCHCNT = Field<12, 4>;    // RXCHCNT
@@ -7294,7 +7294,7 @@ struct STM32MP15xxx {
         };
 
         // This register maintains the interrupts generated from all Receive statistics counters. The MMC Receive Interrupt register maintains the interrupts that are generated when the following occur: Receive statistic counters reach half of their maximum values (0x8000_0000 for 32 bit counter and 0x8000 for 16 bit counter). Receive statistic counters cross their maximum values (0xFFFF_FFFF for 32 bit counter and 0xFFFF for 16 bit counter). When the Counter Stop Rollover is set, interrupts are set but the counter remains at all-ones. The MMC Receive Interrupt register is a 32 bit register. An interrupt bit is cleared when the respective MMC counter that caused the interrupt is read. The least significant byte lane (Bits[7:0]) of the respective counter must be read to clear the interrupt bit.
-        struct MMC_RX_INTERRUPT : public Register<0x5800a704> {
+        struct MMC_RX_INTERRUPT : public RegisterReadOnly<0x5800a704> {
             using RXCRCERPIS = Field<5, 1>;    // RXCRCERPIS
             using RXALGNERPIS = Field<6, 1>;    // RXALGNERPIS
             using RXUCGPIS = Field<17, 1>;    // RXUCGPIS
@@ -7303,7 +7303,7 @@ struct STM32MP15xxx {
         };
 
         // This register maintains the interrupts generated from all Transmit statistics counters. The MMC Transmit Interrupt register maintains the interrupts generated when transmit statistic counters reach half their maximum values (0x8000_0000 for 32 bit counter and 0x8000 for 16 bit counter), and when they cross their maximum values (0xFFFF_FFFF for 32-bit counter and 0xFFFF for 16-bit counter). When Counter Stop Rollover is set, the interrupts are set but the counter remains at all-ones. The MMC Transmit Interrupt register is a 32 bit register. An interrupt bit is cleared when the respective MMC counter that caused the interrupt is read. The least significant byte lane (Bits[7:0]) of the respective counter must be read to clear the interrupt bit.
-        struct MMC_TX_INTERRUPT : public Register<0x5800a708> {
+        struct MMC_TX_INTERRUPT : public RegisterReadOnly<0x5800a708> {
             using TXSCOLGPIS = Field<14, 1>;    // TXSCOLGPIS
             using TXMCOLGPIS = Field<15, 1>;    // TXMCOLGPIS
             using TXGPKTIS = Field<21, 1>;    // TXGPKTIS
@@ -7330,52 +7330,52 @@ struct STM32MP15xxx {
         };
 
         // This register provides the number of successfully transmitted packets by Ethernet peripheral after a single collision in the half-duplex mode.
-        struct TX_SINGLE_COLLISION_GOOD_PACKETS : public Register<0x5800a74c> {
+        struct TX_SINGLE_COLLISION_GOOD_PACKETS : public RegisterReadOnly<0x5800a74c> {
             using TXSNGLCOLG = Field<0, 32>;    // TXSNGLCOLG
         };
 
         // This register provides the number of successfully transmitted packets by Ethernet peripheral after multiple collisions in the half-duplex mode.
-        struct TX_MULTIPLE_COLLISION_GOOD_PACKETS : public Register<0x5800a750> {
+        struct TX_MULTIPLE_COLLISION_GOOD_PACKETS : public RegisterReadOnly<0x5800a750> {
             using TXMULTCOLG = Field<0, 32>;    // TXMULTCOLG
         };
 
         // This register provides the number of good packets transmitted by Ethernet peripheral.
-        struct TX_PACKET_COUNT_GOOD : public Register<0x5800a768> {
+        struct TX_PACKET_COUNT_GOOD : public RegisterReadOnly<0x5800a768> {
             using TXPKTG = Field<0, 32>;    // TXPKTG
         };
 
         // This register provides the number of packets received by Ethernet peripheral with CRC error.
-        struct RX_CRC_ERROR_PACKETS : public Register<0x5800a794> {
+        struct RX_CRC_ERROR_PACKETS : public RegisterReadOnly<0x5800a794> {
             using RXCRCERR = Field<0, 32>;    // RXCRCERR
         };
 
         // This register provides the number of packets received by Ethernet peripheral with alignment (dribble) error. It is valid only in 10/100 mode.
-        struct RX_ALIGNMENT_ERROR_PACKETS : public Register<0x5800a798> {
+        struct RX_ALIGNMENT_ERROR_PACKETS : public RegisterReadOnly<0x5800a798> {
             using RXALGNERR = Field<0, 32>;    // RXALGNERR
         };
 
         // This register provides the number of good unicast packets received by Ethernet peripheral.
-        struct RX_UNICAST_PACKETS_GOOD : public Register<0x5800a7c4> {
+        struct RX_UNICAST_PACKETS_GOOD : public RegisterReadOnly<0x5800a7c4> {
             using RXUCASTG = Field<0, 32>;    // RXUCASTG
         };
 
         // This register provides the number of microseconds Tx LPI is asserted by Ethernet peripheral.
-        struct TX_LPI_USEC_CNTR : public Register<0x5800a7ec> {
+        struct TX_LPI_USEC_CNTR : public RegisterReadOnly<0x5800a7ec> {
             using TXLPIUSC = Field<0, 32>;    // TXLPIUSC
         };
 
         // This register provides the number of times Ethernet peripheral has entered Tx LPI.
-        struct TX_LPI_TRAN_CNTR : public Register<0x5800a7f0> {
+        struct TX_LPI_TRAN_CNTR : public RegisterReadOnly<0x5800a7f0> {
             using TXLPITRC = Field<0, 32>;    // TXLPITRC
         };
 
         // This register provides the number of microseconds Rx LPI is sampled by Ethernet peripheral.
-        struct RX_LPI_USEC_CNTR : public Register<0x5800a7f4> {
+        struct RX_LPI_USEC_CNTR : public RegisterReadOnly<0x5800a7f4> {
             using RXLPIUSC = Field<0, 32>;    // RXLPIUSC
         };
 
         // This register provides the number of times Ethernet peripheral has entered Rx LPI.
-        struct RX_LPI_TRAN_CNTR : public Register<0x5800a7f8> {
+        struct RX_LPI_TRAN_CNTR : public RegisterReadOnly<0x5800a7f8> {
             using RXLPITRC = Field<0, 32>;    // RXLPITRC
         };
 
@@ -7497,12 +7497,12 @@ struct STM32MP15xxx {
         };
 
         // The System Time Seconds register, along with System Time Nanoseconds register, indicates the current value of the system time maintained by the MAC. Though it is updated on a continuous basis, there is some delay from the actual time because of clock domain transfer latencies (from HCLK to CSR clock). This register is present only when the IEEE 1588 Timestamp feature is selected without external timestamp input.
-        struct ETH_MACSTSR : public Register<0x5800ab08> {
+        struct ETH_MACSTSR : public RegisterReadOnly<0x5800ab08> {
             using TSS = Field<0, 32>;    // TSS
         };
 
         // The System Time Nanoseconds register, along with System Time Seconds register, indicates the current value of the system time maintained by the MAC. This register is present only when the IEEE 1588 Timestamp feature is selected without external timestamp input.
-        struct ETH_MACSTNR : public Register<0x5800ab0c> {
+        struct ETH_MACSTNR : public RegisterReadOnly<0x5800ab0c> {
             using TSSS = Field<0, 31>;    // TSSS
         };
 
@@ -7523,7 +7523,7 @@ struct STM32MP15xxx {
         };
 
         // The Timestamp Status register is present only when the IEEE 1588 Timestamp feature is selected. All bits except Bits[27:25] gets cleared when the application reads this register.
-        struct ETH_MACTSSR : public Register<0x5800ab20> {
+        struct ETH_MACTSSR : public RegisterReadOnly<0x5800ab20> {
             using TSSOVF = Field<0, 1>;    // TSSOVF
             using TSTARGT0 = Field<1, 1>;    // TSTARGT0
             using AUXTSTRIG = Field<2, 1>;    // AUXTSTRIG
@@ -7535,13 +7535,13 @@ struct STM32MP15xxx {
         };
 
         // This register contains the nanosecond part of timestamp captured for Transmit packets when Tx status is disabled.
-        struct ETH_MACTxTSSNR : public Register<0x5800ab30> {
+        struct ETH_MACTxTSSNR : public RegisterReadOnly<0x5800ab30> {
             using TXTSSLO = Field<0, 31>;    // TXTSSLO
             using TXTSSMIS = Field<31, 1>;    // TXTSSMIS
         };
 
         // The register contains the higher 32 bits of the timestamp (in seconds) captured when a PTP packet is transmitted.
-        struct ETH_MACTxTSSSR : public Register<0x5800ab34> {
+        struct ETH_MACTxTSSSR : public RegisterReadOnly<0x5800ab34> {
             using TXTSSHI = Field<0, 32>;    // TXTSSHI
         };
 
@@ -7555,12 +7555,12 @@ struct STM32MP15xxx {
         };
 
         // The Auxiliary Timestamp Nanoseconds register, along with ETH_MACATSSR, gives the 64-bit timestamp stored as auxiliary snapshot. These two registers form the read port of a 64-bit wide FIFO with a depth of 4 words. You can store multiple snapshots in this FIFO. Bits[29:25] in ETH_MACTSSR indicate the fill-level of the FIFO. The top of the FIFO is removed only when the last byte of MAC Register 91 (Auxiliary Timestamp - Seconds Register) is read. In the little-endian mode, this means when Bits[31:24] are read and in big-endian mode, Bits[7:0] are read.
-        struct ETH_MACATSNR : public Register<0x5800ab48> {
+        struct ETH_MACATSNR : public RegisterReadOnly<0x5800ab48> {
             using AUXTSLO = Field<0, 31>;    // AUXTSLO
         };
 
         // The Auxiliary Timestamp - Seconds register contains the lower 32 bits of the Seconds field of the auxiliary timestamp register.
-        struct ETH_MACATSSR : public Register<0x5800ab4c> {
+        struct ETH_MACATSSR : public RegisterReadOnly<0x5800ab4c> {
             using AUXTSHI = Field<0, 32>;    // AUXTSHI
         };
 
@@ -7659,7 +7659,7 @@ struct STM32MP15xxx {
         };
 
         // The software driver (application) reads this register during interrupt service routine or polling to determine the interrupt status of MTL queues and the MAC.
-        struct ETH_MTLISR : public Register<0x5800ac20> {
+        struct ETH_MTLISR : public RegisterReadOnly<0x5800ac20> {
             using Q0IS = Field<0, 1>;    // Q0IS
             using Q1IS = Field<1, 1>;    // Q1IS
         };
@@ -7683,19 +7683,19 @@ struct STM32MP15xxx {
         };
 
         // Tx queue 0 underflow register
-        struct ETH_MTLTxQ0UR : public Register<0x5800ad04> {
+        struct ETH_MTLTxQ0UR : public RegisterReadOnly<0x5800ad04> {
             using UFFRMCNT = Field<0, 11>;    // UFFRMCNT
             using UFCNTOVF = Field<11, 1>;    // UFCNTOVF
         };
 
         // Tx queue 1 underflow register
-        struct ETH_MTLTxQ1UR : public Register<0x5800ad44> {
+        struct ETH_MTLTxQ1UR : public RegisterReadOnly<0x5800ad44> {
             using UFFRMCNT = Field<0, 11>;    // UFFRMCNT
             using UFCNTOVF = Field<11, 1>;    // UFCNTOVF
         };
 
         // Tx queue 0 underflow register
-        struct ETH_MTLTxQ0DR : public Register<0x5800ad08> {
+        struct ETH_MTLTxQ0DR : public RegisterReadOnly<0x5800ad08> {
             using TXQPAUSED = Field<0, 1>;    // TXQPAUSED
             using TRCSTS = Field<1, 2>;    // TRCSTS
             using TWCSTS = Field<3, 1>;    // TWCSTS
@@ -7706,7 +7706,7 @@ struct STM32MP15xxx {
         };
 
         // Tx queue 1 underflow register
-        struct ETH_MTLTxQ1DR : public Register<0x5800ad48> {
+        struct ETH_MTLTxQ1DR : public RegisterReadOnly<0x5800ad48> {
             using TXQPAUSED = Field<0, 1>;    // TXQPAUSED
             using TRCSTS = Field<1, 2>;    // TRCSTS
             using TWCSTS = Field<3, 1>;    // TWCSTS
@@ -7717,12 +7717,12 @@ struct STM32MP15xxx {
         };
 
         // Tx queue x ETS status Register
-        struct ETH_MTLTxQ0ESR : public Register<0x5800ad14> {
+        struct ETH_MTLTxQ0ESR : public RegisterReadOnly<0x5800ad14> {
             using ABS = Field<0, 24>;    // ABS
         };
 
         // Tx queue x ETS status Register
-        struct ETH_MTLTxQ1ESR : public Register<0x5800ad54> {
+        struct ETH_MTLTxQ1ESR : public RegisterReadOnly<0x5800ad54> {
             using ABS = Field<0, 24>;    // ABS
         };
 
@@ -7773,7 +7773,7 @@ struct STM32MP15xxx {
         };
 
         // Rx queue 0 missed packet and overflow counter register
-        struct ETH_MTLRxQ0MPOCR : public Register<0x5800ad34> {
+        struct ETH_MTLRxQ0MPOCR : public RegisterReadOnly<0x5800ad34> {
             using OVFPKTCNT = Field<0, 11>;    // OVFPKTCNT
             using OVFCNTOVF = Field<11, 1>;    // OVFCNTOVF
             using MISPKTCNT = Field<16, 11>;    // MISPKTCNT
@@ -7781,7 +7781,7 @@ struct STM32MP15xxx {
         };
 
         // Rx queue 1 missed packet and overflow counter register
-        struct ETH_MTLRxQ1MPOCR : public Register<0x5800ad74> {
+        struct ETH_MTLRxQ1MPOCR : public RegisterReadOnly<0x5800ad74> {
             using OVFPKTCNT = Field<0, 11>;    // OVFPKTCNT
             using OVFCNTOVF = Field<11, 1>;    // OVFCNTOVF
             using MISPKTCNT = Field<16, 11>;    // MISPKTCNT
@@ -7789,7 +7789,7 @@ struct STM32MP15xxx {
         };
 
         // Rx queue i debug register
-        struct ETH_MTLRxQ0DR : public Register<0x5800ad38> {
+        struct ETH_MTLRxQ0DR : public RegisterReadOnly<0x5800ad38> {
             using RWCSTS = Field<0, 1>;    // RWCSTS
             using RRCSTS = Field<1, 2>;    // RRCSTS
             using RXQSTS = Field<4, 2>;    // RXQSTS
@@ -7797,7 +7797,7 @@ struct STM32MP15xxx {
         };
 
         // Rx queue i debug register
-        struct ETH_MTLRxQ1DR : public Register<0x5800ad78> {
+        struct ETH_MTLRxQ1DR : public RegisterReadOnly<0x5800ad78> {
             using RWCSTS = Field<0, 1>;    // RWCSTS
             using RRCSTS = Field<1, 2>;    // RRCSTS
             using RXQSTS = Field<4, 2>;    // RXQSTS
@@ -7875,7 +7875,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt status register
-        struct ETH_DMAISR : public Register<0x5800b008> {
+        struct ETH_DMAISR : public RegisterReadOnly<0x5800b008> {
             using DC0IS = Field<0, 1>;    // DMA Channel Interrupt Status
             using DC1IS = Field<1, 1>;    // DC1IS
             using MTLIS = Field<16, 1>;    // MTL Interrupt Status
@@ -7883,7 +7883,7 @@ struct STM32MP15xxx {
         };
 
         // Debug status register
-        struct ETH_DMADSR : public Register<0x5800b00c> {
+        struct ETH_DMADSR : public RegisterReadOnly<0x5800b00c> {
             using AXWHSTS = Field<0, 1>;    // AHB Master Write Channel
             using AXRHSTS = Field<1, 1>;    // AXRHSTS
             using RPS0 = Field<8, 4>;    // RPS0
@@ -8058,32 +8058,32 @@ struct STM32MP15xxx {
         };
 
         // Channel current application transmit descriptor register
-        struct ETH_DMAC0CATxDR : public Register<0x5800b144> {
+        struct ETH_DMAC0CATxDR : public RegisterReadOnly<0x5800b144> {
             using CURTDESAPTR = Field<0, 32>;    // Application Transmit Descriptor Address Pointer
         };
 
         // Channel current application transmit descriptor register
-        struct ETH_DMAC1CATxDR : public Register<0x5800b1c4> {
+        struct ETH_DMAC1CATxDR : public RegisterReadOnly<0x5800b1c4> {
             using CURTDESAPTR = Field<0, 32>;    // Application Transmit Descriptor Address Pointer
         };
 
         // Channel 0 current application receive descriptor register
-        struct ETH_DMAC0CARxDR : public Register<0x5800b14c> {
+        struct ETH_DMAC0CARxDR : public RegisterReadOnly<0x5800b14c> {
             using CURRDESAPTR = Field<0, 32>;    // Application Transmit Descriptor Address Pointer
         };
 
         // Channel 0 current application transmit buffer register
-        struct ETH_DMAC0CATxBR : public Register<0x5800b154> {
+        struct ETH_DMAC0CATxBR : public RegisterReadOnly<0x5800b154> {
             using CURTBUFAPTR = Field<0, 32>;    // Application Transmit Buffer Address Pointer
         };
 
         // Channel 0 current application transmit buffer register
-        struct ETH_DMAC1CATxBR : public Register<0x5800b1d4> {
+        struct ETH_DMAC1CATxBR : public RegisterReadOnly<0x5800b1d4> {
             using CURTBUFAPTR = Field<0, 32>;    // Application Transmit Buffer Address Pointer
         };
 
         // Channel current application receive buffer register
-        struct ETH_DMAC0CARxBR : public Register<0x5800b15c> {
+        struct ETH_DMAC0CARxBR : public RegisterReadOnly<0x5800b15c> {
             using CURRBUFAPTR = Field<0, 32>;    // Application Receive Buffer Address Pointer
         };
 
@@ -8126,13 +8126,13 @@ struct STM32MP15xxx {
         };
 
         // Channel missed frame count register
-        struct ETH_DMAC0MFCR : public Register<0x5800b16c> {
+        struct ETH_DMAC0MFCR : public RegisterReadOnly<0x5800b16c> {
             using MFC = Field<0, 11>;    // Dropped Packet Counters
             using MFCO = Field<15, 1>;    // Overflow status of the MFC Counter
         };
 
         // Channel missed frame count register
-        struct ETH_DMAC1MFCR : public Register<0x5800b1ec> {
+        struct ETH_DMAC1MFCR : public RegisterReadOnly<0x5800b1ec> {
             using MFC = Field<0, 11>;    // Dropped Packet Counters
             using MFCO = Field<15, 1>;    // Overflow status of the MFC Counter
         };
@@ -8625,64 +8625,64 @@ struct STM32MP15xxx {
         };
 
         // EXTI hardware configuration register 13
-        struct EXTI_HWCFGR13 : public Register<0x5000d3c0> {
+        struct EXTI_HWCFGR13 : public RegisterReadOnly<0x5000d3c0> {
             using TZ = Field<0, 32>;    // TZ
         };
 
         // EXTI hardware configuration register 12
-        struct EXTI_HWCFGR12 : public Register<0x5000d3c4> {
+        struct EXTI_HWCFGR12 : public RegisterReadOnly<0x5000d3c4> {
             using TZ = Field<0, 32>;    // TZ
         };
 
         // EXTI hardware configuration register 11
-        struct EXTI_HWCFGR11 : public Register<0x5000d3c8> {
+        struct EXTI_HWCFGR11 : public RegisterReadOnly<0x5000d3c8> {
             using TZ = Field<0, 32>;    // TZ
         };
 
         // EXTI hardware configuration register 10
-        struct EXTI_HWCFGR10 : public Register<0x5000d3cc> {
+        struct EXTI_HWCFGR10 : public RegisterReadOnly<0x5000d3cc> {
         };
 
         // EXTI hardware configuration register 9
-        struct EXTI_HWCFGR9 : public Register<0x5000d3d0> {
+        struct EXTI_HWCFGR9 : public RegisterReadOnly<0x5000d3d0> {
         };
 
         // EXTI hardware configuration register 8
-        struct EXTI_HWCFGR8 : public Register<0x5000d3d4> {
+        struct EXTI_HWCFGR8 : public RegisterReadOnly<0x5000d3d4> {
         };
 
         // EXTI hardware configuration register 7
-        struct EXTI_HWCFGR7 : public Register<0x5000d3d8> {
+        struct EXTI_HWCFGR7 : public RegisterReadOnly<0x5000d3d8> {
             using CPUEVENT = Field<0, 32>;    // CPUEVENT
         };
 
         // EXTI hardware configuration register 6
-        struct EXTI_HWCFGR6 : public Register<0x5000d3dc> {
+        struct EXTI_HWCFGR6 : public RegisterReadOnly<0x5000d3dc> {
             using CPUEVENT = Field<0, 32>;    // CPUEVENT
         };
 
         // EXTI hardware configuration register 5
-        struct EXTI_HWCFGR5 : public Register<0x5000d3e0> {
+        struct EXTI_HWCFGR5 : public RegisterReadOnly<0x5000d3e0> {
             using CPUEVENT = Field<0, 32>;    // CPUEVENT
         };
 
         // EXTI hardware configuration register 4
-        struct EXTI_HWCFGR4 : public Register<0x5000d3e4> {
+        struct EXTI_HWCFGR4 : public RegisterReadOnly<0x5000d3e4> {
             using EVENT_TRG = Field<0, 32>;    // EVENT_TRG
         };
 
         // EXTI hardware configuration register 3
-        struct EXTI_HWCFGR3 : public Register<0x5000d3e8> {
+        struct EXTI_HWCFGR3 : public RegisterReadOnly<0x5000d3e8> {
             using EVENT_TRG = Field<0, 32>;    // EVENT_TRG
         };
 
         // EXTI hardware configuration register 2
-        struct EXTI_HWCFGR2 : public Register<0x5000d3ec> {
+        struct EXTI_HWCFGR2 : public RegisterReadOnly<0x5000d3ec> {
             using EVENT_TRG = Field<0, 32>;    // EVENT_TRG
         };
 
         // EXTI hardware configuration register 1
-        struct EXTI_HWCFGR1 : public Register<0x5000d3f0> {
+        struct EXTI_HWCFGR1 : public RegisterReadOnly<0x5000d3f0> {
             using NBEVENTS = Field<0, 8>;    // NBEVENTS
             using NBCPUS = Field<8, 4>;    // NBCPUS
             using CPUEVTEN = Field<12, 4>;    // CPUEVTEN
@@ -8690,18 +8690,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP version register
-        struct EXTI_VERR : public Register<0x5000d3f4> {
+        struct EXTI_VERR : public RegisterReadOnly<0x5000d3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // EXTI identification register
-        struct EXTI_IPIDR : public Register<0x5000d3f8> {
+        struct EXTI_IPIDR : public RegisterReadOnly<0x5000d3f8> {
             using IPID = Field<0, 32>;    // IPID
         };
 
         // EXTI size ID register
-        struct EXTI_SIDR : public Register<0x5000d3fc> {
+        struct EXTI_SIDR : public RegisterReadOnly<0x5000d3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -8710,7 +8710,7 @@ struct STM32MP15xxx {
     // FDCAN1
     struct FDCAN1 {
         // FDCAN core release register
-        struct FDCAN_CREL : public Register<0x4400e000> {
+        struct FDCAN_CREL : public RegisterReadOnly<0x4400e000> {
             using DAY = Field<0, 8>;    // DAY
             using MON = Field<8, 8>;    // MON
             using YEAR = Field<16, 4>;    // YEAR
@@ -8720,7 +8720,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Endian register
-        struct FDCAN_ENDN : public Register<0x4400e004> {
+        struct FDCAN_ENDN : public RegisterReadOnly<0x4400e004> {
             using ETV = Field<0, 32>;    // ETV
         };
 
@@ -8956,7 +8956,7 @@ struct STM32MP15xxx {
         };
 
         // This register is updated every time a message ID filter element configured to generate a priority event match. This can be used to monitor the status of incoming high priority messages and to enable fast access to these messages.
-        struct FDCAN_HPMS : public Register<0x4400e094> {
+        struct FDCAN_HPMS : public RegisterReadOnly<0x4400e094> {
             using BIDX = Field<0, 6>;    // BIDX
             using MSI = Field<6, 2>;    // MSI
             using FIDX = Field<8, 7>;    // FIDX
@@ -9071,7 +9071,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Rx FIFO 1 status register
-        struct FDCAN_RXF1S : public Register<0x4400e0b4> {
+        struct FDCAN_RXF1S : public RegisterReadOnly<0x4400e0b4> {
             using F1FL = Field<0, 7>;    // F1FL
             using F1GI = Field<8, 6>;    // F1GI
             using F1PI = Field<16, 6>;    // F1PI
@@ -9086,7 +9086,7 @@ struct STM32MP15xxx {
         };
 
         // Configures the number of data bytes belonging to an Rx buffer / Rx FIFO element. Data field sizes higher than 8 bytes are intended for CAN FD operation only.
-        struct FDCAN_RXESC : public Register<0x4400e0bc> {
+        struct FDCAN_RXESC : public RegisterReadOnly<0x4400e0bc> {
             using F0DS = Field<0, 3>;    // F0DS
             using F1DS = Field<4, 3>;    // F1DS
             using RBDS = Field<8, 3>;    // RBDS
@@ -9101,7 +9101,7 @@ struct STM32MP15xxx {
         };
 
         // The Tx FIFO/queue status is related to the pending Tx requests listed in register FDCAN_TXBRP. Therefore the effect of add/cancellation requests may be delayed due to a running Tx scan (FDCAN_TXBRP not yet updated).
-        struct FDCAN_TXFQS : public Register<0x4400e0c4> {
+        struct FDCAN_TXFQS : public RegisterReadOnly<0x4400e0c4> {
             using TFFL = Field<0, 6>;    // TFFL
             using TFGI = Field<8, 5>;    // TFGI
             using TFQPI = Field<16, 5>;    // TFQPI
@@ -9109,7 +9109,7 @@ struct STM32MP15xxx {
         };
 
         // Configures the number of data bytes belonging to a Tx buffer element. Data field sizes &gt;8 bytes are intended for CAN FD operation only.
-        struct FDCAN_TXESC : public Register<0x4400e0c8> {
+        struct FDCAN_TXESC : public RegisterReadOnly<0x4400e0c8> {
             using TBDS = Field<0, 3>;    // TBDS
         };
 
@@ -9124,12 +9124,12 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Tx buffer transmission occurred register
-        struct FDCAN_TXBTO : public Register<0x4400e0d8> {
+        struct FDCAN_TXBTO : public RegisterReadOnly<0x4400e0d8> {
             using TO = Field<0, 32>;    // TO
         };
 
         // FDCAN Tx buffer cancellation finished register
-        struct FDCAN_TXBCF : public Register<0x4400e0dc> {
+        struct FDCAN_TXBCF : public RegisterReadOnly<0x4400e0dc> {
             using CF = Field<0, 32>;    // CF
         };
 
@@ -9151,7 +9151,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Tx event FIFO status register
-        struct FDCAN_TXEFS : public Register<0x4400e0f4> {
+        struct FDCAN_TXEFS : public RegisterReadOnly<0x4400e0f4> {
             using EFFL = Field<0, 6>;    // EFFL
             using EFGI = Field<8, 5>;    // EFGI
             using EFPI = Field<16, 5>;    // EFPI
@@ -9306,7 +9306,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN TT operation status register
-        struct FDCAN_TTOST : public Register<0x4400e12c> {
+        struct FDCAN_TTOST : public RegisterReadOnly<0x4400e12c> {
             using EL = Field<0, 2>;    // EL
             using MS = Field<2, 2>;    // MS
             using SYS = Field<4, 2>;    // SYS
@@ -9324,30 +9324,30 @@ struct STM32MP15xxx {
         };
 
         // There is no drift compensation in TTCAN level 1.
-        struct FDCAN_TURNA : public Register<0x4400e130> {
+        struct FDCAN_TURNA : public RegisterReadOnly<0x4400e130> {
             using NAV = Field<0, 18>;    // NAV
         };
 
         // FDCAN TT local and global time register
-        struct FDCAN_TTLGT : public Register<0x4400e134> {
+        struct FDCAN_TTLGT : public RegisterReadOnly<0x4400e134> {
             using LT = Field<0, 16>;    // LT
             using GT = Field<16, 16>;    // GT
         };
 
         // FDCAN TT cycle time and count register
-        struct FDCAN_TTCTC : public Register<0x4400e138> {
+        struct FDCAN_TTCTC : public RegisterReadOnly<0x4400e138> {
             using CT = Field<0, 16>;    // CT
             using CC = Field<16, 6>;    // CC
         };
 
         // FDCAN TT capture time register
-        struct FDCAN_TTCPT : public Register<0x4400e13c> {
+        struct FDCAN_TTCPT : public RegisterReadOnly<0x4400e13c> {
             using CCV = Field<0, 6>;    // CCV
             using SWV = Field<16, 16>;    // SWV
         };
 
         // FDCAN TT cycle sync mark register
-        struct FDCAN_TTCSM : public Register<0x4400e140> {
+        struct FDCAN_TTCSM : public RegisterReadOnly<0x4400e140> {
             using CSM = Field<0, 16>;    // CSM
         };
 
@@ -9362,7 +9362,7 @@ struct STM32MP15xxx {
     // FDCAN1
     struct FDCAN2 {
         // FDCAN core release register
-        struct FDCAN_CREL : public Register<0x4400f000> {
+        struct FDCAN_CREL : public RegisterReadOnly<0x4400f000> {
             using DAY = Field<0, 8>;    // DAY
             using MON = Field<8, 8>;    // MON
             using YEAR = Field<16, 4>;    // YEAR
@@ -9372,7 +9372,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Endian register
-        struct FDCAN_ENDN : public Register<0x4400f004> {
+        struct FDCAN_ENDN : public RegisterReadOnly<0x4400f004> {
             using ETV = Field<0, 32>;    // ETV
         };
 
@@ -9608,7 +9608,7 @@ struct STM32MP15xxx {
         };
 
         // This register is updated every time a message ID filter element configured to generate a priority event match. This can be used to monitor the status of incoming high priority messages and to enable fast access to these messages.
-        struct FDCAN_HPMS : public Register<0x4400f094> {
+        struct FDCAN_HPMS : public RegisterReadOnly<0x4400f094> {
             using BIDX = Field<0, 6>;    // BIDX
             using MSI = Field<6, 2>;    // MSI
             using FIDX = Field<8, 7>;    // FIDX
@@ -9723,7 +9723,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Rx FIFO 1 status register
-        struct FDCAN_RXF1S : public Register<0x4400f0b4> {
+        struct FDCAN_RXF1S : public RegisterReadOnly<0x4400f0b4> {
             using F1FL = Field<0, 7>;    // F1FL
             using F1GI = Field<8, 6>;    // F1GI
             using F1PI = Field<16, 6>;    // F1PI
@@ -9738,7 +9738,7 @@ struct STM32MP15xxx {
         };
 
         // Configures the number of data bytes belonging to an Rx buffer / Rx FIFO element. Data field sizes higher than 8 bytes are intended for CAN FD operation only.
-        struct FDCAN_RXESC : public Register<0x4400f0bc> {
+        struct FDCAN_RXESC : public RegisterReadOnly<0x4400f0bc> {
             using F0DS = Field<0, 3>;    // F0DS
             using F1DS = Field<4, 3>;    // F1DS
             using RBDS = Field<8, 3>;    // RBDS
@@ -9753,7 +9753,7 @@ struct STM32MP15xxx {
         };
 
         // The Tx FIFO/queue status is related to the pending Tx requests listed in register FDCAN_TXBRP. Therefore the effect of add/cancellation requests may be delayed due to a running Tx scan (FDCAN_TXBRP not yet updated).
-        struct FDCAN_TXFQS : public Register<0x4400f0c4> {
+        struct FDCAN_TXFQS : public RegisterReadOnly<0x4400f0c4> {
             using TFFL = Field<0, 6>;    // TFFL
             using TFGI = Field<8, 5>;    // TFGI
             using TFQPI = Field<16, 5>;    // TFQPI
@@ -9761,7 +9761,7 @@ struct STM32MP15xxx {
         };
 
         // Configures the number of data bytes belonging to a Tx buffer element. Data field sizes &gt;8 bytes are intended for CAN FD operation only.
-        struct FDCAN_TXESC : public Register<0x4400f0c8> {
+        struct FDCAN_TXESC : public RegisterReadOnly<0x4400f0c8> {
             using TBDS = Field<0, 3>;    // TBDS
         };
 
@@ -9776,12 +9776,12 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Tx buffer transmission occurred register
-        struct FDCAN_TXBTO : public Register<0x4400f0d8> {
+        struct FDCAN_TXBTO : public RegisterReadOnly<0x4400f0d8> {
             using TO = Field<0, 32>;    // TO
         };
 
         // FDCAN Tx buffer cancellation finished register
-        struct FDCAN_TXBCF : public Register<0x4400f0dc> {
+        struct FDCAN_TXBCF : public RegisterReadOnly<0x4400f0dc> {
             using CF = Field<0, 32>;    // CF
         };
 
@@ -9803,7 +9803,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN Tx event FIFO status register
-        struct FDCAN_TXEFS : public Register<0x4400f0f4> {
+        struct FDCAN_TXEFS : public RegisterReadOnly<0x4400f0f4> {
             using EFFL = Field<0, 6>;    // EFFL
             using EFGI = Field<8, 5>;    // EFGI
             using EFPI = Field<16, 5>;    // EFPI
@@ -9958,7 +9958,7 @@ struct STM32MP15xxx {
         };
 
         // FDCAN TT operation status register
-        struct FDCAN_TTOST : public Register<0x4400f12c> {
+        struct FDCAN_TTOST : public RegisterReadOnly<0x4400f12c> {
             using EL = Field<0, 2>;    // EL
             using MS = Field<2, 2>;    // MS
             using SYS = Field<4, 2>;    // SYS
@@ -9976,30 +9976,30 @@ struct STM32MP15xxx {
         };
 
         // There is no drift compensation in TTCAN level 1.
-        struct FDCAN_TURNA : public Register<0x4400f130> {
+        struct FDCAN_TURNA : public RegisterReadOnly<0x4400f130> {
             using NAV = Field<0, 18>;    // NAV
         };
 
         // FDCAN TT local and global time register
-        struct FDCAN_TTLGT : public Register<0x4400f134> {
+        struct FDCAN_TTLGT : public RegisterReadOnly<0x4400f134> {
             using LT = Field<0, 16>;    // LT
             using GT = Field<16, 16>;    // GT
         };
 
         // FDCAN TT cycle time and count register
-        struct FDCAN_TTCTC : public Register<0x4400f138> {
+        struct FDCAN_TTCTC : public RegisterReadOnly<0x4400f138> {
             using CT = Field<0, 16>;    // CT
             using CC = Field<16, 6>;    // CC
         };
 
         // FDCAN TT capture time register
-        struct FDCAN_TTCPT : public Register<0x4400f13c> {
+        struct FDCAN_TTCPT : public RegisterReadOnly<0x4400f13c> {
             using CCV = Field<0, 6>;    // CCV
             using SWV = Field<16, 16>;    // SWV
         };
 
         // FDCAN TT cycle sync mark register
-        struct FDCAN_TTCSM : public Register<0x4400f140> {
+        struct FDCAN_TTCSM : public RegisterReadOnly<0x4400f140> {
             using CSM = Field<0, 16>;    // CSM
         };
 
@@ -10014,7 +10014,7 @@ struct STM32MP15xxx {
     // CCU
     struct CCU {
         // Clock calibration unit core release register
-        struct FCCAN_CCU_CREL : public Register<0x44010000> {
+        struct FCCAN_CCU_CREL : public RegisterReadOnly<0x44010000> {
             using DAY = Field<0, 8>;    // DAY
             using MON = Field<8, 8>;    // MON
             using YEAR = Field<16, 4>;    // YEAR
@@ -10034,7 +10034,7 @@ struct STM32MP15xxx {
         };
 
         // Calibration status register
-        struct FCCAN_CCU_CSTAT : public Register<0x44010008> {
+        struct FCCAN_CCU_CSTAT : public RegisterReadOnly<0x44010008> {
             using OCPC = Field<0, 18>;    // OCPC
             using TQC = Field<18, 11>;    // TQC
             using CALS = Field<30, 2>;    // CALS
@@ -10219,7 +10219,7 @@ struct STM32MP15xxx {
         };
 
         // This register contains information about the AXI interface isolation status and the NAND write requests status. The FMC has to be disabled before modifying some registers. As requests might be pending, it is necessary to wait till the AXI interface is stable and the core of the block is totally isolated from its AXI interface before reconfiguring the registers. The PEF and PNWEF bits indicate the status of the pipe. If Hamming algorithm is used, the ECC is calculated while data are written to the memory. To read the correct ECC, the software must consequently wait untill no write request to the NAND controller are pending, by polling PEF and NWRF bits.
-        struct FMC_SR : public Register<0x58002084> {
+        struct FMC_SR : public RegisterReadOnly<0x58002084> {
             using ISOST = Field<0, 2>;    // ISOST
             using PEF = Field<4, 1>;    // PEF
             using NWRF = Field<6, 1>;    // NWRF
@@ -10242,12 +10242,12 @@ struct STM32MP15xxx {
         };
 
         // This register is used during read accesses in conjunction with the FMC sequencer. It contains the current error correction code value computed by the FMC NAND controller Hamming module. When the FMC sequencer reads data from a NAND Flash memory page at the correct address, the data read are automatically processed by the Hamming computation module. When X bytes have been read (according to the sector size ECCSS field in the FMC_PCR register), the CPU must read the computed ECC value from the FMC_HECCR register. It then verifies if these computed parity data are the same as the parity value recorded in the spare area and stored in the and the FMC_HPR, to determine whether a page is valid, and to correct it otherwise. The FMC_HPR register should be cleared after being read by setting the ECCEN bit to 0. To compute a new data block, the ECCEN bit must be set to 1.
-        struct FMC_HPR : public Register<0x58002090> {
+        struct FMC_HPR : public RegisterReadOnly<0x58002090> {
             using HPR = Field<0, 32>;    // HPR
         };
 
         // This register contain the current error correction code value computed by the FMC NAND controller Hamming module.When the CPU reads/writes data from/to a NAND Flash memory page at the correct address (refer to Section25.8.6: NAND ECC controller), the data read/written from/to the NAND Flash memory are automatically processed by the Hamming computation module. When X bytes have been read (according to the sector size ECCSS field in the FMC_PCR register), the CPU must read the computed ECC value from the FMC_HECCR register. It then verifies if these computed parity data are the same as the parity value recorded in the spare area, to determine whether a page is valid, and to correct it otherwise. The FMC_HECCR register should be cleared after being read by setting the ECCEN bit to 0. To compute a new data block, the ECCEN bit must be set to 1.
-        struct FMC_HECCR : public Register<0x58002094> {
+        struct FMC_HECCR : public RegisterReadOnly<0x58002094> {
             using HECC = Field<0, 32>;    // HECC
         };
 
@@ -10292,7 +10292,7 @@ struct STM32MP15xxx {
         };
 
         // FMC NAND Command Sequencer Control Register
-        struct FMC_CSQCR : public Register<0x58002200> {
+        struct FMC_CSQCR : public RegisterWriteOnly<0x58002200> {
             using CSQSTART = Field<0, 1>;    // CSQSTART
         };
 
@@ -10366,7 +10366,7 @@ struct STM32MP15xxx {
         };
 
         // FMC NAND Command Sequencer Interrupt Clear Register
-        struct FMC_CSQICR : public Register<0x58002228> {
+        struct FMC_CSQICR : public RegisterWriteOnly<0x58002228> {
             using CTCF = Field<0, 1>;    // CTCF
             using CSCF = Field<1, 1>;    // CSCF
             using CSEF = Field<2, 1>;    // CSEF
@@ -10375,7 +10375,7 @@ struct STM32MP15xxx {
         };
 
         // This register holds a sector error mapping status when the whole transfer is complete.
-        struct FMC_CSQEMSR : public Register<0x58002230> {
+        struct FMC_CSQEMSR : public RegisterReadOnly<0x58002230> {
             using SEM = Field<0, 16>;    // SEM
         };
 
@@ -10389,7 +10389,7 @@ struct STM32MP15xxx {
         };
 
         // This register holds the status of BCH encoder/decoder after processing each sector. When the sequencer is used, this register is automatically cleared.
-        struct FMC_BCHISR : public Register<0x58002254> {
+        struct FMC_BCHISR : public RegisterReadOnly<0x58002254> {
             using DUEF = Field<0, 1>;    // DUEF
             using DERF = Field<1, 1>;    // DERF
             using DEFF = Field<2, 1>;    // DEFF
@@ -10398,7 +10398,7 @@ struct STM32MP15xxx {
         };
 
         // FMC BCH Interrupt Clear Register
-        struct FMC_BCHICR : public Register<0x58002258> {
+        struct FMC_BCHICR : public RegisterWriteOnly<0x58002258> {
             using CDUEF = Field<0, 1>;    // CDUEF
             using CDERF = Field<1, 1>;    // CDERF
             using CDEFF = Field<2, 1>;    // CDEFF
@@ -10407,58 +10407,58 @@ struct STM32MP15xxx {
         };
 
         // These registers contain the BCH parity bits (BCHPB). For the BCH 4-bit, only BCHPB[51:0] are significant and for the BCH 8-bit BCHPB[103:0] are significant.
-        struct FMC_BCHPBR1 : public Register<0x58002260> {
+        struct FMC_BCHPBR1 : public RegisterReadOnly<0x58002260> {
             using BCHPB = Field<0, 32>;    // BCHPB
         };
 
         // FMC BCH Parity Bits Register 2
-        struct FMC_BCHPBR2 : public Register<0x58002264> {
+        struct FMC_BCHPBR2 : public RegisterReadOnly<0x58002264> {
             using BCHPB = Field<0, 32>;    // BCHPB
         };
 
         // FMC BCH Parity Bits Register 3
-        struct FMC_BCHPBR3 : public Register<0x58002268> {
+        struct FMC_BCHPBR3 : public RegisterReadOnly<0x58002268> {
             using BCHPB = Field<0, 32>;    // BCHPB
         };
 
         // FMC BCH Parity Bits Register 4
-        struct FMC_BCHPBR4 : public Register<0x5800226c> {
+        struct FMC_BCHPBR4 : public RegisterReadOnly<0x5800226c> {
             using BCHPB = Field<0, 8>;    // BCHPB
         };
 
         // This register contains some fields already available in other registers but that require to be saved when error correction is performed on several sectors at a time (for example a whole NAND Flash page). This allows a DMA channel to transfer the content of FMC_BCHDSR0..4 to a decoding status buffer. .
-        struct FMC_BCHDSR0 : public Register<0x5800227c> {
+        struct FMC_BCHDSR0 : public RegisterReadOnly<0x5800227c> {
             using DUE = Field<0, 1>;    // DUE
             using DEF = Field<1, 1>;    // DEF
             using DEN = Field<4, 4>;    // DEN
         };
 
         // The maximum error correction capability of the BCH block embedded in the FMC is 8 errors
-        struct FMC_BCHDSR1 : public Register<0x58002280> {
+        struct FMC_BCHDSR1 : public RegisterReadOnly<0x58002280> {
             using EBP1 = Field<0, 13>;    // EBP1
             using EBP2 = Field<16, 13>;    // EBP2
         };
 
         // The maximum error correction capability of the BCH block embedded in the FMC is 8 errors. This register contains the positions of the 3rd and 4th error bits in EBP3 and EPB4 fields, respectively.
-        struct FMC_BCHDSR2 : public Register<0x58002284> {
+        struct FMC_BCHDSR2 : public RegisterReadOnly<0x58002284> {
             using EBP3 = Field<0, 13>;    // EBP3
             using EBP4 = Field<16, 13>;    // EBP4
         };
 
         // The maximum error correction capability of the BCH block embedded in the FMC is 8 errors.
-        struct FMC_BCHDSR3 : public Register<0x58002288> {
+        struct FMC_BCHDSR3 : public RegisterReadOnly<0x58002288> {
             using EBP5 = Field<0, 13>;    // EBP5
             using EBP6 = Field<16, 13>;    // EBP6
         };
 
         // The maximum error correction capability of the BCH block embedded in the FMC is 8 errors. This register contains the positions of the 7th and 8th error bits in EBP7 and EPB8 fields, respectively. .
-        struct FMC_BCHDSR4 : public Register<0x5800228c> {
+        struct FMC_BCHDSR4 : public RegisterReadOnly<0x5800228c> {
             using EBP7 = Field<0, 13>;    // EBP7
             using EBP8 = Field<16, 13>;    // EBP8
         };
 
         // FMC Hardware configuration register 2
-        struct FMC_HWCFGR2 : public Register<0x580023ec> {
+        struct FMC_HWCFGR2 : public RegisterReadOnly<0x580023ec> {
             using RD_LN2DPTH = Field<0, 4>;    // RD_LN2DPTH
             using NOR_BASE = Field<4, 4>;    // NOR_BASE
             using SDRAM_RBASE = Field<8, 4>;    // SDRAM_RBASE
@@ -10468,7 +10468,7 @@ struct STM32MP15xxx {
         };
 
         // FMC Hardware configuration register 1
-        struct FMC_HWCFGR1 : public Register<0x580023f0> {
+        struct FMC_HWCFGR1 : public RegisterReadOnly<0x580023f0> {
             using NAND_SEL = Field<0, 1>;    // NAND_SEL
             using NAND_ECC = Field<4, 1>;    // NAND_ECC
             using SDRAM_SEL = Field<8, 1>;    // SDRAM_SEL
@@ -10480,18 +10480,18 @@ struct STM32MP15xxx {
         };
 
         // FMC Version register
-        struct FMC_VERR : public Register<0x580023f4> {
+        struct FMC_VERR : public RegisterReadOnly<0x580023f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // FMC Identification register
-        struct FMC_IPIDR : public Register<0x580023f8> {
+        struct FMC_IPIDR : public RegisterReadOnly<0x580023f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // FMC Size Identification register
-        struct FMC_SIDR : public Register<0x580023fc> {
+        struct FMC_SIDR : public RegisterReadOnly<0x580023fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -10506,7 +10506,7 @@ struct STM32MP15xxx {
         };
 
         // GICD interrupt controller type register
-        struct GICD_TYPER : public Register<0xa0021004> {
+        struct GICD_TYPER : public RegisterReadOnly<0xa0021004> {
             using ITLINESNUMBER = Field<0, 5>;    // ITLINESNUMBER
             using CPUNUMBER = Field<5, 3>;    // CPUNUMBER
             using SECURITYEXTN = Field<10, 1>;    // SECURITYEXTN
@@ -10514,7 +10514,7 @@ struct STM32MP15xxx {
         };
 
         // GICD implementer identification register
-        struct GICD_IIDR : public Register<0xa0021008> {
+        struct GICD_IIDR : public RegisterReadOnly<0xa0021008> {
             using IMPLEMENTER = Field<0, 12>;    // IMPLEMENTER
             using VARIANT = Field<12, 4>;    // VARIANT
             using REVISION = Field<16, 4>;    // REVISION
@@ -11413,7 +11413,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR0 : public Register<0xa0021800> {
+        struct GICD_ITARGETSR0 : public RegisterReadOnly<0xa0021800> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -11421,7 +11421,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR1 : public Register<0xa0021804> {
+        struct GICD_ITARGETSR1 : public RegisterReadOnly<0xa0021804> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -11429,7 +11429,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR2 : public Register<0xa0021808> {
+        struct GICD_ITARGETSR2 : public RegisterReadOnly<0xa0021808> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -11437,7 +11437,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR3 : public Register<0xa002180c> {
+        struct GICD_ITARGETSR3 : public RegisterReadOnly<0xa002180c> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -11445,7 +11445,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR4 : public Register<0xa0021810> {
+        struct GICD_ITARGETSR4 : public RegisterReadOnly<0xa0021810> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -11453,7 +11453,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR5 : public Register<0xa0021814> {
+        struct GICD_ITARGETSR5 : public RegisterReadOnly<0xa0021814> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -11461,7 +11461,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR6 : public Register<0xa0021818> {
+        struct GICD_ITARGETSR6 : public RegisterReadOnly<0xa0021818> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -11469,7 +11469,7 @@ struct STM32MP15xxx {
         };
 
         // For existing SGIs and PPIs, read of CPU targets field returns the number of the processor performing the read.
-        struct GICD_ITARGETSR7 : public Register<0xa002181c> {
+        struct GICD_ITARGETSR7 : public RegisterReadOnly<0xa002181c> {
             using CPU_TARGETS0 = Field<0, 2>;    // CPU_TARGETS0
             using CPU_TARGETS1 = Field<8, 2>;    // CPU_TARGETS1
             using CPU_TARGETS2 = Field<16, 2>;    // CPU_TARGETS2
@@ -12349,7 +12349,7 @@ struct STM32MP15xxx {
         };
 
         // GICD private peripheral interrupt status register
-        struct GICD_PPISR : public Register<0xa0021d00> {
+        struct GICD_PPISR : public RegisterReadOnly<0xa0021d00> {
             using PPI6 = Field<9, 1>;    // PPI6
             using PPI5 = Field<10, 1>;    // PPI5
             using PPI4 = Field<11, 1>;    // PPI4
@@ -12360,42 +12360,42 @@ struct STM32MP15xxx {
         };
 
         // For interrupts ID = SPI number+32, from SPI [x*32+31] to SPI [x*32]
-        struct GICD_SPISR1 : public Register<0xa0021d08> {
+        struct GICD_SPISR1 : public RegisterReadOnly<0xa0021d08> {
             using SPISR1 = Field<0, 32>;    // SPISR1
         };
 
         // For interrupts ID
-        struct GICD_SPISR2 : public Register<0xa0021d0c> {
+        struct GICD_SPISR2 : public RegisterReadOnly<0xa0021d0c> {
             using SPISR2 = Field<0, 32>;    // SPISR2
         };
 
         // For interrupts ID
-        struct GICD_SPISR3 : public Register<0xa0021d10> {
+        struct GICD_SPISR3 : public RegisterReadOnly<0xa0021d10> {
             using SPISR3 = Field<0, 32>;    // SPISR3
         };
 
         // For interrupts ID
-        struct GICD_SPISR4 : public Register<0xa0021d14> {
+        struct GICD_SPISR4 : public RegisterReadOnly<0xa0021d14> {
             using SPISR4 = Field<0, 32>;    // SPISR4
         };
 
         // For interrupts ID
-        struct GICD_SPISR5 : public Register<0xa0021d18> {
+        struct GICD_SPISR5 : public RegisterReadOnly<0xa0021d18> {
             using SPISR5 = Field<0, 32>;    // SPISR5
         };
 
         // For interrupts ID
-        struct GICD_SPISR6 : public Register<0xa0021d1c> {
+        struct GICD_SPISR6 : public RegisterReadOnly<0xa0021d1c> {
             using SPISR6 = Field<0, 32>;    // SPISR6
         };
 
         // For interrupts ID
-        struct GICD_SPISR7 : public Register<0xa0021d20> {
+        struct GICD_SPISR7 : public RegisterReadOnly<0xa0021d20> {
             using SPISR7 = Field<0, 32>;    // SPISR7
         };
 
         // GICD software generated interrupt register
-        struct GICD_SGIR : public Register<0xa0021f00> {
+        struct GICD_SGIR : public RegisterWriteOnly<0xa0021f00> {
             using SGIINTID = Field<0, 4>;    // SGIINTID
             using NSATT = Field<15, 1>;    // NSATT
             using CPUTARGETLIST = Field<16, 2>;    // CPUTARGETLIST
@@ -12467,62 +12467,62 @@ struct STM32MP15xxx {
         };
 
         // GICD peripheral ID4 register
-        struct GICD_PIDR4 : public Register<0xa0021fd0> {
+        struct GICD_PIDR4 : public RegisterReadOnly<0xa0021fd0> {
             using PIDR4 = Field<0, 32>;    // PIDR4
         };
 
         // GICD peripheral ID5 to ID7 register 5
-        struct GICD_PIDR5 : public Register<0xa0021fd4> {
+        struct GICD_PIDR5 : public RegisterReadOnly<0xa0021fd4> {
             using PIDR5 = Field<0, 32>;    // PIDR5
         };
 
         // GICD peripheral ID5 to ID7 register 6
-        struct GICD_PIDR6 : public Register<0xa0021fd8> {
+        struct GICD_PIDR6 : public RegisterReadOnly<0xa0021fd8> {
             using PIDR6 = Field<0, 32>;    // PIDR6
         };
 
         // GICD peripheral ID5 to ID7 register 7
-        struct GICD_PIDR7 : public Register<0xa0021fdc> {
+        struct GICD_PIDR7 : public RegisterReadOnly<0xa0021fdc> {
             using PIDR7 = Field<0, 32>;    // PIDR7
         };
 
         // GICD peripheral ID0 register
-        struct GICD_PIDR0 : public Register<0xa0021fe0> {
+        struct GICD_PIDR0 : public RegisterReadOnly<0xa0021fe0> {
             using PIDR0 = Field<0, 32>;    // PIDR0
         };
 
         // GICD peripheral ID1 register
-        struct GICD_PIDR1 : public Register<0xa0021fe4> {
+        struct GICD_PIDR1 : public RegisterReadOnly<0xa0021fe4> {
             using PIDR1 = Field<0, 32>;    // PIDR1
         };
 
         // GICD peripheral ID2 register
-        struct GICD_PIDR2 : public Register<0xa0021fe8> {
+        struct GICD_PIDR2 : public RegisterReadOnly<0xa0021fe8> {
             using PIDR2 = Field<0, 32>;    // PIDR2
         };
 
         // GICD peripheral ID3 register
-        struct GICD_PIDR3 : public Register<0xa0021fec> {
+        struct GICD_PIDR3 : public RegisterReadOnly<0xa0021fec> {
             using PIDR3 = Field<0, 32>;    // PIDR3
         };
 
         // GICD component ID0 register
-        struct GICD_CIDR0 : public Register<0xa0021ff0> {
+        struct GICD_CIDR0 : public RegisterReadOnly<0xa0021ff0> {
             using CIDR0 = Field<0, 32>;    // CIDR0
         };
 
         // GICD component ID1 register
-        struct GICD_CIDR1 : public Register<0xa0021ff4> {
+        struct GICD_CIDR1 : public RegisterReadOnly<0xa0021ff4> {
             using CIDR1 = Field<0, 32>;    // CIDR1
         };
 
         // GICD component ID2 register
-        struct GICD_CIDR2 : public Register<0xa0021ff8> {
+        struct GICD_CIDR2 : public RegisterReadOnly<0xa0021ff8> {
             using CIDR2 = Field<0, 32>;    // CIDR2
         };
 
         // GICD component ID3 register
-        struct GICD_CIDR3 : public Register<0xa0021ffc> {
+        struct GICD_CIDR3 : public RegisterReadOnly<0xa0021ffc> {
             using CIDR3 = Field<0, 32>;    // CIDR3
         };
 
@@ -12556,24 +12556,24 @@ struct STM32MP15xxx {
         };
 
         // GICC interrupt acknowledge register
-        struct GICC_IAR : public Register<0xa002200c> {
+        struct GICC_IAR : public RegisterReadOnly<0xa002200c> {
             using INTERRUPT_ID = Field<0, 10>;    // INTERRUPT_ID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // GICC end of interrupt register
-        struct GICC_EOIR : public Register<0xa0022010> {
+        struct GICC_EOIR : public RegisterWriteOnly<0xa0022010> {
             using EOIINTID = Field<0, 10>;    // EOIINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // GICC running priority register
-        struct GICC_RPR : public Register<0xa0022014> {
+        struct GICC_RPR : public RegisterReadOnly<0xa0022014> {
             using PRIORITY = Field<3, 5>;    // PRIORITY
         };
 
         // GICC highest priority pending interrupt register
-        struct GICC_HPPIR : public Register<0xa0022018> {
+        struct GICC_HPPIR : public RegisterReadOnly<0xa0022018> {
             using PENDINTID = Field<0, 10>;    // PENDINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
@@ -12584,19 +12584,19 @@ struct STM32MP15xxx {
         };
 
         // GICC_AIAR is an alias of the non-secure view of GICC_IAR. A secure access to this register is identical to a non-secure access to GICC_IAR.
-        struct GICC_AIAR : public Register<0xa0022020> {
+        struct GICC_AIAR : public RegisterReadOnly<0xa0022020> {
             using INTERRUPT_ID = Field<0, 10>;    // INTERRUPT_ID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // GICC_AEOIR is an alias of the Non-secure GICC_EOIR. A secure access to this register is similar to a non-secure access to GICC_EOIR, except that the GICC_CTLR.EOImodeS bit is used.
-        struct GICC_AEOIR : public Register<0xa0022024> {
+        struct GICC_AEOIR : public RegisterWriteOnly<0xa0022024> {
             using EOIINTID = Field<0, 10>;    // EOIINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // ICC_AHPPIR is an alias of the non-secure GICC_HPPIR. A secure access to this register is equivalent to a non-secure access to GICC_HPPIR.
-        struct GICC_AHPPIR : public Register<0xa0022028> {
+        struct GICC_AHPPIR : public RegisterReadOnly<0xa0022028> {
             using PENDINTID = Field<0, 10>;    // PENDINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
@@ -12612,7 +12612,7 @@ struct STM32MP15xxx {
         };
 
         // GICC interface identification register
-        struct GICC_IIDR : public Register<0xa00220fc> {
+        struct GICC_IIDR : public RegisterReadOnly<0xa00220fc> {
             using IMPLEMENTER = Field<0, 12>;    // IMPLEMENTER
             using REVISION = Field<12, 4>;    // REVISION
             using ARCH = Field<16, 4>;    // ARCH
@@ -12620,7 +12620,7 @@ struct STM32MP15xxx {
         };
 
         // GICC deactivate interrupt register
-        struct GICC_DIR : public Register<0xa0023000> {
+        struct GICC_DIR : public RegisterWriteOnly<0xa0023000> {
             using INTERRUPT_ID = Field<0, 10>;    // INTERRUPT_ID
             using CPUID = Field<10, 1>;    // CPUID
         };
@@ -12643,7 +12643,7 @@ struct STM32MP15xxx {
         };
 
         // GICH VGIC type register
-        struct GICH_VTR : public Register<0xa0024004> {
+        struct GICH_VTR : public RegisterReadOnly<0xa0024004> {
             using LISTREGS = Field<0, 5>;    // LISTREGS
             using PREBITS = Field<26, 3>;    // PREBITS
             using PRIBITS = Field<29, 3>;    // PRIBITS
@@ -12663,7 +12663,7 @@ struct STM32MP15xxx {
         };
 
         // GICH maintenance interrupt status register
-        struct GICH_MISR : public Register<0xa0024010> {
+        struct GICH_MISR : public RegisterReadOnly<0xa0024010> {
             using EOI = Field<0, 1>;    // EOI
             using U = Field<1, 1>;    // U
             using LRENP = Field<2, 1>;    // LRENP
@@ -12675,12 +12675,12 @@ struct STM32MP15xxx {
         };
 
         // GICH end of interrupt status register
-        struct GICH_EISR0 : public Register<0xa0024020> {
+        struct GICH_EISR0 : public RegisterReadOnly<0xa0024020> {
             using EISR0 = Field<0, 32>;    // EISR0
         };
 
         // GICH empty list status register
-        struct GICH_ELSR0 : public Register<0xa0024030> {
+        struct GICH_ELSR0 : public RegisterReadOnly<0xa0024030> {
             using ELSR0 = Field<0, 32>;    // ELSR0
         };
 
@@ -12754,24 +12754,24 @@ struct STM32MP15xxx {
         };
 
         // GICV VM interrupt acknowledge register
-        struct GICV_IAR : public Register<0xa002600c> {
+        struct GICV_IAR : public RegisterReadOnly<0xa002600c> {
             using INTERRUPT_ID = Field<0, 10>;    // INTERRUPT_ID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // GICV VM end of interrupt register
-        struct GICV_EOIR : public Register<0xa0026010> {
+        struct GICV_EOIR : public RegisterWriteOnly<0xa0026010> {
             using EOIINTID = Field<0, 10>;    // EOIINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // GICV VM running priority register
-        struct GICV_RPR : public Register<0xa0026014> {
+        struct GICV_RPR : public RegisterReadOnly<0xa0026014> {
             using PRIORITY = Field<3, 5>;    // PRIORITY
         };
 
         // GICV VM highest priority pending interrupt register
-        struct GICV_HPPIR : public Register<0xa0026018> {
+        struct GICV_HPPIR : public RegisterReadOnly<0xa0026018> {
             using PENDINTID = Field<0, 10>;    // PENDINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
@@ -12782,19 +12782,19 @@ struct STM32MP15xxx {
         };
 
         // GICV VM aliased interrupt register
-        struct GICV_AIAR : public Register<0xa0026020> {
+        struct GICV_AIAR : public RegisterReadOnly<0xa0026020> {
             using INTERRUPT_ID = Field<0, 10>;    // INTERRUPT_ID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // GICV VM aliased end of interrupt register
-        struct GICV_AEOIR : public Register<0xa0026024> {
+        struct GICV_AEOIR : public RegisterWriteOnly<0xa0026024> {
             using EOIINTID = Field<0, 10>;    // EOIINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
 
         // GICV VM aliased highest priority pending interrupt register
-        struct GICV_AHPPIR : public Register<0xa0026028> {
+        struct GICV_AHPPIR : public RegisterReadOnly<0xa0026028> {
             using PENDINTID = Field<0, 10>;    // PENDINTID
             using CPUID = Field<10, 1>;    // CPUID
         };
@@ -12805,12 +12805,12 @@ struct STM32MP15xxx {
         };
 
         // The GICV_IIDR is an alias of GICC_IIDR.
-        struct GICV_IIDR : public Register<0xa00260fc> {
+        struct GICV_IIDR : public RegisterReadOnly<0xa00260fc> {
             using IIDR = Field<0, 32>;    // IIDR
         };
 
         // GICV VM deactivate interrupt register
-        struct GICV_DIR : public Register<0xa0027000> {
+        struct GICV_DIR : public RegisterWriteOnly<0xa0027000> {
             using INTERRUPT_ID = Field<0, 10>;    // INTERRUPT_ID
             using CPUID = Field<10, 1>;    // CPUID
         };
@@ -12905,7 +12905,7 @@ struct STM32MP15xxx {
         };
 
         // TIM1 event generation register
-        struct TIM1_EGR : public Register<0x44000014> {
+        struct TIM1_EGR : public RegisterWriteOnly<0x44000014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -13172,7 +13172,7 @@ struct STM32MP15xxx {
         };
 
         // TIM2 event generation register
-        struct TIM2_EGR : public Register<0x40000014> {
+        struct TIM2_EGR : public RegisterWriteOnly<0x40000014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -13416,7 +13416,7 @@ struct STM32MP15xxx {
         };
 
         // TIM3 event generation register
-        struct TIM3_EGR : public Register<0x40001014> {
+        struct TIM3_EGR : public RegisterWriteOnly<0x40001014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -13660,7 +13660,7 @@ struct STM32MP15xxx {
         };
 
         // TIM4 event generation register
-        struct TIM4_EGR : public Register<0x40002014> {
+        struct TIM4_EGR : public RegisterWriteOnly<0x40002014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -13904,7 +13904,7 @@ struct STM32MP15xxx {
         };
 
         // TIM5 event generation register
-        struct TIM5_EGR : public Register<0x40003014> {
+        struct TIM5_EGR : public RegisterWriteOnly<0x40003014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -14148,7 +14148,7 @@ struct STM32MP15xxx {
         };
 
         // TIM6 event generation register
-        struct TIM6_EGR : public Register<0x40004014> {
+        struct TIM6_EGR : public RegisterWriteOnly<0x40004014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -14392,7 +14392,7 @@ struct STM32MP15xxx {
         };
 
         // TIM7 event generation register
-        struct TIM7_EGR : public Register<0x40005014> {
+        struct TIM7_EGR : public RegisterWriteOnly<0x40005014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -14636,7 +14636,7 @@ struct STM32MP15xxx {
         };
 
         // TIM8 event generation register
-        struct TIM8_EGR : public Register<0x44001014> {
+        struct TIM8_EGR : public RegisterWriteOnly<0x44001014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
             using CC2G = Field<2, 1>;    // CC2G
@@ -14842,7 +14842,7 @@ struct STM32MP15xxx {
         };
 
         // TIM13 event generation register
-        struct TIM13_EGR : public Register<0x40007014> {
+        struct TIM13_EGR : public RegisterWriteOnly<0x40007014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
         };
@@ -14918,7 +14918,7 @@ struct STM32MP15xxx {
         };
 
         // TIM14 event generation register
-        struct TIM14_EGR : public Register<0x40008014> {
+        struct TIM14_EGR : public RegisterWriteOnly<0x40008014> {
             using UG = Field<0, 1>;    // UG
             using CC1G = Field<1, 1>;    // CC1G
         };
@@ -15062,7 +15062,7 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_ICR : public Register<0x4001301c> {
+        struct I2C_ICR : public RegisterWriteOnly<0x4001301c> {
             using ADDRCF = Field<3, 1>;    // ADDRCF
             using NACKCF = Field<4, 1>;    // NACKCF
             using STOPCF = Field<5, 1>;    // STOPCF
@@ -15075,12 +15075,12 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_PECR : public Register<0x40013020> {
+        struct I2C_PECR : public RegisterReadOnly<0x40013020> {
             using PEC = Field<0, 8>;    // PEC
         };
 
         // Access: No wait states
-        struct I2C_RXDR : public Register<0x40013024> {
+        struct I2C_RXDR : public RegisterReadOnly<0x40013024> {
             using RXDATA = Field<0, 8>;    // RXDATA
         };
 
@@ -15090,25 +15090,25 @@ struct STM32MP15xxx {
         };
 
         // I2C hardware configuration register
-        struct I2C_HWCFGR : public Register<0x400133f0> {
+        struct I2C_HWCFGR : public RegisterReadOnly<0x400133f0> {
             using SMBUS = Field<0, 4>;    // SMBUS
             using ASYN = Field<4, 4>;    // ASYN
             using WKP = Field<8, 4>;    // WKP
         };
 
         // I2C version register
-        struct I2C_VERR : public Register<0x400133f4> {
+        struct I2C_VERR : public RegisterReadOnly<0x400133f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // I2C identification register
-        struct I2C_IPIDR : public Register<0x400133f8> {
+        struct I2C_IPIDR : public RegisterReadOnly<0x400133f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // I2C size identification register
-        struct I2C_SIDR : public Register<0x400133fc> {
+        struct I2C_SIDR : public RegisterReadOnly<0x400133fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -15209,7 +15209,7 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_ICR : public Register<0x4001201c> {
+        struct I2C_ICR : public RegisterWriteOnly<0x4001201c> {
             using ADDRCF = Field<3, 1>;    // ADDRCF
             using NACKCF = Field<4, 1>;    // NACKCF
             using STOPCF = Field<5, 1>;    // STOPCF
@@ -15222,12 +15222,12 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_PECR : public Register<0x40012020> {
+        struct I2C_PECR : public RegisterReadOnly<0x40012020> {
             using PEC = Field<0, 8>;    // PEC
         };
 
         // Access: No wait states
-        struct I2C_RXDR : public Register<0x40012024> {
+        struct I2C_RXDR : public RegisterReadOnly<0x40012024> {
             using RXDATA = Field<0, 8>;    // RXDATA
         };
 
@@ -15237,25 +15237,25 @@ struct STM32MP15xxx {
         };
 
         // I2C hardware configuration register
-        struct I2C_HWCFGR : public Register<0x400123f0> {
+        struct I2C_HWCFGR : public RegisterReadOnly<0x400123f0> {
             using SMBUS = Field<0, 4>;    // SMBUS
             using ASYN = Field<4, 4>;    // ASYN
             using WKP = Field<8, 4>;    // WKP
         };
 
         // I2C version register
-        struct I2C_VERR : public Register<0x400123f4> {
+        struct I2C_VERR : public RegisterReadOnly<0x400123f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // I2C identification register
-        struct I2C_IPIDR : public Register<0x400123f8> {
+        struct I2C_IPIDR : public RegisterReadOnly<0x400123f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // I2C size identification register
-        struct I2C_SIDR : public Register<0x400123fc> {
+        struct I2C_SIDR : public RegisterReadOnly<0x400123fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -15356,7 +15356,7 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_ICR : public Register<0x4001401c> {
+        struct I2C_ICR : public RegisterWriteOnly<0x4001401c> {
             using ADDRCF = Field<3, 1>;    // ADDRCF
             using NACKCF = Field<4, 1>;    // NACKCF
             using STOPCF = Field<5, 1>;    // STOPCF
@@ -15369,12 +15369,12 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_PECR : public Register<0x40014020> {
+        struct I2C_PECR : public RegisterReadOnly<0x40014020> {
             using PEC = Field<0, 8>;    // PEC
         };
 
         // Access: No wait states
-        struct I2C_RXDR : public Register<0x40014024> {
+        struct I2C_RXDR : public RegisterReadOnly<0x40014024> {
             using RXDATA = Field<0, 8>;    // RXDATA
         };
 
@@ -15384,25 +15384,25 @@ struct STM32MP15xxx {
         };
 
         // I2C hardware configuration register
-        struct I2C_HWCFGR : public Register<0x400143f0> {
+        struct I2C_HWCFGR : public RegisterReadOnly<0x400143f0> {
             using SMBUS = Field<0, 4>;    // SMBUS
             using ASYN = Field<4, 4>;    // ASYN
             using WKP = Field<8, 4>;    // WKP
         };
 
         // I2C version register
-        struct I2C_VERR : public Register<0x400143f4> {
+        struct I2C_VERR : public RegisterReadOnly<0x400143f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // I2C identification register
-        struct I2C_IPIDR : public Register<0x400143f8> {
+        struct I2C_IPIDR : public RegisterReadOnly<0x400143f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // I2C size identification register
-        struct I2C_SIDR : public Register<0x400143fc> {
+        struct I2C_SIDR : public RegisterReadOnly<0x400143fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -15503,7 +15503,7 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_ICR : public Register<0x5c00201c> {
+        struct I2C_ICR : public RegisterWriteOnly<0x5c00201c> {
             using ADDRCF = Field<3, 1>;    // ADDRCF
             using NACKCF = Field<4, 1>;    // NACKCF
             using STOPCF = Field<5, 1>;    // STOPCF
@@ -15516,12 +15516,12 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_PECR : public Register<0x5c002020> {
+        struct I2C_PECR : public RegisterReadOnly<0x5c002020> {
             using PEC = Field<0, 8>;    // PEC
         };
 
         // Access: No wait states
-        struct I2C_RXDR : public Register<0x5c002024> {
+        struct I2C_RXDR : public RegisterReadOnly<0x5c002024> {
             using RXDATA = Field<0, 8>;    // RXDATA
         };
 
@@ -15531,25 +15531,25 @@ struct STM32MP15xxx {
         };
 
         // I2C hardware configuration register
-        struct I2C_HWCFGR : public Register<0x5c0023f0> {
+        struct I2C_HWCFGR : public RegisterReadOnly<0x5c0023f0> {
             using SMBUS = Field<0, 4>;    // SMBUS
             using ASYN = Field<4, 4>;    // ASYN
             using WKP = Field<8, 4>;    // WKP
         };
 
         // I2C version register
-        struct I2C_VERR : public Register<0x5c0023f4> {
+        struct I2C_VERR : public RegisterReadOnly<0x5c0023f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // I2C identification register
-        struct I2C_IPIDR : public Register<0x5c0023f8> {
+        struct I2C_IPIDR : public RegisterReadOnly<0x5c0023f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // I2C size identification register
-        struct I2C_SIDR : public Register<0x5c0023fc> {
+        struct I2C_SIDR : public RegisterReadOnly<0x5c0023fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -15650,7 +15650,7 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_ICR : public Register<0x4001501c> {
+        struct I2C_ICR : public RegisterWriteOnly<0x4001501c> {
             using ADDRCF = Field<3, 1>;    // ADDRCF
             using NACKCF = Field<4, 1>;    // NACKCF
             using STOPCF = Field<5, 1>;    // STOPCF
@@ -15663,12 +15663,12 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_PECR : public Register<0x40015020> {
+        struct I2C_PECR : public RegisterReadOnly<0x40015020> {
             using PEC = Field<0, 8>;    // PEC
         };
 
         // Access: No wait states
-        struct I2C_RXDR : public Register<0x40015024> {
+        struct I2C_RXDR : public RegisterReadOnly<0x40015024> {
             using RXDATA = Field<0, 8>;    // RXDATA
         };
 
@@ -15678,25 +15678,25 @@ struct STM32MP15xxx {
         };
 
         // I2C hardware configuration register
-        struct I2C_HWCFGR : public Register<0x400153f0> {
+        struct I2C_HWCFGR : public RegisterReadOnly<0x400153f0> {
             using SMBUS = Field<0, 4>;    // SMBUS
             using ASYN = Field<4, 4>;    // ASYN
             using WKP = Field<8, 4>;    // WKP
         };
 
         // I2C version register
-        struct I2C_VERR : public Register<0x400153f4> {
+        struct I2C_VERR : public RegisterReadOnly<0x400153f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // I2C identification register
-        struct I2C_IPIDR : public Register<0x400153f8> {
+        struct I2C_IPIDR : public RegisterReadOnly<0x400153f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // I2C size identification register
-        struct I2C_SIDR : public Register<0x400153fc> {
+        struct I2C_SIDR : public RegisterReadOnly<0x400153fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -15797,7 +15797,7 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_ICR : public Register<0x5c00901c> {
+        struct I2C_ICR : public RegisterWriteOnly<0x5c00901c> {
             using ADDRCF = Field<3, 1>;    // ADDRCF
             using NACKCF = Field<4, 1>;    // NACKCF
             using STOPCF = Field<5, 1>;    // STOPCF
@@ -15810,12 +15810,12 @@ struct STM32MP15xxx {
         };
 
         // Access: No wait states
-        struct I2C_PECR : public Register<0x5c009020> {
+        struct I2C_PECR : public RegisterReadOnly<0x5c009020> {
             using PEC = Field<0, 8>;    // PEC
         };
 
         // Access: No wait states
-        struct I2C_RXDR : public Register<0x5c009024> {
+        struct I2C_RXDR : public RegisterReadOnly<0x5c009024> {
             using RXDATA = Field<0, 8>;    // RXDATA
         };
 
@@ -15825,25 +15825,25 @@ struct STM32MP15xxx {
         };
 
         // I2C hardware configuration register
-        struct I2C_HWCFGR : public Register<0x5c0093f0> {
+        struct I2C_HWCFGR : public RegisterReadOnly<0x5c0093f0> {
             using SMBUS = Field<0, 4>;    // SMBUS
             using ASYN = Field<4, 4>;    // ASYN
             using WKP = Field<8, 4>;    // WKP
         };
 
         // I2C version register
-        struct I2C_VERR : public Register<0x5c0093f4> {
+        struct I2C_VERR : public RegisterReadOnly<0x5c0093f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // I2C identification register
-        struct I2C_IPIDR : public Register<0x5c0093f8> {
+        struct I2C_IPIDR : public RegisterReadOnly<0x5c0093f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // I2C size identification register
-        struct I2C_SIDR : public Register<0x5c0093fc> {
+        struct I2C_SIDR : public RegisterReadOnly<0x5c0093fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -15874,7 +15874,7 @@ struct STM32MP15xxx {
         };
 
         // RTC sub second register
-        struct RTC_SSR : public Register<0x5c004008> {
+        struct RTC_SSR : public RegisterReadOnly<0x5c004008> {
             using SS = Field<0, 16>;    // SS
         };
 
@@ -15944,7 +15944,7 @@ struct STM32MP15xxx {
         };
 
         // RTC write protection register
-        struct RTC_WPR : public Register<0x5c004024> {
+        struct RTC_WPR : public RegisterWriteOnly<0x5c004024> {
             using KEY = Field<0, 8>;    // KEY
         };
 
@@ -15957,13 +15957,13 @@ struct STM32MP15xxx {
         };
 
         // This register is write protected. The write access procedure is described in RTC register write protection on page1830. This register can be protected against non-secure access. Refer to Section50.3.4: RTC secure protection modes.
-        struct RTC_SHIFTR : public Register<0x5c00402c> {
+        struct RTC_SHIFTR : public RegisterWriteOnly<0x5c00402c> {
             using SUBFS = Field<0, 15>;    // SUBFS
             using ADD1S = Field<31, 1>;    // ADD1S
         };
 
         // The content of this register is valid only when TSF is set to 1 in RTC_SR. It is cleared when TSF bit is reset. This register can be protected against non-secure access. Refer to Section50.3.4: RTC secure protection modes.
-        struct RTC_TSTR : public Register<0x5c004030> {
+        struct RTC_TSTR : public RegisterReadOnly<0x5c004030> {
             using SU = Field<0, 4>;    // SU
             using ST = Field<4, 3>;    // ST
             using MNU = Field<8, 4>;    // MNU
@@ -15974,7 +15974,7 @@ struct STM32MP15xxx {
         };
 
         // The content of this register is valid only when TSF is set to 1 in RTC_SR. It is cleared when TSF bit is reset. This register can be protected against non-secure access. Refer to Section50.3.4: RTC secure protection modes.
-        struct RTC_TSDR : public Register<0x5c004034> {
+        struct RTC_TSDR : public RegisterReadOnly<0x5c004034> {
             using DU = Field<0, 4>;    // DU
             using DT = Field<4, 2>;    // DT
             using MU = Field<8, 4>;    // MU
@@ -15983,7 +15983,7 @@ struct STM32MP15xxx {
         };
 
         // The content of this register is valid only when TSF is set to 1 in RTC_SR. It is cleared when the TSF bit is reset. This register can be protected against non-secure access. Refer to Section50.3.4: RTC secure protection modes.
-        struct RTC_TSSSR : public Register<0x5c004038> {
+        struct RTC_TSSSR : public RegisterReadOnly<0x5c004038> {
             using SS = Field<0, 16>;    // SS
         };
 
@@ -16036,7 +16036,7 @@ struct STM32MP15xxx {
         };
 
         // This register can be protected against non-secure access. Refer to Section50.3.4: RTC secure protection modes.
-        struct RTC_SR : public Register<0x5c004050> {
+        struct RTC_SR : public RegisterReadOnly<0x5c004050> {
             using ALRAF = Field<0, 1>;    // ALRAF
             using ALRBF = Field<1, 1>;    // ALRBF
             using WUTF = Field<2, 1>;    // WUTF
@@ -16046,7 +16046,7 @@ struct STM32MP15xxx {
         };
 
         // RTC non-secure masked interrupt status register
-        struct RTC_MISR : public Register<0x5c004054> {
+        struct RTC_MISR : public RegisterReadOnly<0x5c004054> {
             using ALRAMF = Field<0, 1>;    // ALRAMF
             using ALRBMF = Field<1, 1>;    // ALRBMF
             using WUTMF = Field<2, 1>;    // WUTMF
@@ -16056,7 +16056,7 @@ struct STM32MP15xxx {
         };
 
         // This register can be protected against non-secure access. Refer to Section50.3.4: RTC secure protection modes.
-        struct RTC_SMISR : public Register<0x5c004058> {
+        struct RTC_SMISR : public RegisterReadOnly<0x5c004058> {
             using ALRAMF = Field<0, 1>;    // ALRAMF
             using ALRBMF = Field<1, 1>;    // ALRBMF
             using WUTMF = Field<2, 1>;    // WUTMF
@@ -16066,7 +16066,7 @@ struct STM32MP15xxx {
         };
 
         // This register can be protected against non-secure access. Refer to Section50.3.4: RTC secure protection modes.
-        struct RTC_SCR : public Register<0x5c00405c> {
+        struct RTC_SCR : public RegisterWriteOnly<0x5c00405c> {
             using CALRAF = Field<0, 1>;    // CALRAF
             using CALRBF = Field<1, 1>;    // CALRBF
             using CWUTF = Field<2, 1>;    // CWUTF
@@ -16082,7 +16082,7 @@ struct STM32MP15xxx {
         };
 
         // RTC hardware configuration register
-        struct RTC_HWCFGR : public Register<0x5c0043f0> {
+        struct RTC_HWCFGR : public RegisterReadOnly<0x5c0043f0> {
             using ALARMB = Field<0, 4>;    // ALARMB
             using WAKEUP = Field<4, 4>;    // WAKEUP
             using SMOOTH_CALIB = Field<8, 4>;    // SMOOTH_CALIB
@@ -16092,18 +16092,18 @@ struct STM32MP15xxx {
         };
 
         // RTC version register
-        struct RTC_VERR : public Register<0x5c0043f4> {
+        struct RTC_VERR : public RegisterReadOnly<0x5c0043f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // RTC identification register
-        struct RTC_IPIDR : public Register<0x5c0043f8> {
+        struct RTC_IPIDR : public RegisterReadOnly<0x5c0043f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // RTC size identification register
-        struct RTC_SIDR : public Register<0x5c0043fc> {
+        struct RTC_SIDR : public RegisterReadOnly<0x5c0043fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -16160,12 +16160,12 @@ struct STM32MP15xxx {
         };
 
         // This register can be protected against non-secure access. Refer to Section51.3.3: TAMP secure protection modes.
-        struct TAMP_ATSEEDR : public Register<0x5c00a014> {
+        struct TAMP_ATSEEDR : public RegisterWriteOnly<0x5c00a014> {
             using SEED = Field<0, 32>;    // SEED
         };
 
         // This register can be protected against non-secure access. Refer to Section51.3.3: TAMP secure protection modes.
-        struct TAMP_ATOR : public Register<0x5c00a018> {
+        struct TAMP_ATOR : public RegisterReadOnly<0x5c00a018> {
             using PRNG = Field<0, 8>;    // PRNG
             using SEEDF = Field<14, 1>;    // SEEDF
             using INITS = Field<15, 1>;    // INITS
@@ -16192,7 +16192,7 @@ struct STM32MP15xxx {
         };
 
         // This register can be protected against non-secure access. Refer to Section51.3.3: TAMP secure protection modes.
-        struct TAMP_SR : public Register<0x5c00a030> {
+        struct TAMP_SR : public RegisterReadOnly<0x5c00a030> {
             using TAMP1F = Field<0, 1>;    // TAMP1F
             using TAMP2F = Field<1, 1>;    // TAMP2F
             using TAMP3F = Field<2, 1>;    // TAMP3F
@@ -16205,7 +16205,7 @@ struct STM32MP15xxx {
         };
 
         // TAMP non-secure masked interrupt status register
-        struct TAMP_MISR : public Register<0x5c00a034> {
+        struct TAMP_MISR : public RegisterReadOnly<0x5c00a034> {
             using TAMP1MF = Field<0, 1>;    // TAMP1MF
             using TAMP2MF = Field<1, 1>;    // TAMP2MF
             using TAMP3MF = Field<2, 1>;    // TAMP3MF
@@ -16218,7 +16218,7 @@ struct STM32MP15xxx {
         };
 
         // TAMP secure masked interrupt status register
-        struct TAMP_SMISR : public Register<0x5c00a038> {
+        struct TAMP_SMISR : public RegisterReadOnly<0x5c00a038> {
             using TAMP1MF = Field<0, 1>;    // TAMP1MF
             using TAMP2MF = Field<1, 1>;    // TAMP2MF
             using TAMP3MF = Field<2, 1>;    // TAMP3MF
@@ -16231,7 +16231,7 @@ struct STM32MP15xxx {
         };
 
         // TAMP status clear register
-        struct TAMP_SCR : public Register<0x5c00a03c> {
+        struct TAMP_SCR : public RegisterWriteOnly<0x5c00a03c> {
             using CTAMP1F = Field<0, 1>;    // CTAMP1F
             using CTAMP2F = Field<1, 1>;    // CTAMP2F
             using CTAMP3F = Field<2, 1>;    // CTAMP3F
@@ -16244,7 +16244,7 @@ struct STM32MP15xxx {
         };
 
         // TAMP monotonic counter register
-        struct TAMP_COUNTR : public Register<0x5c00a040> {
+        struct TAMP_COUNTR : public RegisterReadOnly<0x5c00a040> {
             using COUNT = Field<0, 32>;    // COUNT
         };
 
@@ -16414,13 +16414,13 @@ struct STM32MP15xxx {
         };
 
         // TAMP hardware configuration register 2
-        struct TAMP_HWCFGR2 : public Register<0x5c00a3ec> {
+        struct TAMP_HWCFGR2 : public RegisterReadOnly<0x5c00a3ec> {
             using OPTIONREG_OUT = Field<0, 8>;    // OPTIONREG_OUT
             using TRUST_ZONE = Field<8, 4>;    // TRUST_ZONE
         };
 
         // TAMP hardware configuration register 1
-        struct TAMP_HWCFGR1 : public Register<0x5c00a3f0> {
+        struct TAMP_HWCFGR1 : public RegisterReadOnly<0x5c00a3f0> {
             using BACKUP_REGS = Field<0, 8>;    // BACKUP_REGS
             using TAMPER = Field<8, 4>;    // TAMPER
             using ACTIVE_TAMPER = Field<12, 4>;    // ACTIVE_TAMPER
@@ -16428,18 +16428,18 @@ struct STM32MP15xxx {
         };
 
         // TAMP version register
-        struct TAMP_VERR : public Register<0x5c00a3f4> {
+        struct TAMP_VERR : public RegisterReadOnly<0x5c00a3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // TAMP identification register
-        struct TAMP_IPIDR : public Register<0x5c00a3f8> {
+        struct TAMP_IPIDR : public RegisterReadOnly<0x5c00a3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // TAMP size identification register
-        struct TAMP_SIDR : public Register<0x5c00a3fc> {
+        struct TAMP_SIDR : public RegisterReadOnly<0x5c00a3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -16454,7 +16454,7 @@ struct STM32MP15xxx {
         };
 
         // STGENC status register
-        struct STGENC_CNTSR : public Register<0x5c008004> {
+        struct STGENC_CNTSR : public RegisterReadOnly<0x5c008004> {
             using EN = Field<0, 1>;    // EN
             using HLTDBG = Field<1, 1>;    // HLTDBG
         };
@@ -16475,68 +16475,68 @@ struct STM32MP15xxx {
         };
 
         // STGENC peripheral ID4 register
-        struct STGENC_PIDR4 : public Register<0x5c008fd0> {
+        struct STGENC_PIDR4 : public RegisterReadOnly<0x5c008fd0> {
             using DES_2 = Field<0, 4>;    // DES_2
             using SIZE = Field<4, 4>;    // SIZE
         };
 
         // STGENC peripheral ID5 register
-        struct STGENC_PIDR5 : public Register<0x5c008fd4> {
+        struct STGENC_PIDR5 : public RegisterReadOnly<0x5c008fd4> {
             using PIDR5 = Field<0, 32>;    // PIDR5
         };
 
         // STGENC peripheral ID6 register
-        struct STGENC_PIDR6 : public Register<0x5c008fd8> {
+        struct STGENC_PIDR6 : public RegisterReadOnly<0x5c008fd8> {
             using PIDR6 = Field<0, 32>;    // PIDR6
         };
 
         // STGENC peripheral ID7 register
-        struct STGENC_PIDR7 : public Register<0x5c008fdc> {
+        struct STGENC_PIDR7 : public RegisterReadOnly<0x5c008fdc> {
             using PIDR7 = Field<0, 32>;    // PIDR7
         };
 
         // STGENC peripheral ID0 register
-        struct STGENC_PIDR0 : public Register<0x5c008fe0> {
+        struct STGENC_PIDR0 : public RegisterReadOnly<0x5c008fe0> {
             using PART_0 = Field<0, 8>;    // PART_0
         };
 
         // STGENC peripheral ID1 register
-        struct STGENC_PIDR1 : public Register<0x5c008fe4> {
+        struct STGENC_PIDR1 : public RegisterReadOnly<0x5c008fe4> {
             using PART_1 = Field<0, 4>;    // PART_1
             using DES_0 = Field<4, 4>;    // DES_0
         };
 
         // STGENC peripheral ID2 register
-        struct STGENC_PIDR2 : public Register<0x5c008fe8> {
+        struct STGENC_PIDR2 : public RegisterReadOnly<0x5c008fe8> {
             using DES_1 = Field<0, 3>;    // DES_1
             using JEDEC = Field<3, 1>;    // JEDEC
             using REVISION = Field<4, 4>;    // REVISION
         };
 
         // STGENC peripheral ID3 register
-        struct STGENC_PIDR3 : public Register<0x5c008fec> {
+        struct STGENC_PIDR3 : public RegisterReadOnly<0x5c008fec> {
             using CMOD = Field<0, 4>;    // CMOD
             using REVAND = Field<4, 4>;    // REVAND
         };
 
         // STGENC component ID0 register
-        struct STGENC_CIDR0 : public Register<0x5c008ff0> {
+        struct STGENC_CIDR0 : public RegisterReadOnly<0x5c008ff0> {
             using PRMBL_0 = Field<0, 8>;    // PRMBL_0
         };
 
         // STGENC component ID1 register
-        struct STGENC_CIDR1 : public Register<0x5c008ff4> {
+        struct STGENC_CIDR1 : public RegisterReadOnly<0x5c008ff4> {
             using PRMBL_1 = Field<0, 4>;    // PRMBL_1
             using CLASS = Field<4, 4>;    // CLASS
         };
 
         // STGENC component ID2 register
-        struct STGENC_CIDR2 : public Register<0x5c008ff8> {
+        struct STGENC_CIDR2 : public RegisterReadOnly<0x5c008ff8> {
             using PRMBL_2 = Field<0, 8>;    // PRMBL_2
         };
 
         // STGENC component ID3 register
-        struct STGENC_CIDR3 : public Register<0x5c008ffc> {
+        struct STGENC_CIDR3 : public RegisterReadOnly<0x5c008ffc> {
             using PRMBL_3 = Field<0, 8>;    // PRMBL_3
         };
 
@@ -16545,78 +16545,78 @@ struct STM32MP15xxx {
     // STGENR
     struct STGENR {
         // the control interface must clear the STGEN_CNTCR.EN bit before writing to this register.
-        struct STGENR_CNTCVL : public Register<0x5a005000> {
+        struct STGENR_CNTCVL : public RegisterReadOnly<0x5a005000> {
             using CNTCVL_L_32 = Field<0, 32>;    // CNTCVL_L_32
         };
 
         // the control interface must clear the STGEN_CNTCR.EN bit before writing to this register.
-        struct STGENR_CNTCVU : public Register<0x5a005004> {
+        struct STGENR_CNTCVU : public RegisterReadOnly<0x5a005004> {
             using CNTCVU_U_32 = Field<0, 32>;    // CNTCVU_U_32
         };
 
         // STGENR peripheral ID4 register
-        struct STGENR_PIDR4 : public Register<0x5a005fd0> {
+        struct STGENR_PIDR4 : public RegisterReadOnly<0x5a005fd0> {
             using DES_2 = Field<0, 4>;    // DES_2
             using SIZE = Field<4, 4>;    // SIZE
         };
 
         // STGENR peripheral ID5 register
-        struct STGENR_PIDR5 : public Register<0x5a005fd4> {
+        struct STGENR_PIDR5 : public RegisterReadOnly<0x5a005fd4> {
             using PIDR5 = Field<0, 32>;    // PIDR5
         };
 
         // STGENR peripheral ID6 register
-        struct STGENR_PIDR6 : public Register<0x5a005fd8> {
+        struct STGENR_PIDR6 : public RegisterReadOnly<0x5a005fd8> {
             using PIDR6 = Field<0, 32>;    // PIDR6
         };
 
         // STGENR peripheral ID7 register
-        struct STGENR_PIDR7 : public Register<0x5a005fdc> {
+        struct STGENR_PIDR7 : public RegisterReadOnly<0x5a005fdc> {
             using PIDR7 = Field<0, 32>;    // PIDR7
         };
 
         // STGENR peripheral ID0 register
-        struct STGENR_PIDR0 : public Register<0x5a005fe0> {
+        struct STGENR_PIDR0 : public RegisterReadOnly<0x5a005fe0> {
             using PART_0 = Field<0, 8>;    // PART_0
         };
 
         // STGENR peripheral ID1 register
-        struct STGENR_PIDR1 : public Register<0x5a005fe4> {
+        struct STGENR_PIDR1 : public RegisterReadOnly<0x5a005fe4> {
             using PART_1 = Field<0, 4>;    // PART_1
             using DES_0 = Field<4, 4>;    // DES_0
         };
 
         // STGENR peripheral ID2 register
-        struct STGENR_PIDR2 : public Register<0x5a005fe8> {
+        struct STGENR_PIDR2 : public RegisterReadOnly<0x5a005fe8> {
             using DES_1 = Field<0, 3>;    // DES_1
             using JEDEC = Field<3, 1>;    // JEDEC
             using REVISION = Field<4, 4>;    // REVISION
         };
 
         // STGENR peripheral ID3 register
-        struct STGENR_PIDR3 : public Register<0x5a005fec> {
+        struct STGENR_PIDR3 : public RegisterReadOnly<0x5a005fec> {
             using CMOD = Field<0, 4>;    // CMOD
             using REVAND = Field<4, 4>;    // REVAND
         };
 
         // STGENR component ID0 register
-        struct STGENR_CIDR0 : public Register<0x5a005ff0> {
+        struct STGENR_CIDR0 : public RegisterReadOnly<0x5a005ff0> {
             using PRMBL_0 = Field<0, 8>;    // PRMBL_0
         };
 
         // STGENR component ID1 register
-        struct STGENR_CIDR1 : public Register<0x5a005ff4> {
+        struct STGENR_CIDR1 : public RegisterReadOnly<0x5a005ff4> {
             using PRMBL_1 = Field<0, 4>;    // PRMBL_1
             using CLASS = Field<4, 4>;    // CLASS
         };
 
         // STGENR component ID2 register
-        struct STGENR_CIDR2 : public Register<0x5a005ff8> {
+        struct STGENR_CIDR2 : public RegisterReadOnly<0x5a005ff8> {
             using PRMBL_2 = Field<0, 8>;    // PRMBL_2
         };
 
         // STGENR component ID3 register
-        struct STGENR_CIDR3 : public Register<0x5a005ffc> {
+        struct STGENR_CIDR3 : public RegisterReadOnly<0x5a005ffc> {
             using PRMBL_3 = Field<0, 8>;    // PRMBL_3
         };
 
@@ -16865,7 +16865,7 @@ struct STM32MP15xxx {
         };
 
         // ETZPC IP HW configuration register
-        struct ETZPC_HWCFGR : public Register<0x5c0073f0> {
+        struct ETZPC_HWCFGR : public RegisterReadOnly<0x5c0073f0> {
             using NUM_TZMA = Field<0, 8>;    // NUM_TZMA
             using NUM_PER_SEC = Field<8, 8>;    // NUM_PER_SEC
             using NUM_AHB_SEC = Field<16, 8>;    // NUM_AHB_SEC
@@ -16873,18 +16873,18 @@ struct STM32MP15xxx {
         };
 
         // ETZPC IP version register
-        struct ETZPC_VERR : public Register<0x5c0073f4> {
+        struct ETZPC_VERR : public RegisterReadOnly<0x5c0073f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // ETZPC IP version register
-        struct ETZPC_IDR : public Register<0x5c0073f8> {
+        struct ETZPC_IDR : public RegisterReadOnly<0x5c0073f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // ETZPC IP version register
-        struct ETZPC_SIDR : public Register<0x5c0073fc> {
+        struct ETZPC_SIDR : public RegisterReadOnly<0x5c0073fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -16893,7 +16893,7 @@ struct STM32MP15xxx {
     // IWDG1
     struct IWDG1 {
         // Key register
-        struct IWDG_KR : public Register<0x5c003000> {
+        struct IWDG_KR : public RegisterWriteOnly<0x5c003000> {
             using KEY = Field<0, 16>;    // KEY
         };
 
@@ -16908,7 +16908,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct IWDG_SR : public Register<0x5c00300c> {
+        struct IWDG_SR : public RegisterReadOnly<0x5c00300c> {
             using PVU = Field<0, 1>;    // PVU
             using RVU = Field<1, 1>;    // RVU
             using WVU = Field<2, 1>;    // WVU
@@ -16920,24 +16920,24 @@ struct STM32MP15xxx {
         };
 
         // IWDG hardware configuration register
-        struct IWDG_HWCFGR : public Register<0x5c0033f0> {
+        struct IWDG_HWCFGR : public RegisterReadOnly<0x5c0033f0> {
             using WINDOW = Field<0, 4>;    // WINDOW
             using PR_DEFAULT = Field<4, 4>;    // PR_DEFAULT
         };
 
         // IWDG version register
-        struct IWDG_VERR : public Register<0x5c0033f4> {
+        struct IWDG_VERR : public RegisterReadOnly<0x5c0033f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // IWDG identification register
-        struct IWDG_IDR : public Register<0x5c0033f8> {
+        struct IWDG_IDR : public RegisterReadOnly<0x5c0033f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // IWDG size identification register
-        struct IWDG_SIDR : public Register<0x5c0033fc> {
+        struct IWDG_SIDR : public RegisterReadOnly<0x5c0033fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -16946,7 +16946,7 @@ struct STM32MP15xxx {
     // IWDG1
     struct IWDG2 {
         // Key register
-        struct IWDG_KR : public Register<0x5a002000> {
+        struct IWDG_KR : public RegisterWriteOnly<0x5a002000> {
             using KEY = Field<0, 16>;    // KEY
         };
 
@@ -16961,7 +16961,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct IWDG_SR : public Register<0x5a00200c> {
+        struct IWDG_SR : public RegisterReadOnly<0x5a00200c> {
             using PVU = Field<0, 1>;    // PVU
             using RVU = Field<1, 1>;    // RVU
             using WVU = Field<2, 1>;    // WVU
@@ -16973,24 +16973,24 @@ struct STM32MP15xxx {
         };
 
         // IWDG hardware configuration register
-        struct IWDG_HWCFGR : public Register<0x5a0023f0> {
+        struct IWDG_HWCFGR : public RegisterReadOnly<0x5a0023f0> {
             using WINDOW = Field<0, 4>;    // WINDOW
             using PR_DEFAULT = Field<4, 4>;    // PR_DEFAULT
         };
 
         // IWDG version register
-        struct IWDG_VERR : public Register<0x5a0023f4> {
+        struct IWDG_VERR : public RegisterReadOnly<0x5a0023f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // IWDG identification register
-        struct IWDG_IDR : public Register<0x5a0023f8> {
+        struct IWDG_IDR : public RegisterReadOnly<0x5a0023f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // IWDG size identification register
-        struct IWDG_SIDR : public Register<0x5a0023fc> {
+        struct IWDG_SIDR : public RegisterReadOnly<0x5a0023fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -17028,7 +17028,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S status register
-        struct SPI2S_SR : public Register<0x44004014> {
+        struct SPI2S_SR : public RegisterReadOnly<0x44004014> {
             using RXP = Field<0, 1>;    // RXP
             using TXP = Field<1, 1>;    // TXP
             using DXP = Field<2, 1>;    // DXP
@@ -17048,7 +17048,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S interrupt/status flags clear register
-        struct SPI2S_IFCR : public Register<0x44004018> {
+        struct SPI2S_IFCR : public RegisterWriteOnly<0x44004018> {
             using EOTC = Field<3, 1>;    // EOTC
             using TXTFC = Field<4, 1>;    // TXTFC
             using UDRC = Field<5, 1>;    // UDRC
@@ -17061,12 +17061,12 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S transmit data register
-        struct SPI2S_TXDR : public Register<0x44004020> {
+        struct SPI2S_TXDR : public RegisterWriteOnly<0x44004020> {
             using TXDR = Field<0, 32>;    // TXDR
         };
 
         // SPI/I2S receive data register
-        struct SPI2S_RXDR : public Register<0x44004030> {
+        struct SPI2S_RXDR : public RegisterReadOnly<0x44004030> {
             using RXDR = Field<0, 32>;    // RXDR
         };
 
@@ -17113,12 +17113,12 @@ struct STM32MP15xxx {
         };
 
         // SPI transmitter CRC register
-        struct SPI_TXCRC : public Register<0x44004044> {
+        struct SPI_TXCRC : public RegisterReadOnly<0x44004044> {
             using TXCRC = Field<0, 32>;    // TXCRC
         };
 
         // SPI receiver CRC register
-        struct SPI_RXCRC : public Register<0x44004048> {
+        struct SPI_RXCRC : public RegisterReadOnly<0x44004048> {
             using RXCRC = Field<0, 32>;    // RXCRC
         };
 
@@ -17145,7 +17145,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S hardware configuration register
-        struct SPI_I2S_HWCFGR : public Register<0x440043f0> {
+        struct SPI_I2S_HWCFGR : public RegisterReadOnly<0x440043f0> {
             using TXFCFG = Field<0, 4>;    // TXFCFG
             using RXFCFG = Field<4, 4>;    // RXFCFG
             using CRCCFG = Field<8, 4>;    // CRCCFG
@@ -17154,18 +17154,18 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S version register
-        struct SPI_VERR : public Register<0x440043f4> {
+        struct SPI_VERR : public RegisterReadOnly<0x440043f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SPI/I2S identification register
-        struct SPI_IPIDR : public Register<0x440043f8> {
+        struct SPI_IPIDR : public RegisterReadOnly<0x440043f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SPI/I2S size identification register
-        struct SPI_SIDR : public Register<0x440043fc> {
+        struct SPI_SIDR : public RegisterReadOnly<0x440043fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -17203,7 +17203,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S status register
-        struct SPI2S_SR : public Register<0x4000b014> {
+        struct SPI2S_SR : public RegisterReadOnly<0x4000b014> {
             using RXP = Field<0, 1>;    // RXP
             using TXP = Field<1, 1>;    // TXP
             using DXP = Field<2, 1>;    // DXP
@@ -17223,7 +17223,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S interrupt/status flags clear register
-        struct SPI2S_IFCR : public Register<0x4000b018> {
+        struct SPI2S_IFCR : public RegisterWriteOnly<0x4000b018> {
             using EOTC = Field<3, 1>;    // EOTC
             using TXTFC = Field<4, 1>;    // TXTFC
             using UDRC = Field<5, 1>;    // UDRC
@@ -17236,12 +17236,12 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S transmit data register
-        struct SPI2S_TXDR : public Register<0x4000b020> {
+        struct SPI2S_TXDR : public RegisterWriteOnly<0x4000b020> {
             using TXDR = Field<0, 32>;    // TXDR
         };
 
         // SPI/I2S receive data register
-        struct SPI2S_RXDR : public Register<0x4000b030> {
+        struct SPI2S_RXDR : public RegisterReadOnly<0x4000b030> {
             using RXDR = Field<0, 32>;    // RXDR
         };
 
@@ -17288,12 +17288,12 @@ struct STM32MP15xxx {
         };
 
         // SPI transmitter CRC register
-        struct SPI_TXCRC : public Register<0x4000b044> {
+        struct SPI_TXCRC : public RegisterReadOnly<0x4000b044> {
             using TXCRC = Field<0, 32>;    // TXCRC
         };
 
         // SPI receiver CRC register
-        struct SPI_RXCRC : public Register<0x4000b048> {
+        struct SPI_RXCRC : public RegisterReadOnly<0x4000b048> {
             using RXCRC = Field<0, 32>;    // RXCRC
         };
 
@@ -17320,7 +17320,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S hardware configuration register
-        struct SPI_I2S_HWCFGR : public Register<0x4000b3f0> {
+        struct SPI_I2S_HWCFGR : public RegisterReadOnly<0x4000b3f0> {
             using TXFCFG = Field<0, 4>;    // TXFCFG
             using RXFCFG = Field<4, 4>;    // RXFCFG
             using CRCCFG = Field<8, 4>;    // CRCCFG
@@ -17329,18 +17329,18 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S version register
-        struct SPI_VERR : public Register<0x4000b3f4> {
+        struct SPI_VERR : public RegisterReadOnly<0x4000b3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SPI/I2S identification register
-        struct SPI_IPIDR : public Register<0x4000b3f8> {
+        struct SPI_IPIDR : public RegisterReadOnly<0x4000b3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SPI/I2S size identification register
-        struct SPI_SIDR : public Register<0x4000b3fc> {
+        struct SPI_SIDR : public RegisterReadOnly<0x4000b3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -17378,7 +17378,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S status register
-        struct SPI2S_SR : public Register<0x4000c014> {
+        struct SPI2S_SR : public RegisterReadOnly<0x4000c014> {
             using RXP = Field<0, 1>;    // RXP
             using TXP = Field<1, 1>;    // TXP
             using DXP = Field<2, 1>;    // DXP
@@ -17398,7 +17398,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S interrupt/status flags clear register
-        struct SPI2S_IFCR : public Register<0x4000c018> {
+        struct SPI2S_IFCR : public RegisterWriteOnly<0x4000c018> {
             using EOTC = Field<3, 1>;    // EOTC
             using TXTFC = Field<4, 1>;    // TXTFC
             using UDRC = Field<5, 1>;    // UDRC
@@ -17411,12 +17411,12 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S transmit data register
-        struct SPI2S_TXDR : public Register<0x4000c020> {
+        struct SPI2S_TXDR : public RegisterWriteOnly<0x4000c020> {
             using TXDR = Field<0, 32>;    // TXDR
         };
 
         // SPI/I2S receive data register
-        struct SPI2S_RXDR : public Register<0x4000c030> {
+        struct SPI2S_RXDR : public RegisterReadOnly<0x4000c030> {
             using RXDR = Field<0, 32>;    // RXDR
         };
 
@@ -17463,12 +17463,12 @@ struct STM32MP15xxx {
         };
 
         // SPI transmitter CRC register
-        struct SPI_TXCRC : public Register<0x4000c044> {
+        struct SPI_TXCRC : public RegisterReadOnly<0x4000c044> {
             using TXCRC = Field<0, 32>;    // TXCRC
         };
 
         // SPI receiver CRC register
-        struct SPI_RXCRC : public Register<0x4000c048> {
+        struct SPI_RXCRC : public RegisterReadOnly<0x4000c048> {
             using RXCRC = Field<0, 32>;    // RXCRC
         };
 
@@ -17495,7 +17495,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S hardware configuration register
-        struct SPI_I2S_HWCFGR : public Register<0x4000c3f0> {
+        struct SPI_I2S_HWCFGR : public RegisterReadOnly<0x4000c3f0> {
             using TXFCFG = Field<0, 4>;    // TXFCFG
             using RXFCFG = Field<4, 4>;    // RXFCFG
             using CRCCFG = Field<8, 4>;    // CRCCFG
@@ -17504,18 +17504,18 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S version register
-        struct SPI_VERR : public Register<0x4000c3f4> {
+        struct SPI_VERR : public RegisterReadOnly<0x4000c3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SPI/I2S identification register
-        struct SPI_IPIDR : public Register<0x4000c3f8> {
+        struct SPI_IPIDR : public RegisterReadOnly<0x4000c3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SPI/I2S size identification register
-        struct SPI_SIDR : public Register<0x4000c3fc> {
+        struct SPI_SIDR : public RegisterReadOnly<0x4000c3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -17553,7 +17553,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S status register
-        struct SPI2S_SR : public Register<0x44005014> {
+        struct SPI2S_SR : public RegisterReadOnly<0x44005014> {
             using RXP = Field<0, 1>;    // RXP
             using TXP = Field<1, 1>;    // TXP
             using DXP = Field<2, 1>;    // DXP
@@ -17573,7 +17573,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S interrupt/status flags clear register
-        struct SPI2S_IFCR : public Register<0x44005018> {
+        struct SPI2S_IFCR : public RegisterWriteOnly<0x44005018> {
             using EOTC = Field<3, 1>;    // EOTC
             using TXTFC = Field<4, 1>;    // TXTFC
             using UDRC = Field<5, 1>;    // UDRC
@@ -17586,12 +17586,12 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S transmit data register
-        struct SPI2S_TXDR : public Register<0x44005020> {
+        struct SPI2S_TXDR : public RegisterWriteOnly<0x44005020> {
             using TXDR = Field<0, 32>;    // TXDR
         };
 
         // SPI/I2S receive data register
-        struct SPI2S_RXDR : public Register<0x44005030> {
+        struct SPI2S_RXDR : public RegisterReadOnly<0x44005030> {
             using RXDR = Field<0, 32>;    // RXDR
         };
 
@@ -17638,12 +17638,12 @@ struct STM32MP15xxx {
         };
 
         // SPI transmitter CRC register
-        struct SPI_TXCRC : public Register<0x44005044> {
+        struct SPI_TXCRC : public RegisterReadOnly<0x44005044> {
             using TXCRC = Field<0, 32>;    // TXCRC
         };
 
         // SPI receiver CRC register
-        struct SPI_RXCRC : public Register<0x44005048> {
+        struct SPI_RXCRC : public RegisterReadOnly<0x44005048> {
             using RXCRC = Field<0, 32>;    // RXCRC
         };
 
@@ -17670,7 +17670,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S hardware configuration register
-        struct SPI_I2S_HWCFGR : public Register<0x440053f0> {
+        struct SPI_I2S_HWCFGR : public RegisterReadOnly<0x440053f0> {
             using TXFCFG = Field<0, 4>;    // TXFCFG
             using RXFCFG = Field<4, 4>;    // RXFCFG
             using CRCCFG = Field<8, 4>;    // CRCCFG
@@ -17679,18 +17679,18 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S version register
-        struct SPI_VERR : public Register<0x440053f4> {
+        struct SPI_VERR : public RegisterReadOnly<0x440053f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SPI/I2S identification register
-        struct SPI_IPIDR : public Register<0x440053f8> {
+        struct SPI_IPIDR : public RegisterReadOnly<0x440053f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SPI/I2S size identification register
-        struct SPI_SIDR : public Register<0x440053fc> {
+        struct SPI_SIDR : public RegisterReadOnly<0x440053fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -17728,7 +17728,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S status register
-        struct SPI2S_SR : public Register<0x44009014> {
+        struct SPI2S_SR : public RegisterReadOnly<0x44009014> {
             using RXP = Field<0, 1>;    // RXP
             using TXP = Field<1, 1>;    // TXP
             using DXP = Field<2, 1>;    // DXP
@@ -17748,7 +17748,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S interrupt/status flags clear register
-        struct SPI2S_IFCR : public Register<0x44009018> {
+        struct SPI2S_IFCR : public RegisterWriteOnly<0x44009018> {
             using EOTC = Field<3, 1>;    // EOTC
             using TXTFC = Field<4, 1>;    // TXTFC
             using UDRC = Field<5, 1>;    // UDRC
@@ -17761,12 +17761,12 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S transmit data register
-        struct SPI2S_TXDR : public Register<0x44009020> {
+        struct SPI2S_TXDR : public RegisterWriteOnly<0x44009020> {
             using TXDR = Field<0, 32>;    // TXDR
         };
 
         // SPI/I2S receive data register
-        struct SPI2S_RXDR : public Register<0x44009030> {
+        struct SPI2S_RXDR : public RegisterReadOnly<0x44009030> {
             using RXDR = Field<0, 32>;    // RXDR
         };
 
@@ -17813,12 +17813,12 @@ struct STM32MP15xxx {
         };
 
         // SPI transmitter CRC register
-        struct SPI_TXCRC : public Register<0x44009044> {
+        struct SPI_TXCRC : public RegisterReadOnly<0x44009044> {
             using TXCRC = Field<0, 32>;    // TXCRC
         };
 
         // SPI receiver CRC register
-        struct SPI_RXCRC : public Register<0x44009048> {
+        struct SPI_RXCRC : public RegisterReadOnly<0x44009048> {
             using RXCRC = Field<0, 32>;    // RXCRC
         };
 
@@ -17845,7 +17845,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S hardware configuration register
-        struct SPI_I2S_HWCFGR : public Register<0x440093f0> {
+        struct SPI_I2S_HWCFGR : public RegisterReadOnly<0x440093f0> {
             using TXFCFG = Field<0, 4>;    // TXFCFG
             using RXFCFG = Field<4, 4>;    // RXFCFG
             using CRCCFG = Field<8, 4>;    // CRCCFG
@@ -17854,18 +17854,18 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S version register
-        struct SPI_VERR : public Register<0x440093f4> {
+        struct SPI_VERR : public RegisterReadOnly<0x440093f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SPI/I2S identification register
-        struct SPI_IPIDR : public Register<0x440093f8> {
+        struct SPI_IPIDR : public RegisterReadOnly<0x440093f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SPI/I2S size identification register
-        struct SPI_SIDR : public Register<0x440093fc> {
+        struct SPI_SIDR : public RegisterReadOnly<0x440093fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -17903,7 +17903,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S status register
-        struct SPI2S_SR : public Register<0x5c001014> {
+        struct SPI2S_SR : public RegisterReadOnly<0x5c001014> {
             using RXP = Field<0, 1>;    // RXP
             using TXP = Field<1, 1>;    // TXP
             using DXP = Field<2, 1>;    // DXP
@@ -17923,7 +17923,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S interrupt/status flags clear register
-        struct SPI2S_IFCR : public Register<0x5c001018> {
+        struct SPI2S_IFCR : public RegisterWriteOnly<0x5c001018> {
             using EOTC = Field<3, 1>;    // EOTC
             using TXTFC = Field<4, 1>;    // TXTFC
             using UDRC = Field<5, 1>;    // UDRC
@@ -17936,12 +17936,12 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S transmit data register
-        struct SPI2S_TXDR : public Register<0x5c001020> {
+        struct SPI2S_TXDR : public RegisterWriteOnly<0x5c001020> {
             using TXDR = Field<0, 32>;    // TXDR
         };
 
         // SPI/I2S receive data register
-        struct SPI2S_RXDR : public Register<0x5c001030> {
+        struct SPI2S_RXDR : public RegisterReadOnly<0x5c001030> {
             using RXDR = Field<0, 32>;    // RXDR
         };
 
@@ -17988,12 +17988,12 @@ struct STM32MP15xxx {
         };
 
         // SPI transmitter CRC register
-        struct SPI_TXCRC : public Register<0x5c001044> {
+        struct SPI_TXCRC : public RegisterReadOnly<0x5c001044> {
             using TXCRC = Field<0, 32>;    // TXCRC
         };
 
         // SPI receiver CRC register
-        struct SPI_RXCRC : public Register<0x5c001048> {
+        struct SPI_RXCRC : public RegisterReadOnly<0x5c001048> {
             using RXCRC = Field<0, 32>;    // RXCRC
         };
 
@@ -18020,7 +18020,7 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S hardware configuration register
-        struct SPI_I2S_HWCFGR : public Register<0x5c0013f0> {
+        struct SPI_I2S_HWCFGR : public RegisterReadOnly<0x5c0013f0> {
             using TXFCFG = Field<0, 4>;    // TXFCFG
             using RXFCFG = Field<4, 4>;    // RXFCFG
             using CRCCFG = Field<8, 4>;    // CRCCFG
@@ -18029,18 +18029,18 @@ struct STM32MP15xxx {
         };
 
         // SPI/I2S version register
-        struct SPI_VERR : public Register<0x5c0013f4> {
+        struct SPI_VERR : public RegisterReadOnly<0x5c0013f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SPI/I2S identification register
-        struct SPI_IPIDR : public Register<0x5c0013f8> {
+        struct SPI_IPIDR : public RegisterReadOnly<0x5c0013f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SPI/I2S size identification register
-        struct SPI_SIDR : public Register<0x5c0013fc> {
+        struct SPI_SIDR : public RegisterReadOnly<0x5c0013fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -18148,7 +18148,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x5c000018> {
+        struct RQR : public RegisterWriteOnly<0x5c000018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -18157,7 +18157,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x5c00001c> {
+        struct ISR : public RegisterReadOnly<0x5c00001c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -18189,7 +18189,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x5c000020> {
+        struct ICR : public RegisterWriteOnly<0x5c000020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -18208,7 +18208,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x5c000024> {
+        struct RDR : public RegisterReadOnly<0x5c000024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -18223,13 +18223,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x5c0003ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x5c0003ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x5c0003f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x5c0003f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -18241,18 +18241,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x5c0003f4> {
+        struct VERR : public RegisterReadOnly<0x5c0003f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x5c0003f8> {
+        struct IPIDR : public RegisterReadOnly<0x5c0003f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x5c0003fc> {
+        struct SIDR : public RegisterReadOnly<0x5c0003fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -18360,7 +18360,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x4000e018> {
+        struct RQR : public RegisterWriteOnly<0x4000e018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -18369,7 +18369,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4000e01c> {
+        struct ISR : public RegisterReadOnly<0x4000e01c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -18401,7 +18401,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x4000e020> {
+        struct ICR : public RegisterWriteOnly<0x4000e020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -18420,7 +18420,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x4000e024> {
+        struct RDR : public RegisterReadOnly<0x4000e024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -18435,13 +18435,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x4000e3ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x4000e3ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x4000e3f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x4000e3f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -18453,18 +18453,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x4000e3f4> {
+        struct VERR : public RegisterReadOnly<0x4000e3f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x4000e3f8> {
+        struct IPIDR : public RegisterReadOnly<0x4000e3f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x4000e3fc> {
+        struct SIDR : public RegisterReadOnly<0x4000e3fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -18572,7 +18572,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x4000f018> {
+        struct RQR : public RegisterWriteOnly<0x4000f018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -18581,7 +18581,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4000f01c> {
+        struct ISR : public RegisterReadOnly<0x4000f01c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -18613,7 +18613,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x4000f020> {
+        struct ICR : public RegisterWriteOnly<0x4000f020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -18632,7 +18632,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x4000f024> {
+        struct RDR : public RegisterReadOnly<0x4000f024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -18647,13 +18647,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x4000f3ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x4000f3ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x4000f3f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x4000f3f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -18665,18 +18665,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x4000f3f4> {
+        struct VERR : public RegisterReadOnly<0x4000f3f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x4000f3f8> {
+        struct IPIDR : public RegisterReadOnly<0x4000f3f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x4000f3fc> {
+        struct SIDR : public RegisterReadOnly<0x4000f3fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -18784,7 +18784,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x40010018> {
+        struct RQR : public RegisterWriteOnly<0x40010018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -18793,7 +18793,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4001001c> {
+        struct ISR : public RegisterReadOnly<0x4001001c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -18825,7 +18825,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x40010020> {
+        struct ICR : public RegisterWriteOnly<0x40010020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -18844,7 +18844,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40010024> {
+        struct RDR : public RegisterReadOnly<0x40010024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -18859,13 +18859,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x400103ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x400103ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x400103f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x400103f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -18877,18 +18877,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x400103f4> {
+        struct VERR : public RegisterReadOnly<0x400103f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x400103f8> {
+        struct IPIDR : public RegisterReadOnly<0x400103f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x400103fc> {
+        struct SIDR : public RegisterReadOnly<0x400103fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -18996,7 +18996,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x40011018> {
+        struct RQR : public RegisterWriteOnly<0x40011018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -19005,7 +19005,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4001101c> {
+        struct ISR : public RegisterReadOnly<0x4001101c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -19037,7 +19037,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x40011020> {
+        struct ICR : public RegisterWriteOnly<0x40011020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -19056,7 +19056,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40011024> {
+        struct RDR : public RegisterReadOnly<0x40011024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -19071,13 +19071,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x400113ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x400113ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x400113f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x400113f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -19089,18 +19089,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x400113f4> {
+        struct VERR : public RegisterReadOnly<0x400113f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x400113f8> {
+        struct IPIDR : public RegisterReadOnly<0x400113f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x400113fc> {
+        struct SIDR : public RegisterReadOnly<0x400113fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -19208,7 +19208,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x44003018> {
+        struct RQR : public RegisterWriteOnly<0x44003018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -19217,7 +19217,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4400301c> {
+        struct ISR : public RegisterReadOnly<0x4400301c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -19249,7 +19249,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x44003020> {
+        struct ICR : public RegisterWriteOnly<0x44003020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -19268,7 +19268,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x44003024> {
+        struct RDR : public RegisterReadOnly<0x44003024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -19283,13 +19283,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x440033ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x440033ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x440033f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x440033f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -19301,18 +19301,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x440033f4> {
+        struct VERR : public RegisterReadOnly<0x440033f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x440033f8> {
+        struct IPIDR : public RegisterReadOnly<0x440033f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x440033fc> {
+        struct SIDR : public RegisterReadOnly<0x440033fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -19420,7 +19420,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x40018018> {
+        struct RQR : public RegisterWriteOnly<0x40018018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -19429,7 +19429,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4001801c> {
+        struct ISR : public RegisterReadOnly<0x4001801c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -19461,7 +19461,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x40018020> {
+        struct ICR : public RegisterWriteOnly<0x40018020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -19480,7 +19480,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40018024> {
+        struct RDR : public RegisterReadOnly<0x40018024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -19495,13 +19495,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x400183ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x400183ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x400183f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x400183f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -19513,18 +19513,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x400183f4> {
+        struct VERR : public RegisterReadOnly<0x400183f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x400183f8> {
+        struct IPIDR : public RegisterReadOnly<0x400183f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x400183fc> {
+        struct SIDR : public RegisterReadOnly<0x400183fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -19632,7 +19632,7 @@ struct STM32MP15xxx {
         };
 
         // Request register
-        struct RQR : public Register<0x40019018> {
+        struct RQR : public RegisterWriteOnly<0x40019018> {
             using TXFRQ = Field<4, 1>;    // Transmit data flush request
             using RXFRQ = Field<3, 1>;    // Receive data flush request
             using MMRQ = Field<2, 1>;    // Mute mode request
@@ -19641,7 +19641,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4001901c> {
+        struct ISR : public RegisterReadOnly<0x4001901c> {
             using TXFT = Field<27, 1>;    // TXFIFO threshold flag
             using RXFT = Field<26, 1>;    // RXFIFO threshold flag
             using TCBGT = Field<25, 1>;    // Transmission complete before guard time flag
@@ -19673,7 +19673,7 @@ struct STM32MP15xxx {
         };
 
         // Interrupt flag clear register
-        struct ICR : public Register<0x40019020> {
+        struct ICR : public RegisterWriteOnly<0x40019020> {
             using WUCF = Field<20, 1>;    // Wakeup from Stop mode clear flag
             using CMCF = Field<17, 1>;    // Character match clear flag
             using UDRCF = Field<13, 1>;    // SPI slave underrun clear flag
@@ -19692,7 +19692,7 @@ struct STM32MP15xxx {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40019024> {
+        struct RDR : public RegisterReadOnly<0x40019024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -19707,13 +19707,13 @@ struct STM32MP15xxx {
         };
 
         // USART Hardware Configuration register 2
-        struct HWCFGR2 : public Register<0x400193ec> {
+        struct HWCFGR2 : public RegisterReadOnly<0x400193ec> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
         };
 
         // USART Hardware Configuration register 1
-        struct HWCFGR1 : public Register<0x400193f0> {
+        struct HWCFGR1 : public RegisterReadOnly<0x400193f0> {
             using CFG1 = Field<0, 4>;    // CFG1
             using CFG2 = Field<4, 4>;    // CFG2
             using CFG3 = Field<8, 4>;    // CFG3
@@ -19725,18 +19725,18 @@ struct STM32MP15xxx {
         };
 
         // EXTI IP Version register
-        struct VERR : public Register<0x400193f4> {
+        struct VERR : public RegisterReadOnly<0x400193f4> {
             using MINREV = Field<0, 4>;    // Minor Revision number
             using MAJREV = Field<4, 4>;    // Major Revision number
         };
 
         // EXTI Identification register
-        struct IPIDR : public Register<0x400193f8> {
+        struct IPIDR : public RegisterReadOnly<0x400193f8> {
             using IPID = Field<0, 32>;    // IP Identification
         };
 
         // EXTI Size ID register
-        struct SIDR : public Register<0x400193fc> {
+        struct SIDR : public RegisterReadOnly<0x400193fc> {
             using SID = Field<0, 32>;    // Size Identification
         };
 
@@ -19745,14 +19745,14 @@ struct STM32MP15xxx {
     // LTDC
     struct LTDC {
         // LTDC identification register
-        struct LTDC_IDR : public Register<0x5a001000> {
+        struct LTDC_IDR : public RegisterReadOnly<0x5a001000> {
             using REV = Field<0, 8>;    // REV
             using MINVER = Field<8, 8>;    // MINVER
             using MAJVER = Field<16, 8>;    // MAJVER
         };
 
         // LDTC layer count register
-        struct LTDC_LCR : public Register<0x5a001004> {
+        struct LTDC_LCR : public RegisterReadOnly<0x5a001004> {
             using LNBR = Field<0, 8>;    // LNBR
         };
 
@@ -19794,7 +19794,7 @@ struct STM32MP15xxx {
         };
 
         // LTDC global configuration 1 register
-        struct LTDC_GC1R : public Register<0x5a00101c> {
+        struct LTDC_GC1R : public RegisterReadOnly<0x5a00101c> {
             using WBCH = Field<0, 4>;    // WBCH
             using WGCH = Field<4, 4>;    // WGCH
             using WRCH = Field<8, 4>;    // WRCH
@@ -19814,7 +19814,7 @@ struct STM32MP15xxx {
         };
 
         // LTDC global configuration 2 register
-        struct LTDC_GC2R : public Register<0x5a001020> {
+        struct LTDC_GC2R : public RegisterReadOnly<0x5a001020> {
             using EDCEN = Field<0, 1>;    // EDCEN
             using STSAEN = Field<1, 1>;    // STSAEN
             using DVAEN = Field<2, 1>;    // DVAEN
@@ -19845,7 +19845,7 @@ struct STM32MP15xxx {
         };
 
         // This register returns the interrupt status flag.
-        struct LTDC_ISR : public Register<0x5a001038> {
+        struct LTDC_ISR : public RegisterReadOnly<0x5a001038> {
             using LIF = Field<0, 1>;    // LIF
             using FUIF = Field<1, 1>;    // FUIF
             using TERRIF = Field<2, 1>;    // TERRIF
@@ -19853,7 +19853,7 @@ struct STM32MP15xxx {
         };
 
         // LTDC Interrupt Clear Register
-        struct LTDC_ICR : public Register<0x5a00103c> {
+        struct LTDC_ICR : public RegisterWriteOnly<0x5a00103c> {
             using CLIF = Field<0, 1>;    // CLIF
             using CFUIF = Field<1, 1>;    // CFUIF
             using CTERRIF = Field<2, 1>;    // CTERRIF
@@ -19866,13 +19866,13 @@ struct STM32MP15xxx {
         };
 
         // LTDC current position status register
-        struct LTDC_CPSR : public Register<0x5a001044> {
+        struct LTDC_CPSR : public RegisterReadOnly<0x5a001044> {
             using CYPOS = Field<0, 16>;    // CYPOS
             using CXPOS = Field<16, 16>;    // CXPOS
         };
 
         // This register returns the status of the current display phase which is controlled by the HSYNC, VSYNC, and horizontal/vertical DE signals. Example: if the current display phase is the vertical synchronization, the VSYNCS bit is set (active high). If the current display phase is the horizontal synchronization, the HSYNCS bit is active high.
-        struct LTDC_CDSR : public Register<0x5a001048> {
+        struct LTDC_CDSR : public RegisterReadOnly<0x5a001048> {
             using VDES = Field<0, 1>;    // VDES
             using HDES = Field<1, 1>;    // HDES
             using VSYNCS = Field<2, 1>;    // VSYNCS
@@ -19946,7 +19946,7 @@ struct STM32MP15xxx {
         };
 
         // This register defines the CLUT address and the RGB value.
-        struct LTDC_L1CLUTWR : public Register<0x5a0010c4> {
+        struct LTDC_L1CLUTWR : public RegisterWriteOnly<0x5a0010c4> {
             using BLUE = Field<0, 8>;    // BLUE
             using GREEN = Field<8, 8>;    // GREEN
             using RED = Field<16, 8>;    // RED
@@ -20020,7 +20020,7 @@ struct STM32MP15xxx {
         };
 
         // This register defines the CLUT address and the RGB value.
-        struct LTDC_L2CLUTWR : public Register<0x5a001144> {
+        struct LTDC_L2CLUTWR : public RegisterWriteOnly<0x5a001144> {
             using BLUE = Field<0, 8>;    // BLUE
             using GREEN = Field<8, 8>;    // GREEN
             using RED = Field<16, 8>;    // RED
@@ -20095,7 +20095,7 @@ struct STM32MP15xxx {
         };
 
         // This register defines the version of this IP.
-        struct USBPHYC_VERR : public Register<0x5a006ffc> {
+        struct USBPHYC_VERR : public RegisterReadOnly<0x5a006ffc> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
@@ -20209,27 +20209,27 @@ struct STM32MP15xxx {
         };
 
         // The SDMMC_RESPCMDR register contains the command index field of the last command response received. If the command response transmission does not contain the command index field (long or OCR response), the RESPCMD field is unknown, although it must contain 111111b (the value of the reserved field from the response).
-        struct SDMMC_RESPCMDR : public Register<0x58005010> {
+        struct SDMMC_RESPCMDR : public RegisterReadOnly<0x58005010> {
             using RESPCMD = Field<0, 6>;    // RESPCMD
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP1R : public Register<0x58005014> {
+        struct SDMMC_RESP1R : public RegisterReadOnly<0x58005014> {
             using CARDSTATUS1 = Field<0, 32>;    // CARDSTATUS1
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP2R : public Register<0x58005018> {
+        struct SDMMC_RESP2R : public RegisterReadOnly<0x58005018> {
             using CARDSTATUS2 = Field<0, 32>;    // CARDSTATUS2
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP3R : public Register<0x5800501c> {
+        struct SDMMC_RESP3R : public RegisterReadOnly<0x5800501c> {
             using CARDSTATUS3 = Field<0, 32>;    // CARDSTATUS3
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP4R : public Register<0x58005020> {
+        struct SDMMC_RESP4R : public RegisterReadOnly<0x58005020> {
             using CARDSTATUS4 = Field<0, 32>;    // CARDSTATUS4
         };
 
@@ -20258,12 +20258,12 @@ struct STM32MP15xxx {
         };
 
         // The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set.
-        struct SDMMC_DCNTR : public Register<0x58005030> {
+        struct SDMMC_DCNTR : public RegisterReadOnly<0x58005030> {
             using DATACOUNT = Field<0, 25>;    // DATACOUNT
         };
 
         // The SDMMC_STAR register is a read-only register. It contains two types of flag: Static flags (bits [28, 21, 11:0]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR) Dynamic flags (bits [20:12]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)
-        struct SDMMC_STAR : public Register<0x58005034> {
+        struct SDMMC_STAR : public RegisterReadOnly<0x58005034> {
             using CCRCFAIL = Field<0, 1>;    // CCRCFAIL
             using DCRCFAIL = Field<1, 1>;    // DCRCFAIL
             using CTIMEOUT = Field<2, 1>;    // CTIMEOUT
@@ -20461,18 +20461,18 @@ struct STM32MP15xxx {
         };
 
         // SDMMC version register
-        struct SDMMC_VERR : public Register<0x580053f4> {
+        struct SDMMC_VERR : public RegisterReadOnly<0x580053f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SDMMC identification register
-        struct SDMMC_IPIDR : public Register<0x580053f8> {
+        struct SDMMC_IPIDR : public RegisterReadOnly<0x580053f8> {
             using IP_ID = Field<0, 32>;    // IP_ID
         };
 
         // SDMMC size ID register
-        struct SDMMC_SIDR : public Register<0x580053fc> {
+        struct SDMMC_SIDR : public RegisterReadOnly<0x580053fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -20521,27 +20521,27 @@ struct STM32MP15xxx {
         };
 
         // The SDMMC_RESPCMDR register contains the command index field of the last command response received. If the command response transmission does not contain the command index field (long or OCR response), the RESPCMD field is unknown, although it must contain 111111b (the value of the reserved field from the response).
-        struct SDMMC_RESPCMDR : public Register<0x58007010> {
+        struct SDMMC_RESPCMDR : public RegisterReadOnly<0x58007010> {
             using RESPCMD = Field<0, 6>;    // RESPCMD
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP1R : public Register<0x58007014> {
+        struct SDMMC_RESP1R : public RegisterReadOnly<0x58007014> {
             using CARDSTATUS1 = Field<0, 32>;    // CARDSTATUS1
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP2R : public Register<0x58007018> {
+        struct SDMMC_RESP2R : public RegisterReadOnly<0x58007018> {
             using CARDSTATUS2 = Field<0, 32>;    // CARDSTATUS2
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP3R : public Register<0x5800701c> {
+        struct SDMMC_RESP3R : public RegisterReadOnly<0x5800701c> {
             using CARDSTATUS3 = Field<0, 32>;    // CARDSTATUS3
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP4R : public Register<0x58007020> {
+        struct SDMMC_RESP4R : public RegisterReadOnly<0x58007020> {
             using CARDSTATUS4 = Field<0, 32>;    // CARDSTATUS4
         };
 
@@ -20570,12 +20570,12 @@ struct STM32MP15xxx {
         };
 
         // The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set.
-        struct SDMMC_DCNTR : public Register<0x58007030> {
+        struct SDMMC_DCNTR : public RegisterReadOnly<0x58007030> {
             using DATACOUNT = Field<0, 25>;    // DATACOUNT
         };
 
         // The SDMMC_STAR register is a read-only register. It contains two types of flag: Static flags (bits [28, 21, 11:0]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR) Dynamic flags (bits [20:12]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)
-        struct SDMMC_STAR : public Register<0x58007034> {
+        struct SDMMC_STAR : public RegisterReadOnly<0x58007034> {
             using CCRCFAIL = Field<0, 1>;    // CCRCFAIL
             using DCRCFAIL = Field<1, 1>;    // DCRCFAIL
             using CTIMEOUT = Field<2, 1>;    // CTIMEOUT
@@ -20773,18 +20773,18 @@ struct STM32MP15xxx {
         };
 
         // SDMMC version register
-        struct SDMMC_VERR : public Register<0x580073f4> {
+        struct SDMMC_VERR : public RegisterReadOnly<0x580073f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SDMMC identification register
-        struct SDMMC_IPIDR : public Register<0x580073f8> {
+        struct SDMMC_IPIDR : public RegisterReadOnly<0x580073f8> {
             using IP_ID = Field<0, 32>;    // IP_ID
         };
 
         // SDMMC size ID register
-        struct SDMMC_SIDR : public Register<0x580073fc> {
+        struct SDMMC_SIDR : public RegisterReadOnly<0x580073fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -20833,27 +20833,27 @@ struct STM32MP15xxx {
         };
 
         // The SDMMC_RESPCMDR register contains the command index field of the last command response received. If the command response transmission does not contain the command index field (long or OCR response), the RESPCMD field is unknown, although it must contain 111111b (the value of the reserved field from the response).
-        struct SDMMC_RESPCMDR : public Register<0x48004010> {
+        struct SDMMC_RESPCMDR : public RegisterReadOnly<0x48004010> {
             using RESPCMD = Field<0, 6>;    // RESPCMD
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP1R : public Register<0x48004014> {
+        struct SDMMC_RESP1R : public RegisterReadOnly<0x48004014> {
             using CARDSTATUS1 = Field<0, 32>;    // CARDSTATUS1
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP2R : public Register<0x48004018> {
+        struct SDMMC_RESP2R : public RegisterReadOnly<0x48004018> {
             using CARDSTATUS2 = Field<0, 32>;    // CARDSTATUS2
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP3R : public Register<0x4800401c> {
+        struct SDMMC_RESP3R : public RegisterReadOnly<0x4800401c> {
             using CARDSTATUS3 = Field<0, 32>;    // CARDSTATUS3
         };
 
         // The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.
-        struct SDMMC_RESP4R : public Register<0x48004020> {
+        struct SDMMC_RESP4R : public RegisterReadOnly<0x48004020> {
             using CARDSTATUS4 = Field<0, 32>;    // CARDSTATUS4
         };
 
@@ -20882,12 +20882,12 @@ struct STM32MP15xxx {
         };
 
         // The SDMMC_DCNTR register loads the value from the data length register (see SDMMC_DLENR) when the DPSM moves from the Idle state to the Wait_R or Wait_S state. As data is transferred, the counter decrements the value until it reaches 0. The DPSM then moves to the Idle state and when there has been no error, the data status end flag (DATAEND) is set.
-        struct SDMMC_DCNTR : public Register<0x48004030> {
+        struct SDMMC_DCNTR : public RegisterReadOnly<0x48004030> {
             using DATACOUNT = Field<0, 25>;    // DATACOUNT
         };
 
         // The SDMMC_STAR register is a read-only register. It contains two types of flag: Static flags (bits [28, 21, 11:0]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR) Dynamic flags (bits [20:12]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)
-        struct SDMMC_STAR : public Register<0x48004034> {
+        struct SDMMC_STAR : public RegisterReadOnly<0x48004034> {
             using CCRCFAIL = Field<0, 1>;    // CCRCFAIL
             using DCRCFAIL = Field<1, 1>;    // DCRCFAIL
             using CTIMEOUT = Field<2, 1>;    // CTIMEOUT
@@ -21085,18 +21085,18 @@ struct STM32MP15xxx {
         };
 
         // SDMMC version register
-        struct SDMMC_VERR : public Register<0x480043f4> {
+        struct SDMMC_VERR : public RegisterReadOnly<0x480043f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SDMMC identification register
-        struct SDMMC_IPIDR : public Register<0x480043f8> {
+        struct SDMMC_IPIDR : public RegisterReadOnly<0x480043f8> {
             using IP_ID = Field<0, 32>;    // IP_ID
         };
 
         // SDMMC size ID register
-        struct SDMMC_SIDR : public Register<0x480043fc> {
+        struct SDMMC_SIDR : public RegisterReadOnly<0x480043fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -21132,7 +21132,7 @@ struct STM32MP15xxx {
         };
 
         // QUADSPI status register
-        struct QUADSPI_SR : public Register<0x58003008> {
+        struct QUADSPI_SR : public RegisterReadOnly<0x58003008> {
             using TEF = Field<0, 1>;    // TEF
             using TCF = Field<1, 1>;    // TCF
             using FTF = Field<2, 1>;    // FTF
@@ -21143,7 +21143,7 @@ struct STM32MP15xxx {
         };
 
         // QUADSPI flag clear register
-        struct QUADSPI_FCR : public Register<0x5800300c> {
+        struct QUADSPI_FCR : public RegisterWriteOnly<0x5800300c> {
             using CTEF = Field<0, 1>;    // CTEF
             using CTCF = Field<1, 1>;    // CTCF
             using CSMF = Field<3, 1>;    // CSMF
@@ -21208,7 +21208,7 @@ struct STM32MP15xxx {
         };
 
         // QUADSPI HW configuration register
-        struct QUADSPI_HWCFGR : public Register<0x580033f0> {
+        struct QUADSPI_HWCFGR : public RegisterReadOnly<0x580033f0> {
             using FIFOSIZE = Field<0, 4>;    // FIFOSIZE
             using FIFOPTR = Field<4, 4>;    // FIFOPTR
             using PRESCVAL = Field<8, 4>;    // PRESCVAL
@@ -21216,18 +21216,18 @@ struct STM32MP15xxx {
         };
 
         // QUADSPI version register
-        struct QUADSPI_VERR : public Register<0x580033f4> {
+        struct QUADSPI_VERR : public RegisterReadOnly<0x580033f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // QUADSPI identification register
-        struct QUADSPI_IPIDR : public Register<0x580033f8> {
+        struct QUADSPI_IPIDR : public RegisterReadOnly<0x580033f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // QUADSPI size identification register
-        struct QUADSPI_SIDR : public Register<0x580033fc> {
+        struct QUADSPI_SIDR : public RegisterReadOnly<0x580033fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -21236,7 +21236,7 @@ struct STM32MP15xxx {
     // MDMA1
     struct MDMA {
         // MDMA global interrupt/status register
-        struct MDMA_GISR0 : public Register<0x58000000> {
+        struct MDMA_GISR0 : public RegisterReadOnly<0x58000000> {
             using GIF0 = Field<0, 1>;    // GIF0
             using GIF1 = Field<1, 1>;    // GIF1
             using GIF2 = Field<2, 1>;    // GIF2
@@ -21272,7 +21272,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA secure global interrupt/status register
-        struct MDMA_SGISR0 : public Register<0x58000008> {
+        struct MDMA_SGISR0 : public RegisterReadOnly<0x58000008> {
             using GIF0 = Field<0, 1>;    // GIF0
             using GIF1 = Field<1, 1>;    // GIF1
             using GIF2 = Field<2, 1>;    // GIF2
@@ -21308,7 +21308,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 0 interrupt/status register
-        struct MDMA_C0ISR : public Register<0x58000040> {
+        struct MDMA_C0ISR : public RegisterReadOnly<0x58000040> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -21318,7 +21318,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 0 interrupt flag clear register
-        struct MDMA_C0IFCR : public Register<0x58000044> {
+        struct MDMA_C0IFCR : public RegisterWriteOnly<0x58000044> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -21327,7 +21327,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 0 error status register
-        struct MDMA_C0ESR : public Register<0x58000048> {
+        struct MDMA_C0ESR : public RegisterReadOnly<0x58000048> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -21416,7 +21416,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 1 interrupt/status register
-        struct MDMA_C1ISR : public Register<0x58000080> {
+        struct MDMA_C1ISR : public RegisterReadOnly<0x58000080> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -21426,7 +21426,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 1 interrupt flag clear register
-        struct MDMA_C1IFCR : public Register<0x58000084> {
+        struct MDMA_C1IFCR : public RegisterWriteOnly<0x58000084> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -21435,7 +21435,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 1 error status register
-        struct MDMA_C1ESR : public Register<0x58000088> {
+        struct MDMA_C1ESR : public RegisterReadOnly<0x58000088> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -21524,7 +21524,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 2 interrupt/status register
-        struct MDMA_C2ISR : public Register<0x580000c0> {
+        struct MDMA_C2ISR : public RegisterReadOnly<0x580000c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -21534,7 +21534,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 2 interrupt flag clear register
-        struct MDMA_C2IFCR : public Register<0x580000c4> {
+        struct MDMA_C2IFCR : public RegisterWriteOnly<0x580000c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -21543,7 +21543,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 2 error status register
-        struct MDMA_C2ESR : public Register<0x580000c8> {
+        struct MDMA_C2ESR : public RegisterReadOnly<0x580000c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -21632,7 +21632,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 3 interrupt/status register
-        struct MDMA_C3ISR : public Register<0x58000100> {
+        struct MDMA_C3ISR : public RegisterReadOnly<0x58000100> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -21642,7 +21642,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 3 interrupt flag clear register
-        struct MDMA_C3IFCR : public Register<0x58000104> {
+        struct MDMA_C3IFCR : public RegisterWriteOnly<0x58000104> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -21651,7 +21651,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 3 error status register
-        struct MDMA_C3ESR : public Register<0x58000108> {
+        struct MDMA_C3ESR : public RegisterReadOnly<0x58000108> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -21740,7 +21740,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 4 interrupt/status register
-        struct MDMA_C4ISR : public Register<0x58000140> {
+        struct MDMA_C4ISR : public RegisterReadOnly<0x58000140> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -21750,7 +21750,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 4 interrupt flag clear register
-        struct MDMA_C4IFCR : public Register<0x58000144> {
+        struct MDMA_C4IFCR : public RegisterWriteOnly<0x58000144> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -21759,7 +21759,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 4 error status register
-        struct MDMA_C4ESR : public Register<0x58000148> {
+        struct MDMA_C4ESR : public RegisterReadOnly<0x58000148> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -21848,7 +21848,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 5 interrupt/status register
-        struct MDMA_C5ISR : public Register<0x58000180> {
+        struct MDMA_C5ISR : public RegisterReadOnly<0x58000180> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -21858,7 +21858,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 5 interrupt flag clear register
-        struct MDMA_C5IFCR : public Register<0x58000184> {
+        struct MDMA_C5IFCR : public RegisterWriteOnly<0x58000184> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -21867,7 +21867,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 5 error status register
-        struct MDMA_C5ESR : public Register<0x58000188> {
+        struct MDMA_C5ESR : public RegisterReadOnly<0x58000188> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -21956,7 +21956,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 6 interrupt/status register
-        struct MDMA_C6ISR : public Register<0x580001c0> {
+        struct MDMA_C6ISR : public RegisterReadOnly<0x580001c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -21966,7 +21966,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 6 interrupt flag clear register
-        struct MDMA_C6IFCR : public Register<0x580001c4> {
+        struct MDMA_C6IFCR : public RegisterWriteOnly<0x580001c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -21975,7 +21975,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 6 error status register
-        struct MDMA_C6ESR : public Register<0x580001c8> {
+        struct MDMA_C6ESR : public RegisterReadOnly<0x580001c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22064,7 +22064,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 7 interrupt/status register
-        struct MDMA_C7ISR : public Register<0x58000200> {
+        struct MDMA_C7ISR : public RegisterReadOnly<0x58000200> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22074,7 +22074,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 7 interrupt flag clear register
-        struct MDMA_C7IFCR : public Register<0x58000204> {
+        struct MDMA_C7IFCR : public RegisterWriteOnly<0x58000204> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22083,7 +22083,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 7 error status register
-        struct MDMA_C7ESR : public Register<0x58000208> {
+        struct MDMA_C7ESR : public RegisterReadOnly<0x58000208> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22172,7 +22172,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 8 interrupt/status register
-        struct MDMA_C8ISR : public Register<0x58000240> {
+        struct MDMA_C8ISR : public RegisterReadOnly<0x58000240> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22182,7 +22182,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 8 interrupt flag clear register
-        struct MDMA_C8IFCR : public Register<0x58000244> {
+        struct MDMA_C8IFCR : public RegisterWriteOnly<0x58000244> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22191,7 +22191,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 8 error status register
-        struct MDMA_C8ESR : public Register<0x58000248> {
+        struct MDMA_C8ESR : public RegisterReadOnly<0x58000248> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22280,7 +22280,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 9 interrupt/status register
-        struct MDMA_C9ISR : public Register<0x58000280> {
+        struct MDMA_C9ISR : public RegisterReadOnly<0x58000280> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22290,7 +22290,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 9 interrupt flag clear register
-        struct MDMA_C9IFCR : public Register<0x58000284> {
+        struct MDMA_C9IFCR : public RegisterWriteOnly<0x58000284> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22299,7 +22299,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 9 error status register
-        struct MDMA_C9ESR : public Register<0x58000288> {
+        struct MDMA_C9ESR : public RegisterReadOnly<0x58000288> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22388,7 +22388,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 10 interrupt/status register
-        struct MDMA_C10ISR : public Register<0x580002c0> {
+        struct MDMA_C10ISR : public RegisterReadOnly<0x580002c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22398,7 +22398,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 10 interrupt flag clear register
-        struct MDMA_C10IFCR : public Register<0x580002c4> {
+        struct MDMA_C10IFCR : public RegisterWriteOnly<0x580002c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22407,7 +22407,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 10 error status register
-        struct MDMA_C10ESR : public Register<0x580002c8> {
+        struct MDMA_C10ESR : public RegisterReadOnly<0x580002c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22496,7 +22496,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 11 interrupt/status register
-        struct MDMA_C11ISR : public Register<0x58000300> {
+        struct MDMA_C11ISR : public RegisterReadOnly<0x58000300> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22506,7 +22506,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 11 interrupt flag clear register
-        struct MDMA_C11IFCR : public Register<0x58000304> {
+        struct MDMA_C11IFCR : public RegisterWriteOnly<0x58000304> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22515,7 +22515,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 11 error status register
-        struct MDMA_C11ESR : public Register<0x58000308> {
+        struct MDMA_C11ESR : public RegisterReadOnly<0x58000308> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22604,7 +22604,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 12 interrupt/status register
-        struct MDMA_C12ISR : public Register<0x58000340> {
+        struct MDMA_C12ISR : public RegisterReadOnly<0x58000340> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22614,7 +22614,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 12 interrupt flag clear register
-        struct MDMA_C12IFCR : public Register<0x58000344> {
+        struct MDMA_C12IFCR : public RegisterWriteOnly<0x58000344> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22623,7 +22623,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 12 error status register
-        struct MDMA_C12ESR : public Register<0x58000348> {
+        struct MDMA_C12ESR : public RegisterReadOnly<0x58000348> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22712,7 +22712,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 13 interrupt/status register
-        struct MDMA_C13ISR : public Register<0x58000380> {
+        struct MDMA_C13ISR : public RegisterReadOnly<0x58000380> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22722,7 +22722,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 13 interrupt flag clear register
-        struct MDMA_C13IFCR : public Register<0x58000384> {
+        struct MDMA_C13IFCR : public RegisterWriteOnly<0x58000384> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22731,7 +22731,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 13 error status register
-        struct MDMA_C13ESR : public Register<0x58000388> {
+        struct MDMA_C13ESR : public RegisterReadOnly<0x58000388> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22820,7 +22820,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 14 interrupt/status register
-        struct MDMA_C14ISR : public Register<0x580003c0> {
+        struct MDMA_C14ISR : public RegisterReadOnly<0x580003c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22830,7 +22830,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 14 interrupt flag clear register
-        struct MDMA_C14IFCR : public Register<0x580003c4> {
+        struct MDMA_C14IFCR : public RegisterWriteOnly<0x580003c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22839,7 +22839,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 14 error status register
-        struct MDMA_C14ESR : public Register<0x580003c8> {
+        struct MDMA_C14ESR : public RegisterReadOnly<0x580003c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -22928,7 +22928,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 15 interrupt/status register
-        struct MDMA_C15ISR : public Register<0x58000400> {
+        struct MDMA_C15ISR : public RegisterReadOnly<0x58000400> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -22938,7 +22938,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 15 interrupt flag clear register
-        struct MDMA_C15IFCR : public Register<0x58000404> {
+        struct MDMA_C15IFCR : public RegisterWriteOnly<0x58000404> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -22947,7 +22947,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 15 error status register
-        struct MDMA_C15ESR : public Register<0x58000408> {
+        struct MDMA_C15ESR : public RegisterReadOnly<0x58000408> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23036,7 +23036,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 16 interrupt/status register
-        struct MDMA_C16ISR : public Register<0x58000440> {
+        struct MDMA_C16ISR : public RegisterReadOnly<0x58000440> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23046,7 +23046,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 16 interrupt flag clear register
-        struct MDMA_C16IFCR : public Register<0x58000444> {
+        struct MDMA_C16IFCR : public RegisterWriteOnly<0x58000444> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23055,7 +23055,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 16 error status register
-        struct MDMA_C16ESR : public Register<0x58000448> {
+        struct MDMA_C16ESR : public RegisterReadOnly<0x58000448> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23144,7 +23144,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 17 interrupt/status register
-        struct MDMA_C17ISR : public Register<0x58000480> {
+        struct MDMA_C17ISR : public RegisterReadOnly<0x58000480> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23154,7 +23154,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 17 interrupt flag clear register
-        struct MDMA_C17IFCR : public Register<0x58000484> {
+        struct MDMA_C17IFCR : public RegisterWriteOnly<0x58000484> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23163,7 +23163,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 17 error status register
-        struct MDMA_C17ESR : public Register<0x58000488> {
+        struct MDMA_C17ESR : public RegisterReadOnly<0x58000488> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23252,7 +23252,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 18 interrupt/status register
-        struct MDMA_C18ISR : public Register<0x580004c0> {
+        struct MDMA_C18ISR : public RegisterReadOnly<0x580004c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23262,7 +23262,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 18 interrupt flag clear register
-        struct MDMA_C18IFCR : public Register<0x580004c4> {
+        struct MDMA_C18IFCR : public RegisterWriteOnly<0x580004c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23271,7 +23271,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 18 error status register
-        struct MDMA_C18ESR : public Register<0x580004c8> {
+        struct MDMA_C18ESR : public RegisterReadOnly<0x580004c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23360,7 +23360,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 19 interrupt/status register
-        struct MDMA_C19ISR : public Register<0x58000500> {
+        struct MDMA_C19ISR : public RegisterReadOnly<0x58000500> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23370,7 +23370,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 19 interrupt flag clear register
-        struct MDMA_C19IFCR : public Register<0x58000504> {
+        struct MDMA_C19IFCR : public RegisterWriteOnly<0x58000504> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23379,7 +23379,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 19 error status register
-        struct MDMA_C19ESR : public Register<0x58000508> {
+        struct MDMA_C19ESR : public RegisterReadOnly<0x58000508> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23468,7 +23468,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 20 interrupt/status register
-        struct MDMA_C20ISR : public Register<0x58000540> {
+        struct MDMA_C20ISR : public RegisterReadOnly<0x58000540> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23478,7 +23478,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 20 interrupt flag clear register
-        struct MDMA_C20IFCR : public Register<0x58000544> {
+        struct MDMA_C20IFCR : public RegisterWriteOnly<0x58000544> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23487,7 +23487,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 20 error status register
-        struct MDMA_C20ESR : public Register<0x58000548> {
+        struct MDMA_C20ESR : public RegisterReadOnly<0x58000548> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23576,7 +23576,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 21 interrupt/status register
-        struct MDMA_C21ISR : public Register<0x58000580> {
+        struct MDMA_C21ISR : public RegisterReadOnly<0x58000580> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23586,7 +23586,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 21 interrupt flag clear register
-        struct MDMA_C21IFCR : public Register<0x58000584> {
+        struct MDMA_C21IFCR : public RegisterWriteOnly<0x58000584> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23595,7 +23595,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 21 error status register
-        struct MDMA_C21ESR : public Register<0x58000588> {
+        struct MDMA_C21ESR : public RegisterReadOnly<0x58000588> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23684,7 +23684,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 22 interrupt/status register
-        struct MDMA_C22ISR : public Register<0x580005c0> {
+        struct MDMA_C22ISR : public RegisterReadOnly<0x580005c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23694,7 +23694,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 22 interrupt flag clear register
-        struct MDMA_C22IFCR : public Register<0x580005c4> {
+        struct MDMA_C22IFCR : public RegisterWriteOnly<0x580005c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23703,7 +23703,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 22 error status register
-        struct MDMA_C22ESR : public Register<0x580005c8> {
+        struct MDMA_C22ESR : public RegisterReadOnly<0x580005c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23792,7 +23792,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 23 interrupt/status register
-        struct MDMA_C23ISR : public Register<0x58000600> {
+        struct MDMA_C23ISR : public RegisterReadOnly<0x58000600> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23802,7 +23802,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 23 interrupt flag clear register
-        struct MDMA_C23IFCR : public Register<0x58000604> {
+        struct MDMA_C23IFCR : public RegisterWriteOnly<0x58000604> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23811,7 +23811,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 23 error status register
-        struct MDMA_C23ESR : public Register<0x58000608> {
+        struct MDMA_C23ESR : public RegisterReadOnly<0x58000608> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -23900,7 +23900,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 24 interrupt/status register
-        struct MDMA_C24ISR : public Register<0x58000640> {
+        struct MDMA_C24ISR : public RegisterReadOnly<0x58000640> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -23910,7 +23910,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 24 interrupt flag clear register
-        struct MDMA_C24IFCR : public Register<0x58000644> {
+        struct MDMA_C24IFCR : public RegisterWriteOnly<0x58000644> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -23919,7 +23919,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 24 error status register
-        struct MDMA_C24ESR : public Register<0x58000648> {
+        struct MDMA_C24ESR : public RegisterReadOnly<0x58000648> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24008,7 +24008,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 25 interrupt/status register
-        struct MDMA_C25ISR : public Register<0x58000680> {
+        struct MDMA_C25ISR : public RegisterReadOnly<0x58000680> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -24018,7 +24018,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 25 interrupt flag clear register
-        struct MDMA_C25IFCR : public Register<0x58000684> {
+        struct MDMA_C25IFCR : public RegisterWriteOnly<0x58000684> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -24027,7 +24027,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 25 error status register
-        struct MDMA_C25ESR : public Register<0x58000688> {
+        struct MDMA_C25ESR : public RegisterReadOnly<0x58000688> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24116,7 +24116,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 26 interrupt/status register
-        struct MDMA_C26ISR : public Register<0x580006c0> {
+        struct MDMA_C26ISR : public RegisterReadOnly<0x580006c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -24126,7 +24126,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 26 interrupt flag clear register
-        struct MDMA_C26IFCR : public Register<0x580006c4> {
+        struct MDMA_C26IFCR : public RegisterWriteOnly<0x580006c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -24135,7 +24135,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 26 error status register
-        struct MDMA_C26ESR : public Register<0x580006c8> {
+        struct MDMA_C26ESR : public RegisterReadOnly<0x580006c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24224,7 +24224,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 27 interrupt/status register
-        struct MDMA_C27ISR : public Register<0x58000700> {
+        struct MDMA_C27ISR : public RegisterReadOnly<0x58000700> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -24234,7 +24234,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 27 interrupt flag clear register
-        struct MDMA_C27IFCR : public Register<0x58000704> {
+        struct MDMA_C27IFCR : public RegisterWriteOnly<0x58000704> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -24243,7 +24243,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 27 error status register
-        struct MDMA_C27ESR : public Register<0x58000708> {
+        struct MDMA_C27ESR : public RegisterReadOnly<0x58000708> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24332,7 +24332,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 28 interrupt/status register
-        struct MDMA_C28ISR : public Register<0x58000740> {
+        struct MDMA_C28ISR : public RegisterReadOnly<0x58000740> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -24342,7 +24342,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 28 interrupt flag clear register
-        struct MDMA_C28IFCR : public Register<0x58000744> {
+        struct MDMA_C28IFCR : public RegisterWriteOnly<0x58000744> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -24351,7 +24351,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 28 error status register
-        struct MDMA_C28ESR : public Register<0x58000748> {
+        struct MDMA_C28ESR : public RegisterReadOnly<0x58000748> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24440,7 +24440,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 29 interrupt/status register
-        struct MDMA_C29ISR : public Register<0x58000780> {
+        struct MDMA_C29ISR : public RegisterReadOnly<0x58000780> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -24450,7 +24450,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 29 interrupt flag clear register
-        struct MDMA_C29IFCR : public Register<0x58000784> {
+        struct MDMA_C29IFCR : public RegisterWriteOnly<0x58000784> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -24459,7 +24459,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 29 error status register
-        struct MDMA_C29ESR : public Register<0x58000788> {
+        struct MDMA_C29ESR : public RegisterReadOnly<0x58000788> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24548,7 +24548,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 30 interrupt/status register
-        struct MDMA_C30ISR : public Register<0x580007c0> {
+        struct MDMA_C30ISR : public RegisterReadOnly<0x580007c0> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -24558,7 +24558,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 30 interrupt flag clear register
-        struct MDMA_C30IFCR : public Register<0x580007c4> {
+        struct MDMA_C30IFCR : public RegisterWriteOnly<0x580007c4> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -24567,7 +24567,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 30 error status register
-        struct MDMA_C30ESR : public Register<0x580007c8> {
+        struct MDMA_C30ESR : public RegisterReadOnly<0x580007c8> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24656,7 +24656,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 31 interrupt/status register
-        struct MDMA_C31ISR : public Register<0x58000800> {
+        struct MDMA_C31ISR : public RegisterReadOnly<0x58000800> {
             using TEIF = Field<0, 1>;    // TEIF
             using CTCIF = Field<1, 1>;    // CTCIF
             using BRTIF = Field<2, 1>;    // BRTIF
@@ -24666,7 +24666,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 31 interrupt flag clear register
-        struct MDMA_C31IFCR : public Register<0x58000804> {
+        struct MDMA_C31IFCR : public RegisterWriteOnly<0x58000804> {
             using CTEIF = Field<0, 1>;    // CTEIF
             using CCTCIF = Field<1, 1>;    // CCTCIF
             using CBRTIF = Field<2, 1>;    // CBRTIF
@@ -24675,7 +24675,7 @@ struct STM32MP15xxx {
         };
 
         // MDMA channel 31 error status register
-        struct MDMA_C31ESR : public Register<0x58000808> {
+        struct MDMA_C31ESR : public RegisterReadOnly<0x58000808> {
             using TEA = Field<0, 7>;    // TEA
             using TED = Field<7, 1>;    // TED
             using TELD = Field<8, 1>;    // TELD
@@ -24848,7 +24848,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOA_IDR : public Register<0x50002010> {
+        struct GPIOA_IDR : public RegisterReadOnly<0x50002010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -24888,7 +24888,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOA_BSRR : public Register<0x50002018> {
+        struct GPIOA_BSRR : public RegisterWriteOnly<0x50002018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -24969,7 +24969,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOA_BRR : public Register<0x50002028> {
+        struct GPIOA_BRR : public RegisterWriteOnly<0x50002028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -24989,7 +24989,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOA_HWCFGR10 : public Register<0x500023c8> {
+        struct GPIOA_HWCFGR10 : public RegisterReadOnly<0x500023c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -24999,12 +24999,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOA_HWCFGR9 : public Register<0x500023cc> {
+        struct GPIOA_HWCFGR9 : public RegisterReadOnly<0x500023cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOA_HWCFGR8 : public Register<0x500023d0> {
+        struct GPIOA_HWCFGR8 : public RegisterReadOnly<0x500023d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -25016,7 +25016,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOA_HWCFGR7 : public Register<0x500023d4> {
+        struct GPIOA_HWCFGR7 : public RegisterReadOnly<0x500023d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -25028,54 +25028,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOA_HWCFGR6 : public Register<0x500023d8> {
+        struct GPIOA_HWCFGR6 : public RegisterReadOnly<0x500023d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOA_HWCFGR5 : public Register<0x500023dc> {
+        struct GPIOA_HWCFGR5 : public RegisterReadOnly<0x500023dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOA_HWCFGR4 : public Register<0x500023e0> {
+        struct GPIOA_HWCFGR4 : public RegisterReadOnly<0x500023e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOA_HWCFGR3 : public Register<0x500023e4> {
+        struct GPIOA_HWCFGR3 : public RegisterReadOnly<0x500023e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOA_HWCFGR2 : public Register<0x500023e8> {
+        struct GPIOA_HWCFGR2 : public RegisterReadOnly<0x500023e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOA_HWCFGR1 : public Register<0x500023ec> {
+        struct GPIOA_HWCFGR1 : public RegisterReadOnly<0x500023ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOA_HWCFGR0 : public Register<0x500023f0> {
+        struct GPIOA_HWCFGR0 : public RegisterReadOnly<0x500023f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOA_VERR : public Register<0x500023f4> {
+        struct GPIOA_VERR : public RegisterReadOnly<0x500023f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOA_IPIDR : public Register<0x500023f8> {
+        struct GPIOA_IPIDR : public RegisterReadOnly<0x500023f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOA_SIDR : public Register<0x500023fc> {
+        struct GPIOA_SIDR : public RegisterReadOnly<0x500023fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -25164,7 +25164,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOB_IDR : public Register<0x50003010> {
+        struct GPIOB_IDR : public RegisterReadOnly<0x50003010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -25204,7 +25204,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOB_BSRR : public Register<0x50003018> {
+        struct GPIOB_BSRR : public RegisterWriteOnly<0x50003018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -25285,7 +25285,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOB_BRR : public Register<0x50003028> {
+        struct GPIOB_BRR : public RegisterWriteOnly<0x50003028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -25305,7 +25305,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOB_HWCFGR10 : public Register<0x500033c8> {
+        struct GPIOB_HWCFGR10 : public RegisterReadOnly<0x500033c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -25315,12 +25315,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOB_HWCFGR9 : public Register<0x500033cc> {
+        struct GPIOB_HWCFGR9 : public RegisterReadOnly<0x500033cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOB_HWCFGR8 : public Register<0x500033d0> {
+        struct GPIOB_HWCFGR8 : public RegisterReadOnly<0x500033d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -25332,7 +25332,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOB_HWCFGR7 : public Register<0x500033d4> {
+        struct GPIOB_HWCFGR7 : public RegisterReadOnly<0x500033d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -25344,54 +25344,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOB_HWCFGR6 : public Register<0x500033d8> {
+        struct GPIOB_HWCFGR6 : public RegisterReadOnly<0x500033d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOB_HWCFGR5 : public Register<0x500033dc> {
+        struct GPIOB_HWCFGR5 : public RegisterReadOnly<0x500033dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOB_HWCFGR4 : public Register<0x500033e0> {
+        struct GPIOB_HWCFGR4 : public RegisterReadOnly<0x500033e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOB_HWCFGR3 : public Register<0x500033e4> {
+        struct GPIOB_HWCFGR3 : public RegisterReadOnly<0x500033e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOB_HWCFGR2 : public Register<0x500033e8> {
+        struct GPIOB_HWCFGR2 : public RegisterReadOnly<0x500033e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOB_HWCFGR1 : public Register<0x500033ec> {
+        struct GPIOB_HWCFGR1 : public RegisterReadOnly<0x500033ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOB_HWCFGR0 : public Register<0x500033f0> {
+        struct GPIOB_HWCFGR0 : public RegisterReadOnly<0x500033f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOB_VERR : public Register<0x500033f4> {
+        struct GPIOB_VERR : public RegisterReadOnly<0x500033f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOB_IPIDR : public Register<0x500033f8> {
+        struct GPIOB_IPIDR : public RegisterReadOnly<0x500033f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOB_SIDR : public Register<0x500033fc> {
+        struct GPIOB_SIDR : public RegisterReadOnly<0x500033fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -25480,7 +25480,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOC_IDR : public Register<0x50004010> {
+        struct GPIOC_IDR : public RegisterReadOnly<0x50004010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -25520,7 +25520,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOC_BSRR : public Register<0x50004018> {
+        struct GPIOC_BSRR : public RegisterWriteOnly<0x50004018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -25601,7 +25601,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOC_BRR : public Register<0x50004028> {
+        struct GPIOC_BRR : public RegisterWriteOnly<0x50004028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -25621,7 +25621,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOC_HWCFGR10 : public Register<0x500043c8> {
+        struct GPIOC_HWCFGR10 : public RegisterReadOnly<0x500043c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -25631,12 +25631,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOC_HWCFGR9 : public Register<0x500043cc> {
+        struct GPIOC_HWCFGR9 : public RegisterReadOnly<0x500043cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOC_HWCFGR8 : public Register<0x500043d0> {
+        struct GPIOC_HWCFGR8 : public RegisterReadOnly<0x500043d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -25648,7 +25648,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOC_HWCFGR7 : public Register<0x500043d4> {
+        struct GPIOC_HWCFGR7 : public RegisterReadOnly<0x500043d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -25660,54 +25660,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOC_HWCFGR6 : public Register<0x500043d8> {
+        struct GPIOC_HWCFGR6 : public RegisterReadOnly<0x500043d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOC_HWCFGR5 : public Register<0x500043dc> {
+        struct GPIOC_HWCFGR5 : public RegisterReadOnly<0x500043dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOC_HWCFGR4 : public Register<0x500043e0> {
+        struct GPIOC_HWCFGR4 : public RegisterReadOnly<0x500043e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOC_HWCFGR3 : public Register<0x500043e4> {
+        struct GPIOC_HWCFGR3 : public RegisterReadOnly<0x500043e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOC_HWCFGR2 : public Register<0x500043e8> {
+        struct GPIOC_HWCFGR2 : public RegisterReadOnly<0x500043e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOC_HWCFGR1 : public Register<0x500043ec> {
+        struct GPIOC_HWCFGR1 : public RegisterReadOnly<0x500043ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOC_HWCFGR0 : public Register<0x500043f0> {
+        struct GPIOC_HWCFGR0 : public RegisterReadOnly<0x500043f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOC_VERR : public Register<0x500043f4> {
+        struct GPIOC_VERR : public RegisterReadOnly<0x500043f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOC_IPIDR : public Register<0x500043f8> {
+        struct GPIOC_IPIDR : public RegisterReadOnly<0x500043f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOC_SIDR : public Register<0x500043fc> {
+        struct GPIOC_SIDR : public RegisterReadOnly<0x500043fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -25796,7 +25796,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOD_IDR : public Register<0x50005010> {
+        struct GPIOD_IDR : public RegisterReadOnly<0x50005010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -25836,7 +25836,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOD_BSRR : public Register<0x50005018> {
+        struct GPIOD_BSRR : public RegisterWriteOnly<0x50005018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -25917,7 +25917,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOD_BRR : public Register<0x50005028> {
+        struct GPIOD_BRR : public RegisterWriteOnly<0x50005028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -25937,7 +25937,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOD_HWCFGR10 : public Register<0x500053c8> {
+        struct GPIOD_HWCFGR10 : public RegisterReadOnly<0x500053c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -25947,12 +25947,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOD_HWCFGR9 : public Register<0x500053cc> {
+        struct GPIOD_HWCFGR9 : public RegisterReadOnly<0x500053cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOD_HWCFGR8 : public Register<0x500053d0> {
+        struct GPIOD_HWCFGR8 : public RegisterReadOnly<0x500053d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -25964,7 +25964,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOD_HWCFGR7 : public Register<0x500053d4> {
+        struct GPIOD_HWCFGR7 : public RegisterReadOnly<0x500053d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -25976,54 +25976,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOD_HWCFGR6 : public Register<0x500053d8> {
+        struct GPIOD_HWCFGR6 : public RegisterReadOnly<0x500053d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOD_HWCFGR5 : public Register<0x500053dc> {
+        struct GPIOD_HWCFGR5 : public RegisterReadOnly<0x500053dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOD_HWCFGR4 : public Register<0x500053e0> {
+        struct GPIOD_HWCFGR4 : public RegisterReadOnly<0x500053e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOD_HWCFGR3 : public Register<0x500053e4> {
+        struct GPIOD_HWCFGR3 : public RegisterReadOnly<0x500053e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOD_HWCFGR2 : public Register<0x500053e8> {
+        struct GPIOD_HWCFGR2 : public RegisterReadOnly<0x500053e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOD_HWCFGR1 : public Register<0x500053ec> {
+        struct GPIOD_HWCFGR1 : public RegisterReadOnly<0x500053ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOD_HWCFGR0 : public Register<0x500053f0> {
+        struct GPIOD_HWCFGR0 : public RegisterReadOnly<0x500053f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOD_VERR : public Register<0x500053f4> {
+        struct GPIOD_VERR : public RegisterReadOnly<0x500053f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOD_IPIDR : public Register<0x500053f8> {
+        struct GPIOD_IPIDR : public RegisterReadOnly<0x500053f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOD_SIDR : public Register<0x500053fc> {
+        struct GPIOD_SIDR : public RegisterReadOnly<0x500053fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -26112,7 +26112,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOE_IDR : public Register<0x50006010> {
+        struct GPIOE_IDR : public RegisterReadOnly<0x50006010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -26152,7 +26152,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOE_BSRR : public Register<0x50006018> {
+        struct GPIOE_BSRR : public RegisterWriteOnly<0x50006018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -26233,7 +26233,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOE_BRR : public Register<0x50006028> {
+        struct GPIOE_BRR : public RegisterWriteOnly<0x50006028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -26253,7 +26253,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOE_HWCFGR10 : public Register<0x500063c8> {
+        struct GPIOE_HWCFGR10 : public RegisterReadOnly<0x500063c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -26263,12 +26263,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOE_HWCFGR9 : public Register<0x500063cc> {
+        struct GPIOE_HWCFGR9 : public RegisterReadOnly<0x500063cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOE_HWCFGR8 : public Register<0x500063d0> {
+        struct GPIOE_HWCFGR8 : public RegisterReadOnly<0x500063d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -26280,7 +26280,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOE_HWCFGR7 : public Register<0x500063d4> {
+        struct GPIOE_HWCFGR7 : public RegisterReadOnly<0x500063d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -26292,54 +26292,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOE_HWCFGR6 : public Register<0x500063d8> {
+        struct GPIOE_HWCFGR6 : public RegisterReadOnly<0x500063d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOE_HWCFGR5 : public Register<0x500063dc> {
+        struct GPIOE_HWCFGR5 : public RegisterReadOnly<0x500063dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOE_HWCFGR4 : public Register<0x500063e0> {
+        struct GPIOE_HWCFGR4 : public RegisterReadOnly<0x500063e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOE_HWCFGR3 : public Register<0x500063e4> {
+        struct GPIOE_HWCFGR3 : public RegisterReadOnly<0x500063e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOE_HWCFGR2 : public Register<0x500063e8> {
+        struct GPIOE_HWCFGR2 : public RegisterReadOnly<0x500063e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOE_HWCFGR1 : public Register<0x500063ec> {
+        struct GPIOE_HWCFGR1 : public RegisterReadOnly<0x500063ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOE_HWCFGR0 : public Register<0x500063f0> {
+        struct GPIOE_HWCFGR0 : public RegisterReadOnly<0x500063f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOE_VERR : public Register<0x500063f4> {
+        struct GPIOE_VERR : public RegisterReadOnly<0x500063f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOE_IPIDR : public Register<0x500063f8> {
+        struct GPIOE_IPIDR : public RegisterReadOnly<0x500063f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOE_SIDR : public Register<0x500063fc> {
+        struct GPIOE_SIDR : public RegisterReadOnly<0x500063fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -26428,7 +26428,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOF_IDR : public Register<0x50007010> {
+        struct GPIOF_IDR : public RegisterReadOnly<0x50007010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -26468,7 +26468,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOF_BSRR : public Register<0x50007018> {
+        struct GPIOF_BSRR : public RegisterWriteOnly<0x50007018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -26549,7 +26549,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOF_BRR : public Register<0x50007028> {
+        struct GPIOF_BRR : public RegisterWriteOnly<0x50007028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -26569,7 +26569,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOF_HWCFGR10 : public Register<0x500073c8> {
+        struct GPIOF_HWCFGR10 : public RegisterReadOnly<0x500073c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -26579,12 +26579,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOF_HWCFGR9 : public Register<0x500073cc> {
+        struct GPIOF_HWCFGR9 : public RegisterReadOnly<0x500073cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOF_HWCFGR8 : public Register<0x500073d0> {
+        struct GPIOF_HWCFGR8 : public RegisterReadOnly<0x500073d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -26596,7 +26596,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOF_HWCFGR7 : public Register<0x500073d4> {
+        struct GPIOF_HWCFGR7 : public RegisterReadOnly<0x500073d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -26608,54 +26608,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOF_HWCFGR6 : public Register<0x500073d8> {
+        struct GPIOF_HWCFGR6 : public RegisterReadOnly<0x500073d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOF_HWCFGR5 : public Register<0x500073dc> {
+        struct GPIOF_HWCFGR5 : public RegisterReadOnly<0x500073dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOF_HWCFGR4 : public Register<0x500073e0> {
+        struct GPIOF_HWCFGR4 : public RegisterReadOnly<0x500073e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOF_HWCFGR3 : public Register<0x500073e4> {
+        struct GPIOF_HWCFGR3 : public RegisterReadOnly<0x500073e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOF_HWCFGR2 : public Register<0x500073e8> {
+        struct GPIOF_HWCFGR2 : public RegisterReadOnly<0x500073e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOF_HWCFGR1 : public Register<0x500073ec> {
+        struct GPIOF_HWCFGR1 : public RegisterReadOnly<0x500073ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOF_HWCFGR0 : public Register<0x500073f0> {
+        struct GPIOF_HWCFGR0 : public RegisterReadOnly<0x500073f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOF_VERR : public Register<0x500073f4> {
+        struct GPIOF_VERR : public RegisterReadOnly<0x500073f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOF_IPIDR : public Register<0x500073f8> {
+        struct GPIOF_IPIDR : public RegisterReadOnly<0x500073f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOF_SIDR : public Register<0x500073fc> {
+        struct GPIOF_SIDR : public RegisterReadOnly<0x500073fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -26744,7 +26744,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOG_IDR : public Register<0x50008010> {
+        struct GPIOG_IDR : public RegisterReadOnly<0x50008010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -26784,7 +26784,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOG_BSRR : public Register<0x50008018> {
+        struct GPIOG_BSRR : public RegisterWriteOnly<0x50008018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -26865,7 +26865,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOG_BRR : public Register<0x50008028> {
+        struct GPIOG_BRR : public RegisterWriteOnly<0x50008028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -26885,7 +26885,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOG_HWCFGR10 : public Register<0x500083c8> {
+        struct GPIOG_HWCFGR10 : public RegisterReadOnly<0x500083c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -26895,12 +26895,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOG_HWCFGR9 : public Register<0x500083cc> {
+        struct GPIOG_HWCFGR9 : public RegisterReadOnly<0x500083cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOG_HWCFGR8 : public Register<0x500083d0> {
+        struct GPIOG_HWCFGR8 : public RegisterReadOnly<0x500083d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -26912,7 +26912,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOG_HWCFGR7 : public Register<0x500083d4> {
+        struct GPIOG_HWCFGR7 : public RegisterReadOnly<0x500083d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -26924,54 +26924,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOG_HWCFGR6 : public Register<0x500083d8> {
+        struct GPIOG_HWCFGR6 : public RegisterReadOnly<0x500083d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOG_HWCFGR5 : public Register<0x500083dc> {
+        struct GPIOG_HWCFGR5 : public RegisterReadOnly<0x500083dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOG_HWCFGR4 : public Register<0x500083e0> {
+        struct GPIOG_HWCFGR4 : public RegisterReadOnly<0x500083e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOG_HWCFGR3 : public Register<0x500083e4> {
+        struct GPIOG_HWCFGR3 : public RegisterReadOnly<0x500083e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOG_HWCFGR2 : public Register<0x500083e8> {
+        struct GPIOG_HWCFGR2 : public RegisterReadOnly<0x500083e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOG_HWCFGR1 : public Register<0x500083ec> {
+        struct GPIOG_HWCFGR1 : public RegisterReadOnly<0x500083ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOG_HWCFGR0 : public Register<0x500083f0> {
+        struct GPIOG_HWCFGR0 : public RegisterReadOnly<0x500083f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOG_VERR : public Register<0x500083f4> {
+        struct GPIOG_VERR : public RegisterReadOnly<0x500083f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOG_IPIDR : public Register<0x500083f8> {
+        struct GPIOG_IPIDR : public RegisterReadOnly<0x500083f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOG_SIDR : public Register<0x500083fc> {
+        struct GPIOG_SIDR : public RegisterReadOnly<0x500083fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -27060,7 +27060,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOH_IDR : public Register<0x50009010> {
+        struct GPIOH_IDR : public RegisterReadOnly<0x50009010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -27100,7 +27100,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOH_BSRR : public Register<0x50009018> {
+        struct GPIOH_BSRR : public RegisterWriteOnly<0x50009018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -27181,7 +27181,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOH_BRR : public Register<0x50009028> {
+        struct GPIOH_BRR : public RegisterWriteOnly<0x50009028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -27201,7 +27201,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOH_HWCFGR10 : public Register<0x500093c8> {
+        struct GPIOH_HWCFGR10 : public RegisterReadOnly<0x500093c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -27211,12 +27211,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOH_HWCFGR9 : public Register<0x500093cc> {
+        struct GPIOH_HWCFGR9 : public RegisterReadOnly<0x500093cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOH_HWCFGR8 : public Register<0x500093d0> {
+        struct GPIOH_HWCFGR8 : public RegisterReadOnly<0x500093d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -27228,7 +27228,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOH_HWCFGR7 : public Register<0x500093d4> {
+        struct GPIOH_HWCFGR7 : public RegisterReadOnly<0x500093d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -27240,54 +27240,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOH_HWCFGR6 : public Register<0x500093d8> {
+        struct GPIOH_HWCFGR6 : public RegisterReadOnly<0x500093d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOH_HWCFGR5 : public Register<0x500093dc> {
+        struct GPIOH_HWCFGR5 : public RegisterReadOnly<0x500093dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOH_HWCFGR4 : public Register<0x500093e0> {
+        struct GPIOH_HWCFGR4 : public RegisterReadOnly<0x500093e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOH_HWCFGR3 : public Register<0x500093e4> {
+        struct GPIOH_HWCFGR3 : public RegisterReadOnly<0x500093e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOH_HWCFGR2 : public Register<0x500093e8> {
+        struct GPIOH_HWCFGR2 : public RegisterReadOnly<0x500093e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOH_HWCFGR1 : public Register<0x500093ec> {
+        struct GPIOH_HWCFGR1 : public RegisterReadOnly<0x500093ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOH_HWCFGR0 : public Register<0x500093f0> {
+        struct GPIOH_HWCFGR0 : public RegisterReadOnly<0x500093f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOH_VERR : public Register<0x500093f4> {
+        struct GPIOH_VERR : public RegisterReadOnly<0x500093f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOH_IPIDR : public Register<0x500093f8> {
+        struct GPIOH_IPIDR : public RegisterReadOnly<0x500093f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOH_SIDR : public Register<0x500093fc> {
+        struct GPIOH_SIDR : public RegisterReadOnly<0x500093fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -27376,7 +27376,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOI_IDR : public Register<0x5000a010> {
+        struct GPIOI_IDR : public RegisterReadOnly<0x5000a010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -27416,7 +27416,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOI_BSRR : public Register<0x5000a018> {
+        struct GPIOI_BSRR : public RegisterWriteOnly<0x5000a018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -27497,7 +27497,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOI_BRR : public Register<0x5000a028> {
+        struct GPIOI_BRR : public RegisterWriteOnly<0x5000a028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -27517,7 +27517,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOI_HWCFGR10 : public Register<0x5000a3c8> {
+        struct GPIOI_HWCFGR10 : public RegisterReadOnly<0x5000a3c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -27527,12 +27527,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOI_HWCFGR9 : public Register<0x5000a3cc> {
+        struct GPIOI_HWCFGR9 : public RegisterReadOnly<0x5000a3cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOI_HWCFGR8 : public Register<0x5000a3d0> {
+        struct GPIOI_HWCFGR8 : public RegisterReadOnly<0x5000a3d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -27544,7 +27544,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOI_HWCFGR7 : public Register<0x5000a3d4> {
+        struct GPIOI_HWCFGR7 : public RegisterReadOnly<0x5000a3d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -27556,54 +27556,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOI_HWCFGR6 : public Register<0x5000a3d8> {
+        struct GPIOI_HWCFGR6 : public RegisterReadOnly<0x5000a3d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOI_HWCFGR5 : public Register<0x5000a3dc> {
+        struct GPIOI_HWCFGR5 : public RegisterReadOnly<0x5000a3dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOI_HWCFGR4 : public Register<0x5000a3e0> {
+        struct GPIOI_HWCFGR4 : public RegisterReadOnly<0x5000a3e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOI_HWCFGR3 : public Register<0x5000a3e4> {
+        struct GPIOI_HWCFGR3 : public RegisterReadOnly<0x5000a3e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOI_HWCFGR2 : public Register<0x5000a3e8> {
+        struct GPIOI_HWCFGR2 : public RegisterReadOnly<0x5000a3e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOI_HWCFGR1 : public Register<0x5000a3ec> {
+        struct GPIOI_HWCFGR1 : public RegisterReadOnly<0x5000a3ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOI_HWCFGR0 : public Register<0x5000a3f0> {
+        struct GPIOI_HWCFGR0 : public RegisterReadOnly<0x5000a3f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOI_VERR : public Register<0x5000a3f4> {
+        struct GPIOI_VERR : public RegisterReadOnly<0x5000a3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOI_IPIDR : public Register<0x5000a3f8> {
+        struct GPIOI_IPIDR : public RegisterReadOnly<0x5000a3f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOI_SIDR : public Register<0x5000a3fc> {
+        struct GPIOI_SIDR : public RegisterReadOnly<0x5000a3fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -27692,7 +27692,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOJ_IDR : public Register<0x5000b010> {
+        struct GPIOJ_IDR : public RegisterReadOnly<0x5000b010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -27732,7 +27732,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOJ_BSRR : public Register<0x5000b018> {
+        struct GPIOJ_BSRR : public RegisterWriteOnly<0x5000b018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -27813,7 +27813,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOJ_BRR : public Register<0x5000b028> {
+        struct GPIOJ_BRR : public RegisterWriteOnly<0x5000b028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -27833,7 +27833,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOJ_HWCFGR10 : public Register<0x5000b3c8> {
+        struct GPIOJ_HWCFGR10 : public RegisterReadOnly<0x5000b3c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -27843,12 +27843,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOJ_HWCFGR9 : public Register<0x5000b3cc> {
+        struct GPIOJ_HWCFGR9 : public RegisterReadOnly<0x5000b3cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOJ_HWCFGR8 : public Register<0x5000b3d0> {
+        struct GPIOJ_HWCFGR8 : public RegisterReadOnly<0x5000b3d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -27860,7 +27860,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOJ_HWCFGR7 : public Register<0x5000b3d4> {
+        struct GPIOJ_HWCFGR7 : public RegisterReadOnly<0x5000b3d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -27872,54 +27872,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOJ_HWCFGR6 : public Register<0x5000b3d8> {
+        struct GPIOJ_HWCFGR6 : public RegisterReadOnly<0x5000b3d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOJ_HWCFGR5 : public Register<0x5000b3dc> {
+        struct GPIOJ_HWCFGR5 : public RegisterReadOnly<0x5000b3dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOJ_HWCFGR4 : public Register<0x5000b3e0> {
+        struct GPIOJ_HWCFGR4 : public RegisterReadOnly<0x5000b3e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOJ_HWCFGR3 : public Register<0x5000b3e4> {
+        struct GPIOJ_HWCFGR3 : public RegisterReadOnly<0x5000b3e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOJ_HWCFGR2 : public Register<0x5000b3e8> {
+        struct GPIOJ_HWCFGR2 : public RegisterReadOnly<0x5000b3e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOJ_HWCFGR1 : public Register<0x5000b3ec> {
+        struct GPIOJ_HWCFGR1 : public RegisterReadOnly<0x5000b3ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOJ_HWCFGR0 : public Register<0x5000b3f0> {
+        struct GPIOJ_HWCFGR0 : public RegisterReadOnly<0x5000b3f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOJ_VERR : public Register<0x5000b3f4> {
+        struct GPIOJ_VERR : public RegisterReadOnly<0x5000b3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOJ_IPIDR : public Register<0x5000b3f8> {
+        struct GPIOJ_IPIDR : public RegisterReadOnly<0x5000b3f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOJ_SIDR : public Register<0x5000b3fc> {
+        struct GPIOJ_SIDR : public RegisterReadOnly<0x5000b3fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -28008,7 +28008,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOK_IDR : public Register<0x5000c010> {
+        struct GPIOK_IDR : public RegisterReadOnly<0x5000c010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -28048,7 +28048,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOK_BSRR : public Register<0x5000c018> {
+        struct GPIOK_BSRR : public RegisterWriteOnly<0x5000c018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -28129,7 +28129,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOK_BRR : public Register<0x5000c028> {
+        struct GPIOK_BRR : public RegisterWriteOnly<0x5000c028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -28149,7 +28149,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOK_HWCFGR10 : public Register<0x5000c3c8> {
+        struct GPIOK_HWCFGR10 : public RegisterReadOnly<0x5000c3c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -28159,12 +28159,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOK_HWCFGR9 : public Register<0x5000c3cc> {
+        struct GPIOK_HWCFGR9 : public RegisterReadOnly<0x5000c3cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOK_HWCFGR8 : public Register<0x5000c3d0> {
+        struct GPIOK_HWCFGR8 : public RegisterReadOnly<0x5000c3d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -28176,7 +28176,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOK_HWCFGR7 : public Register<0x5000c3d4> {
+        struct GPIOK_HWCFGR7 : public RegisterReadOnly<0x5000c3d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -28188,54 +28188,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOK_HWCFGR6 : public Register<0x5000c3d8> {
+        struct GPIOK_HWCFGR6 : public RegisterReadOnly<0x5000c3d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOK_HWCFGR5 : public Register<0x5000c3dc> {
+        struct GPIOK_HWCFGR5 : public RegisterReadOnly<0x5000c3dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOK_HWCFGR4 : public Register<0x5000c3e0> {
+        struct GPIOK_HWCFGR4 : public RegisterReadOnly<0x5000c3e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOK_HWCFGR3 : public Register<0x5000c3e4> {
+        struct GPIOK_HWCFGR3 : public RegisterReadOnly<0x5000c3e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOK_HWCFGR2 : public Register<0x5000c3e8> {
+        struct GPIOK_HWCFGR2 : public RegisterReadOnly<0x5000c3e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOK_HWCFGR1 : public Register<0x5000c3ec> {
+        struct GPIOK_HWCFGR1 : public RegisterReadOnly<0x5000c3ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOK_HWCFGR0 : public Register<0x5000c3f0> {
+        struct GPIOK_HWCFGR0 : public RegisterReadOnly<0x5000c3f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOK_VERR : public Register<0x5000c3f4> {
+        struct GPIOK_VERR : public RegisterReadOnly<0x5000c3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOK_IPIDR : public Register<0x5000c3f8> {
+        struct GPIOK_IPIDR : public RegisterReadOnly<0x5000c3f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOK_SIDR : public Register<0x5000c3fc> {
+        struct GPIOK_SIDR : public RegisterReadOnly<0x5000c3fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -28324,7 +28324,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port input data register
-        struct GPIOZ_IDR : public Register<0x54004010> {
+        struct GPIOZ_IDR : public RegisterReadOnly<0x54004010> {
             using IDR0 = Field<0, 1>;    // IDR0
             using IDR1 = Field<1, 1>;    // IDR1
             using IDR2 = Field<2, 1>;    // IDR2
@@ -28364,7 +28364,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit set/reset register
-        struct GPIOZ_BSRR : public Register<0x54004018> {
+        struct GPIOZ_BSRR : public RegisterWriteOnly<0x54004018> {
             using BS0 = Field<0, 1>;    // BS0
             using BS1 = Field<1, 1>;    // BS1
             using BS2 = Field<2, 1>;    // BS2
@@ -28445,7 +28445,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO port bit reset register
-        struct GPIOZ_BRR : public Register<0x54004028> {
+        struct GPIOZ_BRR : public RegisterWriteOnly<0x54004028> {
             using BR0 = Field<0, 1>;    // BR0
             using BR1 = Field<1, 1>;    // BR1
             using BR2 = Field<2, 1>;    // BR2
@@ -28465,7 +28465,7 @@ struct STM32MP15xxx {
         };
 
         // This register provides write access security and can be written only by a secure access. It is used to configure a selected I/O as secure. A non-secure write access to this register is discarded.
-        struct GPIOZ_SECCFGR : public Register<0x54004030> {
+        struct GPIOZ_SECCFGR : public RegisterWriteOnly<0x54004030> {
             using SEC0 = Field<0, 1>;    // SEC0
             using SEC1 = Field<1, 1>;    // SEC1
             using SEC2 = Field<2, 1>;    // SEC2
@@ -28477,7 +28477,7 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, J and GPIOK: For GPIOZ:
-        struct GPIOZ_HWCFGR10 : public Register<0x540043c8> {
+        struct GPIOZ_HWCFGR10 : public RegisterReadOnly<0x540043c8> {
             using AHB_IOP = Field<0, 4>;    // AHB_IOP
             using AF_SIZE = Field<4, 4>;    // AF_SIZE
             using SPEED_CFG = Field<8, 4>;    // SPEED_CFG
@@ -28487,12 +28487,12 @@ struct STM32MP15xxx {
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOZ_HWCFGR9 : public Register<0x540043cc> {
+        struct GPIOZ_HWCFGR9 : public RegisterReadOnly<0x540043cc> {
             using EN_IO = Field<0, 16>;    // EN_IO
         };
 
         // For GPIOA, B, C, D, E, F, G, H, I, and GPIOJ: For GPIOK and GPIOZ:
-        struct GPIOZ_HWCFGR8 : public Register<0x540043d0> {
+        struct GPIOZ_HWCFGR8 : public RegisterReadOnly<0x540043d0> {
             using AF_PRIO8 = Field<0, 4>;    // AF_PRIO8
             using AF_PRIO9 = Field<4, 4>;    // AF_PRIO9
             using AF_PRIO10 = Field<8, 4>;    // AF_PRIO10
@@ -28504,7 +28504,7 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 7
-        struct GPIOZ_HWCFGR7 : public Register<0x540043d4> {
+        struct GPIOZ_HWCFGR7 : public RegisterReadOnly<0x540043d4> {
             using AF_PRIO0 = Field<0, 4>;    // AF_PRIO0
             using AF_PRIO1 = Field<4, 4>;    // AF_PRIO1
             using AF_PRIO2 = Field<8, 4>;    // AF_PRIO2
@@ -28516,54 +28516,54 @@ struct STM32MP15xxx {
         };
 
         // GPIO hardware configuration register 6
-        struct GPIOZ_HWCFGR6 : public Register<0x540043d8> {
+        struct GPIOZ_HWCFGR6 : public RegisterReadOnly<0x540043d8> {
             using MODER_RES = Field<0, 32>;    // MODER_RES
         };
 
         // GPIO hardware configuration register 5
-        struct GPIOZ_HWCFGR5 : public Register<0x540043dc> {
+        struct GPIOZ_HWCFGR5 : public RegisterReadOnly<0x540043dc> {
             using PUPDR_RES = Field<0, 32>;    // PUPDR_RES
         };
 
         // GPIO hardware configuration register 4
-        struct GPIOZ_HWCFGR4 : public Register<0x540043e0> {
+        struct GPIOZ_HWCFGR4 : public RegisterReadOnly<0x540043e0> {
             using OSPEED_RES = Field<0, 32>;    // OSPEED_RES
         };
 
         // GPIO hardware configuration register 3
-        struct GPIOZ_HWCFGR3 : public Register<0x540043e4> {
+        struct GPIOZ_HWCFGR3 : public RegisterReadOnly<0x540043e4> {
             using ODR_RES = Field<0, 16>;    // ODR_RES
             using OTYPER_RES = Field<16, 16>;    // OTYPER_RES
         };
 
         // GPIO hardware configuration register 2
-        struct GPIOZ_HWCFGR2 : public Register<0x540043e8> {
+        struct GPIOZ_HWCFGR2 : public RegisterReadOnly<0x540043e8> {
             using AFRL_RES = Field<0, 32>;    // AFRL_RES
         };
 
         // GPIO hardware configuration register 1
-        struct GPIOZ_HWCFGR1 : public Register<0x540043ec> {
+        struct GPIOZ_HWCFGR1 : public RegisterReadOnly<0x540043ec> {
             using AFRH_RES = Field<0, 32>;    // AFRH_RES
         };
 
         // GPIO hardware configuration register 0
-        struct GPIOZ_HWCFGR0 : public Register<0x540043f0> {
+        struct GPIOZ_HWCFGR0 : public RegisterReadOnly<0x540043f0> {
             using OR_RES = Field<0, 16>;    // OR_RES
         };
 
         // GPIO version register
-        struct GPIOZ_VERR : public Register<0x540043f4> {
+        struct GPIOZ_VERR : public RegisterReadOnly<0x540043f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // GPIO identification register
-        struct GPIOZ_IPIDR : public Register<0x540043f8> {
+        struct GPIOZ_IPIDR : public RegisterReadOnly<0x540043f8> {
             using IPIDR = Field<0, 32>;    // IPIDR
         };
 
         // GPIO size identification register
-        struct GPIOZ_SIDR : public Register<0x540043fc> {
+        struct GPIOZ_SIDR : public RegisterReadOnly<0x540043fc> {
             using SIDR = Field<0, 32>;    // SIDR
         };
 
@@ -28588,27 +28588,27 @@ struct STM32MP15xxx {
         };
 
         // The RNG_DR register is a read-only register.
-        struct RNG_DR : public Register<0x54003008> {
+        struct RNG_DR : public RegisterReadOnly<0x54003008> {
             using RNDATA = Field<0, 32>;    // RNDATA
         };
 
         // RNG hardware configuration register
-        struct RNG_HWCFGR : public Register<0x540033f0> {
+        struct RNG_HWCFGR : public RegisterReadOnly<0x540033f0> {
         };
 
         // RNG version register
-        struct RNG_VERR : public Register<0x540033f4> {
+        struct RNG_VERR : public RegisterReadOnly<0x540033f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // RNG identification register
-        struct RNG_IPIDR : public Register<0x540033f8> {
+        struct RNG_IPIDR : public RegisterReadOnly<0x540033f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // RNG size ID register
-        struct RNG_SIDR : public Register<0x540033fc> {
+        struct RNG_SIDR : public RegisterReadOnly<0x540033fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -28633,27 +28633,27 @@ struct STM32MP15xxx {
         };
 
         // The RNG_DR register is a read-only register.
-        struct RNG_DR : public Register<0x4c003008> {
+        struct RNG_DR : public RegisterReadOnly<0x4c003008> {
             using RNDATA = Field<0, 32>;    // RNDATA
         };
 
         // RNG hardware configuration register
-        struct RNG_HWCFGR : public Register<0x4c0033f0> {
+        struct RNG_HWCFGR : public RegisterReadOnly<0x4c0033f0> {
         };
 
         // RNG version register
-        struct RNG_VERR : public Register<0x4c0033f4> {
+        struct RNG_VERR : public RegisterReadOnly<0x4c0033f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // RNG identification register
-        struct RNG_IPIDR : public Register<0x4c0033f8> {
+        struct RNG_IPIDR : public RegisterReadOnly<0x4c0033f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // RNG size ID register
-        struct RNG_SIDR : public Register<0x4c0033fc> {
+        struct RNG_SIDR : public RegisterReadOnly<0x4c0033fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -28688,27 +28688,27 @@ struct STM32MP15xxx {
         };
 
         // HASH digest register 0
-        struct HASH_HR0 : public Register<0x5400200c> {
+        struct HASH_HR0 : public RegisterReadOnly<0x5400200c> {
             using H0 = Field<0, 32>;    // H0
         };
 
         // HASH digest register 1
-        struct HASH_HR1 : public Register<0x54002010> {
+        struct HASH_HR1 : public RegisterReadOnly<0x54002010> {
             using H1 = Field<0, 32>;    // H1
         };
 
         // HASH digest register 2
-        struct HASH_HR2 : public Register<0x54002014> {
+        struct HASH_HR2 : public RegisterReadOnly<0x54002014> {
             using H2 = Field<0, 32>;    // H2
         };
 
         // HASH digest register 3
-        struct HASH_HR3 : public Register<0x54002018> {
+        struct HASH_HR3 : public RegisterReadOnly<0x54002018> {
             using H3 = Field<0, 32>;    // H3
         };
 
         // HASH digest register 4
-        struct HASH_HR4 : public Register<0x5400201c> {
+        struct HASH_HR4 : public RegisterReadOnly<0x5400201c> {
             using H4 = Field<0, 32>;    // H4
         };
 
@@ -28997,37 +28997,37 @@ struct STM32MP15xxx {
         };
 
         // HASH digest register 5
-        struct HASH_HR5 : public Register<0x54002324> {
+        struct HASH_HR5 : public RegisterReadOnly<0x54002324> {
             using H5 = Field<0, 32>;    // H5
         };
 
         // HASH digest register 6
-        struct HASH_HR6 : public Register<0x54002328> {
+        struct HASH_HR6 : public RegisterReadOnly<0x54002328> {
             using H6 = Field<0, 32>;    // H6
         };
 
         // HASH digest register 7
-        struct HASH_HR7 : public Register<0x5400232c> {
+        struct HASH_HR7 : public RegisterReadOnly<0x5400232c> {
             using H7 = Field<0, 32>;    // H7
         };
 
         // HASH Hardware Configuration Register
-        struct HASH_HWCFGR : public Register<0x540023f0> {
+        struct HASH_HWCFGR : public RegisterReadOnly<0x540023f0> {
             using CFG1 = Field<0, 4>;    // CFG1
         };
 
         // HASH Version Register
-        struct HASH_VERR : public Register<0x540023f4> {
+        struct HASH_VERR : public RegisterReadOnly<0x540023f4> {
             using VER = Field<0, 8>;    // VER
         };
 
         // HASH Identification
-        struct HASH_IPIDR : public Register<0x540023f8> {
+        struct HASH_IPIDR : public RegisterReadOnly<0x540023f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // HASH Hardware Magic ID
-        struct HASH_MID : public Register<0x540023fc> {
+        struct HASH_MID : public RegisterReadOnly<0x540023fc> {
             using MID = Field<0, 32>;    // MID
         };
 
@@ -29062,27 +29062,27 @@ struct STM32MP15xxx {
         };
 
         // HASH digest register 0
-        struct HASH_HR0 : public Register<0x4c00200c> {
+        struct HASH_HR0 : public RegisterReadOnly<0x4c00200c> {
             using H0 = Field<0, 32>;    // H0
         };
 
         // HASH digest register 1
-        struct HASH_HR1 : public Register<0x4c002010> {
+        struct HASH_HR1 : public RegisterReadOnly<0x4c002010> {
             using H1 = Field<0, 32>;    // H1
         };
 
         // HASH digest register 2
-        struct HASH_HR2 : public Register<0x4c002014> {
+        struct HASH_HR2 : public RegisterReadOnly<0x4c002014> {
             using H2 = Field<0, 32>;    // H2
         };
 
         // HASH digest register 3
-        struct HASH_HR3 : public Register<0x4c002018> {
+        struct HASH_HR3 : public RegisterReadOnly<0x4c002018> {
             using H3 = Field<0, 32>;    // H3
         };
 
         // HASH digest register 4
-        struct HASH_HR4 : public Register<0x4c00201c> {
+        struct HASH_HR4 : public RegisterReadOnly<0x4c00201c> {
             using H4 = Field<0, 32>;    // H4
         };
 
@@ -29371,37 +29371,37 @@ struct STM32MP15xxx {
         };
 
         // HASH digest register 5
-        struct HASH_HR5 : public Register<0x4c002324> {
+        struct HASH_HR5 : public RegisterReadOnly<0x4c002324> {
             using H5 = Field<0, 32>;    // H5
         };
 
         // HASH digest register 6
-        struct HASH_HR6 : public Register<0x4c002328> {
+        struct HASH_HR6 : public RegisterReadOnly<0x4c002328> {
             using H6 = Field<0, 32>;    // H6
         };
 
         // HASH digest register 7
-        struct HASH_HR7 : public Register<0x4c00232c> {
+        struct HASH_HR7 : public RegisterReadOnly<0x4c00232c> {
             using H7 = Field<0, 32>;    // H7
         };
 
         // HASH Hardware Configuration Register
-        struct HASH_HWCFGR : public Register<0x4c0023f0> {
+        struct HASH_HWCFGR : public RegisterReadOnly<0x4c0023f0> {
             using CFG1 = Field<0, 4>;    // CFG1
         };
 
         // HASH Version Register
-        struct HASH_VERR : public Register<0x4c0023f4> {
+        struct HASH_VERR : public RegisterReadOnly<0x4c0023f4> {
             using VER = Field<0, 8>;    // VER
         };
 
         // HASH Identification
-        struct HASH_IPIDR : public Register<0x4c0023f8> {
+        struct HASH_IPIDR : public RegisterReadOnly<0x4c0023f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // HASH Hardware Magic ID
-        struct HASH_MID : public Register<0x4c0023fc> {
+        struct HASH_MID : public RegisterReadOnly<0x4c0023fc> {
             using MID = Field<0, 32>;    // MID
         };
 
@@ -29634,224 +29634,224 @@ struct STM32MP15xxx {
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR0 : public Register<0x4c000080> {
+        struct HSEM_RLR0 : public RegisterReadOnly<0x4c000080> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR1 : public Register<0x4c000084> {
+        struct HSEM_RLR1 : public RegisterReadOnly<0x4c000084> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR2 : public Register<0x4c000088> {
+        struct HSEM_RLR2 : public RegisterReadOnly<0x4c000088> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR3 : public Register<0x4c00008c> {
+        struct HSEM_RLR3 : public RegisterReadOnly<0x4c00008c> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR4 : public Register<0x4c000090> {
+        struct HSEM_RLR4 : public RegisterReadOnly<0x4c000090> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR5 : public Register<0x4c000094> {
+        struct HSEM_RLR5 : public RegisterReadOnly<0x4c000094> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR6 : public Register<0x4c000098> {
+        struct HSEM_RLR6 : public RegisterReadOnly<0x4c000098> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR7 : public Register<0x4c00009c> {
+        struct HSEM_RLR7 : public RegisterReadOnly<0x4c00009c> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR8 : public Register<0x4c0000a0> {
+        struct HSEM_RLR8 : public RegisterReadOnly<0x4c0000a0> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR9 : public Register<0x4c0000a4> {
+        struct HSEM_RLR9 : public RegisterReadOnly<0x4c0000a4> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR10 : public Register<0x4c0000a8> {
+        struct HSEM_RLR10 : public RegisterReadOnly<0x4c0000a8> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR11 : public Register<0x4c0000ac> {
+        struct HSEM_RLR11 : public RegisterReadOnly<0x4c0000ac> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR12 : public Register<0x4c0000b0> {
+        struct HSEM_RLR12 : public RegisterReadOnly<0x4c0000b0> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR13 : public Register<0x4c0000b4> {
+        struct HSEM_RLR13 : public RegisterReadOnly<0x4c0000b4> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR14 : public Register<0x4c0000b8> {
+        struct HSEM_RLR14 : public RegisterReadOnly<0x4c0000b8> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR15 : public Register<0x4c0000bc> {
+        struct HSEM_RLR15 : public RegisterReadOnly<0x4c0000bc> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR16 : public Register<0x4c0000c0> {
+        struct HSEM_RLR16 : public RegisterReadOnly<0x4c0000c0> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR17 : public Register<0x4c0000c4> {
+        struct HSEM_RLR17 : public RegisterReadOnly<0x4c0000c4> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR18 : public Register<0x4c0000c8> {
+        struct HSEM_RLR18 : public RegisterReadOnly<0x4c0000c8> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR19 : public Register<0x4c0000cc> {
+        struct HSEM_RLR19 : public RegisterReadOnly<0x4c0000cc> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR20 : public Register<0x4c0000d0> {
+        struct HSEM_RLR20 : public RegisterReadOnly<0x4c0000d0> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR21 : public Register<0x4c0000d4> {
+        struct HSEM_RLR21 : public RegisterReadOnly<0x4c0000d4> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR22 : public Register<0x4c0000d8> {
+        struct HSEM_RLR22 : public RegisterReadOnly<0x4c0000d8> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR23 : public Register<0x4c0000dc> {
+        struct HSEM_RLR23 : public RegisterReadOnly<0x4c0000dc> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR24 : public Register<0x4c0000e0> {
+        struct HSEM_RLR24 : public RegisterReadOnly<0x4c0000e0> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR25 : public Register<0x4c0000e4> {
+        struct HSEM_RLR25 : public RegisterReadOnly<0x4c0000e4> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR26 : public Register<0x4c0000e8> {
+        struct HSEM_RLR26 : public RegisterReadOnly<0x4c0000e8> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR27 : public Register<0x4c0000ec> {
+        struct HSEM_RLR27 : public RegisterReadOnly<0x4c0000ec> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR28 : public Register<0x4c0000f0> {
+        struct HSEM_RLR28 : public RegisterReadOnly<0x4c0000f0> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR29 : public Register<0x4c0000f4> {
+        struct HSEM_RLR29 : public RegisterReadOnly<0x4c0000f4> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR30 : public Register<0x4c0000f8> {
+        struct HSEM_RLR30 : public RegisterReadOnly<0x4c0000f8> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
         };
 
         // Accesses the same physical bits as HSEM_Rx. The HSEM_RLRx shall be used to perform a 1-step Read lock. Only Read accesses with authorized AHB bus master IDs are granted. Read accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_RLR31 : public Register<0x4c0000fc> {
+        struct HSEM_RLR31 : public RegisterReadOnly<0x4c0000fc> {
             using PROCID = Field<0, 8>;    // PROCID
             using COREID = Field<8, 4>;    // COREID
             using LOCK = Field<31, 1>;    // LOCK
@@ -29868,12 +29868,12 @@ struct STM32MP15xxx {
         };
 
         // HSEM i1terrupt status register
-        struct HSEM_C1ISR : public Register<0x4c000108> {
+        struct HSEM_C1ISR : public RegisterReadOnly<0x4c000108> {
             using ISF = Field<0, 32>;    // ISF
         };
 
         // HSEM i1terrupt status register
-        struct HSEM_C1MISR : public Register<0x4c00010c> {
+        struct HSEM_C1MISR : public RegisterReadOnly<0x4c00010c> {
             using MISF = Field<0, 32>;    // MISF
         };
 
@@ -29888,17 +29888,17 @@ struct STM32MP15xxx {
         };
 
         // HSEM i2terrupt status register
-        struct HSEM_C2ISR : public Register<0x4c000118> {
+        struct HSEM_C2ISR : public RegisterReadOnly<0x4c000118> {
             using ISF = Field<0, 32>;    // ISF
         };
 
         // HSEM i2terrupt status register
-        struct HSEM_C2MISR : public Register<0x4c00011c> {
+        struct HSEM_C2MISR : public RegisterReadOnly<0x4c00011c> {
             using MISF = Field<0, 32>;    // MISF
         };
 
         // Only Write accesses with authorized AHB bus master IDs are granted. Write accesses with unauthorized AHB bus master IDs are discarded.
-        struct HSEM_CR : public Register<0x4c000140> {
+        struct HSEM_CR : public RegisterWriteOnly<0x4c000140> {
             using COREID = Field<8, 4>;    // COREID
             using KEY = Field<16, 16>;    // KEY
         };
@@ -29909,7 +29909,7 @@ struct STM32MP15xxx {
         };
 
         // HSEM hardware configuration register 2
-        struct HSEM_HWCFGR2 : public Register<0x4c0003ec> {
+        struct HSEM_HWCFGR2 : public RegisterReadOnly<0x4c0003ec> {
             using MASTERID1 = Field<0, 4>;    // MASTERID1
             using MASTERID2 = Field<4, 4>;    // MASTERID2
             using MASTERID3 = Field<8, 4>;    // MASTERID3
@@ -29917,24 +29917,24 @@ struct STM32MP15xxx {
         };
 
         // HSEM hardware configuration register 1
-        struct HSEM_HWCFGR1 : public Register<0x4c0003f0> {
+        struct HSEM_HWCFGR1 : public RegisterReadOnly<0x4c0003f0> {
             using NBSEM = Field<0, 8>;    // NBSEM
             using NBINT = Field<8, 4>;    // NBINT
         };
 
         // HSEM IP version register
-        struct HSEM_VERR : public Register<0x4c0003f4> {
+        struct HSEM_VERR : public RegisterReadOnly<0x4c0003f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // HSEM IP identification register
-        struct HSEM_IPIDR : public Register<0x4c0003f8> {
+        struct HSEM_IPIDR : public RegisterReadOnly<0x4c0003f8> {
             using IPID = Field<0, 32>;    // IPID
         };
 
         // HSEM size identification register
-        struct HSEM_SIDR : public Register<0x4c0003fc> {
+        struct HSEM_SIDR : public RegisterReadOnly<0x4c0003fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -29960,17 +29960,17 @@ struct STM32MP15xxx {
         };
 
         // HDP value
-        struct HDP_VAL : public Register<0x5002a010> {
+        struct HDP_VAL : public RegisterReadOnly<0x5002a010> {
             using HDPVAL = Field<0, 8>;    // HDPVAL
         };
 
         // HDP GPO set
-        struct HDP_GPOSET : public Register<0x5002a014> {
+        struct HDP_GPOSET : public RegisterWriteOnly<0x5002a014> {
             using HDPGPOSET = Field<0, 8>;    // HDPGPOSET
         };
 
         // HDP GPO clear
-        struct HDP_GPOCLR : public Register<0x5002a018> {
+        struct HDP_GPOCLR : public RegisterWriteOnly<0x5002a018> {
             using HDPGPOCLR = Field<0, 8>;    // HDPGPOCLR
         };
 
@@ -29980,18 +29980,18 @@ struct STM32MP15xxx {
         };
 
         // HDP version register
-        struct HDP_VERR : public Register<0x5002a3f4> {
+        struct HDP_VERR : public RegisterReadOnly<0x5002a3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // HDP IP identification register
-        struct HDP_IPIDR : public Register<0x5002a3f8> {
+        struct HDP_IPIDR : public RegisterReadOnly<0x5002a3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // HDP size identification register
-        struct HDP_SIDR : public Register<0x5002a3fc> {
+        struct HDP_SIDR : public RegisterReadOnly<0x5002a3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -30064,7 +30064,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_ASR : public Register<0x4400a018> {
+        struct SAI_ASR : public RegisterReadOnly<0x4400a018> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30076,7 +30076,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_ACLRFR : public Register<0x4400a01c> {
+        struct SAI_ACLRFR : public RegisterWriteOnly<0x4400a01c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30149,7 +30149,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_BSR : public Register<0x4400a038> {
+        struct SAI_BSR : public RegisterReadOnly<0x4400a038> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30161,7 +30161,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_BCLRFR : public Register<0x4400a03c> {
+        struct SAI_BCLRFR : public RegisterWriteOnly<0x4400a03c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30198,25 +30198,25 @@ struct STM32MP15xxx {
         };
 
         // SAI hardware configuration register
-        struct SAI_HWCFGR : public Register<0x4400a3f0> {
+        struct SAI_HWCFGR : public RegisterReadOnly<0x4400a3f0> {
             using FIFO_SIZE = Field<0, 8>;    // FIFO_SIZE
             using SPDIF_PDM = Field<8, 4>;    // SPDIF_PDM
             using OPTION_REGOUT = Field<12, 8>;    // OPTION_REGOUT
         };
 
         // SAI version register
-        struct SAI_VERR : public Register<0x4400a3f4> {
+        struct SAI_VERR : public RegisterReadOnly<0x4400a3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SAI identification register
-        struct SAI_IPIDR : public Register<0x4400a3f8> {
+        struct SAI_IPIDR : public RegisterReadOnly<0x4400a3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SAI size identification register
-        struct SAI_SIDR : public Register<0x4400a3fc> {
+        struct SAI_SIDR : public RegisterReadOnly<0x4400a3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -30289,7 +30289,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_ASR : public Register<0x4400b018> {
+        struct SAI_ASR : public RegisterReadOnly<0x4400b018> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30301,7 +30301,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_ACLRFR : public Register<0x4400b01c> {
+        struct SAI_ACLRFR : public RegisterWriteOnly<0x4400b01c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30374,7 +30374,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_BSR : public Register<0x4400b038> {
+        struct SAI_BSR : public RegisterReadOnly<0x4400b038> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30386,7 +30386,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_BCLRFR : public Register<0x4400b03c> {
+        struct SAI_BCLRFR : public RegisterWriteOnly<0x4400b03c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30423,25 +30423,25 @@ struct STM32MP15xxx {
         };
 
         // SAI hardware configuration register
-        struct SAI_HWCFGR : public Register<0x4400b3f0> {
+        struct SAI_HWCFGR : public RegisterReadOnly<0x4400b3f0> {
             using FIFO_SIZE = Field<0, 8>;    // FIFO_SIZE
             using SPDIF_PDM = Field<8, 4>;    // SPDIF_PDM
             using OPTION_REGOUT = Field<12, 8>;    // OPTION_REGOUT
         };
 
         // SAI version register
-        struct SAI_VERR : public Register<0x4400b3f4> {
+        struct SAI_VERR : public RegisterReadOnly<0x4400b3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SAI identification register
-        struct SAI_IPIDR : public Register<0x4400b3f8> {
+        struct SAI_IPIDR : public RegisterReadOnly<0x4400b3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SAI size identification register
-        struct SAI_SIDR : public Register<0x4400b3fc> {
+        struct SAI_SIDR : public RegisterReadOnly<0x4400b3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -30514,7 +30514,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_ASR : public Register<0x4400c018> {
+        struct SAI_ASR : public RegisterReadOnly<0x4400c018> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30526,7 +30526,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_ACLRFR : public Register<0x4400c01c> {
+        struct SAI_ACLRFR : public RegisterWriteOnly<0x4400c01c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30599,7 +30599,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_BSR : public Register<0x4400c038> {
+        struct SAI_BSR : public RegisterReadOnly<0x4400c038> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30611,7 +30611,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_BCLRFR : public Register<0x4400c03c> {
+        struct SAI_BCLRFR : public RegisterWriteOnly<0x4400c03c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30648,25 +30648,25 @@ struct STM32MP15xxx {
         };
 
         // SAI hardware configuration register
-        struct SAI_HWCFGR : public Register<0x4400c3f0> {
+        struct SAI_HWCFGR : public RegisterReadOnly<0x4400c3f0> {
             using FIFO_SIZE = Field<0, 8>;    // FIFO_SIZE
             using SPDIF_PDM = Field<8, 4>;    // SPDIF_PDM
             using OPTION_REGOUT = Field<12, 8>;    // OPTION_REGOUT
         };
 
         // SAI version register
-        struct SAI_VERR : public Register<0x4400c3f4> {
+        struct SAI_VERR : public RegisterReadOnly<0x4400c3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SAI identification register
-        struct SAI_IPIDR : public Register<0x4400c3f8> {
+        struct SAI_IPIDR : public RegisterReadOnly<0x4400c3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SAI size identification register
-        struct SAI_SIDR : public Register<0x4400c3fc> {
+        struct SAI_SIDR : public RegisterReadOnly<0x4400c3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -30739,7 +30739,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_ASR : public Register<0x50027018> {
+        struct SAI_ASR : public RegisterReadOnly<0x50027018> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30751,7 +30751,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_ACLRFR : public Register<0x5002701c> {
+        struct SAI_ACLRFR : public RegisterWriteOnly<0x5002701c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30824,7 +30824,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SAI_BSR : public Register<0x50027038> {
+        struct SAI_BSR : public RegisterReadOnly<0x50027038> {
             using OVRUDR = Field<0, 1>;    // OVRUDR
             using MUTEDET = Field<1, 1>;    // MUTEDET
             using WCKCFG = Field<2, 1>;    // WCKCFG
@@ -30836,7 +30836,7 @@ struct STM32MP15xxx {
         };
 
         // Clear flag register
-        struct SAI_BCLRFR : public Register<0x5002703c> {
+        struct SAI_BCLRFR : public RegisterWriteOnly<0x5002703c> {
             using COVRUDR = Field<0, 1>;    // COVRUDR
             using CMUTEDET = Field<1, 1>;    // CMUTEDET
             using CWCKCFG = Field<2, 1>;    // CWCKCFG
@@ -30873,25 +30873,25 @@ struct STM32MP15xxx {
         };
 
         // SAI hardware configuration register
-        struct SAI_HWCFGR : public Register<0x500273f0> {
+        struct SAI_HWCFGR : public RegisterReadOnly<0x500273f0> {
             using FIFO_SIZE = Field<0, 8>;    // FIFO_SIZE
             using SPDIF_PDM = Field<8, 4>;    // SPDIF_PDM
             using OPTION_REGOUT = Field<12, 8>;    // OPTION_REGOUT
         };
 
         // SAI version register
-        struct SAI_VERR : public Register<0x500273f4> {
+        struct SAI_VERR : public RegisterReadOnly<0x500273f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SAI identification register
-        struct SAI_IPIDR : public Register<0x500273f8> {
+        struct SAI_IPIDR : public RegisterReadOnly<0x500273f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SAI size identification register
-        struct SAI_SIDR : public Register<0x500273fc> {
+        struct SAI_SIDR : public RegisterReadOnly<0x500273fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -30917,7 +30917,7 @@ struct STM32MP15xxx {
     // LPTIM1
     struct LPTIM1 {
         // LPTIM interrupt and status register
-        struct LPTIM_ISR : public Register<0x40009000> {
+        struct LPTIM_ISR : public RegisterReadOnly<0x40009000> {
             using CMPM = Field<0, 1>;    // CMPM
             using ARRM = Field<1, 1>;    // ARRM
             using EXTTRIG = Field<2, 1>;    // EXTTRIG
@@ -30928,7 +30928,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt clear register
-        struct LPTIM_ICR : public Register<0x40009004> {
+        struct LPTIM_ICR : public RegisterWriteOnly<0x40009004> {
             using CMPMCF = Field<0, 1>;    // CMPMCF
             using ARRMCF = Field<1, 1>;    // ARRMCF
             using EXTTRIGCF = Field<2, 1>;    // EXTTRIGCF
@@ -30986,7 +30986,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM counter register
-        struct LPTIM_CNT : public Register<0x4000901c> {
+        struct LPTIM_CNT : public RegisterReadOnly<0x4000901c> {
             using CNT = Field<0, 16>;    // CNT
         };
 
@@ -30997,7 +30997,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM 1 peripheral hardware configuration register
-        struct LPTIM1_HWCFGR : public Register<0x400093f0> {
+        struct LPTIM1_HWCFGR : public RegisterReadOnly<0x400093f0> {
             using CFG1 = Field<0, 8>;    // CFG1
             using CFG2 = Field<8, 8>;    // CFG2
             using CFG3 = Field<16, 4>;    // CFG3
@@ -31005,18 +31005,18 @@ struct STM32MP15xxx {
         };
 
         // LPTIM peripheral version identification register
-        struct LPTIM_VERR : public Register<0x400093f4> {
+        struct LPTIM_VERR : public RegisterReadOnly<0x400093f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // LPTIM peripheral type identification register
-        struct LPTIM_PIDR : public Register<0x400093f8> {
+        struct LPTIM_PIDR : public RegisterReadOnly<0x400093f8> {
             using P_ID = Field<0, 32>;    // P_ID
         };
 
         // LPTIM registers map size identification register
-        struct LPTIM_SIDR : public Register<0x400093fc> {
+        struct LPTIM_SIDR : public RegisterReadOnly<0x400093fc> {
             using S_ID = Field<0, 32>;    // S_ID
         };
 
@@ -31025,7 +31025,7 @@ struct STM32MP15xxx {
     // LPTIM2
     struct LPTIM2 {
         // LPTIM 2 peripheral hardware configuration register
-        struct LPTIM2_HWCFGR : public Register<0x500213f0> {
+        struct LPTIM2_HWCFGR : public RegisterReadOnly<0x500213f0> {
             using CFG1 = Field<0, 8>;    // CFG1
             using CFG2 = Field<8, 8>;    // CFG2
             using CFG3 = Field<16, 4>;    // CFG3
@@ -31033,7 +31033,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt and status register
-        struct LPTIM_ISR : public Register<0x50021000> {
+        struct LPTIM_ISR : public RegisterReadOnly<0x50021000> {
             using CMPM = Field<0, 1>;    // CMPM
             using ARRM = Field<1, 1>;    // ARRM
             using EXTTRIG = Field<2, 1>;    // EXTTRIG
@@ -31044,7 +31044,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt clear register
-        struct LPTIM_ICR : public Register<0x50021004> {
+        struct LPTIM_ICR : public RegisterWriteOnly<0x50021004> {
             using CMPMCF = Field<0, 1>;    // CMPMCF
             using ARRMCF = Field<1, 1>;    // ARRMCF
             using EXTTRIGCF = Field<2, 1>;    // EXTTRIGCF
@@ -31102,7 +31102,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM counter register
-        struct LPTIM_CNT : public Register<0x5002101c> {
+        struct LPTIM_CNT : public RegisterReadOnly<0x5002101c> {
             using CNT = Field<0, 16>;    // CNT
         };
 
@@ -31113,18 +31113,18 @@ struct STM32MP15xxx {
         };
 
         // LPTIM peripheral version identification register
-        struct LPTIM_VERR : public Register<0x500213f4> {
+        struct LPTIM_VERR : public RegisterReadOnly<0x500213f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // LPTIM peripheral type identification register
-        struct LPTIM_PIDR : public Register<0x500213f8> {
+        struct LPTIM_PIDR : public RegisterReadOnly<0x500213f8> {
             using P_ID = Field<0, 32>;    // P_ID
         };
 
         // LPTIM registers map size identification register
-        struct LPTIM_SIDR : public Register<0x500213fc> {
+        struct LPTIM_SIDR : public RegisterReadOnly<0x500213fc> {
             using S_ID = Field<0, 32>;    // S_ID
         };
 
@@ -31133,7 +31133,7 @@ struct STM32MP15xxx {
     // LPTIM4
     struct LPTIM4 {
         // LPTIM 4 peripheral hardware configuration register
-        struct LPTIM4_HWCFGR : public Register<0x500233f0> {
+        struct LPTIM4_HWCFGR : public RegisterReadOnly<0x500233f0> {
             using CFG1 = Field<0, 8>;    // CFG1
             using CFG2 = Field<8, 8>;    // CFG2
             using CFG3 = Field<16, 4>;    // CFG3
@@ -31141,7 +31141,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt and status register
-        struct LPTIM_ISR : public Register<0x50023000> {
+        struct LPTIM_ISR : public RegisterReadOnly<0x50023000> {
             using CMPM = Field<0, 1>;    // CMPM
             using ARRM = Field<1, 1>;    // ARRM
             using EXTTRIG = Field<2, 1>;    // EXTTRIG
@@ -31152,7 +31152,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt clear register
-        struct LPTIM_ICR : public Register<0x50023004> {
+        struct LPTIM_ICR : public RegisterWriteOnly<0x50023004> {
             using CMPMCF = Field<0, 1>;    // CMPMCF
             using ARRMCF = Field<1, 1>;    // ARRMCF
             using EXTTRIGCF = Field<2, 1>;    // EXTTRIGCF
@@ -31210,7 +31210,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM counter register
-        struct LPTIM_CNT : public Register<0x5002301c> {
+        struct LPTIM_CNT : public RegisterReadOnly<0x5002301c> {
             using CNT = Field<0, 16>;    // CNT
         };
 
@@ -31221,18 +31221,18 @@ struct STM32MP15xxx {
         };
 
         // LPTIM peripheral version identification register
-        struct LPTIM_VERR : public Register<0x500233f4> {
+        struct LPTIM_VERR : public RegisterReadOnly<0x500233f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // LPTIM peripheral type identification register
-        struct LPTIM_PIDR : public Register<0x500233f8> {
+        struct LPTIM_PIDR : public RegisterReadOnly<0x500233f8> {
             using P_ID = Field<0, 32>;    // P_ID
         };
 
         // LPTIM registers map size identification register
-        struct LPTIM_SIDR : public Register<0x500233fc> {
+        struct LPTIM_SIDR : public RegisterReadOnly<0x500233fc> {
             using S_ID = Field<0, 32>;    // S_ID
         };
 
@@ -31241,7 +31241,7 @@ struct STM32MP15xxx {
     // LPTIM5
     struct LPTIM5 {
         // LPTIM 5 peripheral hardware configuration register
-        struct LPTIM5_HWCFGR : public Register<0x500243f0> {
+        struct LPTIM5_HWCFGR : public RegisterReadOnly<0x500243f0> {
             using CFG1 = Field<0, 8>;    // CFG1
             using CFG2 = Field<8, 8>;    // CFG2
             using CFG3 = Field<16, 4>;    // CFG3
@@ -31249,7 +31249,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt and status register
-        struct LPTIM_ISR : public Register<0x50024000> {
+        struct LPTIM_ISR : public RegisterReadOnly<0x50024000> {
             using CMPM = Field<0, 1>;    // CMPM
             using ARRM = Field<1, 1>;    // ARRM
             using EXTTRIG = Field<2, 1>;    // EXTTRIG
@@ -31260,7 +31260,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt clear register
-        struct LPTIM_ICR : public Register<0x50024004> {
+        struct LPTIM_ICR : public RegisterWriteOnly<0x50024004> {
             using CMPMCF = Field<0, 1>;    // CMPMCF
             using ARRMCF = Field<1, 1>;    // ARRMCF
             using EXTTRIGCF = Field<2, 1>;    // EXTTRIGCF
@@ -31318,7 +31318,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM counter register
-        struct LPTIM_CNT : public Register<0x5002401c> {
+        struct LPTIM_CNT : public RegisterReadOnly<0x5002401c> {
             using CNT = Field<0, 16>;    // CNT
         };
 
@@ -31329,18 +31329,18 @@ struct STM32MP15xxx {
         };
 
         // LPTIM peripheral version identification register
-        struct LPTIM_VERR : public Register<0x500243f4> {
+        struct LPTIM_VERR : public RegisterReadOnly<0x500243f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // LPTIM peripheral type identification register
-        struct LPTIM_PIDR : public Register<0x500243f8> {
+        struct LPTIM_PIDR : public RegisterReadOnly<0x500243f8> {
             using P_ID = Field<0, 32>;    // P_ID
         };
 
         // LPTIM registers map size identification register
-        struct LPTIM_SIDR : public Register<0x500243fc> {
+        struct LPTIM_SIDR : public RegisterReadOnly<0x500243fc> {
             using S_ID = Field<0, 32>;    // S_ID
         };
 
@@ -31455,18 +31455,18 @@ struct STM32MP15xxx {
         };
 
         // SYSCFG version register
-        struct SYSCFG_VERR : public Register<0x500203f4> {
+        struct SYSCFG_VERR : public RegisterReadOnly<0x500203f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SYSCFG identification register
-        struct SYSCFG_IPIDR : public Register<0x500203f8> {
+        struct SYSCFG_IPIDR : public RegisterReadOnly<0x500203f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SYSCFG size identification register
-        struct SYSCFG_SIDR : public Register<0x500203fc> {
+        struct SYSCFG_SIDR : public RegisterReadOnly<0x500203fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -31480,7 +31480,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt and status register
-        struct LPTIM_ISR : public Register<0x50022000> {
+        struct LPTIM_ISR : public RegisterReadOnly<0x50022000> {
             using CMPM = Field<0, 1>;    // CMPM
             using ARRM = Field<1, 1>;    // ARRM
             using EXTTRIG = Field<2, 1>;    // EXTTRIG
@@ -31491,7 +31491,7 @@ struct STM32MP15xxx {
         };
 
         // LPTIM interrupt clear register
-        struct LPTIM_ICR : public Register<0x50022004> {
+        struct LPTIM_ICR : public RegisterWriteOnly<0x50022004> {
             using CMPMCF = Field<0, 1>;    // CMPMCF
             using ARRMCF = Field<1, 1>;    // ARRMCF
             using EXTTRIGCF = Field<2, 1>;    // EXTTRIGCF
@@ -31549,28 +31549,28 @@ struct STM32MP15xxx {
         };
 
         // LPTIM counter register
-        struct LPTIM_CNT : public Register<0x5002201c> {
+        struct LPTIM_CNT : public RegisterReadOnly<0x5002201c> {
             using CNT = Field<0, 16>;    // CNT
         };
 
         // LPTIM peripheral version identification register
-        struct LPTIM_VERR : public Register<0x500223f4> {
+        struct LPTIM_VERR : public RegisterReadOnly<0x500223f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // LPTIM peripheral type identification register
-        struct LPTIM_PIDR : public Register<0x500223f8> {
+        struct LPTIM_PIDR : public RegisterReadOnly<0x500223f8> {
             using P_ID = Field<0, 32>;    // P_ID
         };
 
         // LPTIM registers map size identification register
-        struct LPTIM_SIDR : public Register<0x500223fc> {
+        struct LPTIM_SIDR : public RegisterReadOnly<0x500223fc> {
             using S_ID = Field<0, 32>;    // S_ID
         };
 
         // LPTIM 3 peripheral hardware configuration register
-        struct LPTIM3_HWCFGR : public Register<0x500223f0> {
+        struct LPTIM3_HWCFGR : public RegisterReadOnly<0x500223f0> {
             using CFG1 = Field<0, 8>;    // CFG1
             using CFG2 = Field<8, 8>;    // CFG2
             using CFG3 = Field<16, 4>;    // CFG3
@@ -31594,7 +31594,7 @@ struct STM32MP15xxx {
         };
 
         // Reset on any system reset.
-        struct PWR_CSR1 : public Register<0x50001004> {
+        struct PWR_CSR1 : public RegisterReadOnly<0x50001004> {
             using PVDO = Field<4, 1>;    // PVDO
             using AVDO = Field<16, 1>;    // AVDO
         };
@@ -31671,7 +31671,7 @@ struct STM32MP15xxx {
         };
 
         // Not reset by wakeup from Standby mode but by any Application reset (NRST, IWDG, ...)
-        struct PWR_WKUPFR : public Register<0x50001024> {
+        struct PWR_WKUPFR : public RegisterReadOnly<0x50001024> {
             using WKUPF1 = Field<0, 1>;    // WKUPF1
             using WKUPF2 = Field<1, 1>;    // WKUPF2
             using WKUPF3 = Field<2, 1>;    // WKUPF3
@@ -31701,18 +31701,18 @@ struct STM32MP15xxx {
         };
 
         // PWR IP version register
-        struct PWR_VER : public Register<0x500013f4> {
+        struct PWR_VER : public RegisterReadOnly<0x500013f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // PWR IP identification register
-        struct PWR_ID : public Register<0x500013f8> {
+        struct PWR_ID : public RegisterReadOnly<0x500013f8> {
             using IPID = Field<0, 32>;    // IPID
         };
 
         // PWR size ID register
-        struct PWR_SID : public Register<0x500013fc> {
+        struct PWR_SID : public RegisterReadOnly<0x500013fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -31980,7 +31980,7 @@ struct STM32MP15xxx {
         };
 
         // This register provides a status of the RDCTL. If TZEN = , this register can only be modified in secure mode.
-        struct RCC_MP_APRSTSR : public Register<0x50000114> {
+        struct RCC_MP_APRSTSR : public RegisterReadOnly<0x50000114> {
             using RSTTOV = Field<8, 7>;    // RSTTOV
         };
 
@@ -32640,7 +32640,7 @@ struct STM32MP15xxx {
         };
 
         // This is a read-only access register, It contains the status flags of oscillators. Writing has no effect.
-        struct RCC_OCRDYR : public Register<0x50000808> {
+        struct RCC_OCRDYR : public RegisterReadOnly<0x50000808> {
             using HSIRDY = Field<0, 1>;    // HSIRDY
             using HSIDIVRDY = Field<2, 1>;    // HSIDIVRDY
             using CSIRDY = Field<4, 1>;    // CSIRDY
@@ -34029,18 +34029,18 @@ struct STM32MP15xxx {
         };
 
         // This register gives the IP version
-        struct RCC_VERR : public Register<0x50000ff4> {
+        struct RCC_VERR : public RegisterReadOnly<0x50000ff4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // This register gives the unique identifier of the RCC
-        struct RCC_IDR : public Register<0x50000ff8> {
+        struct RCC_IDR : public RegisterReadOnly<0x50000ff8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // This register gives the decoding space, which is for the RCC of 4 kB.
-        struct RCC_SIDR : public Register<0x50000ffc> {
+        struct RCC_SIDR : public RegisterReadOnly<0x50000ffc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -34067,7 +34067,7 @@ struct STM32MP15xxx {
         };
 
         // IPCC processor 1 to processor 2 status register
-        struct IPCC_C1TOC2SR : public Register<0x4c00100c> {
+        struct IPCC_C1TOC2SR : public RegisterReadOnly<0x4c00100c> {
             using CHxF = Field<0, 6>;    // CHxF
         };
 
@@ -34090,28 +34090,28 @@ struct STM32MP15xxx {
         };
 
         // IPCC processor 2 to processor 1 status register
-        struct IPCC_C2TOC1SR : public Register<0x4c00101c> {
+        struct IPCC_C2TOC1SR : public RegisterReadOnly<0x4c00101c> {
             using CHxF = Field<0, 6>;    // CHxF
         };
 
         // IPCC Hardware configuration register
-        struct IPCC_HWCFGR : public Register<0x4c0013f0> {
+        struct IPCC_HWCFGR : public RegisterReadOnly<0x4c0013f0> {
             using CHANNELS = Field<0, 8>;    // CHANNELS
         };
 
         // IPCC IP Version register
-        struct IPCC_VER : public Register<0x4c0013f4> {
+        struct IPCC_VER : public RegisterReadOnly<0x4c0013f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // IPCC IP Identification register
-        struct IPCC_ID : public Register<0x4c0013f8> {
+        struct IPCC_ID : public RegisterReadOnly<0x4c0013f8> {
             using IPID = Field<0, 32>;    // IPID
         };
 
         // IPCC Size ID register
-        struct IPCC_SID : public Register<0x4c0013fc> {
+        struct IPCC_SID : public RegisterReadOnly<0x4c0013fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -34248,7 +34248,7 @@ struct STM32MP15xxx {
         };
 
         // This description is for register OTG_GRXSTSR in Device mode. A read to the receive status debug read register returns the contents of the top of the receive FIFO. The core ignores the receive status read when the receive FIFO is empty and returns a value of 0x00000000.
-        struct OTG_GRXSTSR : public Register<0x4900001c> {
+        struct OTG_GRXSTSR : public RegisterReadOnly<0x4900001c> {
             using EPNUM = Field<0, 4>;    // EPNUM
             using BCNT = Field<4, 11>;    // BCNT
             using DPID = Field<15, 2>;    // DPID
@@ -34258,7 +34258,7 @@ struct STM32MP15xxx {
         };
 
         // This description is for register OTG_GRXSTSP in Device mode. Similarly to OTG_GRXSTSR (receive status debug read register) where a read returns the contents of the top of the receive FIFO, a read to OTG_GRXSTSP (receive status read and pop register) additionally pops the top data entry out of the Rx FIFO. The core ignores the receive status pop/read when the receive FIFO is empty and returns a value of 0x00000000. The application must only pop the receive status FIFO when the receive FIFO non-empty bit of the core interrupt register (RXFLVL bit in OTG_GINTSTS) is asserted.
-        struct OTG_GRXSTSP : public Register<0x49000020> {
+        struct OTG_GRXSTSP : public RegisterReadOnly<0x49000020> {
             using EPNUM = Field<0, 4>;    // EPNUM
             using BCNT = Field<4, 11>;    // BCNT
             using DPID = Field<15, 2>;    // DPID
@@ -34279,7 +34279,7 @@ struct STM32MP15xxx {
         };
 
         // In device mode, this register is not valid. This read-only register contains the free space information for the non-periodic Tx FIFO and the non-periodic transmit request queue.
-        struct OTG_HNPTXSTS : public Register<0x4900002c> {
+        struct OTG_HNPTXSTS : public RegisterReadOnly<0x4900002c> {
             using NPTXFSAV = Field<0, 16>;    // NPTXFSAV
             using NPTQXSAV = Field<16, 8>;    // NPTQXSAV
             using NPTXQTOP = Field<24, 7>;    // NPTXQTOP
@@ -34392,20 +34392,20 @@ struct STM32MP15xxx {
         };
 
         // This register indicates the current frame number. It also indicates the time remaining (in terms of the number of PHY clocks) in the current frame.
-        struct OTG_HFNUM : public Register<0x49000408> {
+        struct OTG_HFNUM : public RegisterReadOnly<0x49000408> {
             using FRNUM = Field<0, 16>;    // FRNUM
             using FTREM = Field<16, 16>;    // FTREM
         };
 
         // This read-only register contains the free space information for the periodic Tx FIFO and the periodic transmit request queue.
-        struct OTG_HPTXSTS : public Register<0x49000410> {
+        struct OTG_HPTXSTS : public RegisterReadOnly<0x49000410> {
             using PTXFSAVL = Field<0, 16>;    // PTXFSAVL
             using PTXQSAV = Field<16, 8>;    // PTXQSAV
             using PTXQTOP = Field<24, 8>;    // PTXQTOP
         };
 
         // When a significant event occurs on a channel, the host all channels interrupt register interrupts the application using the host channels interrupt bit of the core interrupt register (HCINT bit in OTG_GINTSTS). This is shown in Figure724. There is one interrupt bit per channel, up to a maximum of 16 bits. Bits in this register are set and cleared when the application sets and clears bits in the corresponding host channel-x interrupt register.
-        struct OTG_HAINT : public Register<0x49000414> {
+        struct OTG_HAINT : public RegisterReadOnly<0x49000414> {
             using HAINT = Field<0, 16>;    // HAINT
         };
 
@@ -34506,7 +34506,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB0 : public Register<0x4900051c> {
+        struct OTG_HCDMAB0 : public RegisterReadOnly<0x4900051c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -34580,7 +34580,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB1 : public Register<0x4900053c> {
+        struct OTG_HCDMAB1 : public RegisterReadOnly<0x4900053c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -34654,7 +34654,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB2 : public Register<0x4900055c> {
+        struct OTG_HCDMAB2 : public RegisterReadOnly<0x4900055c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -34728,7 +34728,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB3 : public Register<0x4900057c> {
+        struct OTG_HCDMAB3 : public RegisterReadOnly<0x4900057c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -34802,7 +34802,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB4 : public Register<0x4900059c> {
+        struct OTG_HCDMAB4 : public RegisterReadOnly<0x4900059c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -34876,7 +34876,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB5 : public Register<0x490005bc> {
+        struct OTG_HCDMAB5 : public RegisterReadOnly<0x490005bc> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -34950,7 +34950,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB6 : public Register<0x490005dc> {
+        struct OTG_HCDMAB6 : public RegisterReadOnly<0x490005dc> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35024,7 +35024,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB7 : public Register<0x490005fc> {
+        struct OTG_HCDMAB7 : public RegisterReadOnly<0x490005fc> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35098,7 +35098,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB8 : public Register<0x4900061c> {
+        struct OTG_HCDMAB8 : public RegisterReadOnly<0x4900061c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35172,7 +35172,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB9 : public Register<0x4900063c> {
+        struct OTG_HCDMAB9 : public RegisterReadOnly<0x4900063c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35246,7 +35246,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB10 : public Register<0x4900065c> {
+        struct OTG_HCDMAB10 : public RegisterReadOnly<0x4900065c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35320,7 +35320,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB11 : public Register<0x4900067c> {
+        struct OTG_HCDMAB11 : public RegisterReadOnly<0x4900067c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35394,7 +35394,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB12 : public Register<0x4900069c> {
+        struct OTG_HCDMAB12 : public RegisterReadOnly<0x4900069c> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35468,7 +35468,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB13 : public Register<0x490006bc> {
+        struct OTG_HCDMAB13 : public RegisterReadOnly<0x490006bc> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35542,7 +35542,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB14 : public Register<0x490006dc> {
+        struct OTG_HCDMAB14 : public RegisterReadOnly<0x490006dc> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35616,7 +35616,7 @@ struct STM32MP15xxx {
         };
 
         // OTG host channel-n DMA address buffer register
-        struct OTG_HCDMAB15 : public Register<0x490006fc> {
+        struct OTG_HCDMAB15 : public RegisterReadOnly<0x490006fc> {
             using HCDMAB = Field<0, 32>;    // HCDMAB
         };
 
@@ -35647,7 +35647,7 @@ struct STM32MP15xxx {
         };
 
         // This register indicates the status of the core with respect to USB-related events. It must be read on interrupts from the device all interrupts (OTG_DAINT) register.
-        struct OTG_DSTS : public Register<0x49000808> {
+        struct OTG_DSTS : public RegisterReadOnly<0x49000808> {
             using SUSPSTS = Field<0, 1>;    // SUSPSTS
             using ENUMSPD = Field<1, 2>;    // ENUMSPD
             using EERR = Field<3, 1>;    // EERR
@@ -35686,7 +35686,7 @@ struct STM32MP15xxx {
         };
 
         // When a significant event occurs on an endpoint, a OTG_DAINT register interrupts the application using the device OUT endpoints interrupt bit or device IN endpoints interrupt bit of the OTG_GINTSTS register (OEPINT or IEPINT in OTG_GINTSTS, respectively). There is one interrupt bit per endpoint, up to a maximum of 16 bits for OUT endpoints and 16 bits for IN endpoints. For a bidirectional endpoint, the corresponding IN and OUT interrupt bits are used. Bits in this register are set and cleared when the application sets and clears bits in the corresponding device endpoint-x interrupt register (OTG_DIEPINTx/OTG_DOEPINTx).
-        struct OTG_DAINT : public Register<0x49000818> {
+        struct OTG_DAINT : public RegisterReadOnly<0x49000818> {
             using IEPINT = Field<0, 16>;    // IEPINT
             using OEPINT = Field<16, 16>;    // OEPINT
         };
@@ -35723,7 +35723,7 @@ struct STM32MP15xxx {
         };
 
         // OTG device each endpoint interrupt register
-        struct OTG_DEACHINT : public Register<0x49000838> {
+        struct OTG_DEACHINT : public RegisterReadOnly<0x49000838> {
             using IEP1INT = Field<1, 1>;    // IEP1INT
             using OEP1INT = Field<17, 1>;    // OEP1INT
         };
@@ -35807,7 +35807,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS0 : public Register<0x49000918> {
+        struct OTG_DTXFSTS0 : public RegisterReadOnly<0x49000918> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -35857,7 +35857,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS1 : public Register<0x49000938> {
+        struct OTG_DTXFSTS1 : public RegisterReadOnly<0x49000938> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -35907,7 +35907,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS2 : public Register<0x49000958> {
+        struct OTG_DTXFSTS2 : public RegisterReadOnly<0x49000958> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -35957,7 +35957,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS3 : public Register<0x49000978> {
+        struct OTG_DTXFSTS3 : public RegisterReadOnly<0x49000978> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -36007,7 +36007,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS4 : public Register<0x49000998> {
+        struct OTG_DTXFSTS4 : public RegisterReadOnly<0x49000998> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -36057,7 +36057,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS5 : public Register<0x490009b8> {
+        struct OTG_DTXFSTS5 : public RegisterReadOnly<0x490009b8> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -36107,7 +36107,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS6 : public Register<0x490009d8> {
+        struct OTG_DTXFSTS6 : public RegisterReadOnly<0x490009d8> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -36157,7 +36157,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS7 : public Register<0x490009f8> {
+        struct OTG_DTXFSTS7 : public RegisterReadOnly<0x490009f8> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -36207,7 +36207,7 @@ struct STM32MP15xxx {
         };
 
         // This read-only register contains the free space information for the device IN endpoint Tx FIFO.
-        struct OTG_DTXFSTS8 : public Register<0x49000a18> {
+        struct OTG_DTXFSTS8 : public RegisterReadOnly<0x49000a18> {
             using INEPTFSAV = Field<0, 16>;    // INEPTFSAV
         };
 
@@ -36647,7 +36647,7 @@ struct STM32MP15xxx {
         };
 
         // MDIOS write flag register
-        struct MDIOS_WRFR : public Register<0x4001c004> {
+        struct MDIOS_WRFR : public RegisterReadOnly<0x4001c004> {
             using WRF = Field<0, 32>;    // WRF
         };
 
@@ -36657,7 +36657,7 @@ struct STM32MP15xxx {
         };
 
         // MDIOS read flag register
-        struct MDIOS_RDFR : public Register<0x4001c00c> {
+        struct MDIOS_RDFR : public RegisterReadOnly<0x4001c00c> {
             using RDF = Field<0, 32>;    // RDF
         };
 
@@ -36667,7 +36667,7 @@ struct STM32MP15xxx {
         };
 
         // MDIOS status register
-        struct MDIOS_SR : public Register<0x4001c014> {
+        struct MDIOS_SR : public RegisterReadOnly<0x4001c014> {
             using PERF = Field<0, 1>;    // PERF
             using SERF = Field<1, 1>;    // SERF
             using TERF = Field<2, 1>;    // TERF
@@ -36681,343 +36681,343 @@ struct STM32MP15xxx {
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR0 : public Register<0x4001c100> {
+        struct MDIOS_DINR0 : public RegisterReadOnly<0x4001c100> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR1 : public Register<0x4001c104> {
+        struct MDIOS_DINR1 : public RegisterReadOnly<0x4001c104> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR2 : public Register<0x4001c108> {
+        struct MDIOS_DINR2 : public RegisterReadOnly<0x4001c108> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR3 : public Register<0x4001c10c> {
+        struct MDIOS_DINR3 : public RegisterReadOnly<0x4001c10c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR4 : public Register<0x4001c110> {
+        struct MDIOS_DINR4 : public RegisterReadOnly<0x4001c110> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR5 : public Register<0x4001c114> {
+        struct MDIOS_DINR5 : public RegisterReadOnly<0x4001c114> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR6 : public Register<0x4001c118> {
+        struct MDIOS_DINR6 : public RegisterReadOnly<0x4001c118> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR7 : public Register<0x4001c11c> {
+        struct MDIOS_DINR7 : public RegisterReadOnly<0x4001c11c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR8 : public Register<0x4001c120> {
+        struct MDIOS_DINR8 : public RegisterReadOnly<0x4001c120> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR9 : public Register<0x4001c124> {
+        struct MDIOS_DINR9 : public RegisterReadOnly<0x4001c124> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR10 : public Register<0x4001c128> {
+        struct MDIOS_DINR10 : public RegisterReadOnly<0x4001c128> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR11 : public Register<0x4001c12c> {
+        struct MDIOS_DINR11 : public RegisterReadOnly<0x4001c12c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR12 : public Register<0x4001c130> {
+        struct MDIOS_DINR12 : public RegisterReadOnly<0x4001c130> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR13 : public Register<0x4001c134> {
+        struct MDIOS_DINR13 : public RegisterReadOnly<0x4001c134> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR14 : public Register<0x4001c138> {
+        struct MDIOS_DINR14 : public RegisterReadOnly<0x4001c138> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR15 : public Register<0x4001c13c> {
+        struct MDIOS_DINR15 : public RegisterReadOnly<0x4001c13c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR16 : public Register<0x4001c140> {
+        struct MDIOS_DINR16 : public RegisterReadOnly<0x4001c140> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR17 : public Register<0x4001c144> {
+        struct MDIOS_DINR17 : public RegisterReadOnly<0x4001c144> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR18 : public Register<0x4001c148> {
+        struct MDIOS_DINR18 : public RegisterReadOnly<0x4001c148> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR19 : public Register<0x4001c14c> {
+        struct MDIOS_DINR19 : public RegisterReadOnly<0x4001c14c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR20 : public Register<0x4001c150> {
+        struct MDIOS_DINR20 : public RegisterReadOnly<0x4001c150> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR21 : public Register<0x4001c154> {
+        struct MDIOS_DINR21 : public RegisterReadOnly<0x4001c154> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR22 : public Register<0x4001c158> {
+        struct MDIOS_DINR22 : public RegisterReadOnly<0x4001c158> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR23 : public Register<0x4001c15c> {
+        struct MDIOS_DINR23 : public RegisterReadOnly<0x4001c15c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR24 : public Register<0x4001c160> {
+        struct MDIOS_DINR24 : public RegisterReadOnly<0x4001c160> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR25 : public Register<0x4001c164> {
+        struct MDIOS_DINR25 : public RegisterReadOnly<0x4001c164> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR26 : public Register<0x4001c168> {
+        struct MDIOS_DINR26 : public RegisterReadOnly<0x4001c168> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR27 : public Register<0x4001c16c> {
+        struct MDIOS_DINR27 : public RegisterReadOnly<0x4001c16c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR28 : public Register<0x4001c170> {
+        struct MDIOS_DINR28 : public RegisterReadOnly<0x4001c170> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR29 : public Register<0x4001c174> {
+        struct MDIOS_DINR29 : public RegisterReadOnly<0x4001c174> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR30 : public Register<0x4001c178> {
+        struct MDIOS_DINR30 : public RegisterReadOnly<0x4001c178> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DINR31 : public Register<0x4001c17c> {
+        struct MDIOS_DINR31 : public RegisterReadOnly<0x4001c17c> {
             using DIN = Field<0, 16>;    // DIN
         };
 
         // MDIOS input data register
-        struct MDIOS_DOUTR0 : public Register<0x4001c180> {
+        struct MDIOS_DOUTR0 : public RegisterReadOnly<0x4001c180> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS input data register
-        struct MDIOS_DOUTR1 : public Register<0x4001c184> {
-            using DOUT = Field<0, 16>;    // DOUT
-        };
-
-        // MDIOS output data register
-        struct MDIOS_DOUTR2 : public Register<0x4001c188> {
+        struct MDIOS_DOUTR1 : public RegisterReadOnly<0x4001c184> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR3 : public Register<0x4001c18c> {
+        struct MDIOS_DOUTR2 : public RegisterReadOnly<0x4001c188> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR4 : public Register<0x4001c190> {
+        struct MDIOS_DOUTR3 : public RegisterReadOnly<0x4001c18c> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR5 : public Register<0x4001c194> {
+        struct MDIOS_DOUTR4 : public RegisterReadOnly<0x4001c190> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR6 : public Register<0x4001c198> {
+        struct MDIOS_DOUTR5 : public RegisterReadOnly<0x4001c194> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR7 : public Register<0x4001c19c> {
+        struct MDIOS_DOUTR6 : public RegisterReadOnly<0x4001c198> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR8 : public Register<0x4001c1a0> {
+        struct MDIOS_DOUTR7 : public RegisterReadOnly<0x4001c19c> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR9 : public Register<0x4001c1a4> {
+        struct MDIOS_DOUTR8 : public RegisterReadOnly<0x4001c1a0> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR10 : public Register<0x4001c1a8> {
+        struct MDIOS_DOUTR9 : public RegisterReadOnly<0x4001c1a4> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR11 : public Register<0x4001c1ac> {
+        struct MDIOS_DOUTR10 : public RegisterReadOnly<0x4001c1a8> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR12 : public Register<0x4001c1b0> {
+        struct MDIOS_DOUTR11 : public RegisterReadOnly<0x4001c1ac> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR13 : public Register<0x4001c1b4> {
+        struct MDIOS_DOUTR12 : public RegisterReadOnly<0x4001c1b0> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR14 : public Register<0x4001c1b8> {
+        struct MDIOS_DOUTR13 : public RegisterReadOnly<0x4001c1b4> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR15 : public Register<0x4001c1bc> {
+        struct MDIOS_DOUTR14 : public RegisterReadOnly<0x4001c1b8> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR16 : public Register<0x4001c1c0> {
+        struct MDIOS_DOUTR15 : public RegisterReadOnly<0x4001c1bc> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR17 : public Register<0x4001c1c4> {
+        struct MDIOS_DOUTR16 : public RegisterReadOnly<0x4001c1c0> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR18 : public Register<0x4001c1c8> {
+        struct MDIOS_DOUTR17 : public RegisterReadOnly<0x4001c1c4> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR19 : public Register<0x4001c1cc> {
+        struct MDIOS_DOUTR18 : public RegisterReadOnly<0x4001c1c8> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR20 : public Register<0x4001c1d0> {
+        struct MDIOS_DOUTR19 : public RegisterReadOnly<0x4001c1cc> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR21 : public Register<0x4001c1d4> {
+        struct MDIOS_DOUTR20 : public RegisterReadOnly<0x4001c1d0> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR22 : public Register<0x4001c1d8> {
+        struct MDIOS_DOUTR21 : public RegisterReadOnly<0x4001c1d4> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR23 : public Register<0x4001c1dc> {
+        struct MDIOS_DOUTR22 : public RegisterReadOnly<0x4001c1d8> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR24 : public Register<0x4001c1e0> {
+        struct MDIOS_DOUTR23 : public RegisterReadOnly<0x4001c1dc> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR25 : public Register<0x4001c1e4> {
+        struct MDIOS_DOUTR24 : public RegisterReadOnly<0x4001c1e0> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR26 : public Register<0x4001c1e8> {
+        struct MDIOS_DOUTR25 : public RegisterReadOnly<0x4001c1e4> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR27 : public Register<0x4001c1ec> {
+        struct MDIOS_DOUTR26 : public RegisterReadOnly<0x4001c1e8> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR28 : public Register<0x4001c1f0> {
+        struct MDIOS_DOUTR27 : public RegisterReadOnly<0x4001c1ec> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR29 : public Register<0x4001c1f4> {
+        struct MDIOS_DOUTR28 : public RegisterReadOnly<0x4001c1f0> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR30 : public Register<0x4001c1f8> {
+        struct MDIOS_DOUTR29 : public RegisterReadOnly<0x4001c1f4> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS output data register
-        struct MDIOS_DOUTR31 : public Register<0x4001c1fc> {
+        struct MDIOS_DOUTR30 : public RegisterReadOnly<0x4001c1f8> {
+            using DOUT = Field<0, 16>;    // DOUT
+        };
+
+        // MDIOS output data register
+        struct MDIOS_DOUTR31 : public RegisterReadOnly<0x4001c1fc> {
             using DOUT = Field<0, 16>;    // DOUT
         };
 
         // MDIOS HW configuration register
-        struct MDIOS_HWCFGR : public Register<0x4001c3f0> {
+        struct MDIOS_HWCFGR : public RegisterReadOnly<0x4001c3f0> {
             using NBREG = Field<0, 8>;    // NBREG
         };
 
         // MDIOS version register
-        struct MDIOS_VERR : public Register<0x4001c3f4> {
+        struct MDIOS_VERR : public RegisterReadOnly<0x4001c3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // MDIOS identification register
-        struct MDIOS_IPIDR : public Register<0x4001c3f8> {
+        struct MDIOS_IPIDR : public RegisterReadOnly<0x4001c3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // MDIOS size identification register
-        struct MDIOS_SIDR : public Register<0x4001c3fc> {
+        struct MDIOS_SIDR : public RegisterReadOnly<0x4001c3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -37051,7 +37051,7 @@ struct STM32MP15xxx {
         };
 
         // CEC Rx data register
-        struct CEC_RXDR : public Register<0x4001600c> {
+        struct CEC_RXDR : public RegisterReadOnly<0x4001600c> {
             using RXD = Field<0, 8>;    // RXD
         };
 
@@ -37124,7 +37124,7 @@ struct STM32MP15xxx {
         };
 
         // Status register
-        struct SPDIFRX_SR : public Register<0x4000d008> {
+        struct SPDIFRX_SR : public RegisterReadOnly<0x4000d008> {
             using RXNE = Field<0, 1>;    // RXNE
             using CSRNE = Field<1, 1>;    // CSRNE
             using PERR = Field<2, 1>;    // PERR
@@ -37146,7 +37146,7 @@ struct STM32MP15xxx {
         };
 
         // This register can take 3 different formats according to DRFMT. Here is the format when DRFMT = 00:
-        struct SPDIFRX_FMT0_DR : public Register<0x4000d010> {
+        struct SPDIFRX_FMT0_DR : public RegisterReadOnly<0x4000d010> {
             using DR = Field<0, 24>;    // DR
             using PE = Field<24, 1>;    // PE
             using V = Field<25, 1>;    // V
@@ -37156,31 +37156,31 @@ struct STM32MP15xxx {
         };
 
         // Channel status register
-        struct SPDIFRX_CSR : public Register<0x4000d014> {
+        struct SPDIFRX_CSR : public RegisterReadOnly<0x4000d014> {
             using USR = Field<0, 16>;    // USR
             using CS = Field<16, 8>;    // CS
             using SOB = Field<24, 1>;    // SOB
         };
 
         // Debug information register
-        struct SPDIFRX_DIR : public Register<0x4000d018> {
+        struct SPDIFRX_DIR : public RegisterReadOnly<0x4000d018> {
             using THI = Field<0, 13>;    // THI
             using TLO = Field<16, 13>;    // TLO
         };
 
         // SPDIFRX version register
-        struct SPDIFRX_VERR : public Register<0x4000d3f4> {
+        struct SPDIFRX_VERR : public RegisterReadOnly<0x4000d3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // SPDIFRX identification register
-        struct SPDIFRX_IPIDR : public Register<0x4000d3f8> {
+        struct SPDIFRX_IPIDR : public RegisterReadOnly<0x4000d3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // SPDIFRX size identification register
-        struct SPDIFRX_SIDR : public Register<0x4000d3fc> {
+        struct SPDIFRX_SIDR : public RegisterReadOnly<0x4000d3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -37207,23 +37207,23 @@ struct STM32MP15xxx {
         };
 
         // WWDG hardware configuration register
-        struct WWDG_HWCFGR : public Register<0x4000a3f0> {
+        struct WWDG_HWCFGR : public RegisterReadOnly<0x4000a3f0> {
             using PREDIV = Field<0, 16>;    // PREDIV
         };
 
         // WWDG version register
-        struct WWDG_VERR : public Register<0x4000a3f4> {
+        struct WWDG_VERR : public RegisterReadOnly<0x4000a3f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // WWDG ID register
-        struct WWDG_IPIDR : public Register<0x4000a3f8> {
+        struct WWDG_IPIDR : public RegisterReadOnly<0x4000a3f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // WWDG size ID register
-        struct WWDG_SIDR : public Register<0x4000a3fc> {
+        struct WWDG_SIDR : public RegisterReadOnly<0x4000a3fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -37438,65 +37438,65 @@ struct STM32MP15xxx {
         };
 
         // AXIMC peripheral ID4 register
-        struct AXIMC_PERIPH_ID_4 : public Register<0x57043ff4> {
+        struct AXIMC_PERIPH_ID_4 : public RegisterReadOnly<0x57043ff4> {
             using JEP106CON = Field<0, 4>;    // JEP106CON
             using K4COUNT = Field<4, 4>;    // K4COUNT
         };
 
         // AXIMC peripheral ID5 register
-        struct AXIMC_PERIPH_ID_5 : public Register<0x57043ff8> {
+        struct AXIMC_PERIPH_ID_5 : public RegisterReadOnly<0x57043ff8> {
             using PERIPH_ID_5 = Field<0, 8>;    // PERIPH_ID_5
         };
 
         // AXIMC peripheral ID6 register
-        struct AXIMC_PERIPH_ID_6 : public Register<0x57043ffc> {
+        struct AXIMC_PERIPH_ID_6 : public RegisterReadOnly<0x57043ffc> {
             using PERIPH_ID_6 = Field<0, 8>;    // PERIPH_ID_6
         };
 
         // AXIMC peripheral ID7 register
-        struct AXIMC_PERIPH_ID_7 : public Register<0x57044000> {
+        struct AXIMC_PERIPH_ID_7 : public RegisterReadOnly<0x57044000> {
             using PERIPH_ID_7 = Field<0, 8>;    // PERIPH_ID_7
         };
 
         // AXIMC peripheral ID0 register
-        struct AXIMC_PERIPH_ID_0 : public Register<0x57044004> {
+        struct AXIMC_PERIPH_ID_0 : public RegisterReadOnly<0x57044004> {
             using PERIPH_ID_0 = Field<0, 8>;    // PERIPH_ID_0
         };
 
         // AXIMC peripheral ID1 register
-        struct AXIMC_PERIPH_ID_1 : public Register<0x57044008> {
+        struct AXIMC_PERIPH_ID_1 : public RegisterReadOnly<0x57044008> {
             using PERIPH_ID_1 = Field<0, 8>;    // PERIPH_ID_1
         };
 
         // AXIMC peripheral ID2 register
-        struct AXIMC_PERIPH_ID_2 : public Register<0x5704400c> {
+        struct AXIMC_PERIPH_ID_2 : public RegisterReadOnly<0x5704400c> {
             using PERIPH_ID_2 = Field<0, 8>;    // PERIPH_ID_2
         };
 
         // AXIMC peripheral ID3 register
-        struct AXIMC_PERIPH_ID_3 : public Register<0x57044010> {
+        struct AXIMC_PERIPH_ID_3 : public RegisterReadOnly<0x57044010> {
             using CUST_MOD_NUM = Field<0, 4>;    // CUST_MOD_NUM
             using REV_AND = Field<4, 4>;    // REV_AND
         };
 
         // AXIMC component ID0 register
-        struct AXIMC_COMP_ID_0 : public Register<0x57044014> {
+        struct AXIMC_COMP_ID_0 : public RegisterReadOnly<0x57044014> {
             using PREAMBLE = Field<0, 8>;    // PREAMBLE
         };
 
         // AXIMC component ID1 register
-        struct AXIMC_COMP_ID_1 : public Register<0x57044018> {
+        struct AXIMC_COMP_ID_1 : public RegisterReadOnly<0x57044018> {
             using PREAMBLE = Field<0, 4>;    // PREAMBLE
             using CLASS = Field<4, 4>;    // CLASS
         };
 
         // AXIMC component ID2 register
-        struct AXIMC_COMP_ID_2 : public Register<0x5704401c> {
+        struct AXIMC_COMP_ID_2 : public RegisterReadOnly<0x5704401c> {
             using PREAMBLE = Field<0, 8>;    // PREAMBLE
         };
 
         // AXIMC component ID3 register
-        struct AXIMC_COMP_ID_3 : public Register<0x57044020> {
+        struct AXIMC_COMP_ID_3 : public RegisterReadOnly<0x57044020> {
             using PREAMBLE = Field<0, 8>;    // PREAMBLE
         };
 
@@ -37540,7 +37540,7 @@ struct STM32MP15xxx {
     // TZC
     struct TZC {
         // Provides information about TZC configuration.
-        struct TZC_BUILD_CONFIG : public Register<0x5c006000> {
+        struct TZC_BUILD_CONFIG : public RegisterReadOnly<0x5c006000> {
             using NO_OF_REGIONS = Field<0, 5>;    // NO_OF_REGIONS
             using ADDRESS_WIDTH = Field<8, 6>;    // ADDRESS_WIDTH
             using NO_OF_FILTERS = Field<24, 2>;    // NO_OF_FILTERS
@@ -37564,7 +37564,7 @@ struct STM32MP15xxx {
         };
 
         // Contains the status of the interrupt signal, TZCINT, that reports access security violations or region overlap errors.
-        struct TZC_INT_STATUS : public Register<0x5c006010> {
+        struct TZC_INT_STATUS : public RegisterReadOnly<0x5c006010> {
             using STATUS = Field<0, 2>;    // STATUS
             using OVERRUN = Field<8, 2>;    // OVERRUN
             using OVERLAP = Field<16, 2>;    // OVERLAP
@@ -37576,26 +37576,26 @@ struct STM32MP15xxx {
         };
 
         // Status information about the first access that failed a region permission check in the associated filter (0 to 1).
-        struct TZC_FAIL_CONTROL0 : public Register<0x5c006028> {
+        struct TZC_FAIL_CONTROL0 : public RegisterReadOnly<0x5c006028> {
             using PRIVILEGE = Field<20, 1>;    // PRIVILEGE
             using NON_SECURE = Field<21, 1>;    // NON_SECURE
             using DIRECTION = Field<24, 1>;    // DIRECTION
         };
 
         // Contains the master AXI ARID or AWID of the first access that failed a region permission check in the associated filter unit. This occurs even if the ACTION register is set to not drive the interrupt signal. AXI ID mapping is described in Table4: NSAID definition table (TBD).
-        struct TZC_FAIL_ID0 : public Register<0x5c00602c> {
+        struct TZC_FAIL_ID0 : public RegisterReadOnly<0x5c00602c> {
             using ID = Field<0, 11>;    // ID
         };
 
         // Status information about the first access that failed a region permission check in the associated filter (0 to 1).
-        struct TZC_FAIL_CONTROL1 : public Register<0x5c006038> {
+        struct TZC_FAIL_CONTROL1 : public RegisterReadOnly<0x5c006038> {
             using PRIVILEGE = Field<20, 1>;    // PRIVILEGE
             using NON_SECURE = Field<21, 1>;    // NON_SECURE
             using DIRECTION = Field<24, 1>;    // DIRECTION
         };
 
         // Contains the master AXI ARID or AWID of the first access that failed a region permission check in the associated filter unit. This occurs even if the ACTION register is set to not drive the interrupt signal. AXI ID mapping is described in Table4: NSAID definition table (TBD).
-        struct TZC_FAIL_ID1 : public Register<0x5c00603c> {
+        struct TZC_FAIL_ID1 : public RegisterReadOnly<0x5c00603c> {
             using ID = Field<0, 11>;    // ID
         };
 
@@ -37663,94 +37663,94 @@ struct STM32MP15xxx {
         };
 
         // Peripheral ID 4.
-        struct TZC_PID4 : public Register<0x5c006fd0> {
+        struct TZC_PID4 : public RegisterReadOnly<0x5c006fd0> {
             using PER_ID_4 = Field<0, 8>;    // PER_ID_4
         };
 
         // Peripheral ID 5.
-        struct TZC_PID5 : public Register<0x5c006fd4> {
+        struct TZC_PID5 : public RegisterReadOnly<0x5c006fd4> {
             using PER_ID_5 = Field<0, 8>;    // PER_ID_5
         };
 
         // Peripheral ID 6.
-        struct TZC_PID6 : public Register<0x5c006fd8> {
+        struct TZC_PID6 : public RegisterReadOnly<0x5c006fd8> {
             using PER_ID_6 = Field<0, 8>;    // PER_ID_6
         };
 
         // Peripheral ID 7.
-        struct TZC_PID7 : public Register<0x5c006fdc> {
+        struct TZC_PID7 : public RegisterReadOnly<0x5c006fdc> {
             using PER_ID_7 = Field<0, 8>;    // PER_ID_7
         };
 
         // Peripheral ID 0.
-        struct TZC_PID0 : public Register<0x5c006fe0> {
+        struct TZC_PID0 : public RegisterReadOnly<0x5c006fe0> {
             using PER_ID_0 = Field<0, 8>;    // PER_ID_0
         };
 
         // Peripheral ID 1.
-        struct TZC_PID1 : public Register<0x5c006fe4> {
+        struct TZC_PID1 : public RegisterReadOnly<0x5c006fe4> {
             using PER_ID_1 = Field<0, 8>;    // PER_ID_1
         };
 
         // Peripheral ID 2.
-        struct TZC_PID2 : public Register<0x5c006fe8> {
+        struct TZC_PID2 : public RegisterReadOnly<0x5c006fe8> {
             using PER_ID_2 = Field<0, 8>;    // PER_ID_2
         };
 
         // Peripheral ID 3.
-        struct TZC_PID3 : public Register<0x5c006fec> {
+        struct TZC_PID3 : public RegisterReadOnly<0x5c006fec> {
             using PER_ID_3 = Field<0, 8>;    // PER_ID_3
         };
 
         // Component ID 0.
-        struct TZC_CID0 : public Register<0x5c006ff0> {
+        struct TZC_CID0 : public RegisterReadOnly<0x5c006ff0> {
             using COMP_ID_0 = Field<0, 8>;    // COMP_ID_0
         };
 
         // Component ID 1.
-        struct TZC_CID1 : public Register<0x5c006ff4> {
+        struct TZC_CID1 : public RegisterReadOnly<0x5c006ff4> {
             using COMP_ID_1 = Field<0, 8>;    // COMP_ID_1
         };
 
         // Component ID 2.
-        struct TZC_CID2 : public Register<0x5c006ff8> {
+        struct TZC_CID2 : public RegisterReadOnly<0x5c006ff8> {
             using COMP_ID_2 = Field<0, 8>;    // COMP_ID_2
         };
 
         // Component ID 3.
-        struct TZC_CID3 : public Register<0x5c006ffc> {
+        struct TZC_CID3 : public RegisterReadOnly<0x5c006ffc> {
             using COMP_ID_3 = Field<0, 8>;    // COMP_ID_3
         };
 
         // Address low bits of the first failed access in the associated filter (0 to 1).
-        struct TZC_FAIL_ADDRESS_LOW0 : public Register<0x5c006020> {
+        struct TZC_FAIL_ADDRESS_LOW0 : public RegisterReadOnly<0x5c006020> {
             using ADDR_STATUS_LOW = Field<0, 32>;    // ADDR_STATUS_LOW
         };
 
         // Address high bit of the first failed access in the associated filter (0 to 1). Not used with 32bit address.
-        struct TZC_FAIL_ADDRESS_HIGH0 : public Register<0x5c006024> {
+        struct TZC_FAIL_ADDRESS_HIGH0 : public RegisterReadOnly<0x5c006024> {
         };
 
         // Address low bits of the first failed access in the associated filter (0 to 1).
-        struct TZC_FAIL_ADDRESS_LOW1 : public Register<0x5c006030> {
+        struct TZC_FAIL_ADDRESS_LOW1 : public RegisterReadOnly<0x5c006030> {
             using ADDR_STATUS_LOW = Field<0, 32>;    // ADDR_STATUS_LOW
         };
 
         // Address high bit of the first failed access in the associated filter (0 to 1). Not used with 32bit address.
-        struct TZC_FAIL_ADDRESS_HIGH1 : public Register<0x5c006034> {
+        struct TZC_FAIL_ADDRESS_HIGH1 : public RegisterReadOnly<0x5c006034> {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH0 : public Register<0x5c006104> {
+        struct TZC_REGION_BASE_HIGH0 : public RegisterReadOnly<0x5c006104> {
         };
 
         // Top address bits [31:12] for region 0.
-        struct TZC_REGION_TOP_LOW0 : public Register<0x5c006108> {
+        struct TZC_REGION_TOP_LOW0 : public RegisterReadOnly<0x5c006108> {
             using TOP_ADDRESS_LOW = Field<12, 20>;    // TOP_ADDRESS_LOW
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH0 : public Register<0x5c00610c> {
+        struct TZC_REGION_TOP_HIGH0 : public RegisterReadOnly<0x5c00610c> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37765,7 +37765,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH1 : public Register<0x5c006124> {
+        struct TZC_REGION_BASE_HIGH1 : public RegisterReadOnly<0x5c006124> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37774,7 +37774,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH1 : public Register<0x5c00612c> {
+        struct TZC_REGION_TOP_HIGH1 : public RegisterReadOnly<0x5c00612c> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37789,7 +37789,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH2 : public Register<0x5c006144> {
+        struct TZC_REGION_BASE_HIGH2 : public RegisterReadOnly<0x5c006144> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37798,7 +37798,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH2 : public Register<0x5c00614c> {
+        struct TZC_REGION_TOP_HIGH2 : public RegisterReadOnly<0x5c00614c> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37813,7 +37813,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH3 : public Register<0x5c006164> {
+        struct TZC_REGION_BASE_HIGH3 : public RegisterReadOnly<0x5c006164> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37822,7 +37822,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH3 : public Register<0x5c00616c> {
+        struct TZC_REGION_TOP_HIGH3 : public RegisterReadOnly<0x5c00616c> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37837,7 +37837,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH4 : public Register<0x5c006184> {
+        struct TZC_REGION_BASE_HIGH4 : public RegisterReadOnly<0x5c006184> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37846,7 +37846,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH4 : public Register<0x5c00618c> {
+        struct TZC_REGION_TOP_HIGH4 : public RegisterReadOnly<0x5c00618c> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37861,7 +37861,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH5 : public Register<0x5c0061a4> {
+        struct TZC_REGION_BASE_HIGH5 : public RegisterReadOnly<0x5c0061a4> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37870,7 +37870,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH5 : public Register<0x5c0061ac> {
+        struct TZC_REGION_TOP_HIGH5 : public RegisterReadOnly<0x5c0061ac> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37885,7 +37885,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH6 : public Register<0x5c0061c4> {
+        struct TZC_REGION_BASE_HIGH6 : public RegisterReadOnly<0x5c0061c4> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37894,7 +37894,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH6 : public Register<0x5c0061cc> {
+        struct TZC_REGION_TOP_HIGH6 : public RegisterReadOnly<0x5c0061cc> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37909,7 +37909,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH7 : public Register<0x5c0062e4> {
+        struct TZC_REGION_BASE_HIGH7 : public RegisterReadOnly<0x5c0062e4> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37918,7 +37918,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH7 : public Register<0x5c0062ec> {
+        struct TZC_REGION_TOP_HIGH7 : public RegisterReadOnly<0x5c0062ec> {
         };
 
         // Region non-secure access based on NSAID.
@@ -37933,7 +37933,7 @@ struct STM32MP15xxx {
         };
 
         // Base address high are not used with 32-bit address.
-        struct TZC_REGION_BASE_HIGH8 : public Register<0x5c006204> {
+        struct TZC_REGION_BASE_HIGH8 : public RegisterReadOnly<0x5c006204> {
         };
 
         // Top address bits [31:12] for region x.
@@ -37942,7 +37942,7 @@ struct STM32MP15xxx {
         };
 
         // Top address high of region are not used with 32-bit address.
-        struct TZC_REGION_TOP_HIGH8 : public Register<0x5c00630c> {
+        struct TZC_REGION_TOP_HIGH8 : public RegisterReadOnly<0x5c00630c> {
         };
 
         // Region non-secure access based on NSAID.
@@ -38015,7 +38015,7 @@ struct STM32MP15xxx {
         };
 
         // event generation register
-        struct TIMx_EGR : public Register<0x44006014> {
+        struct TIMx_EGR : public RegisterWriteOnly<0x44006014> {
             using BG = Field<7, 1>;    // BG
             using TG = Field<6, 1>;    // Trigger generation
             using COMG = Field<5, 1>;    // COMG
@@ -38176,7 +38176,7 @@ struct STM32MP15xxx {
         };
 
         // event generation register
-        struct TIMx_EGR : public Register<0x44007014> {
+        struct TIMx_EGR : public RegisterWriteOnly<0x44007014> {
             using UG = Field<0, 1>;    // Update generation
         };
 
@@ -38297,7 +38297,7 @@ struct STM32MP15xxx {
         };
 
         // event generation register
-        struct TIMx_EGR : public Register<0x44008014> {
+        struct TIMx_EGR : public RegisterWriteOnly<0x44008014> {
             using UG = Field<0, 1>;    // Update generation
         };
 
@@ -38392,18 +38392,18 @@ struct STM32MP15xxx {
         };
 
         // DLYB IP version register
-        struct DLYB_VERR : public Register<0x580043f4> {
+        struct DLYB_VERR : public RegisterReadOnly<0x580043f4> {
             using MINREV = Field<0, 4>;    // MINREV
             using MAJREV = Field<4, 4>;    // MAJREV
         };
 
         // DLYB IP identification register
-        struct DLYB_IPIDR : public Register<0x580043f8> {
+        struct DLYB_IPIDR : public RegisterReadOnly<0x580043f8> {
             using ID = Field<0, 32>;    // ID
         };
 
         // DLYB size ID register
-        struct DLYB_SIDR : public Register<0x580043fc> {
+        struct DLYB_SIDR : public RegisterReadOnly<0x580043fc> {
             using SID = Field<0, 32>;    // SID
         };
 
@@ -38492,22 +38492,22 @@ struct STM32MP15xxx {
         };
 
         // Interrupt Active Bit Register
-        struct IABR0 : public Register<0xe000e300> {
+        struct IABR0 : public RegisterReadOnly<0xe000e300> {
             using ACTIVE = Field<0, 32>;    // ACTIVE
         };
 
         // Interrupt Active Bit Register
-        struct IABR1 : public Register<0xe000e304> {
+        struct IABR1 : public RegisterReadOnly<0xe000e304> {
             using ACTIVE = Field<0, 32>;    // ACTIVE
         };
 
         // Interrupt Active Bit Register
-        struct IABR2 : public Register<0xe000e308> {
+        struct IABR2 : public RegisterReadOnly<0xe000e308> {
             using ACTIVE = Field<0, 32>;    // ACTIVE
         };
 
         // Interrupt Active Bit Register
-        struct IABR3 : public Register<0xe000e30c> {
+        struct IABR3 : public RegisterReadOnly<0xe000e30c> {
             using ACTIVE = Field<0, 32>;    // ACTIVE
         };
 
@@ -38843,6 +38843,38 @@ struct STM32MP15xxx {
         struct IABR4 : public Register<0xe000e310> {
         };
 
+    };
+
+    static std::uint32_t const numInterrupts = 200;
+
+    enum class Interrupts: std::uint32_t {
+        WWDG1_IT = 0,
+        PVD_AVD = 1,
+        TAMP = 2,
+        RTC_WKUP_ALARM = 3,
+        TZC_IT = 4,
+        RCC = 5,
+        EXTI0 = 6,
+        EXTI1 = 7,
+        EXTI2 = 8,
+        EXTI3 = 9,
+        EXTI4 = 10,
+        EXTI5 = 23,
+        EXTI10 = 40,
+        RTC_TS = 41,
+        EXTI11 = 42,
+        EXTI6 = 64,
+        EXTI7 = 65,
+        EXTI8 = 66,
+        EXTI9 = 67,
+        EXTI12 = 76,
+        EXTI13 = 77,
+        EXTI14 = 121,
+        EXTI15 = 127,
+        RCC_WAKEUP = 145,
+        TAMP_S = 197,
+        RTC_WKUP_ALARM_S = 198,
+        RTC_TS_S = 199,
     };
 
 };

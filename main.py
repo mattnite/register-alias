@@ -11,38 +11,6 @@ cpuNameTable = {
     "CM7": "cortex-m7"
 }
 
-def someCode():
-    f.write('        struct %s : public Register%s<%s> {\n' % (registerName, access, hex(baseAddress + addressOffset)))
-    for field in register.iter("field"):
-        fieldDescription = field.find("description");
-        fieldName = field.find("name").text
-        
-        bitWidth = field.find("bitWidth")
-        bitOffset = field.find("bitOffset")
-        lsb = field.find("lsb")
-        msb = field.find("msb")
-        bitRange = field.find("bitRange")
-        if bitWidth is not None and bitOffset is not None:
-            width = bitWidth.text
-            offset = bitOffset.text
-        elif lsb is not None and msb is not None:
-            offset = lsb.text
-            width = str(int(msb.text) - int(lsb.text) + 1)
-        elif bitRange is not None:
-            print("bitRange not implemented yet")
-            exit()
-        else:
-            print("failed to find field position")
-            exit()
-
-        f.write('            using %s = Field<%s, %s>;' % (fieldName if fieldName != registerName else "Field", offset, width))
-        if fieldDescription is not None:
-            f.write('    // %s' % ' '.join(fieldDescription.text.replace('\n', ' ').replace('\r', '').split()))
-        
-        f.write('\n')
-
-    f.write('        };\n\n')
-
 def indent(depth):
     return ''.join(['    '] * depth)
 

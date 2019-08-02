@@ -89,7 +89,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48000010> {
+        struct IDR : public RegisterReadOnly<0x48000010> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -129,7 +129,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48000018> {
+        struct BSRR : public RegisterWriteOnly<0x48000018> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -210,7 +210,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48000028> {
+        struct BRR : public RegisterWriteOnly<0x48000028> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -314,7 +314,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48000410> {
+        struct IDR : public RegisterReadOnly<0x48000410> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -354,7 +354,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48000418> {
+        struct BSRR : public RegisterWriteOnly<0x48000418> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -435,7 +435,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48000428> {
+        struct BRR : public RegisterWriteOnly<0x48000428> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -539,7 +539,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48000810> {
+        struct IDR : public RegisterReadOnly<0x48000810> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -579,7 +579,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48000818> {
+        struct BSRR : public RegisterWriteOnly<0x48000818> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -660,7 +660,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48000828> {
+        struct BRR : public RegisterWriteOnly<0x48000828> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -764,7 +764,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48000c10> {
+        struct IDR : public RegisterReadOnly<0x48000c10> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -804,7 +804,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48000c18> {
+        struct BSRR : public RegisterWriteOnly<0x48000c18> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -885,7 +885,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48000c28> {
+        struct BRR : public RegisterWriteOnly<0x48000c28> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -989,7 +989,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48001010> {
+        struct IDR : public RegisterReadOnly<0x48001010> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -1029,7 +1029,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48001018> {
+        struct BSRR : public RegisterWriteOnly<0x48001018> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -1110,7 +1110,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48001028> {
+        struct BRR : public RegisterWriteOnly<0x48001028> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -1214,7 +1214,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48001410> {
+        struct IDR : public RegisterReadOnly<0x48001410> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -1254,7 +1254,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48001418> {
+        struct BSRR : public RegisterWriteOnly<0x48001418> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -1335,7 +1335,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48001428> {
+        struct BRR : public RegisterWriteOnly<0x48001428> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -1439,7 +1439,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48001810> {
+        struct IDR : public RegisterReadOnly<0x48001810> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -1479,7 +1479,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48001818> {
+        struct BSRR : public RegisterWriteOnly<0x48001818> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -1560,7 +1560,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48001828> {
+        struct BRR : public RegisterWriteOnly<0x48001828> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -1664,7 +1664,7 @@ struct STM32F303 {
         };
 
         // GPIO port input data register
-        struct IDR : public Register<0x48001c10> {
+        struct IDR : public RegisterReadOnly<0x48001c10> {
             using IDR15 = Field<15, 1>;    // Port input data (y = 0..15)
             using IDR14 = Field<14, 1>;    // Port input data (y = 0..15)
             using IDR13 = Field<13, 1>;    // Port input data (y = 0..15)
@@ -1704,7 +1704,7 @@ struct STM32F303 {
         };
 
         // GPIO port bit set/reset register
-        struct BSRR : public Register<0x48001c18> {
+        struct BSRR : public RegisterWriteOnly<0x48001c18> {
             using BR15 = Field<31, 1>;    // Port x reset bit y (y = 0..15)
             using BR14 = Field<30, 1>;    // Port x reset bit y (y = 0..15)
             using BR13 = Field<29, 1>;    // Port x reset bit y (y = 0..15)
@@ -1785,7 +1785,7 @@ struct STM32F303 {
         };
 
         // Port bit reset register
-        struct BRR : public Register<0x48001c28> {
+        struct BRR : public RegisterWriteOnly<0x48001c28> {
             using BR0 = Field<0, 1>;    // Port x Reset bit y
             using BR1 = Field<1, 1>;    // Port x Reset bit y
             using BR2 = Field<2, 1>;    // Port x Reset bit y
@@ -2007,42 +2007,42 @@ struct STM32F303 {
         };
 
         // I/O group x counter register
-        struct IOG1CR : public Register<0x40024034> {
+        struct IOG1CR : public RegisterReadOnly<0x40024034> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
         // I/O group x counter register
-        struct IOG2CR : public Register<0x40024038> {
+        struct IOG2CR : public RegisterReadOnly<0x40024038> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
         // I/O group x counter register
-        struct IOG3CR : public Register<0x4002403c> {
+        struct IOG3CR : public RegisterReadOnly<0x4002403c> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
         // I/O group x counter register
-        struct IOG4CR : public Register<0x40024040> {
+        struct IOG4CR : public RegisterReadOnly<0x40024040> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
         // I/O group x counter register
-        struct IOG5CR : public Register<0x40024044> {
+        struct IOG5CR : public RegisterReadOnly<0x40024044> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
         // I/O group x counter register
-        struct IOG6CR : public Register<0x40024048> {
+        struct IOG6CR : public RegisterReadOnly<0x40024048> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
         // I/O group x counter register
-        struct IOG7CR : public Register<0x4002404c> {
+        struct IOG7CR : public RegisterReadOnly<0x4002404c> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
         // I/O group x counter register
-        struct IOG8CR : public Register<0x40024050> {
+        struct IOG8CR : public RegisterReadOnly<0x40024050> {
             using CNT = Field<0, 14>;    // Counter value
         };
 
@@ -2090,12 +2090,12 @@ struct STM32F303 {
         };
 
         // Flash key register
-        struct KEYR : public Register<0x40022004> {
+        struct KEYR : public RegisterWriteOnly<0x40022004> {
             using FKEYR = Field<0, 32>;    // Flash Key
         };
 
         // Flash option key register
-        struct OPTKEYR : public Register<0x40022008> {
+        struct OPTKEYR : public RegisterWriteOnly<0x40022008> {
             using Field = Field<0, 32>;    // Option byte key
         };
 
@@ -2123,12 +2123,12 @@ struct STM32F303 {
         };
 
         // Flash address register
-        struct AR : public Register<0x40022014> {
+        struct AR : public RegisterWriteOnly<0x40022014> {
             using FAR = Field<0, 32>;    // Flash address
         };
 
         // Option byte register
-        struct OBR : public Register<0x4002201c> {
+        struct OBR : public RegisterReadOnly<0x4002201c> {
             using OPTERR = Field<0, 1>;    // Option byte error
             using LEVEL1_PROT = Field<1, 1>;    // Level 1 protection status
             using LEVEL2_PROT = Field<2, 1>;    // Level 2 protection status
@@ -2143,7 +2143,7 @@ struct STM32F303 {
         };
 
         // Write protection register
-        struct WRPR : public Register<0x40022020> {
+        struct WRPR : public RegisterReadOnly<0x40022020> {
             using WRP = Field<0, 32>;    // Write protect
         };
 
@@ -2361,7 +2361,7 @@ struct STM32F303 {
     // DMA controller 1
     struct DMA1 {
         // DMA interrupt status register (DMA_ISR)
-        struct ISR : public Register<0x40020000> {
+        struct ISR : public RegisterReadOnly<0x40020000> {
             using GIF1 = Field<0, 1>;    // Channel 1 Global interrupt flag
             using TCIF1 = Field<1, 1>;    // Channel 1 Transfer Complete flag
             using HTIF1 = Field<2, 1>;    // Channel 1 Half Transfer Complete flag
@@ -2393,7 +2393,7 @@ struct STM32F303 {
         };
 
         // DMA interrupt flag clear register (DMA_IFCR)
-        struct IFCR : public Register<0x40020004> {
+        struct IFCR : public RegisterWriteOnly<0x40020004> {
             using CGIF1 = Field<0, 1>;    // Channel 1 Global interrupt clear
             using CTCIF1 = Field<1, 1>;    // Channel 1 Transfer Complete clear
             using CHTIF1 = Field<2, 1>;    // Channel 1 Half Transfer clear
@@ -2646,7 +2646,7 @@ struct STM32F303 {
     // DMA controller 1
     struct DMA2 {
         // DMA interrupt status register (DMA_ISR)
-        struct ISR : public Register<0x40020400> {
+        struct ISR : public RegisterReadOnly<0x40020400> {
             using GIF1 = Field<0, 1>;    // Channel 1 Global interrupt flag
             using TCIF1 = Field<1, 1>;    // Channel 1 Transfer Complete flag
             using HTIF1 = Field<2, 1>;    // Channel 1 Half Transfer Complete flag
@@ -2678,7 +2678,7 @@ struct STM32F303 {
         };
 
         // DMA interrupt flag clear register (DMA_IFCR)
-        struct IFCR : public Register<0x40020404> {
+        struct IFCR : public RegisterWriteOnly<0x40020404> {
             using CGIF1 = Field<0, 1>;    // Channel 1 Global interrupt clear
             using CTCIF1 = Field<1, 1>;    // Channel 1 Transfer Complete clear
             using CHTIF1 = Field<2, 1>;    // Channel 1 Half Transfer clear
@@ -2994,7 +2994,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40000014> {
+        struct EGR : public RegisterWriteOnly<0x40000014> {
             using TG = Field<6, 1>;    // Trigger generation
             using CC4G = Field<4, 1>;    // Capture/compare 4 generation
             using CC3G = Field<3, 1>;    // Capture/compare 3 generation
@@ -3192,7 +3192,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40000414> {
+        struct EGR : public RegisterWriteOnly<0x40000414> {
             using TG = Field<6, 1>;    // Trigger generation
             using CC4G = Field<4, 1>;    // Capture/compare 4 generation
             using CC3G = Field<3, 1>;    // Capture/compare 3 generation
@@ -3390,7 +3390,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40000814> {
+        struct EGR : public RegisterWriteOnly<0x40000814> {
             using TG = Field<6, 1>;    // Trigger generation
             using CC4G = Field<4, 1>;    // Capture/compare 4 generation
             using CC3G = Field<3, 1>;    // Capture/compare 3 generation
@@ -3583,7 +3583,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40014014> {
+        struct EGR : public RegisterWriteOnly<0x40014014> {
             using BG = Field<7, 1>;    // Break generation
             using TG = Field<6, 1>;    // Trigger generation
             using COMG = Field<5, 1>;    // Capture/Compare control update generation
@@ -3730,7 +3730,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40014414> {
+        struct EGR : public RegisterWriteOnly<0x40014414> {
             using BG = Field<7, 1>;    // Break generation
             using TG = Field<6, 1>;    // Trigger generation
             using COMG = Field<5, 1>;    // Capture/Compare control update generation
@@ -3864,7 +3864,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40014814> {
+        struct EGR : public RegisterWriteOnly<0x40014814> {
             using BG = Field<7, 1>;    // Break generation
             using TG = Field<6, 1>;    // Trigger generation
             using COMG = Field<5, 1>;    // Capture/Compare control update generation
@@ -4048,7 +4048,7 @@ struct STM32F303 {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4001381c> {
+        struct ISR : public RegisterReadOnly<0x4001381c> {
             using REACK = Field<22, 1>;    // Receive enable acknowledge flag
             using TEACK = Field<21, 1>;    // Transmit enable acknowledge flag
             using WUF = Field<20, 1>;    // Wakeup from Stop mode flag
@@ -4090,7 +4090,7 @@ struct STM32F303 {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40013824> {
+        struct RDR : public RegisterReadOnly<0x40013824> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -4201,7 +4201,7 @@ struct STM32F303 {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4000441c> {
+        struct ISR : public RegisterReadOnly<0x4000441c> {
             using REACK = Field<22, 1>;    // Receive enable acknowledge flag
             using TEACK = Field<21, 1>;    // Transmit enable acknowledge flag
             using WUF = Field<20, 1>;    // Wakeup from Stop mode flag
@@ -4243,7 +4243,7 @@ struct STM32F303 {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40004424> {
+        struct RDR : public RegisterReadOnly<0x40004424> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -4354,7 +4354,7 @@ struct STM32F303 {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4000481c> {
+        struct ISR : public RegisterReadOnly<0x4000481c> {
             using REACK = Field<22, 1>;    // Receive enable acknowledge flag
             using TEACK = Field<21, 1>;    // Transmit enable acknowledge flag
             using WUF = Field<20, 1>;    // Wakeup from Stop mode flag
@@ -4396,7 +4396,7 @@ struct STM32F303 {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40004824> {
+        struct RDR : public RegisterReadOnly<0x40004824> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -4507,7 +4507,7 @@ struct STM32F303 {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x40004c1c> {
+        struct ISR : public RegisterReadOnly<0x40004c1c> {
             using REACK = Field<22, 1>;    // Receive enable acknowledge flag
             using TEACK = Field<21, 1>;    // Transmit enable acknowledge flag
             using WUF = Field<20, 1>;    // Wakeup from Stop mode flag
@@ -4549,7 +4549,7 @@ struct STM32F303 {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40004c24> {
+        struct RDR : public RegisterReadOnly<0x40004c24> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -4660,7 +4660,7 @@ struct STM32F303 {
         };
 
         // Interrupt & status register
-        struct ISR : public Register<0x4000501c> {
+        struct ISR : public RegisterReadOnly<0x4000501c> {
             using REACK = Field<22, 1>;    // Receive enable acknowledge flag
             using TEACK = Field<21, 1>;    // Transmit enable acknowledge flag
             using WUF = Field<20, 1>;    // Wakeup from Stop mode flag
@@ -4702,7 +4702,7 @@ struct STM32F303 {
         };
 
         // Receive data register
-        struct RDR : public Register<0x40005024> {
+        struct RDR : public RegisterReadOnly<0x40005024> {
             using Field = Field<0, 9>;    // Receive data value
         };
 
@@ -4775,12 +4775,12 @@ struct STM32F303 {
         };
 
         // RX CRC register
-        struct RXCRCR : public Register<0x40013014> {
+        struct RXCRCR : public RegisterReadOnly<0x40013014> {
             using RxCRC = Field<0, 16>;    // Rx CRC register
         };
 
         // TX CRC register
-        struct TXCRCR : public Register<0x40013018> {
+        struct TXCRCR : public RegisterReadOnly<0x40013018> {
             using TxCRC = Field<0, 16>;    // Tx CRC register
         };
 
@@ -4867,12 +4867,12 @@ struct STM32F303 {
         };
 
         // RX CRC register
-        struct RXCRCR : public Register<0x40003814> {
+        struct RXCRCR : public RegisterReadOnly<0x40003814> {
             using RxCRC = Field<0, 16>;    // Rx CRC register
         };
 
         // TX CRC register
-        struct TXCRCR : public Register<0x40003818> {
+        struct TXCRCR : public RegisterReadOnly<0x40003818> {
             using TxCRC = Field<0, 16>;    // Tx CRC register
         };
 
@@ -4959,12 +4959,12 @@ struct STM32F303 {
         };
 
         // RX CRC register
-        struct RXCRCR : public Register<0x40003c14> {
+        struct RXCRCR : public RegisterReadOnly<0x40003c14> {
             using RxCRC = Field<0, 16>;    // Rx CRC register
         };
 
         // TX CRC register
-        struct TXCRCR : public Register<0x40003c18> {
+        struct TXCRCR : public RegisterReadOnly<0x40003c18> {
             using TxCRC = Field<0, 16>;    // Tx CRC register
         };
 
@@ -5051,12 +5051,12 @@ struct STM32F303 {
         };
 
         // RX CRC register
-        struct RXCRCR : public Register<0x40003414> {
+        struct RXCRCR : public RegisterReadOnly<0x40003414> {
             using RxCRC = Field<0, 16>;    // Rx CRC register
         };
 
         // TX CRC register
-        struct TXCRCR : public Register<0x40003418> {
+        struct TXCRCR : public RegisterReadOnly<0x40003418> {
             using TxCRC = Field<0, 16>;    // Tx CRC register
         };
 
@@ -5143,12 +5143,12 @@ struct STM32F303 {
         };
 
         // RX CRC register
-        struct RXCRCR : public Register<0x40004014> {
+        struct RXCRCR : public RegisterReadOnly<0x40004014> {
             using RxCRC = Field<0, 16>;    // Rx CRC register
         };
 
         // TX CRC register
-        struct TXCRCR : public Register<0x40004018> {
+        struct TXCRCR : public RegisterReadOnly<0x40004018> {
             using TxCRC = Field<0, 16>;    // Tx CRC register
         };
 
@@ -5235,12 +5235,12 @@ struct STM32F303 {
         };
 
         // RX CRC register
-        struct RXCRCR : public Register<0x40013c14> {
+        struct RXCRCR : public RegisterReadOnly<0x40013c14> {
             using RxCRC = Field<0, 16>;    // Rx CRC register
         };
 
         // TX CRC register
-        struct TXCRCR : public Register<0x40013c18> {
+        struct TXCRCR : public RegisterReadOnly<0x40013c18> {
             using TxCRC = Field<0, 16>;    // Tx CRC register
         };
 
@@ -5731,7 +5731,7 @@ struct STM32F303 {
         };
 
         // receive FIFO mailbox identifier register
-        struct RI0R : public Register<0x400065b0> {
+        struct RI0R : public RegisterReadOnly<0x400065b0> {
             using STID = Field<21, 11>;    // STID
             using EXID = Field<3, 18>;    // EXID
             using IDE = Field<2, 1>;    // IDE
@@ -5739,14 +5739,14 @@ struct STM32F303 {
         };
 
         // receive FIFO mailbox data length control and time stamp register
-        struct RDT0R : public Register<0x400065b4> {
+        struct RDT0R : public RegisterReadOnly<0x400065b4> {
             using TIME = Field<16, 16>;    // TIME
             using FMI = Field<8, 8>;    // FMI
             using DLC = Field<0, 4>;    // DLC
         };
 
         // receive FIFO mailbox data low register
-        struct RDL0R : public Register<0x400065b8> {
+        struct RDL0R : public RegisterReadOnly<0x400065b8> {
             using DATA3 = Field<24, 8>;    // DATA3
             using DATA2 = Field<16, 8>;    // DATA2
             using DATA1 = Field<8, 8>;    // DATA1
@@ -5754,7 +5754,7 @@ struct STM32F303 {
         };
 
         // receive FIFO mailbox data high register
-        struct RDH0R : public Register<0x400065bc> {
+        struct RDH0R : public RegisterReadOnly<0x400065bc> {
             using DATA7 = Field<24, 8>;    // DATA7
             using DATA6 = Field<16, 8>;    // DATA6
             using DATA5 = Field<8, 8>;    // DATA5
@@ -5762,7 +5762,7 @@ struct STM32F303 {
         };
 
         // receive FIFO mailbox identifier register
-        struct RI1R : public Register<0x400065c0> {
+        struct RI1R : public RegisterReadOnly<0x400065c0> {
             using STID = Field<21, 11>;    // STID
             using EXID = Field<3, 18>;    // EXID
             using IDE = Field<2, 1>;    // IDE
@@ -5770,14 +5770,14 @@ struct STM32F303 {
         };
 
         // receive FIFO mailbox data length control and time stamp register
-        struct RDT1R : public Register<0x400065c4> {
+        struct RDT1R : public RegisterReadOnly<0x400065c4> {
             using TIME = Field<16, 16>;    // TIME
             using FMI = Field<8, 8>;    // FMI
             using DLC = Field<0, 4>;    // DLC
         };
 
         // receive FIFO mailbox data low register
-        struct RDL1R : public Register<0x400065c8> {
+        struct RDL1R : public RegisterReadOnly<0x400065c8> {
             using DATA3 = Field<24, 8>;    // DATA3
             using DATA2 = Field<16, 8>;    // DATA2
             using DATA1 = Field<8, 8>;    // DATA1
@@ -5785,7 +5785,7 @@ struct STM32F303 {
         };
 
         // receive FIFO mailbox data high register
-        struct RDH1R : public Register<0x400065cc> {
+        struct RDH1R : public RegisterReadOnly<0x400065cc> {
             using DATA7 = Field<24, 8>;    // DATA7
             using DATA6 = Field<16, 8>;    // DATA6
             using DATA5 = Field<8, 8>;    // DATA5
@@ -8090,7 +8090,7 @@ struct STM32F303 {
         };
 
         // frame number register
-        struct FNR : public Register<0x40005c48> {
+        struct FNR : public RegisterReadOnly<0x40005c48> {
             using FN = Field<0, 11>;    // Frame number
             using LSOF = Field<11, 2>;    // Lost SOF
             using LCK = Field<13, 1>;    // Locked
@@ -8217,7 +8217,7 @@ struct STM32F303 {
         };
 
         // Interrupt clear register
-        struct ICR : public Register<0x4000541c> {
+        struct ICR : public RegisterWriteOnly<0x4000541c> {
             using ALERTCF = Field<13, 1>;    // Alert flag clear
             using TIMOUTCF = Field<12, 1>;    // Timeout detection flag clear
             using PECCF = Field<11, 1>;    // PEC Error flag clear
@@ -8230,12 +8230,12 @@ struct STM32F303 {
         };
 
         // PEC register
-        struct PECR : public Register<0x40005420> {
+        struct PECR : public RegisterReadOnly<0x40005420> {
             using PEC = Field<0, 8>;    // Packet error checking register
         };
 
         // Receive data register
-        struct RXDR : public Register<0x40005424> {
+        struct RXDR : public RegisterReadOnly<0x40005424> {
             using RXDATA = Field<0, 8>;    // 8-bit receive data
         };
 
@@ -8346,7 +8346,7 @@ struct STM32F303 {
         };
 
         // Interrupt clear register
-        struct ICR : public Register<0x4000581c> {
+        struct ICR : public RegisterWriteOnly<0x4000581c> {
             using ALERTCF = Field<13, 1>;    // Alert flag clear
             using TIMOUTCF = Field<12, 1>;    // Timeout detection flag clear
             using PECCF = Field<11, 1>;    // PEC Error flag clear
@@ -8359,12 +8359,12 @@ struct STM32F303 {
         };
 
         // PEC register
-        struct PECR : public Register<0x40005820> {
+        struct PECR : public RegisterReadOnly<0x40005820> {
             using PEC = Field<0, 8>;    // Packet error checking register
         };
 
         // Receive data register
-        struct RXDR : public Register<0x40005824> {
+        struct RXDR : public RegisterReadOnly<0x40005824> {
             using RXDATA = Field<0, 8>;    // 8-bit receive data
         };
 
@@ -8475,7 +8475,7 @@ struct STM32F303 {
         };
 
         // Interrupt clear register
-        struct ICR : public Register<0x4000781c> {
+        struct ICR : public RegisterWriteOnly<0x4000781c> {
             using ALERTCF = Field<13, 1>;    // Alert flag clear
             using TIMOUTCF = Field<12, 1>;    // Timeout detection flag clear
             using PECCF = Field<11, 1>;    // PEC Error flag clear
@@ -8488,12 +8488,12 @@ struct STM32F303 {
         };
 
         // PEC register
-        struct PECR : public Register<0x40007820> {
+        struct PECR : public RegisterReadOnly<0x40007820> {
             using PEC = Field<0, 8>;    // Packet error checking register
         };
 
         // Receive data register
-        struct RXDR : public Register<0x40007824> {
+        struct RXDR : public RegisterReadOnly<0x40007824> {
             using RXDATA = Field<0, 8>;    // 8-bit receive data
         };
 
@@ -8507,7 +8507,7 @@ struct STM32F303 {
     // Independent watchdog
     struct IWDG {
         // Key register
-        struct KR : public Register<0x40003000> {
+        struct KR : public RegisterWriteOnly<0x40003000> {
             using KEY = Field<0, 16>;    // Key value
         };
 
@@ -8522,7 +8522,7 @@ struct STM32F303 {
         };
 
         // Status register
-        struct SR : public Register<0x4000300c> {
+        struct SR : public RegisterReadOnly<0x4000300c> {
             using PVU = Field<0, 1>;    // Watchdog prescaler value update
             using RVU = Field<1, 1>;    // Watchdog counter reload value update
             using WVU = Field<2, 1>;    // Watchdog counter window value update
@@ -8674,23 +8674,23 @@ struct STM32F303 {
         };
 
         // write protection register
-        struct WPR : public Register<0x40002824> {
+        struct WPR : public RegisterWriteOnly<0x40002824> {
             using KEY = Field<0, 8>;    // Write protection key
         };
 
         // sub second register
-        struct SSR : public Register<0x40002828> {
+        struct SSR : public RegisterReadOnly<0x40002828> {
             using SS = Field<0, 16>;    // Sub second value
         };
 
         // shift control register
-        struct SHIFTR : public Register<0x4000282c> {
+        struct SHIFTR : public RegisterWriteOnly<0x4000282c> {
             using ADD1S = Field<31, 1>;    // Add one second
             using SUBFS = Field<0, 15>;    // Subtract a fraction of a second
         };
 
         // time stamp time register
-        struct TSTR : public Register<0x40002830> {
+        struct TSTR : public RegisterReadOnly<0x40002830> {
             using SU = Field<0, 4>;    // Second units in BCD format
             using ST = Field<4, 3>;    // Second tens in BCD format
             using MNU = Field<8, 4>;    // Minute units in BCD format
@@ -8701,7 +8701,7 @@ struct STM32F303 {
         };
 
         // time stamp date register
-        struct TSDR : public Register<0x40002834> {
+        struct TSDR : public RegisterReadOnly<0x40002834> {
             using WDU = Field<13, 3>;    // Week day units
             using MT = Field<12, 1>;    // Month tens in BCD format
             using MU = Field<8, 4>;    // Month units in BCD format
@@ -8710,7 +8710,7 @@ struct STM32F303 {
         };
 
         // timestamp sub second register
-        struct TSSSR : public Register<0x40002838> {
+        struct TSSSR : public RegisterReadOnly<0x40002838> {
             using SS = Field<0, 16>;    // Sub second value
         };
 
@@ -8947,7 +8947,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40001014> {
+        struct EGR : public RegisterWriteOnly<0x40001014> {
             using UG = Field<0, 1>;    // Update generation
         };
 
@@ -8998,7 +8998,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40001414> {
+        struct EGR : public RegisterWriteOnly<0x40001414> {
             using UG = Field<0, 1>;    // Update generation
         };
 
@@ -9043,7 +9043,7 @@ struct STM32F303 {
         };
 
         // software trigger register
-        struct SWTRIGR : public Register<0x40007404> {
+        struct SWTRIGR : public RegisterWriteOnly<0x40007404> {
             using SWTRIG2 = Field<1, 1>;    // DAC channel2 software trigger
             using SWTRIG1 = Field<0, 1>;    // DAC channel1 software trigger
         };
@@ -9097,12 +9097,12 @@ struct STM32F303 {
         };
 
         // channel1 data output register
-        struct DOR1 : public Register<0x4000742c> {
+        struct DOR1 : public RegisterReadOnly<0x4000742c> {
             using DACC1DOR = Field<0, 12>;    // DAC channel1 data output
         };
 
         // channel2 data output register
-        struct DOR2 : public Register<0x40007430> {
+        struct DOR2 : public RegisterReadOnly<0x40007430> {
             using DACC2DOR = Field<0, 12>;    // DAC channel2 data output
         };
 
@@ -9117,7 +9117,7 @@ struct STM32F303 {
     // Debug support
     struct DBGMCU {
         // MCU Device ID Code Register
-        struct IDCODE : public Register<0xe0042000> {
+        struct IDCODE : public RegisterReadOnly<0xe0042000> {
             using DEV_ID = Field<0, 12>;    // Device Identifier
             using REV_ID = Field<16, 16>;    // Revision Identifier
         };
@@ -9247,7 +9247,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40012c14> {
+        struct EGR : public RegisterWriteOnly<0x40012c14> {
             using UG = Field<0, 1>;    // Update generation
             using CC1G = Field<1, 1>;    // Capture/compare 1 generation
             using CC2G = Field<2, 1>;    // Capture/compare 2 generation
@@ -9523,7 +9523,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40015014> {
+        struct EGR : public RegisterWriteOnly<0x40015014> {
             using UG = Field<0, 1>;    // Update generation
             using CC1G = Field<1, 1>;    // Capture/compare 1 generation
             using CC2G = Field<2, 1>;    // Capture/compare 2 generation
@@ -9799,7 +9799,7 @@ struct STM32F303 {
         };
 
         // event generation register
-        struct EGR : public Register<0x40013414> {
+        struct EGR : public RegisterWriteOnly<0x40013414> {
             using UG = Field<0, 1>;    // Update generation
             using CC1G = Field<1, 1>;    // Capture/compare 1 generation
             using CC2G = Field<2, 1>;    // Capture/compare 2 generation
@@ -10136,7 +10136,7 @@ struct STM32F303 {
         };
 
         // regular Data Register
-        struct DR : public Register<0x50000040> {
+        struct DR : public RegisterReadOnly<0x50000040> {
             using regularDATA = Field<0, 16>;    // regularDATA
         };
 
@@ -10180,22 +10180,22 @@ struct STM32F303 {
         };
 
         // injected data register 1
-        struct JDR1 : public Register<0x50000080> {
+        struct JDR1 : public RegisterReadOnly<0x50000080> {
             using JDATA1 = Field<0, 16>;    // JDATA1
         };
 
         // injected data register 2
-        struct JDR2 : public Register<0x50000084> {
+        struct JDR2 : public RegisterReadOnly<0x50000084> {
             using JDATA2 = Field<0, 16>;    // JDATA2
         };
 
         // injected data register 3
-        struct JDR3 : public Register<0x50000088> {
+        struct JDR3 : public RegisterReadOnly<0x50000088> {
             using JDATA3 = Field<0, 16>;    // JDATA3
         };
 
         // injected data register 4
-        struct JDR4 : public Register<0x5000008c> {
+        struct JDR4 : public RegisterReadOnly<0x5000008c> {
             using JDATA4 = Field<0, 16>;    // JDATA4
         };
 
@@ -10370,7 +10370,7 @@ struct STM32F303 {
         };
 
         // regular Data Register
-        struct DR : public Register<0x50000140> {
+        struct DR : public RegisterReadOnly<0x50000140> {
             using regularDATA = Field<0, 16>;    // regularDATA
         };
 
@@ -10414,22 +10414,22 @@ struct STM32F303 {
         };
 
         // injected data register 1
-        struct JDR1 : public Register<0x50000180> {
+        struct JDR1 : public RegisterReadOnly<0x50000180> {
             using JDATA1 = Field<0, 16>;    // JDATA1
         };
 
         // injected data register 2
-        struct JDR2 : public Register<0x50000184> {
+        struct JDR2 : public RegisterReadOnly<0x50000184> {
             using JDATA2 = Field<0, 16>;    // JDATA2
         };
 
         // injected data register 3
-        struct JDR3 : public Register<0x50000188> {
+        struct JDR3 : public RegisterReadOnly<0x50000188> {
             using JDATA3 = Field<0, 16>;    // JDATA3
         };
 
         // injected data register 4
-        struct JDR4 : public Register<0x5000018c> {
+        struct JDR4 : public RegisterReadOnly<0x5000018c> {
             using JDATA4 = Field<0, 16>;    // JDATA4
         };
 
@@ -10604,7 +10604,7 @@ struct STM32F303 {
         };
 
         // regular Data Register
-        struct DR : public Register<0x50000440> {
+        struct DR : public RegisterReadOnly<0x50000440> {
             using regularDATA = Field<0, 16>;    // regularDATA
         };
 
@@ -10648,22 +10648,22 @@ struct STM32F303 {
         };
 
         // injected data register 1
-        struct JDR1 : public Register<0x50000480> {
+        struct JDR1 : public RegisterReadOnly<0x50000480> {
             using JDATA1 = Field<0, 16>;    // JDATA1
         };
 
         // injected data register 2
-        struct JDR2 : public Register<0x50000484> {
+        struct JDR2 : public RegisterReadOnly<0x50000484> {
             using JDATA2 = Field<0, 16>;    // JDATA2
         };
 
         // injected data register 3
-        struct JDR3 : public Register<0x50000488> {
+        struct JDR3 : public RegisterReadOnly<0x50000488> {
             using JDATA3 = Field<0, 16>;    // JDATA3
         };
 
         // injected data register 4
-        struct JDR4 : public Register<0x5000048c> {
+        struct JDR4 : public RegisterReadOnly<0x5000048c> {
             using JDATA4 = Field<0, 16>;    // JDATA4
         };
 
@@ -10838,7 +10838,7 @@ struct STM32F303 {
         };
 
         // regular Data Register
-        struct DR : public Register<0x50000540> {
+        struct DR : public RegisterReadOnly<0x50000540> {
             using regularDATA = Field<0, 16>;    // regularDATA
         };
 
@@ -10882,22 +10882,22 @@ struct STM32F303 {
         };
 
         // injected data register 1
-        struct JDR1 : public Register<0x50000580> {
+        struct JDR1 : public RegisterReadOnly<0x50000580> {
             using JDATA1 = Field<0, 16>;    // JDATA1
         };
 
         // injected data register 2
-        struct JDR2 : public Register<0x50000584> {
+        struct JDR2 : public RegisterReadOnly<0x50000584> {
             using JDATA2 = Field<0, 16>;    // JDATA2
         };
 
         // injected data register 3
-        struct JDR3 : public Register<0x50000588> {
+        struct JDR3 : public RegisterReadOnly<0x50000588> {
             using JDATA3 = Field<0, 16>;    // JDATA3
         };
 
         // injected data register 4
-        struct JDR4 : public Register<0x5000058c> {
+        struct JDR4 : public RegisterReadOnly<0x5000058c> {
             using JDATA4 = Field<0, 16>;    // JDATA4
         };
 
@@ -10928,7 +10928,7 @@ struct STM32F303 {
     // Analog-to-Digital Converter
     struct ADC1_2 {
         // ADC Common status register
-        struct CSR : public Register<0x50000300> {
+        struct CSR : public RegisterReadOnly<0x50000300> {
             using ADDRDY_MST = Field<0, 1>;    // ADDRDY_MST
             using EOSMP_MST = Field<1, 1>;    // EOSMP_MST
             using EOC_MST = Field<2, 1>;    // EOC_MST
@@ -10966,7 +10966,7 @@ struct STM32F303 {
         };
 
         // ADC common regular data register for dual and triple modes
-        struct CDR : public Register<0x5000030c> {
+        struct CDR : public RegisterReadOnly<0x5000030c> {
             using RDATA_SLV = Field<16, 16>;    // Regular data of the slave ADC
             using RDATA_MST = Field<0, 16>;    // Regular data of the master ADC
         };
@@ -10976,7 +10976,7 @@ struct STM32F303 {
     // Analog-to-Digital Converter
     struct ADC3_4 {
         // ADC Common status register
-        struct CSR : public Register<0x50000700> {
+        struct CSR : public RegisterReadOnly<0x50000700> {
             using ADDRDY_MST = Field<0, 1>;    // ADDRDY_MST
             using EOSMP_MST = Field<1, 1>;    // EOSMP_MST
             using EOC_MST = Field<2, 1>;    // EOC_MST
@@ -11014,7 +11014,7 @@ struct STM32F303 {
         };
 
         // ADC common regular data register for dual and triple modes
-        struct CDR : public Register<0x5000070c> {
+        struct CDR : public RegisterReadOnly<0x5000070c> {
             using RDATA_SLV = Field<16, 16>;    // Regular data of the slave ADC
             using RDATA_MST = Field<0, 16>;    // Regular data of the master ADC
         };
@@ -11437,7 +11437,7 @@ struct STM32F303 {
         };
 
         // ECC result register 2
-        struct ECCR2 : public Register<0xa0000474> {
+        struct ECCR2 : public RegisterReadOnly<0xa0000474> {
             using ECCx = Field<0, 32>;    // ECCx
         };
 
@@ -11481,7 +11481,7 @@ struct STM32F303 {
         };
 
         // ECC result register 3
-        struct ECCR3 : public Register<0xa0000494> {
+        struct ECCR3 : public RegisterReadOnly<0xa0000494> {
             using ECCx = Field<0, 32>;    // ECCx
         };
 
@@ -11641,17 +11641,17 @@ struct STM32F303 {
         };
 
         // Interrupt Active Bit Register
-        struct IABR0 : public Register<0xe000e300> {
+        struct IABR0 : public RegisterReadOnly<0xe000e300> {
             using ACTIVE = Field<0, 32>;    // ACTIVE
         };
 
         // Interrupt Active Bit Register
-        struct IABR1 : public Register<0xe000e304> {
+        struct IABR1 : public RegisterReadOnly<0xe000e304> {
             using ACTIVE = Field<0, 32>;    // ACTIVE
         };
 
         // Interrupt Active Bit Register
-        struct IABR2 : public Register<0xe000e308> {
+        struct IABR2 : public RegisterReadOnly<0xe000e308> {
             using ACTIVE = Field<0, 32>;    // ACTIVE
         };
 
@@ -11868,14 +11868,14 @@ struct STM32F303 {
     // Memory protection unit
     struct MPU {
         // MPU type register
-        struct MPU_TYPER : public Register<0xe000ed90> {
+        struct MPU_TYPER : public RegisterReadOnly<0xe000ed90> {
             using SEPARATE = Field<0, 1>;    // Separate flag
             using DREGION = Field<8, 8>;    // Number of MPU data regions
             using IREGION = Field<16, 8>;    // Number of MPU instruction regions
         };
 
         // MPU control register
-        struct MPU_CTRL : public Register<0xe000ed94> {
+        struct MPU_CTRL : public RegisterReadOnly<0xe000ed94> {
             using ENABLE = Field<0, 1>;    // Enables the MPU
             using HFNMIENA = Field<1, 1>;    // Enables the operation of MPU during hard fault
             using PRIVDEFENA = Field<2, 1>;    // Enable priviliged software access to default memory map
@@ -11940,7 +11940,7 @@ struct STM32F303 {
     // System control block
     struct SCB {
         // CPUID base register
-        struct CPUID : public Register<0xe000ed00> {
+        struct CPUID : public RegisterReadOnly<0xe000ed00> {
             using Revision = Field<0, 4>;    // Revision number
             using PartNo = Field<4, 12>;    // Part number of the processor
             using Constant = Field<16, 4>;    // Reads as 0xF
@@ -12104,6 +12104,85 @@ struct STM32F303 {
             using DISOOFP = Field<9, 1>;    // DISOOFP
         };
 
+    };
+
+    static std::uint32_t const numInterrupts = 85;
+
+    enum class Interrupts: std::uint32_t {
+        WWDG = 0,
+        PVD = 1,
+        TAMP_STAMP = 2,
+        RTC_WKUP = 3,
+        FLASH = 4,
+        RCC = 5,
+        EXTI0 = 6,
+        EXTI1 = 7,
+        EXTI2_TSC = 8,
+        EXTI3 = 9,
+        EXTI4 = 10,
+        DMA1_CH1 = 11,
+        DMA1_CH2 = 12,
+        DMA1_CH3 = 13,
+        DMA1_CH4 = 14,
+        DMA1_CH5 = 15,
+        DMA1_CH6 = 16,
+        DMA1_CH7 = 17,
+        ADC1_2 = 18,
+        USB_HP_CAN_TX = 19,
+        USB_LP_CAN_RX0 = 20,
+        CAN_RX1 = 21,
+        CAN_SCE = 22,
+        EXTI9_5 = 23,
+        TIM1_BRK_TIM15 = 24,
+        TIM1_UP_TIM16 = 25,
+        TIM1_TRG_COM_TIM17 = 26,
+        TIM1_CC = 27,
+        TIM2 = 28,
+        TIM3 = 29,
+        TIM4 = 30,
+        I2C1_EV_EXTI23 = 31,
+        I2C1_ER = 32,
+        I2C2_EV_EXTI24 = 33,
+        I2C2_ER = 34,
+        SPI1 = 35,
+        SPI2 = 36,
+        USART1_EXTI25 = 37,
+        USART2_EXTI26 = 38,
+        USART3_EXTI28 = 39,
+        EXTI15_10 = 40,
+        RTCAlarm = 41,
+        USB_WKUP = 42,
+        TIM8_BRK = 43,
+        TIM8_UP = 44,
+        TIM8_TRG_COM = 45,
+        TIM8_CC = 46,
+        ADC3 = 47,
+        FMC = 48,
+        SPI3 = 51,
+        UART4_EXTI34 = 52,
+        UART5_EXTI35 = 53,
+        TIM6_DACUNDER = 54,
+        TIM7 = 55,
+        DMA2_CH1 = 56,
+        DMA2_CH2 = 57,
+        DMA2_CH3 = 58,
+        DMA2_CH4 = 59,
+        DMA2_CH5 = 60,
+        ADC4 = 61,
+        COMP123 = 64,
+        COMP456 = 65,
+        COMP7 = 66,
+        I2C3_EV = 72,
+        I2C3_ER = 73,
+        USB_HP = 74,
+        USB_LP = 75,
+        USB_WKUP_EXTI = 76,
+        TIM20_BRK = 77,
+        TIM20_UP = 78,
+        TIM20_TRG_COM = 79,
+        TIM20_CC = 80,
+        FPU = 81,
+        SPI4 = 84,
     };
 
 };
