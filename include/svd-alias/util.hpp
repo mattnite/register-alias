@@ -9,18 +9,18 @@
 #include <cstdint>
 
 namespace Svd {
-	template <typename FieldType, auto val>
-	struct FieldPair {
-		using Field = FieldType;
-		static const auto value = val;
-	};
+    template <typename FieldType, auto val>
+    struct FieldPair {
+        using Field = FieldType;
+        static const auto value = val;
+    };
 
-	template <typename FieldType>
-	using FieldClear = FieldPair<FieldType, 0>;
+    template <typename FieldType>
+    using FieldClear = FieldPair<FieldType, 0>;
 
-	template <typename FieldType, typename T = std::uint32_t>
-	struct FieldValue {
-		using Field = FieldType;
-		T value;
-	};
-}
+    template <typename FieldType, typename T = std::uint32_t>
+    struct FieldValue {
+        using Field = FieldType;
+        T value;
+    };
+} // namespace Svd

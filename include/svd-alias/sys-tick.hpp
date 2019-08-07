@@ -33,4 +33,4 @@ namespace Svd {
             Mcu::STK::CSR::TICKINT::write(0);
         }
     };
-}
+} // namespace Svd
