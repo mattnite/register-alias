@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include <type_traits>
+
 #include <cstdint>
 
 namespace Svd {
@@ -16,7 +18,11 @@ namespace Svd {
     };
 
     template <typename FieldType>
-    using FieldClear = FieldPair<FieldType, 0>;
+    using ClearField = FieldPair<FieldType, 0>;
+
+    template <typename FieldType,
+              typename = std::enable_if<FieldType::width == 1>>
+    using SetField = FieldPair<FieldType, 1>;
 
     template <typename FieldType, typename T = std::uint32_t>
     struct FieldValue {
