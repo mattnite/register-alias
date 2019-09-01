@@ -26,7 +26,7 @@ class SvdAliasConan(ConanFile):
         self.copy("data/*", ".", root_package="svd-data")
 
     def build(self):
-        data_path = self.build_folder + "/data" 
+        data_path = self.build_folder + "/data"
         include_path = self.build_folder + "/include"
         svd_include_path = include_path + "/svd-alias"
         master_include_file = svd_include_path + "/svd-alias.hpp"
@@ -38,7 +38,7 @@ class SvdAliasConan(ConanFile):
                 vendor_path = os.path.join(svd_include_path, os.path.relpath(root, start=data_path))
                 vendor_include = os.path.join(vendor_path, os.path.relpath(root, start=data_path)) + ".hpp"
                 vendor_cmake = os.path.join(cmake_path, os.path.relpath(vendor_path, start=svd_include_path))
-                
+
                 self._create_dir(vendor_path)
                 self._create_dir(vendor_cmake)
                 with open(master_include_file, "a") as f:
@@ -49,7 +49,7 @@ class SvdAliasConan(ConanFile):
                     rel_path = os.path.relpath(os.path.dirname(file_path), start=data_path)
                     create_svd_cmake(file_path, os.path.join(cmake_path, rel_path))
                     header_file = create_svd_header(file_path, os.path.join(svd_include_path, rel_path))
-                    
+
                     with open(vendor_include, "a") as f:
                         f.write(include_str.format(os.path.relpath(header_file, start=include_path)))
 
