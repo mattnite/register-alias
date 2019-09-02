@@ -4,7 +4,7 @@ import os
 
 class SvdAliasConan(ConanFile):
     name = "svd-alias"
-    version = "0.2"
+    version = "0.3"
     license = "MIT"
     author = "Matthew Knight <mgk1795@gmail.com>"
     url = "https://github.com/matt1795/svd-alias"
