@@ -10,7 +10,7 @@
 
 #include <cstdint>
 
-namespace Svd {
+namespace RegisterAlias {
     template <typename FieldType, auto val>
     struct FieldPair {
         using Field = FieldType;
@@ -29,4 +29,4 @@ namespace Svd {
         using Field = FieldType;
         T value;
     };
-} // namespace Svd
+} // namespace RegisterAlias

@@ -6,12 +6,12 @@
 
 #pragma once
 
-#include "svd-alias/register.hpp"
-#include "svd-alias/util.hpp"
+#include "register-alias/register.hpp"
+#include "register-alias/util.hpp"
 
 #include <chrono>
 
-namespace Svd {
+namespace RegisterAlias {
     using Milliseconds = std::chrono::duration<std::uint32_t, std::milli>;
 
     template <typename Mcu>
@@ -33,4 +33,4 @@ namespace Svd {
             */
         }
     };
-} // namespace Svd
+} // namespace RegisterAlias

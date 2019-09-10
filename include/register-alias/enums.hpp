@@ -6,7 +6,7 @@
 
 #pragma once
 
-namespace Svd {
+namespace RegisterAlias {
     enum class Cpu {
         CortexM0,
         CortexM0Plus,

@@ -8,7 +8,7 @@
 
 #include <tuple>
 
-namespace Svd {
+namespace RegisterAlias {
     using Isr = void (*)();
 
     std::int32_t const irqOffset = 16;
@@ -47,4 +47,4 @@ namespace Svd {
 
         ~VectorTable() { Mcu::SCB::VTOR::write(vtor); }
     };
-} // namespace Svd
+} // namespace RegisterAlias
