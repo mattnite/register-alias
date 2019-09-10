@@ -2,13 +2,8 @@ from conans import ConanFile, CMake, tools
 from register_alias_tools import create_register_alias_cmake, create_register_alias_header
 import os
 
-<<<<<<< Updated upstream
-class SvdAliasConan(ConanFile):
-    name = "svd-alias"
-=======
 class RegisterAliasConan(ConanFile):
     name = "register-alias"
->>>>>>> Stashed changes
     version = "0.3"
     license = "MIT"
     author = "Matthew Knight <mgk1795@gmail.com>"
